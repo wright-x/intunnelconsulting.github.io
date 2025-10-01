@@ -1,0 +1,15 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1200" height="630" fill="#FFFFFF"/>
+<rect width="1200" height="630" fill="url(#bgGradient)"/>
+<defs>
+<linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#FFFFFF"/>
+<stop offset="100%" style="stop-color:#F8FAFF"/>
+</linearGradient>
+</defs>
+<text x="600" y="200" text-anchor="middle" fill="#0B1020" font-family="Inter, system-ui, sans-serif" font-size="64" font-weight="700">Intunnel Consulting</text>
+<text x="600" y="280" text-anchor="middle" fill="#2340FF" font-family="Inter, system-ui, sans-serif" font-size="48" font-weight="600">We turn attention into</text>
+<text x="600" y="340" text-anchor="middle" fill="#2340FF" font-family="Inter, system-ui, sans-serif" font-size="48" font-weight="600">predictable revenue</text>
+<text x="600" y="420" text-anchor="middle" fill="#525252" font-family="Inter, system-ui, sans-serif" font-size="32" font-weight="400">Ads, automations, and sales systems that make you rich</text>
+<rect x="400" y="500" width="400" height="4" rx="2" fill="#2340FF"/>
+</svg>
