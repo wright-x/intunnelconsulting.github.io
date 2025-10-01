@@ -1,3 +1,36 @@
+export const services = [
+  {
+    title: "Performance UGC Ads",
+    description: "User-generated content campaigns that drive authentic engagement and conversions.",
+    outcome: "Higher conversion rates and lower cost per acquisition."
+  },
+  {
+    title: "Local Marketing",
+    description: "Geo-targeted campaigns that dominate local markets and drive foot traffic.",
+    outcome: "Increased local market share and brand recognition."
+  },
+  {
+    title: "CRM + Automations",
+    description: "Automated lead nurturing and customer lifecycle management systems.",
+    outcome: "Consistent follow-up and improved customer retention."
+  },
+  {
+    title: "Appointment Setters",
+    description: "Performance-based team members who book qualified calls on your calendar.",
+    outcome: "More qualified leads and better use of your time."
+  },
+  {
+    title: "Sales Process + Scripts",
+    description: "Proven frameworks and scripts that close more deals consistently.",
+    outcome: "Higher close rates and predictable revenue."
+  },
+  {
+    title: "Landing Pages + CRO",
+    description: "High-converting pages optimized for your specific audience and goals.",
+    outcome: "Better lead quality and higher conversion rates."
+  }
+];
+
 export const caseStudies = [
   {
     slug: "saad",
@@ -27,61 +60,6 @@ export const caseStudies = [
       "Became #1 for brows locally; predictable stream + retention."
     ],
     badges: ["$30k/mo Revenue", "Local #1", "Predictable Stream"]
-  },
-  {
-    slug: "manpreet",
-    title: "$0 to $10k/mo with Local Ads + Collabs",
-    challenge: "No revenue, no positioning, no lead system.",
-    solution: [
-      "Local ads with expertise-led creatives; CRM automations.",
-      "Speed-to-lead; social collabs with bridal photographers/jewelry."
-    ],
-    results: [
-      "$0 → $10,000/mo; celebrity clients; brand projects (e.g., Ubisoft).",
-      "Predictable inbound + partnerships."
-    ],
-    badges: ["$10k/mo Revenue", "Celebrity Clients", "Brand Partnerships"]
-  },
-  {
-    slug: "mokobara",
-    title: "UAE Launch — Content-Led Growth",
-    challenge: "Entered UAE with no recognition in crowded D2C.",
-    solution: [
-      "Full photo production; website collateral curation with localized lifestyle images.",
-      "Micro-influencer program to seed content cheaply; repurposed best creators into UGC ads."
-    ],
-    results: [
-      "Rapid recognition; content-led approach became a regional benchmark."
-    ],
-    badges: ["Regional Benchmark", "Content-Led Growth", "UAE Launch"]
-  },
-  {
-    slug: "kary-li",
-    title: "+$10k/mo for 12 months; ~$6k ad spend",
-    challenge: "~$200k/yr via Yelp & word-of-mouth; limited growth headroom.",
-    solution: [
-      "Local leadgen ads; CRM + automations; speed-to-lead.",
-      "Commission-based closer."
-    ],
-    results: [
-      "+$10k/mo for 12 months (~+$120k in 6 months); ~$6k ad spend.",
-      "Predictable pipeline and pro sales process."
-    ],
-    badges: ["+$10k/mo", "12 Months", "$6k Ad Spend"]
-  },
-  {
-    slug: "revive",
-    title: "Solo Operator to $8–9k/mo on $600/mo ad spend",
-    challenge: "Plateau at ~$1,800/mo; no scalable acquisition.",
-    solution: [
-      "Local UGC ad campaigns; CRM with automated follow-ups.",
-      "Speed-to-lead; light-touch nurture."
-    ],
-    results: [
-      "$1.8k → $8–9k/mo on ~$600/mo ad spend.",
-      "Predictable monthly revenue."
-    ],
-    badges: ["$8-9k/mo", "$600 Ad Spend", "Solo Operator"]
   },
   {
     slug: "lr-ventures",
@@ -123,48 +101,34 @@ export const caseStudies = [
       "Overflow appointments and repeat bookings."
     ],
     badges: ["90× ROAS", "Exhibition Launch", "₹3.6M Revenue"]
+  },
+  {
+    slug: "kary-li",
+    title: "+$10k/mo for 12 months; ~$6k ad spend",
+    challenge: "~$200k/yr via Yelp & word-of-mouth; limited growth headroom.",
+    solution: [
+      "Local leadgen ads; CRM + automations; speed-to-lead.",
+      "Commission-based closer."
+    ],
+    results: [
+      "+$10k/mo for 12 months (~+$120k in 6 months); ~$6k ad spend.",
+      "Predictable pipeline and pro sales process."
+    ],
+    badges: ["+$10k/mo", "12 Months", "$6k Ad Spend"]
   }
 ];
 
-export const services = [
-  {
-    title: "Performance UGC Ads",
-    description: "Drive engagement with user-generated content ads tailored to your audience.",
-    outcome: "Higher conversion rates and lower cost per acquisition."
-  },
-  {
-    title: "Local Ads",
-    description: "Geo-targeted campaigns that reach your ideal local customers.",
-    outcome: "Increased local market share and foot traffic."
-  },
-  {
-    title: "CRM + Automations",
-    description: "Automated lead nurturing and customer lifecycle management.",
-    outcome: "Consistent follow-up and improved customer retention."
-  },
-  {
-    title: "Appointment Setters",
-    description: "Performance-based team members who book qualified calls.",
-    outcome: "More qualified leads and better use of your time."
-  },
-  {
-    title: "Sales Process + Scripts",
-    description: "Proven frameworks and scripts that close more deals.",
-    outcome: "Higher close rates and predictable revenue."
-  },
-  {
-    title: "Landing Pages + CRO",
-    description: "High-converting pages optimized for your specific audience.",
-    outcome: "Better lead quality and higher conversion rates."
-  },
-  {
-    title: "Content Engine for Social",
-    description: "Consistent, engaging content that builds your brand.",
-    outcome: "Stronger brand presence and organic growth."
-  },
-  {
-    title: "Reporting + P&L Views",
-    description: "Clear insights into your marketing ROI and profitability.",
-    outcome: "Data-driven decisions and optimized spending."
-  }
+export const partners = [
+  "@saadsells",
+  "Trophy Beauty Spa", 
+  "LR Ventures",
+  "Bottega5 Group",
+  "Revive Aesthetics",
+  "Kary Li",
+  "Mokobara",
+  "Naina Jain",
+  "Manpreet",
+  "Game Studio",
+  "Tech Startup",
+  "E-commerce Brand"
 ];

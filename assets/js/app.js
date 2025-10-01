@@ -1,4 +1,4 @@
-import { caseStudies, services } from './data.js';
+import { services } from './data.js';
 
 // Configuration
 let config = {};
@@ -10,12 +10,11 @@ document.addEventListener('DOMContentLoaded', async () => {
   
   // Initialize components
   initSmoothScroll();
-  initNavigation();
+  initScrollSpy();
   initMobileMenu();
   initAnimations();
   initForm();
   populateServices();
-  populateCaseStudies();
   initIntersectionObserver();
 });
 
@@ -64,10 +63,12 @@ function initSmoothScroll() {
       header.style.opacity = '1';
     }
   });
+
+  return lenis;
 }
 
-// Initialize navigation with active state tracking
-function initNavigation() {
+// Initialize scroll spy for navigation
+function initScrollSpy() {
   const navLinks = document.querySelectorAll('.nav-link');
   const sections = document.querySelectorAll('section[id]');
   
@@ -79,9 +80,12 @@ function initNavigation() {
       const targetSection = document.getElementById(targetId);
       
       if (targetSection) {
-        targetSection.scrollIntoView({ 
-          behavior: 'smooth',
-          block: 'start'
+        const headerHeight = 80; // Account for sticky header
+        const targetPosition = targetSection.offsetTop - headerHeight;
+        
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
         });
       }
     });
@@ -105,6 +109,13 @@ function initMobileMenu() {
         mobileMenu.classList.add('hidden');
       });
     });
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+        mobileMenu.classList.add('hidden');
+      }
+    });
   }
 }
 
@@ -117,35 +128,32 @@ function initAnimations() {
     return;
   }
 
+  // Register ScrollTrigger
+  gsap.registerPlugin(ScrollTrigger);
+
   // Hero section animation
-  gsap.from('.hero h1', {
-    opacity: 0,
-    y: 50,
-    duration: 1,
-    ease: 'power2.out',
-    delay: 0.2
-  });
-
-  gsap.from('.hero p', {
-    opacity: 0,
-    y: 30,
-    duration: 0.8,
-    ease: 'power2.out',
-    delay: 0.4
-  });
-
-  gsap.from('.proof-chips', {
-    opacity: 0,
-    y: 20,
-    duration: 0.8,
-    ease: 'power2.out',
-    delay: 0.6
-  });
+  gsap.timeline()
+    .from('.hero h1', {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      ease: 'power2.out'
+    })
+    .from('.hero p', {
+      opacity: 0,
+      y: 30,
+      duration: 0.8,
+      ease: 'power2.out'
+    }, '-=0.5')
+    .from('.hero .grid', {
+      opacity: 0,
+      y: 20,
+      duration: 0.6,
+      ease: 'power2.out'
+    }, '-=0.3');
 
   // Section reveal animations
-  gsap.registerPlugin(ScrollTrigger);
-  
-  gsap.utils.toArray('.value-card, .service-card, .process-step, .case-study-card, .pricing-card').forEach((element, index) => {
+  gsap.utils.toArray('.focus-card, .service-card, .package-card, .logo-item').forEach((element, index) => {
     gsap.from(element, {
       opacity: 0,
       y: 30,
@@ -159,6 +167,32 @@ function initAnimations() {
       delay: index * 0.1
     });
   });
+
+  // Staggered logo animation
+  gsap.from('.logo-item', {
+    opacity: 0,
+    y: 20,
+    duration: 0.4,
+    ease: 'power2.out',
+    stagger: 0.1,
+    scrollTrigger: {
+      trigger: '.logo-wall',
+      start: 'top 80%',
+      toggleActions: 'play none none reverse'
+    }
+  });
+
+  // Parallax effect for hero background
+  gsap.to('.hero::before', {
+    y: -50,
+    ease: 'none',
+    scrollTrigger: {
+      trigger: '.hero',
+      start: 'top bottom',
+      end: 'bottom top',
+      scrub: true
+    }
+  });
 }
 
 // Initialize intersection observer for navigation active state
@@ -167,7 +201,7 @@ function initIntersectionObserver() {
   const sections = document.querySelectorAll('section[id]');
   
   const observerOptions = {
-    rootMargin: '-50% 0px -50% 0px',
+    rootMargin: '-20% 0px -60% 0px',
     threshold: 0
   };
   
@@ -197,8 +231,22 @@ function populateServices() {
   const servicesGrid = document.getElementById('services-grid');
   if (!servicesGrid) return;
   
-  servicesGrid.innerHTML = services.map(service => `
+  const serviceIcons = [
+    'M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2h3a1 1 0 011 1v14a1 1 0 01-1 1H4a1 1 0 01-1-1V5a1 1 0 011-1h3zM9 4h6V3H9v1z',
+    'M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z',
+    'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z',
+    'M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z',
+    'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z',
+    'M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z'
+  ];
+  
+  servicesGrid.innerHTML = services.map((service, index) => `
     <div class="service-card">
+      <div class="service-icon">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="${serviceIcons[index] || serviceIcons[0]}"></path>
+        </svg>
+      </div>
       <h3 class="text-lg font-semibold text-ink mb-3">${service.title}</h3>
       <p class="text-neutral-600 mb-4">${service.description}</p>
       <div class="text-sm text-primary font-medium">${service.outcome}</div>
@@ -206,68 +254,10 @@ function populateServices() {
   `).join('');
 }
 
-// Populate case studies section
-function populateCaseStudies() {
-  const caseStudiesGrid = document.getElementById('case-studies-grid');
-  if (!caseStudiesGrid) return;
-  
-  caseStudiesGrid.innerHTML = caseStudies.map(study => `
-    <div class="case-study-card">
-      <details>
-        <summary class="case-study-header">
-          <div>
-            <h3 class="text-lg font-semibold text-ink mb-2">${study.title}</h3>
-            <div class="case-study-badges">
-              ${study.badges.map(badge => `<span class="case-study-badge">${badge}</span>`).join('')}
-            </div>
-          </div>
-        </summary>
-        <div class="case-study-content">
-          <div class="mb-4">
-            <h4 class="font-semibold text-ink mb-2">Challenge:</h4>
-            <p class="text-neutral-600">${study.challenge}</p>
-          </div>
-          
-          <div class="mb-4">
-            <h4 class="font-semibold text-ink mb-2">Solution:</h4>
-            <ul class="text-neutral-600 space-y-1">
-              ${study.solution.map(item => `<li>• ${item}</li>`).join('')}
-            </ul>
-          </div>
-          
-          <div>
-            <h4 class="font-semibold text-ink mb-2">Results:</h4>
-            <ul class="text-neutral-600 space-y-1">
-              ${study.results.map(result => `<li>• ${result}</li>`).join('')}
-            </ul>
-          </div>
-        </div>
-      </details>
-    </div>
-  `).join('');
-  
-  // Add animation to case study details
-  const detailsElements = document.querySelectorAll('.case-study-card details');
-  detailsElements.forEach(details => {
-    details.addEventListener('toggle', () => {
-      if (details.open) {
-        const content = details.querySelector('.case-study-content');
-        gsap.from(content, {
-          opacity: 0,
-          y: 20,
-          duration: 0.3,
-          ease: 'power2.out'
-        });
-      }
-    });
-  });
-}
-
 // Initialize contact form
 function initForm() {
   const form = document.getElementById('contact-form');
   const successMessage = document.getElementById('form-success');
-  const calendlyLink = document.getElementById('calendly-link');
   
   if (!form) return;
   
@@ -298,14 +288,17 @@ function initForm() {
       });
       
       if (response.ok) {
-        // Show success message
+        // Show success message with animation
         form.style.display = 'none';
         successMessage.classList.remove('hidden');
         
-        // Set Calendly link
-        if (calendlyLink && config.calendly) {
-          calendlyLink.href = config.calendly;
-        }
+        // Animate success message
+        gsap.from(successMessage, {
+          opacity: 0,
+          y: 20,
+          duration: 0.6,
+          ease: 'power2.out'
+        });
         
         // Track conversion (if analytics is available)
         if (typeof gtag !== 'undefined') {
@@ -374,10 +367,9 @@ window.addEventListener('error', (event) => {
 // Export functions for potential external use
 window.IntunnelConsulting = {
   initSmoothScroll,
-  initNavigation,
+  initScrollSpy,
   initMobileMenu,
   initAnimations,
   initForm,
-  populateServices,
-  populateCaseStudies
+  populateServices
 };
