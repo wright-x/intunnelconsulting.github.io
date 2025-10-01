@@ -137,23 +137,40 @@
   }
 }
 
+/* Hide duplicate chips */
+.proof-chip:nth-child(n+5) {
+  display: none;
+}
+
 /* Platform Badges */
 .platform-badges {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 2rem;
   margin-top: 3rem;
+  flex-wrap: wrap;
 }
 
 .platform-badge {
   opacity: 0.6;
-  transition: opacity 0.3s ease;
+  transition: all 0.3s ease;
   filter: grayscale(100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .platform-badge:hover {
   opacity: 1;
   filter: grayscale(0%);
+  transform: scale(1.1);
+}
+
+.platform-badge img {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
 }
 
 /* Value Cards */
@@ -390,10 +407,45 @@
   transition: all 0.3s ease;
 }
 
+/* Ensure mobile menu is properly hidden on desktop */
+@media (min-width: 768px) {
+  .mobile-menu {
+    display: none !important;
+  }
+  
+  .mobile-menu-btn {
+    display: none !important;
+  }
+}
+
 /* Navigation Active State */
 .nav-link.active {
   color: var(--primary);
   font-weight: 500;
+}
+
+/* Fix header layout issues */
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--neutral-100);
+  transition: opacity 0.3s ease;
+}
+
+/* Ensure proper mobile menu visibility */
+@media (max-width: 767px) {
+  .mobile-menu {
+    display: block;
+  }
+  
+  .mobile-menu-btn {
+    display: block;
+  }
 }
 
 /* Smooth Scroll */
