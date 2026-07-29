@@ -1,0 +1,1310 @@
+[
+  {
+    "page_num": 1,
+    "type": "hero",
+    "slug": "cover",
+    "title": "cover",
+    "items": [],
+    "reference_photos": [],
+    "prompt": "Render this as a FLAT, front-on, full-bleed page design filling the entire frame edge-to-edge — NOT a 3D mockup, NOT shown at an angle or propped up, NO drop shadow around the page edges, NO book/binder/table framing. The image itself IS the printed page, viewed perfectly straight-on like a scanned document. Premium editorial restaurant menu page design, bright and clean. Soft white/light warm-marble background with subtle natural texture, generous whitespace, delicate thin gold-black hairline rules and dotted price leaders. Elegant modern serif headline typography for the restaurant wordmark 'THE THEATER' with small refined tracked-out caps subtitle 'INDIAN KITCHEN & BAR', and a clean modern sans-serif for dish names, descriptions and prices. High-end food photography styling for every dish shown, shot in soft bright studio light, shallow depth of field. Small minimal line-art icons: a tiny green circle outline with a leaf for vegetarian dishes placed beside the dish name, one to three small red chili-pepper outline icons beside the dish name indicating spice level, and a small elegant gold star-ribbon badge labeled 'CHEF'S RECOMMENDED' beside any dish marked as recommended. Consistent premium restaurant branding throughout, magazine-quality layout, no clutter. 2K quality, ultra-detailed, photorealistic food, sharp typography. No spelling mistakes. No stray watermarks, no phone UI, no random extra text. This is the FRONT COVER of the menu: a full-bleed, atmospheric, single beautiful hero image with no dish list. Show an elegant overhead flat-lay of aromatic Indian spices (star anise, cinnamon sticks, cardamom pods, dried red chilies, saffron threads) scattered artfully on a warm marble surface with soft directional light and gentle shadow. Centered near the top, render the restaurant wordmark 'THE THEATER' in elegant serif type with the small tracked caps subtitle 'INDIAN KITCHEN & BAR' beneath it, and beneath that in small italic type: 'Dương Đông, Phú Quốc'. No other text, no dish photos, no menu items on this page."
+  },
+  {
+    "page_num": 2,
+    "type": "hero",
+    "slug": "divider-small-plates",
+    "title": "divider-small-plates",
+    "items": [],
+    "reference_photos": [],
+    "prompt": "Render this as a FLAT, front-on, full-bleed page design filling the entire frame edge-to-edge — NOT a 3D mockup, NOT shown at an angle or propped up, NO drop shadow around the page edges, NO book/binder/table framing. The image itself IS the printed page, viewed perfectly straight-on like a scanned document. Premium editorial restaurant menu page design, bright and clean. Soft white/light warm-marble background with subtle natural texture, generous whitespace, delicate thin gold-black hairline rules and dotted price leaders. Elegant modern serif headline typography for the restaurant wordmark 'THE THEATER' with small refined tracked-out caps subtitle 'INDIAN KITCHEN & BAR', and a clean modern sans-serif for dish names, descriptions and prices. High-end food photography styling for every dish shown, shot in soft bright studio light, shallow depth of field. Small minimal line-art icons: a tiny green circle outline with a leaf for vegetarian dishes placed beside the dish name, one to three small red chili-pepper outline icons beside the dish name indicating spice level, and a small elegant gold star-ribbon badge labeled 'CHEF'S RECOMMENDED' beside any dish marked as recommended. Consistent premium restaurant branding throughout, magazine-quality layout, no clutter. 2K quality, ultra-detailed, photorealistic food, sharp typography. No spelling mistakes. No stray watermarks, no phone UI, no random extra text. This is a SECTION DIVIDER page with no dish list and no prices — just one beautiful full-bleed atmospheric photograph: a close-up of golden crispy fried snacks and small plates being plated, steam and texture visible, shallow depth of field, on a bright marble surface. Render only a small elegant section label near the bottom: 'SMALL PLATES, BAR BITES & CHAAT'."
+  },
+  {
+    "page_num": 3,
+    "type": "content",
+    "slug": "small-plates-bar-bites-1",
+    "title": "Small Plates & Bar Bites",
+    "items": [
+      {
+        "name": "French Fries",
+        "price_vnd_k": 125,
+        "description": "crispy golden fries seasoned with sea salt",
+        "veg": true,
+        "spice": 1,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/small-plates-bar-bites/french-fries.png"
+      },
+      {
+        "name": "Peri Peri Fries",
+        "price_vnd_k": 135,
+        "description": "crispy fries tossed in spicy peri peri seasoning",
+        "veg": true,
+        "spice": 3,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/small-plates-bar-bites/peri-peri-fries.png"
+      },
+      {
+        "name": "Masala Peanut Bowl",
+        "price_vnd_k": 75,
+        "description": "roasted peanuts tossed with curry leaves and aromatic spices",
+        "veg": true,
+        "spice": 2,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/small-plates-bar-bites/masala-peanut-bowl.png"
+      },
+      {
+        "name": "Crispy Bhindi",
+        "price_vnd_k": 150,
+        "description": "crispy finger-cut okra strips coated in light besan batter, deep-fried to golden perfection",
+        "veg": true,
+        "spice": 1,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/small-plates-bar-bites/crispy-bhindi.png"
+      }
+    ],
+    "reference_photos": [
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/small-plates-bar-bites/french-fries.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/small-plates-bar-bites/peri-peri-fries.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/small-plates-bar-bites/masala-peanut-bowl.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/small-plates-bar-bites/crispy-bhindi.png"
+    ],
+    "prompt": "Render this as a FLAT, front-on, full-bleed page design filling the entire frame edge-to-edge — NOT a 3D mockup, NOT shown at an angle or propped up, NO drop shadow around the page edges, NO book/binder/table framing. The image itself IS the printed page, viewed perfectly straight-on like a scanned document. Premium editorial restaurant menu page design, bright and clean. Soft white/light warm-marble background with subtle natural texture, generous whitespace, delicate thin gold-black hairline rules and dotted price leaders. Elegant modern serif headline typography for the restaurant wordmark 'THE THEATER' with small refined tracked-out caps subtitle 'INDIAN KITCHEN & BAR', and a clean modern sans-serif for dish names, descriptions and prices. High-end food photography styling for every dish shown, shot in soft bright studio light, shallow depth of field. Small minimal line-art icons: a tiny green circle outline with a leaf for vegetarian dishes placed beside the dish name, one to three small red chili-pepper outline icons beside the dish name indicating spice level, and a small elegant gold star-ribbon badge labeled 'CHEF'S RECOMMENDED' beside any dish marked as recommended. Consistent premium restaurant branding throughout, magazine-quality layout, no clutter. 2K quality, ultra-detailed, photorealistic food, sharp typography. No spelling mistakes. No stray watermarks, no phone UI, no random extra text. This page is titled 'SMALL PLATES & BAR BITES' (page 1 of 4 for this section) — render the section title prominently near the top of the page beneath the restaurant wordmark. Lay out the following dishes on this single page, each with its own photo, name, price and description rendered EXACTLY as given below (render this precise text, do not invent different names/prices): - \"French Fries\" — 125K VND — \"crispy golden fries seasoned with sea salt\". VEGETARIAN (show the green leaf icon). Spice level: 1 chili icon(s). Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Peri Peri Fries\" — 135K VND — \"crispy fries tossed in spicy peri peri seasoning\". VEGETARIAN (show the green leaf icon). Spice level: 3 chili icon(s). Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Masala Peanut Bowl\" — 75K VND — \"roasted peanuts tossed with curry leaves and aromatic spices\". VEGETARIAN (show the green leaf icon). Spice level: 2 chili icon(s). Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Crispy Bhindi\" — 150K VND — \"crispy finger-cut okra strips coated in light besan batter, deep-fried to golden perfection\". VEGETARIAN (show the green leaf icon). Spice level: 1 chili icon(s). Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. Footnote at the bottom in small type: 'All prices are in thousand VND (d). VAT and service charge is extra.'"
+  },
+  {
+    "page_num": 4,
+    "type": "content",
+    "slug": "small-plates-bar-bites-2",
+    "title": "Small Plates & Bar Bites",
+    "items": [
+      {
+        "name": "Samosa with Mint Chutney",
+        "price_vnd_k": 120,
+        "description": "spiced potato pastry served with fresh mint chutney",
+        "veg": true,
+        "spice": 1,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/small-plates-bar-bites/samosa-with-mint-chutney.png"
+      },
+      {
+        "name": "Hara Bhara Kebab",
+        "price_vnd_k": 165,
+        "description": "spinach and pea kebabs served with mint chutney",
+        "veg": true,
+        "spice": 1,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/small-plates-bar-bites/hara-bhara-kebab.png"
+      },
+      {
+        "name": "Chilli Paneer",
+        "price_vnd_k": 199,
+        "description": "cottage cheese cubes tossed in a spicy Indo-Chinese chilli sauce with bell peppers, onions and spring onions",
+        "veg": true,
+        "spice": 3,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/small-plates-bar-bites/chilli-paneer.png"
+      },
+      {
+        "name": "Paneer 65",
+        "price_vnd_k": 199,
+        "description": "crispy cottage cheese tossed with curry leaves, garlic and South Indian spices",
+        "veg": true,
+        "spice": 2,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/small-plates-bar-bites/paneer-65.png"
+      }
+    ],
+    "reference_photos": [
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/small-plates-bar-bites/samosa-with-mint-chutney.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/small-plates-bar-bites/hara-bhara-kebab.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/small-plates-bar-bites/chilli-paneer.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/small-plates-bar-bites/paneer-65.png"
+    ],
+    "prompt": "Render this as a FLAT, front-on, full-bleed page design filling the entire frame edge-to-edge — NOT a 3D mockup, NOT shown at an angle or propped up, NO drop shadow around the page edges, NO book/binder/table framing. The image itself IS the printed page, viewed perfectly straight-on like a scanned document. Premium editorial restaurant menu page design, bright and clean. Soft white/light warm-marble background with subtle natural texture, generous whitespace, delicate thin gold-black hairline rules and dotted price leaders. Elegant modern serif headline typography for the restaurant wordmark 'THE THEATER' with small refined tracked-out caps subtitle 'INDIAN KITCHEN & BAR', and a clean modern sans-serif for dish names, descriptions and prices. High-end food photography styling for every dish shown, shot in soft bright studio light, shallow depth of field. Small minimal line-art icons: a tiny green circle outline with a leaf for vegetarian dishes placed beside the dish name, one to three small red chili-pepper outline icons beside the dish name indicating spice level, and a small elegant gold star-ribbon badge labeled 'CHEF'S RECOMMENDED' beside any dish marked as recommended. Consistent premium restaurant branding throughout, magazine-quality layout, no clutter. 2K quality, ultra-detailed, photorealistic food, sharp typography. No spelling mistakes. No stray watermarks, no phone UI, no random extra text. This page is titled 'SMALL PLATES & BAR BITES' (page 2 of 4 for this section) — render the section title prominently near the top of the page beneath the restaurant wordmark. Lay out the following dishes on this single page, each with its own photo, name, price and description rendered EXACTLY as given below (render this precise text, do not invent different names/prices): - \"Samosa with Mint Chutney\" — 120K VND — \"spiced potato pastry served with fresh mint chutney\". VEGETARIAN (show the green leaf icon). Spice level: 1 chili icon(s). Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Hara Bhara Kebab\" — 165K VND — \"spinach and pea kebabs served with mint chutney\". VEGETARIAN (show the green leaf icon). Spice level: 1 chili icon(s). Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Chilli Paneer\" — 199K VND — \"cottage cheese cubes tossed in a spicy Indo-Chinese chilli sauce with bell peppers, onions and spring onions\". VEGETARIAN (show the green leaf icon). Spice level: 3 chili icon(s). Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Paneer 65\" — 199K VND — \"crispy cottage cheese tossed with curry leaves, garlic and South Indian spices\". VEGETARIAN (show the green leaf icon). Spice level: 2 chili icon(s). Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. Footnote at the bottom in small type: 'All prices are in thousand VND (d). VAT and service charge is extra.'"
+  },
+  {
+    "page_num": 5,
+    "type": "content",
+    "slug": "small-plates-bar-bites-3",
+    "title": "Small Plates & Bar Bites",
+    "items": [
+      {
+        "name": "Honey Chilli Potato",
+        "price_vnd_k": 150,
+        "description": "crispy potato fingers tossed in honey, chilli and aromatic spices",
+        "veg": true,
+        "spice": 3,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/small-plates-bar-bites/honey-chilli-potato.png"
+      },
+      {
+        "name": "Gobhi 65",
+        "price_vnd_k": 165,
+        "description": "crispy cauliflower florets tossed with aromatic spices and curry leaves",
+        "veg": true,
+        "spice": 2,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/small-plates-bar-bites/gobhi-65.png"
+      },
+      {
+        "name": "Veg Manchurian (Dry)",
+        "price_vnd_k": 195,
+        "description": "crispy vegetable balls tossed with garlic, peppers and a savoury sauce",
+        "veg": true,
+        "spice": 2,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/small-plates-bar-bites/veg-manchurian-dry.png"
+      },
+      {
+        "name": "Hakka Noodles",
+        "price_vnd_k": 180,
+        "description": "stir-fried noodles with fresh vegetables, garlic and aromatic seasoning",
+        "veg": true,
+        "spice": 1,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/small-plates-bar-bites/hakka-noodles.png"
+      }
+    ],
+    "reference_photos": [
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/small-plates-bar-bites/honey-chilli-potato.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/small-plates-bar-bites/gobhi-65.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/small-plates-bar-bites/veg-manchurian-dry.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/small-plates-bar-bites/hakka-noodles.png"
+    ],
+    "prompt": "Render this as a FLAT, front-on, full-bleed page design filling the entire frame edge-to-edge — NOT a 3D mockup, NOT shown at an angle or propped up, NO drop shadow around the page edges, NO book/binder/table framing. The image itself IS the printed page, viewed perfectly straight-on like a scanned document. Premium editorial restaurant menu page design, bright and clean. Soft white/light warm-marble background with subtle natural texture, generous whitespace, delicate thin gold-black hairline rules and dotted price leaders. Elegant modern serif headline typography for the restaurant wordmark 'THE THEATER' with small refined tracked-out caps subtitle 'INDIAN KITCHEN & BAR', and a clean modern sans-serif for dish names, descriptions and prices. High-end food photography styling for every dish shown, shot in soft bright studio light, shallow depth of field. Small minimal line-art icons: a tiny green circle outline with a leaf for vegetarian dishes placed beside the dish name, one to three small red chili-pepper outline icons beside the dish name indicating spice level, and a small elegant gold star-ribbon badge labeled 'CHEF'S RECOMMENDED' beside any dish marked as recommended. Consistent premium restaurant branding throughout, magazine-quality layout, no clutter. 2K quality, ultra-detailed, photorealistic food, sharp typography. No spelling mistakes. No stray watermarks, no phone UI, no random extra text. This page is titled 'SMALL PLATES & BAR BITES' (page 3 of 4 for this section) — render the section title prominently near the top of the page beneath the restaurant wordmark. Lay out the following dishes on this single page, each with its own photo, name, price and description rendered EXACTLY as given below (render this precise text, do not invent different names/prices): - \"Honey Chilli Potato\" — 150K VND — \"crispy potato fingers tossed in honey, chilli and aromatic spices\". VEGETARIAN (show the green leaf icon). Spice level: 3 chili icon(s). Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Gobhi 65\" — 165K VND — \"crispy cauliflower florets tossed with aromatic spices and curry leaves\". VEGETARIAN (show the green leaf icon). Spice level: 2 chili icon(s). Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Veg Manchurian (Dry)\" — 195K VND — \"crispy vegetable balls tossed with garlic, peppers and a savoury sauce\". VEGETARIAN (show the green leaf icon). Spice level: 2 chili icon(s). Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Hakka Noodles\" — 180K VND — \"stir-fried noodles with fresh vegetables, garlic and aromatic seasoning\". VEGETARIAN (show the green leaf icon). Spice level: 1 chili icon(s). Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. Footnote at the bottom in small type: 'All prices are in thousand VND (d). VAT and service charge is extra.'"
+  },
+  {
+    "page_num": 6,
+    "type": "content",
+    "slug": "small-plates-bar-bites-4",
+    "title": "Small Plates & Bar Bites",
+    "items": [
+      {
+        "name": "Chicken 65",
+        "price_vnd_k": 220,
+        "description": "crispy fried chicken tossed with curry leaves, garlic and aromatic South Indian spices",
+        "veg": false,
+        "spice": 2,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/small-plates-bar-bites/chicken-65.png"
+      },
+      {
+        "name": "Chilli Chicken",
+        "price_vnd_k": 220,
+        "description": "crispy chicken tossed in a bold chilli sauce",
+        "veg": false,
+        "spice": 3,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/small-plates-bar-bites/chilli-chicken.png"
+      },
+      {
+        "name": "Butter Garlic Prawns",
+        "price_vnd_k": 250,
+        "description": "juicy prawns sauteed with garlic, herbs and butter",
+        "veg": false,
+        "spice": 1,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/small-plates-bar-bites/butter-garlic-prawns.png"
+      },
+      {
+        "name": "Fish Amritsari",
+        "price_vnd_k": 245,
+        "description": "crispy fish fingers coated in gram flour and Amritsari spices",
+        "veg": false,
+        "spice": 1,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/small-plates-bar-bites/fish-amritsari.png"
+      }
+    ],
+    "reference_photos": [
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/small-plates-bar-bites/chicken-65.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/small-plates-bar-bites/chilli-chicken.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/small-plates-bar-bites/butter-garlic-prawns.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/small-plates-bar-bites/fish-amritsari.png"
+    ],
+    "prompt": "Render this as a FLAT, front-on, full-bleed page design filling the entire frame edge-to-edge — NOT a 3D mockup, NOT shown at an angle or propped up, NO drop shadow around the page edges, NO book/binder/table framing. The image itself IS the printed page, viewed perfectly straight-on like a scanned document. Premium editorial restaurant menu page design, bright and clean. Soft white/light warm-marble background with subtle natural texture, generous whitespace, delicate thin gold-black hairline rules and dotted price leaders. Elegant modern serif headline typography for the restaurant wordmark 'THE THEATER' with small refined tracked-out caps subtitle 'INDIAN KITCHEN & BAR', and a clean modern sans-serif for dish names, descriptions and prices. High-end food photography styling for every dish shown, shot in soft bright studio light, shallow depth of field. Small minimal line-art icons: a tiny green circle outline with a leaf for vegetarian dishes placed beside the dish name, one to three small red chili-pepper outline icons beside the dish name indicating spice level, and a small elegant gold star-ribbon badge labeled 'CHEF'S RECOMMENDED' beside any dish marked as recommended. Consistent premium restaurant branding throughout, magazine-quality layout, no clutter. 2K quality, ultra-detailed, photorealistic food, sharp typography. No spelling mistakes. No stray watermarks, no phone UI, no random extra text. This page is titled 'SMALL PLATES & BAR BITES' (page 4 of 4 for this section) — render the section title prominently near the top of the page beneath the restaurant wordmark. Lay out the following dishes on this single page, each with its own photo, name, price and description rendered EXACTLY as given below (render this precise text, do not invent different names/prices): - \"Chicken 65\" — 220K VND — \"crispy fried chicken tossed with curry leaves, garlic and aromatic South Indian spices\". non-vegetarian (no leaf icon). Spice level: 2 chili icon(s). Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Chilli Chicken\" — 220K VND — \"crispy chicken tossed in a bold chilli sauce\". non-vegetarian (no leaf icon). Spice level: 3 chili icon(s). Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Butter Garlic Prawns\" — 250K VND — \"juicy prawns sauteed with garlic, herbs and butter\". non-vegetarian (no leaf icon). Spice level: 1 chili icon(s). Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Fish Amritsari\" — 245K VND — \"crispy fish fingers coated in gram flour and Amritsari spices\". non-vegetarian (no leaf icon). Spice level: 1 chili icon(s). Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. Footnote at the bottom in small type: 'All prices are in thousand VND (d). VAT and service charge is extra.'"
+  },
+  {
+    "page_num": 7,
+    "type": "content",
+    "slug": "chaat-fast-sellers-1",
+    "title": "Chaat & Fast Sellers",
+    "items": [
+      {
+        "name": "Masala Papad",
+        "price_vnd_k": 55,
+        "description": "crispy papad topped with onion, tomato and fresh herbs",
+        "veg": true,
+        "spice": 0,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/chaat-fast-sellers/masala-papad.png"
+      },
+      {
+        "name": "Pani Puri Shots",
+        "price_vnd_k": 90,
+        "description": "crispy puris served with tangy flavored waters and chutneys",
+        "veg": true,
+        "spice": 1,
+        "chef_recommended": true,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/chaat-fast-sellers/pani-puri-shots.png"
+      },
+      {
+        "name": "Dahi Papdi Chaat",
+        "price_vnd_k": 150,
+        "description": "crispy wafers topped with yogurt, chutneys and spices",
+        "veg": true,
+        "spice": 1,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/chaat-fast-sellers/dahi-papdi-chaat.png"
+      },
+      {
+        "name": "Aloo Tikki Chaat",
+        "price_vnd_k": 155,
+        "description": "crispy potato patties topped with yogurt and chutneys",
+        "veg": true,
+        "spice": 1,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/chaat-fast-sellers/aloo-tikki-chaat.png"
+      }
+    ],
+    "reference_photos": [
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/chaat-fast-sellers/masala-papad.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/chaat-fast-sellers/pani-puri-shots.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/chaat-fast-sellers/dahi-papdi-chaat.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/chaat-fast-sellers/aloo-tikki-chaat.png"
+    ],
+    "prompt": "Render this as a FLAT, front-on, full-bleed page design filling the entire frame edge-to-edge — NOT a 3D mockup, NOT shown at an angle or propped up, NO drop shadow around the page edges, NO book/binder/table framing. The image itself IS the printed page, viewed perfectly straight-on like a scanned document. Premium editorial restaurant menu page design, bright and clean. Soft white/light warm-marble background with subtle natural texture, generous whitespace, delicate thin gold-black hairline rules and dotted price leaders. Elegant modern serif headline typography for the restaurant wordmark 'THE THEATER' with small refined tracked-out caps subtitle 'INDIAN KITCHEN & BAR', and a clean modern sans-serif for dish names, descriptions and prices. High-end food photography styling for every dish shown, shot in soft bright studio light, shallow depth of field. Small minimal line-art icons: a tiny green circle outline with a leaf for vegetarian dishes placed beside the dish name, one to three small red chili-pepper outline icons beside the dish name indicating spice level, and a small elegant gold star-ribbon badge labeled 'CHEF'S RECOMMENDED' beside any dish marked as recommended. Consistent premium restaurant branding throughout, magazine-quality layout, no clutter. 2K quality, ultra-detailed, photorealistic food, sharp typography. No spelling mistakes. No stray watermarks, no phone UI, no random extra text. This page is titled 'CHAAT & FAST SELLERS' (page 1 of 3 for this section) — render the section title prominently near the top of the page beneath the restaurant wordmark. Lay out the following dishes on this single page, each with its own photo, name, price and description rendered EXACTLY as given below (render this precise text, do not invent different names/prices): - \"Masala Papad\" — 55K VND — \"crispy papad topped with onion, tomato and fresh herbs\". VEGETARIAN (show the green leaf icon). Spice level: no chili icon. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Pani Puri Shots\" — 90K VND — \"crispy puris served with tangy flavored waters and chutneys\". VEGETARIAN (show the green leaf icon). Spice level: 1 chili icon(s). Mark this dish with the CHEF'S RECOMMENDED gold ribbon badge. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Dahi Papdi Chaat\" — 150K VND — \"crispy wafers topped with yogurt, chutneys and spices\". VEGETARIAN (show the green leaf icon). Spice level: 1 chili icon(s). Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Aloo Tikki Chaat\" — 155K VND — \"crispy potato patties topped with yogurt and chutneys\". VEGETARIAN (show the green leaf icon). Spice level: 1 chili icon(s). Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. Footnote at the bottom in small type: 'All prices are in thousand VND (d). VAT and service charge is extra.'"
+  },
+  {
+    "page_num": 8,
+    "type": "content",
+    "slug": "chaat-fast-sellers-2",
+    "title": "Chaat & Fast Sellers",
+    "items": [
+      {
+        "name": "Papad",
+        "price_vnd_k": 45,
+        "description": "crispy lentil wafers served as a light and crunchy starter",
+        "veg": true,
+        "spice": 0,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/chaat-fast-sellers/papad.png"
+      },
+      {
+        "name": "Green Salad",
+        "price_vnd_k": 100,
+        "description": "fresh and crisp salad with cucumbers, tomatoes, onions and carrots",
+        "veg": true,
+        "spice": 0,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/chaat-fast-sellers/green-salad.png"
+      },
+      {
+        "name": "Crispy Corn",
+        "price_vnd_k": 125,
+        "description": "crispy sweet corn tossed with spices, herbs and chilli",
+        "veg": true,
+        "spice": 3,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/chaat-fast-sellers/crispy-corn.png"
+      },
+      {
+        "name": "Chole Bhature",
+        "price_vnd_k": 185,
+        "description": "spiced chickpea curry served with fluffy fried bhature bread",
+        "veg": true,
+        "spice": 2,
+        "chef_recommended": true,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/chaat-fast-sellers/chole-bhature.png"
+      }
+    ],
+    "reference_photos": [
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/chaat-fast-sellers/papad.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/chaat-fast-sellers/green-salad.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/chaat-fast-sellers/crispy-corn.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/chaat-fast-sellers/chole-bhature.png"
+    ],
+    "prompt": "Render this as a FLAT, front-on, full-bleed page design filling the entire frame edge-to-edge — NOT a 3D mockup, NOT shown at an angle or propped up, NO drop shadow around the page edges, NO book/binder/table framing. The image itself IS the printed page, viewed perfectly straight-on like a scanned document. Premium editorial restaurant menu page design, bright and clean. Soft white/light warm-marble background with subtle natural texture, generous whitespace, delicate thin gold-black hairline rules and dotted price leaders. Elegant modern serif headline typography for the restaurant wordmark 'THE THEATER' with small refined tracked-out caps subtitle 'INDIAN KITCHEN & BAR', and a clean modern sans-serif for dish names, descriptions and prices. High-end food photography styling for every dish shown, shot in soft bright studio light, shallow depth of field. Small minimal line-art icons: a tiny green circle outline with a leaf for vegetarian dishes placed beside the dish name, one to three small red chili-pepper outline icons beside the dish name indicating spice level, and a small elegant gold star-ribbon badge labeled 'CHEF'S RECOMMENDED' beside any dish marked as recommended. Consistent premium restaurant branding throughout, magazine-quality layout, no clutter. 2K quality, ultra-detailed, photorealistic food, sharp typography. No spelling mistakes. No stray watermarks, no phone UI, no random extra text. This page is titled 'CHAAT & FAST SELLERS' (page 2 of 3 for this section) — render the section title prominently near the top of the page beneath the restaurant wordmark. Lay out the following dishes on this single page, each with its own photo, name, price and description rendered EXACTLY as given below (render this precise text, do not invent different names/prices): - \"Papad\" — 45K VND — \"crispy lentil wafers served as a light and crunchy starter\". VEGETARIAN (show the green leaf icon). Spice level: no chili icon. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Green Salad\" — 100K VND — \"fresh and crisp salad with cucumbers, tomatoes, onions and carrots\". VEGETARIAN (show the green leaf icon). Spice level: no chili icon. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Crispy Corn\" — 125K VND — \"crispy sweet corn tossed with spices, herbs and chilli\". VEGETARIAN (show the green leaf icon). Spice level: 3 chili icon(s). Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Chole Bhature\" — 185K VND — \"spiced chickpea curry served with fluffy fried bhature bread\". VEGETARIAN (show the green leaf icon). Spice level: 2 chili icon(s). Mark this dish with the CHEF'S RECOMMENDED gold ribbon badge. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. Footnote at the bottom in small type: 'All prices are in thousand VND (d). VAT and service charge is extra.'"
+  },
+  {
+    "page_num": 9,
+    "type": "content",
+    "slug": "chaat-fast-sellers-3",
+    "title": "Chaat & Fast Sellers",
+    "items": [
+      {
+        "name": "Mix Raita",
+        "price_vnd_k": 95,
+        "description": "refreshing yogurt with vegetables and roasted spices",
+        "veg": true,
+        "spice": 0,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/chaat-fast-sellers/mix-raita.png"
+      },
+      {
+        "name": "Mix Veg Pakora",
+        "price_vnd_k": 160,
+        "description": "crispy mixed vegetable fritters served with mint chutney",
+        "veg": true,
+        "spice": 1,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/chaat-fast-sellers/mix-veg-pakora.png"
+      },
+      {
+        "name": "Samosa Chaat",
+        "price_vnd_k": 150,
+        "description": "crushed samosas topped with yogurt, chutneys and spices",
+        "veg": true,
+        "spice": 1,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/chaat-fast-sellers/samosa-chaat.png"
+      }
+    ],
+    "reference_photos": [
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/chaat-fast-sellers/mix-raita.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/chaat-fast-sellers/mix-veg-pakora.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/chaat-fast-sellers/samosa-chaat.png"
+    ],
+    "prompt": "Render this as a FLAT, front-on, full-bleed page design filling the entire frame edge-to-edge — NOT a 3D mockup, NOT shown at an angle or propped up, NO drop shadow around the page edges, NO book/binder/table framing. The image itself IS the printed page, viewed perfectly straight-on like a scanned document. Premium editorial restaurant menu page design, bright and clean. Soft white/light warm-marble background with subtle natural texture, generous whitespace, delicate thin gold-black hairline rules and dotted price leaders. Elegant modern serif headline typography for the restaurant wordmark 'THE THEATER' with small refined tracked-out caps subtitle 'INDIAN KITCHEN & BAR', and a clean modern sans-serif for dish names, descriptions and prices. High-end food photography styling for every dish shown, shot in soft bright studio light, shallow depth of field. Small minimal line-art icons: a tiny green circle outline with a leaf for vegetarian dishes placed beside the dish name, one to three small red chili-pepper outline icons beside the dish name indicating spice level, and a small elegant gold star-ribbon badge labeled 'CHEF'S RECOMMENDED' beside any dish marked as recommended. Consistent premium restaurant branding throughout, magazine-quality layout, no clutter. 2K quality, ultra-detailed, photorealistic food, sharp typography. No spelling mistakes. No stray watermarks, no phone UI, no random extra text. This page is titled 'CHAAT & FAST SELLERS' (page 3 of 3 for this section) — render the section title prominently near the top of the page beneath the restaurant wordmark. Lay out the following dishes on this single page, each with its own photo, name, price and description rendered EXACTLY as given below (render this precise text, do not invent different names/prices): - \"Mix Raita\" — 95K VND — \"refreshing yogurt with vegetables and roasted spices\". VEGETARIAN (show the green leaf icon). Spice level: no chili icon. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Mix Veg Pakora\" — 160K VND — \"crispy mixed vegetable fritters served with mint chutney\". VEGETARIAN (show the green leaf icon). Spice level: 1 chili icon(s). Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Samosa Chaat\" — 150K VND — \"crushed samosas topped with yogurt, chutneys and spices\". VEGETARIAN (show the green leaf icon). Spice level: 1 chili icon(s). Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. Footnote at the bottom in small type: 'All prices are in thousand VND (d). VAT and service charge is extra.'"
+  },
+  {
+    "page_num": 10,
+    "type": "hero",
+    "slug": "divider-tandoor",
+    "title": "divider-tandoor",
+    "items": [],
+    "reference_photos": [],
+    "prompt": "Render this as a FLAT, front-on, full-bleed page design filling the entire frame edge-to-edge — NOT a 3D mockup, NOT shown at an angle or propped up, NO drop shadow around the page edges, NO book/binder/table framing. The image itself IS the printed page, viewed perfectly straight-on like a scanned document. Premium editorial restaurant menu page design, bright and clean. Soft white/light warm-marble background with subtle natural texture, generous whitespace, delicate thin gold-black hairline rules and dotted price leaders. Elegant modern serif headline typography for the restaurant wordmark 'THE THEATER' with small refined tracked-out caps subtitle 'INDIAN KITCHEN & BAR', and a clean modern sans-serif for dish names, descriptions and prices. High-end food photography styling for every dish shown, shot in soft bright studio light, shallow depth of field. Small minimal line-art icons: a tiny green circle outline with a leaf for vegetarian dishes placed beside the dish name, one to three small red chili-pepper outline icons beside the dish name indicating spice level, and a small elegant gold star-ribbon badge labeled 'CHEF'S RECOMMENDED' beside any dish marked as recommended. Consistent premium restaurant branding throughout, magazine-quality layout, no clutter. 2K quality, ultra-detailed, photorealistic food, sharp typography. No spelling mistakes. No stray watermarks, no phone UI, no random extra text. This is a SECTION DIVIDER page with no dish list and no prices — just one beautiful full-bleed atmospheric photograph: glowing charcoal embers inside a traditional clay tandoor oven with a skewer of char-grilled tikka just visible at the edge of frame, warm dramatic light, shallow depth of field. Render only a small elegant section label near the bottom: 'TANDOOR, GRILL & MAIN CURRIES'."
+  },
+  {
+    "page_num": 11,
+    "type": "content",
+    "slug": "tandoor-grill-1",
+    "title": "Tandoor & Grill",
+    "items": [
+      {
+        "name": "Paneer Tikka Skewers",
+        "price_vnd_k": 220,
+        "description": "cottage cheese cubes marinated in yogurt and aromatic Indian spices, grilled in the traditional tandoor",
+        "veg": true,
+        "spice": 2,
+        "chef_recommended": true,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/tandoor-grill/paneer-tikka-skewers.png"
+      },
+      {
+        "name": "Mushroom Tikka",
+        "price_vnd_k": 190,
+        "description": "mushrooms marinated in yogurt and blended Indian spices, grilled to smoky perfection in the tandoor",
+        "veg": true,
+        "spice": 2,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/tandoor-grill/mushroom-tikka.png"
+      },
+      {
+        "name": "Achari Paneer Tikka",
+        "price_vnd_k": 220,
+        "description": "cottage cheese marinated with traditional Indian pickling spices and grilled over charcoal",
+        "veg": true,
+        "spice": 3,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/tandoor-grill/achari-paneer-tikka.png"
+      }
+    ],
+    "reference_photos": [
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/tandoor-grill/paneer-tikka-skewers.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/tandoor-grill/mushroom-tikka.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/tandoor-grill/achari-paneer-tikka.png"
+    ],
+    "prompt": "Render this as a FLAT, front-on, full-bleed page design filling the entire frame edge-to-edge — NOT a 3D mockup, NOT shown at an angle or propped up, NO drop shadow around the page edges, NO book/binder/table framing. The image itself IS the printed page, viewed perfectly straight-on like a scanned document. Premium editorial restaurant menu page design, bright and clean. Soft white/light warm-marble background with subtle natural texture, generous whitespace, delicate thin gold-black hairline rules and dotted price leaders. Elegant modern serif headline typography for the restaurant wordmark 'THE THEATER' with small refined tracked-out caps subtitle 'INDIAN KITCHEN & BAR', and a clean modern sans-serif for dish names, descriptions and prices. High-end food photography styling for every dish shown, shot in soft bright studio light, shallow depth of field. Small minimal line-art icons: a tiny green circle outline with a leaf for vegetarian dishes placed beside the dish name, one to three small red chili-pepper outline icons beside the dish name indicating spice level, and a small elegant gold star-ribbon badge labeled 'CHEF'S RECOMMENDED' beside any dish marked as recommended. Consistent premium restaurant branding throughout, magazine-quality layout, no clutter. 2K quality, ultra-detailed, photorealistic food, sharp typography. No spelling mistakes. No stray watermarks, no phone UI, no random extra text. This page is titled 'TANDOOR & GRILL' (page 1 of 3 for this section) — render the section title prominently near the top of the page beneath the restaurant wordmark. Lay out the following dishes on this single page, each with its own photo, name, price and description rendered EXACTLY as given below (render this precise text, do not invent different names/prices): - \"Paneer Tikka Skewers\" — 220K VND — \"cottage cheese cubes marinated in yogurt and aromatic Indian spices, grilled in the traditional tandoor\". VEGETARIAN (show the green leaf icon). Spice level: 2 chili icon(s). Mark this dish with the CHEF'S RECOMMENDED gold ribbon badge. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Mushroom Tikka\" — 190K VND — \"mushrooms marinated in yogurt and blended Indian spices, grilled to smoky perfection in the tandoor\". VEGETARIAN (show the green leaf icon). Spice level: 2 chili icon(s). Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Achari Paneer Tikka\" — 220K VND — \"cottage cheese marinated with traditional Indian pickling spices and grilled over charcoal\". VEGETARIAN (show the green leaf icon). Spice level: 3 chili icon(s). Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. Footnote at the bottom in small type: 'All prices are in thousand VND (d). VAT and service charge is extra.'"
+  },
+  {
+    "page_num": 12,
+    "type": "content",
+    "slug": "tandoor-grill-2",
+    "title": "Tandoor & Grill",
+    "items": [
+      {
+        "name": "Chicken Tikka",
+        "price_vnd_k": 230,
+        "description": "tender boneless chicken marinated with yogurt, spices and grilled in the tandoor",
+        "veg": false,
+        "spice": 2,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/tandoor-grill/chicken-tikka.png"
+      },
+      {
+        "name": "Chicken Malai Tikka",
+        "price_vnd_k": 240,
+        "description": "creamy cheese and cream-marinated chicken grilled until lightly charred",
+        "veg": false,
+        "spice": 2,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/tandoor-grill/chicken-malai-tikka.png"
+      },
+      {
+        "name": "Tangdi Kebab",
+        "price_vnd_k": 250,
+        "description": "three tandoor-grilled chicken drumsticks marinated with aromatic Indian spices",
+        "veg": false,
+        "spice": 1,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/tandoor-grill/tangdi-kebab.png"
+      }
+    ],
+    "reference_photos": [
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/tandoor-grill/chicken-tikka.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/tandoor-grill/chicken-malai-tikka.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/tandoor-grill/tangdi-kebab.png"
+    ],
+    "prompt": "Render this as a FLAT, front-on, full-bleed page design filling the entire frame edge-to-edge — NOT a 3D mockup, NOT shown at an angle or propped up, NO drop shadow around the page edges, NO book/binder/table framing. The image itself IS the printed page, viewed perfectly straight-on like a scanned document. Premium editorial restaurant menu page design, bright and clean. Soft white/light warm-marble background with subtle natural texture, generous whitespace, delicate thin gold-black hairline rules and dotted price leaders. Elegant modern serif headline typography for the restaurant wordmark 'THE THEATER' with small refined tracked-out caps subtitle 'INDIAN KITCHEN & BAR', and a clean modern sans-serif for dish names, descriptions and prices. High-end food photography styling for every dish shown, shot in soft bright studio light, shallow depth of field. Small minimal line-art icons: a tiny green circle outline with a leaf for vegetarian dishes placed beside the dish name, one to three small red chili-pepper outline icons beside the dish name indicating spice level, and a small elegant gold star-ribbon badge labeled 'CHEF'S RECOMMENDED' beside any dish marked as recommended. Consistent premium restaurant branding throughout, magazine-quality layout, no clutter. 2K quality, ultra-detailed, photorealistic food, sharp typography. No spelling mistakes. No stray watermarks, no phone UI, no random extra text. This page is titled 'TANDOOR & GRILL' (page 2 of 3 for this section) — render the section title prominently near the top of the page beneath the restaurant wordmark. Lay out the following dishes on this single page, each with its own photo, name, price and description rendered EXACTLY as given below (render this precise text, do not invent different names/prices): - \"Chicken Tikka\" — 230K VND — \"tender boneless chicken marinated with yogurt, spices and grilled in the tandoor\". non-vegetarian (no leaf icon). Spice level: 2 chili icon(s). Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Chicken Malai Tikka\" — 240K VND — \"creamy cheese and cream-marinated chicken grilled until lightly charred\". non-vegetarian (no leaf icon). Spice level: 2 chili icon(s). Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Tangdi Kebab\" — 250K VND — \"three tandoor-grilled chicken drumsticks marinated with aromatic Indian spices\". non-vegetarian (no leaf icon). Spice level: 1 chili icon(s). Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. Footnote at the bottom in small type: 'All prices are in thousand VND (d). VAT and service charge is extra.'"
+  },
+  {
+    "page_num": 13,
+    "type": "content",
+    "slug": "tandoor-grill-3",
+    "title": "Tandoor & Grill",
+    "items": [
+      {
+        "name": "Tandoori Chicken",
+        "price_vnd_k": 265,
+        "description": "half chicken with one breast and one leg, marinated overnight and roasted in the tandoor",
+        "veg": false,
+        "spice": 2,
+        "chef_recommended": true,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/tandoor-grill/tandoori-chicken.png"
+      },
+      {
+        "name": "Tandoori Fish Tikka",
+        "price_vnd_k": 265,
+        "description": "six boneless fish cubes marinated with spices and grilled in the tandoor",
+        "veg": false,
+        "spice": 2,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/tandoor-grill/tandoori-fish-tikka.png"
+      },
+      {
+        "name": "Mixed Tandoori Platter",
+        "price_vnd_k": 399,
+        "description": "Chicken Tikka, Chicken Malai Tikka, Paneer Tikka and Achari Paneer Tikka served on one sizzling platter with mint chutney",
+        "veg": false,
+        "spice": 3,
+        "chef_recommended": true,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/tandoor-grill/mixed-tandoori-platter.png"
+      }
+    ],
+    "reference_photos": [
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/tandoor-grill/tandoori-chicken.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/tandoor-grill/tandoori-fish-tikka.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/tandoor-grill/mixed-tandoori-platter.png"
+    ],
+    "prompt": "Render this as a FLAT, front-on, full-bleed page design filling the entire frame edge-to-edge — NOT a 3D mockup, NOT shown at an angle or propped up, NO drop shadow around the page edges, NO book/binder/table framing. The image itself IS the printed page, viewed perfectly straight-on like a scanned document. Premium editorial restaurant menu page design, bright and clean. Soft white/light warm-marble background with subtle natural texture, generous whitespace, delicate thin gold-black hairline rules and dotted price leaders. Elegant modern serif headline typography for the restaurant wordmark 'THE THEATER' with small refined tracked-out caps subtitle 'INDIAN KITCHEN & BAR', and a clean modern sans-serif for dish names, descriptions and prices. High-end food photography styling for every dish shown, shot in soft bright studio light, shallow depth of field. Small minimal line-art icons: a tiny green circle outline with a leaf for vegetarian dishes placed beside the dish name, one to three small red chili-pepper outline icons beside the dish name indicating spice level, and a small elegant gold star-ribbon badge labeled 'CHEF'S RECOMMENDED' beside any dish marked as recommended. Consistent premium restaurant branding throughout, magazine-quality layout, no clutter. 2K quality, ultra-detailed, photorealistic food, sharp typography. No spelling mistakes. No stray watermarks, no phone UI, no random extra text. This page is titled 'TANDOOR & GRILL' (page 3 of 3 for this section) — render the section title prominently near the top of the page beneath the restaurant wordmark. Lay out the following dishes on this single page, each with its own photo, name, price and description rendered EXACTLY as given below (render this precise text, do not invent different names/prices): - \"Tandoori Chicken\" — 265K VND — \"half chicken with one breast and one leg, marinated overnight and roasted in the tandoor\". non-vegetarian (no leaf icon). Spice level: 2 chili icon(s). Mark this dish with the CHEF'S RECOMMENDED gold ribbon badge. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Tandoori Fish Tikka\" — 265K VND — \"six boneless fish cubes marinated with spices and grilled in the tandoor\". non-vegetarian (no leaf icon). Spice level: 2 chili icon(s). Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Mixed Tandoori Platter\" — 399K VND — \"Chicken Tikka, Chicken Malai Tikka, Paneer Tikka and Achari Paneer Tikka served on one sizzling platter with mint chutney\". non-vegetarian (no leaf icon). Spice level: 3 chili icon(s). Mark this dish with the CHEF'S RECOMMENDED gold ribbon badge. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. Footnote at the bottom in small type: 'All prices are in thousand VND (d). VAT and service charge is extra.'"
+  },
+  {
+    "page_num": 14,
+    "type": "content",
+    "slug": "main-curries-1",
+    "title": "Main Curries",
+    "items": [
+      {
+        "name": "Dal Makhani",
+        "price_vnd_k": 165,
+        "description": "creamy black lentils slow-cooked with butter and aromatic spices",
+        "veg": true,
+        "spice": 1,
+        "chef_recommended": true,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/main-curries/dal-makhani.png"
+      },
+      {
+        "name": "Paneer Butter Masala",
+        "price_vnd_k": 199,
+        "description": "cottage cheese cooked in a rich tomato and butter gravy",
+        "veg": true,
+        "spice": 2,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/main-curries/paneer-butter-masala.png"
+      },
+      {
+        "name": "Dal Tadka",
+        "price_vnd_k": 150,
+        "description": "yellow lentils tempered with garlic, cumin and spices",
+        "veg": true,
+        "spice": 1,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/main-curries/dal-tadka.png"
+      },
+      {
+        "name": "Kadhai Paneer",
+        "price_vnd_k": 199,
+        "description": "cottage cheese cooked with bell peppers, onions and traditional spices",
+        "veg": true,
+        "spice": 2,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/main-curries/kadhai-paneer.png"
+      }
+    ],
+    "reference_photos": [
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/main-curries/dal-makhani.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/main-curries/paneer-butter-masala.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/main-curries/dal-tadka.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/main-curries/kadhai-paneer.png"
+    ],
+    "prompt": "Render this as a FLAT, front-on, full-bleed page design filling the entire frame edge-to-edge — NOT a 3D mockup, NOT shown at an angle or propped up, NO drop shadow around the page edges, NO book/binder/table framing. The image itself IS the printed page, viewed perfectly straight-on like a scanned document. Premium editorial restaurant menu page design, bright and clean. Soft white/light warm-marble background with subtle natural texture, generous whitespace, delicate thin gold-black hairline rules and dotted price leaders. Elegant modern serif headline typography for the restaurant wordmark 'THE THEATER' with small refined tracked-out caps subtitle 'INDIAN KITCHEN & BAR', and a clean modern sans-serif for dish names, descriptions and prices. High-end food photography styling for every dish shown, shot in soft bright studio light, shallow depth of field. Small minimal line-art icons: a tiny green circle outline with a leaf for vegetarian dishes placed beside the dish name, one to three small red chili-pepper outline icons beside the dish name indicating spice level, and a small elegant gold star-ribbon badge labeled 'CHEF'S RECOMMENDED' beside any dish marked as recommended. Consistent premium restaurant branding throughout, magazine-quality layout, no clutter. 2K quality, ultra-detailed, photorealistic food, sharp typography. No spelling mistakes. No stray watermarks, no phone UI, no random extra text. This page is titled 'MAIN CURRIES' (page 1 of 4 for this section) — render the section title prominently near the top of the page beneath the restaurant wordmark. Lay out the following dishes on this single page, each with its own photo, name, price and description rendered EXACTLY as given below (render this precise text, do not invent different names/prices): - \"Dal Makhani\" — 165K VND — \"creamy black lentils slow-cooked with butter and aromatic spices\". VEGETARIAN (show the green leaf icon). Spice level: 1 chili icon(s). Mark this dish with the CHEF'S RECOMMENDED gold ribbon badge. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Paneer Butter Masala\" — 199K VND — \"cottage cheese cooked in a rich tomato and butter gravy\". VEGETARIAN (show the green leaf icon). Spice level: 2 chili icon(s). Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Dal Tadka\" — 150K VND — \"yellow lentils tempered with garlic, cumin and spices\". VEGETARIAN (show the green leaf icon). Spice level: 1 chili icon(s). Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Kadhai Paneer\" — 199K VND — \"cottage cheese cooked with bell peppers, onions and traditional spices\". VEGETARIAN (show the green leaf icon). Spice level: 2 chili icon(s). Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. Footnote at the bottom in small type: 'All prices are in thousand VND (d). VAT and service charge is extra.'"
+  },
+  {
+    "page_num": 15,
+    "type": "content",
+    "slug": "main-curries-2",
+    "title": "Main Curries",
+    "items": [
+      {
+        "name": "Palak Paneer",
+        "price_vnd_k": 199,
+        "description": "cottage cheese simmered in a creamy spinach gravy",
+        "veg": true,
+        "spice": 1,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/main-curries/palak-paneer.png"
+      },
+      {
+        "name": "Malai Kofta",
+        "price_vnd_k": 195,
+        "description": "vegetable dumplings served in a rich creamy curry",
+        "veg": true,
+        "spice": 2,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/main-curries/malai-kofta.png"
+      },
+      {
+        "name": "Veg Jalfrezi",
+        "price_vnd_k": 165,
+        "description": "mixed vegetables tossed in a spiced tomato-based gravy",
+        "veg": true,
+        "spice": 1,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/main-curries/veg-jalfrezi.png"
+      },
+      {
+        "name": "Jeera Aloo",
+        "price_vnd_k": 155,
+        "description": "potatoes sauteed with cumin and aromatic spices",
+        "veg": true,
+        "spice": 1,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/main-curries/jeera-aloo.png"
+      }
+    ],
+    "reference_photos": [
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/main-curries/palak-paneer.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/main-curries/malai-kofta.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/main-curries/veg-jalfrezi.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/main-curries/jeera-aloo.png"
+    ],
+    "prompt": "Render this as a FLAT, front-on, full-bleed page design filling the entire frame edge-to-edge — NOT a 3D mockup, NOT shown at an angle or propped up, NO drop shadow around the page edges, NO book/binder/table framing. The image itself IS the printed page, viewed perfectly straight-on like a scanned document. Premium editorial restaurant menu page design, bright and clean. Soft white/light warm-marble background with subtle natural texture, generous whitespace, delicate thin gold-black hairline rules and dotted price leaders. Elegant modern serif headline typography for the restaurant wordmark 'THE THEATER' with small refined tracked-out caps subtitle 'INDIAN KITCHEN & BAR', and a clean modern sans-serif for dish names, descriptions and prices. High-end food photography styling for every dish shown, shot in soft bright studio light, shallow depth of field. Small minimal line-art icons: a tiny green circle outline with a leaf for vegetarian dishes placed beside the dish name, one to three small red chili-pepper outline icons beside the dish name indicating spice level, and a small elegant gold star-ribbon badge labeled 'CHEF'S RECOMMENDED' beside any dish marked as recommended. Consistent premium restaurant branding throughout, magazine-quality layout, no clutter. 2K quality, ultra-detailed, photorealistic food, sharp typography. No spelling mistakes. No stray watermarks, no phone UI, no random extra text. This page is titled 'MAIN CURRIES' (page 2 of 4 for this section) — render the section title prominently near the top of the page beneath the restaurant wordmark. Lay out the following dishes on this single page, each with its own photo, name, price and description rendered EXACTLY as given below (render this precise text, do not invent different names/prices): - \"Palak Paneer\" — 199K VND — \"cottage cheese simmered in a creamy spinach gravy\". VEGETARIAN (show the green leaf icon). Spice level: 1 chili icon(s). Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Malai Kofta\" — 195K VND — \"vegetable dumplings served in a rich creamy curry\". VEGETARIAN (show the green leaf icon). Spice level: 2 chili icon(s). Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Veg Jalfrezi\" — 165K VND — \"mixed vegetables tossed in a spiced tomato-based gravy\". VEGETARIAN (show the green leaf icon). Spice level: 1 chili icon(s). Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Jeera Aloo\" — 155K VND — \"potatoes sauteed with cumin and aromatic spices\". VEGETARIAN (show the green leaf icon). Spice level: 1 chili icon(s). Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. Footnote at the bottom in small type: 'All prices are in thousand VND (d). VAT and service charge is extra.'"
+  },
+  {
+    "page_num": 16,
+    "type": "content",
+    "slug": "main-curries-3",
+    "title": "Main Curries",
+    "items": [
+      {
+        "name": "Dum Aloo",
+        "price_vnd_k": 185,
+        "description": "baby potatoes simmered in a rich spiced gravy",
+        "veg": true,
+        "spice": 1,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/main-curries/dum-aloo.png"
+      },
+      {
+        "name": "Bhindi Masala",
+        "price_vnd_k": 165,
+        "description": "okra cooked with onions, tomatoes and aromatic spices",
+        "veg": true,
+        "spice": 2,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/main-curries/bhindi-masala.png"
+      },
+      {
+        "name": "Aloo Gobhi",
+        "price_vnd_k": 170,
+        "description": "potatoes and cauliflower cooked with traditional Indian spices",
+        "veg": true,
+        "spice": 1,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/main-curries/aloo-gobhi.png"
+      },
+      {
+        "name": "Butter Chicken",
+        "price_vnd_k": 245,
+        "description": "tender chicken cooked in a rich tomato and butter gravy",
+        "veg": false,
+        "spice": 1,
+        "chef_recommended": true,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/main-curries/butter-chicken.png"
+      }
+    ],
+    "reference_photos": [
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/main-curries/dum-aloo.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/main-curries/bhindi-masala.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/main-curries/aloo-gobhi.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/main-curries/butter-chicken.png"
+    ],
+    "prompt": "Render this as a FLAT, front-on, full-bleed page design filling the entire frame edge-to-edge — NOT a 3D mockup, NOT shown at an angle or propped up, NO drop shadow around the page edges, NO book/binder/table framing. The image itself IS the printed page, viewed perfectly straight-on like a scanned document. Premium editorial restaurant menu page design, bright and clean. Soft white/light warm-marble background with subtle natural texture, generous whitespace, delicate thin gold-black hairline rules and dotted price leaders. Elegant modern serif headline typography for the restaurant wordmark 'THE THEATER' with small refined tracked-out caps subtitle 'INDIAN KITCHEN & BAR', and a clean modern sans-serif for dish names, descriptions and prices. High-end food photography styling for every dish shown, shot in soft bright studio light, shallow depth of field. Small minimal line-art icons: a tiny green circle outline with a leaf for vegetarian dishes placed beside the dish name, one to three small red chili-pepper outline icons beside the dish name indicating spice level, and a small elegant gold star-ribbon badge labeled 'CHEF'S RECOMMENDED' beside any dish marked as recommended. Consistent premium restaurant branding throughout, magazine-quality layout, no clutter. 2K quality, ultra-detailed, photorealistic food, sharp typography. No spelling mistakes. No stray watermarks, no phone UI, no random extra text. This page is titled 'MAIN CURRIES' (page 3 of 4 for this section) — render the section title prominently near the top of the page beneath the restaurant wordmark. Lay out the following dishes on this single page, each with its own photo, name, price and description rendered EXACTLY as given below (render this precise text, do not invent different names/prices): - \"Dum Aloo\" — 185K VND — \"baby potatoes simmered in a rich spiced gravy\". VEGETARIAN (show the green leaf icon). Spice level: 1 chili icon(s). Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Bhindi Masala\" — 165K VND — \"okra cooked with onions, tomatoes and aromatic spices\". VEGETARIAN (show the green leaf icon). Spice level: 2 chili icon(s). Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Aloo Gobhi\" — 170K VND — \"potatoes and cauliflower cooked with traditional Indian spices\". VEGETARIAN (show the green leaf icon). Spice level: 1 chili icon(s). Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Butter Chicken\" — 245K VND — \"tender chicken cooked in a rich tomato and butter gravy\". non-vegetarian (no leaf icon). Spice level: 1 chili icon(s). Mark this dish with the CHEF'S RECOMMENDED gold ribbon badge. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. Footnote at the bottom in small type: 'All prices are in thousand VND (d). VAT and service charge is extra.'"
+  },
+  {
+    "page_num": 17,
+    "type": "content",
+    "slug": "main-curries-4",
+    "title": "Main Curries",
+    "items": [
+      {
+        "name": "Chicken Tikka Masala",
+        "price_vnd_k": 235,
+        "description": "grilled chicken tikka simmered in a rich spiced tomato gravy",
+        "veg": false,
+        "spice": 2,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/main-curries/chicken-tikka-masala.png"
+      },
+      {
+        "name": "Kadai Chicken",
+        "price_vnd_k": 225,
+        "description": "chicken cooked with onions, bell peppers and aromatic Indian spices",
+        "veg": false,
+        "spice": 2,
+        "chef_recommended": true,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/main-curries/kadai-chicken.png"
+      },
+      {
+        "name": "Egg Curry",
+        "price_vnd_k": 175,
+        "description": "two whole boiled eggs simmered in a rich traditional Indian curry",
+        "veg": false,
+        "spice": 2,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/main-curries/egg-curry.png"
+      },
+      {
+        "name": "Egg Bhurji",
+        "price_vnd_k": 175,
+        "description": "Indian-style scrambled eggs cooked with onions, tomatoes, green chili and aromatic spices",
+        "veg": false,
+        "spice": 3,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/main-curries/egg-bhurji.png"
+      }
+    ],
+    "reference_photos": [
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/main-curries/chicken-tikka-masala.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/main-curries/kadai-chicken.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/main-curries/egg-curry.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/main-curries/egg-bhurji.png"
+    ],
+    "prompt": "Render this as a FLAT, front-on, full-bleed page design filling the entire frame edge-to-edge — NOT a 3D mockup, NOT shown at an angle or propped up, NO drop shadow around the page edges, NO book/binder/table framing. The image itself IS the printed page, viewed perfectly straight-on like a scanned document. Premium editorial restaurant menu page design, bright and clean. Soft white/light warm-marble background with subtle natural texture, generous whitespace, delicate thin gold-black hairline rules and dotted price leaders. Elegant modern serif headline typography for the restaurant wordmark 'THE THEATER' with small refined tracked-out caps subtitle 'INDIAN KITCHEN & BAR', and a clean modern sans-serif for dish names, descriptions and prices. High-end food photography styling for every dish shown, shot in soft bright studio light, shallow depth of field. Small minimal line-art icons: a tiny green circle outline with a leaf for vegetarian dishes placed beside the dish name, one to three small red chili-pepper outline icons beside the dish name indicating spice level, and a small elegant gold star-ribbon badge labeled 'CHEF'S RECOMMENDED' beside any dish marked as recommended. Consistent premium restaurant branding throughout, magazine-quality layout, no clutter. 2K quality, ultra-detailed, photorealistic food, sharp typography. No spelling mistakes. No stray watermarks, no phone UI, no random extra text. This page is titled 'MAIN CURRIES' (page 4 of 4 for this section) — render the section title prominently near the top of the page beneath the restaurant wordmark. Lay out the following dishes on this single page, each with its own photo, name, price and description rendered EXACTLY as given below (render this precise text, do not invent different names/prices): - \"Chicken Tikka Masala\" — 235K VND — \"grilled chicken tikka simmered in a rich spiced tomato gravy\". non-vegetarian (no leaf icon). Spice level: 2 chili icon(s). Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Kadai Chicken\" — 225K VND — \"chicken cooked with onions, bell peppers and aromatic Indian spices\". non-vegetarian (no leaf icon). Spice level: 2 chili icon(s). Mark this dish with the CHEF'S RECOMMENDED gold ribbon badge. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Egg Curry\" — 175K VND — \"two whole boiled eggs simmered in a rich traditional Indian curry\". non-vegetarian (no leaf icon). Spice level: 2 chili icon(s). Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Egg Bhurji\" — 175K VND — \"Indian-style scrambled eggs cooked with onions, tomatoes, green chili and aromatic spices\". non-vegetarian (no leaf icon). Spice level: 3 chili icon(s). Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. Footnote at the bottom in small type: 'All prices are in thousand VND (d). VAT and service charge is extra.'"
+  },
+  {
+    "page_num": 18,
+    "type": "content",
+    "slug": "seafood-curries-1",
+    "title": "Seafood Curries",
+    "items": [
+      {
+        "name": "Fish Curry Coastal Style",
+        "price_vnd_k": 240,
+        "description": "fresh fish simmered in a rich coastal-style curry",
+        "veg": false,
+        "spice": 2,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/seafood-curries/fish-curry-coastal-style.png"
+      },
+      {
+        "name": "Prawn Masala",
+        "price_vnd_k": 260,
+        "description": "prawns cooked in a spiced onion and tomato gravy",
+        "veg": false,
+        "spice": 2,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/seafood-curries/prawn-masala.png"
+      },
+      {
+        "name": "Goan Prawn Curry",
+        "price_vnd_k": 260,
+        "description": "prawns cooked in a coconut-based coastal curry with aromatic spices",
+        "veg": false,
+        "spice": 2,
+        "chef_recommended": true,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/seafood-curries/goan-prawn-curry.png"
+      }
+    ],
+    "reference_photos": [
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/seafood-curries/fish-curry-coastal-style.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/seafood-curries/prawn-masala.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/seafood-curries/goan-prawn-curry.png"
+    ],
+    "prompt": "Render this as a FLAT, front-on, full-bleed page design filling the entire frame edge-to-edge — NOT a 3D mockup, NOT shown at an angle or propped up, NO drop shadow around the page edges, NO book/binder/table framing. The image itself IS the printed page, viewed perfectly straight-on like a scanned document. Premium editorial restaurant menu page design, bright and clean. Soft white/light warm-marble background with subtle natural texture, generous whitespace, delicate thin gold-black hairline rules and dotted price leaders. Elegant modern serif headline typography for the restaurant wordmark 'THE THEATER' with small refined tracked-out caps subtitle 'INDIAN KITCHEN & BAR', and a clean modern sans-serif for dish names, descriptions and prices. High-end food photography styling for every dish shown, shot in soft bright studio light, shallow depth of field. Small minimal line-art icons: a tiny green circle outline with a leaf for vegetarian dishes placed beside the dish name, one to three small red chili-pepper outline icons beside the dish name indicating spice level, and a small elegant gold star-ribbon badge labeled 'CHEF'S RECOMMENDED' beside any dish marked as recommended. Consistent premium restaurant branding throughout, magazine-quality layout, no clutter. 2K quality, ultra-detailed, photorealistic food, sharp typography. No spelling mistakes. No stray watermarks, no phone UI, no random extra text. This page is titled 'SEAFOOD CURRIES' (page 1 of 1 for this section) — render the section title prominently near the top of the page beneath the restaurant wordmark. Lay out the following dishes on this single page, each with its own photo, name, price and description rendered EXACTLY as given below (render this precise text, do not invent different names/prices): - \"Fish Curry Coastal Style\" — 240K VND — \"fresh fish simmered in a rich coastal-style curry\". non-vegetarian (no leaf icon). Spice level: 2 chili icon(s). Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Prawn Masala\" — 260K VND — \"prawns cooked in a spiced onion and tomato gravy\". non-vegetarian (no leaf icon). Spice level: 2 chili icon(s). Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Goan Prawn Curry\" — 260K VND — \"prawns cooked in a coconut-based coastal curry with aromatic spices\". non-vegetarian (no leaf icon). Spice level: 2 chili icon(s). Mark this dish with the CHEF'S RECOMMENDED gold ribbon badge. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. Footnote at the bottom in small type: 'All prices are in thousand VND (d). VAT and service charge is extra.'"
+  },
+  {
+    "page_num": 19,
+    "type": "content",
+    "slug": "breads-1",
+    "title": "Breads",
+    "items": [
+      {
+        "name": "Tandoori Roti / Tawa Roti",
+        "price_vnd_k": 55,
+        "description": "soft whole wheat bread baked in the tandoor",
+        "veg": true,
+        "spice": 0,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/breads/tandoori-roti-tawa-roti.png"
+      },
+      {
+        "name": "Garlic Naan",
+        "price_vnd_k": 85,
+        "description": "soft naan bread topped with garlic and fresh coriander",
+        "veg": true,
+        "spice": 0,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/breads/garlic-naan.png"
+      },
+      {
+        "name": "Laccha Parantha",
+        "price_vnd_k": 80,
+        "description": "multi-layered whole wheat bread cooked on a tawa with a touch of ghee",
+        "veg": true,
+        "spice": 0,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/breads/laccha-parantha.png"
+      },
+      {
+        "name": "Plain Naan",
+        "price_vnd_k": 75,
+        "description": "soft and pillowy white flour bread baked in the tandoor",
+        "veg": true,
+        "spice": 0,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/breads/plain-naan.png"
+      }
+    ],
+    "reference_photos": [
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/breads/tandoori-roti-tawa-roti.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/breads/garlic-naan.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/breads/laccha-parantha.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/breads/plain-naan.png"
+    ],
+    "prompt": "Render this as a FLAT, front-on, full-bleed page design filling the entire frame edge-to-edge — NOT a 3D mockup, NOT shown at an angle or propped up, NO drop shadow around the page edges, NO book/binder/table framing. The image itself IS the printed page, viewed perfectly straight-on like a scanned document. Premium editorial restaurant menu page design, bright and clean. Soft white/light warm-marble background with subtle natural texture, generous whitespace, delicate thin gold-black hairline rules and dotted price leaders. Elegant modern serif headline typography for the restaurant wordmark 'THE THEATER' with small refined tracked-out caps subtitle 'INDIAN KITCHEN & BAR', and a clean modern sans-serif for dish names, descriptions and prices. High-end food photography styling for every dish shown, shot in soft bright studio light, shallow depth of field. Small minimal line-art icons: a tiny green circle outline with a leaf for vegetarian dishes placed beside the dish name, one to three small red chili-pepper outline icons beside the dish name indicating spice level, and a small elegant gold star-ribbon badge labeled 'CHEF'S RECOMMENDED' beside any dish marked as recommended. Consistent premium restaurant branding throughout, magazine-quality layout, no clutter. 2K quality, ultra-detailed, photorealistic food, sharp typography. No spelling mistakes. No stray watermarks, no phone UI, no random extra text. This page is titled 'BREADS' (page 1 of 2 for this section) — render the section title prominently near the top of the page beneath the restaurant wordmark. Lay out the following dishes on this single page, each with its own photo, name, price and description rendered EXACTLY as given below (render this precise text, do not invent different names/prices): - \"Tandoori Roti / Tawa Roti\" — 55K VND — \"soft whole wheat bread baked in the tandoor\". VEGETARIAN (show the green leaf icon). Spice level: no chili icon. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Garlic Naan\" — 85K VND — \"soft naan bread topped with garlic and fresh coriander\". VEGETARIAN (show the green leaf icon). Spice level: no chili icon. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Laccha Parantha\" — 80K VND — \"multi-layered whole wheat bread cooked on a tawa with a touch of ghee\". VEGETARIAN (show the green leaf icon). Spice level: no chili icon. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Plain Naan\" — 75K VND — \"soft and pillowy white flour bread baked in the tandoor\". VEGETARIAN (show the green leaf icon). Spice level: no chili icon. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. Footnote at the bottom in small type: 'All prices are in thousand VND (d). VAT and service charge is extra.'"
+  },
+  {
+    "page_num": 20,
+    "type": "content",
+    "slug": "breads-2",
+    "title": "Breads",
+    "items": [
+      {
+        "name": "Cheese Garlic Naan",
+        "price_vnd_k": 95,
+        "description": "soft naan topped with garlic and melted cheese, baked in the tandoor",
+        "veg": true,
+        "spice": 0,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/breads/cheese-garlic-naan.png"
+      },
+      {
+        "name": "Chilli Cheese Naan",
+        "price_vnd_k": 95,
+        "description": "soft naan loaded with cheese, garlic and a touch of chili, baked in the tandoor",
+        "veg": true,
+        "spice": 0,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/breads/chilli-cheese-naan.png"
+      },
+      {
+        "name": "Stuffed Naan (Aloo / Mix / Paneer)",
+        "price_vnd_k": 110,
+        "description": "soft naan stuffed with your choice of aloo, mix or paneer, baked to perfection in the tandoor",
+        "veg": true,
+        "spice": 0,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/breads/stuffed-naan-aloo-mix-paneer.png"
+      },
+      {
+        "name": "Parantha",
+        "price_vnd_k": 110,
+        "description": "traditional layered flatbread with a soft, flaky texture, cooked on a griddle",
+        "veg": true,
+        "spice": 0,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/breads/parantha.png"
+      }
+    ],
+    "reference_photos": [
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/breads/cheese-garlic-naan.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/breads/chilli-cheese-naan.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/breads/stuffed-naan-aloo-mix-paneer.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/breads/parantha.png"
+    ],
+    "prompt": "Render this as a FLAT, front-on, full-bleed page design filling the entire frame edge-to-edge — NOT a 3D mockup, NOT shown at an angle or propped up, NO drop shadow around the page edges, NO book/binder/table framing. The image itself IS the printed page, viewed perfectly straight-on like a scanned document. Premium editorial restaurant menu page design, bright and clean. Soft white/light warm-marble background with subtle natural texture, generous whitespace, delicate thin gold-black hairline rules and dotted price leaders. Elegant modern serif headline typography for the restaurant wordmark 'THE THEATER' with small refined tracked-out caps subtitle 'INDIAN KITCHEN & BAR', and a clean modern sans-serif for dish names, descriptions and prices. High-end food photography styling for every dish shown, shot in soft bright studio light, shallow depth of field. Small minimal line-art icons: a tiny green circle outline with a leaf for vegetarian dishes placed beside the dish name, one to three small red chili-pepper outline icons beside the dish name indicating spice level, and a small elegant gold star-ribbon badge labeled 'CHEF'S RECOMMENDED' beside any dish marked as recommended. Consistent premium restaurant branding throughout, magazine-quality layout, no clutter. 2K quality, ultra-detailed, photorealistic food, sharp typography. No spelling mistakes. No stray watermarks, no phone UI, no random extra text. This page is titled 'BREADS' (page 2 of 2 for this section) — render the section title prominently near the top of the page beneath the restaurant wordmark. Lay out the following dishes on this single page, each with its own photo, name, price and description rendered EXACTLY as given below (render this precise text, do not invent different names/prices): - \"Cheese Garlic Naan\" — 95K VND — \"soft naan topped with garlic and melted cheese, baked in the tandoor\". VEGETARIAN (show the green leaf icon). Spice level: no chili icon. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Chilli Cheese Naan\" — 95K VND — \"soft naan loaded with cheese, garlic and a touch of chili, baked in the tandoor\". VEGETARIAN (show the green leaf icon). Spice level: no chili icon. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Stuffed Naan (Aloo / Mix / Paneer)\" — 110K VND — \"soft naan stuffed with your choice of aloo, mix or paneer, baked to perfection in the tandoor\". VEGETARIAN (show the green leaf icon). Spice level: no chili icon. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Parantha\" — 110K VND — \"traditional layered flatbread with a soft, flaky texture, cooked on a griddle\". VEGETARIAN (show the green leaf icon). Spice level: no chili icon. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. Footnote at the bottom in small type: 'All prices are in thousand VND (d). VAT and service charge is extra.'"
+  },
+  {
+    "page_num": 21,
+    "type": "hero",
+    "slug": "divider-rice",
+    "title": "divider-rice",
+    "items": [],
+    "reference_photos": [],
+    "prompt": "Render this as a FLAT, front-on, full-bleed page design filling the entire frame edge-to-edge — NOT a 3D mockup, NOT shown at an angle or propped up, NO drop shadow around the page edges, NO book/binder/table framing. The image itself IS the printed page, viewed perfectly straight-on like a scanned document. Premium editorial restaurant menu page design, bright and clean. Soft white/light warm-marble background with subtle natural texture, generous whitespace, delicate thin gold-black hairline rules and dotted price leaders. Elegant modern serif headline typography for the restaurant wordmark 'THE THEATER' with small refined tracked-out caps subtitle 'INDIAN KITCHEN & BAR', and a clean modern sans-serif for dish names, descriptions and prices. High-end food photography styling for every dish shown, shot in soft bright studio light, shallow depth of field. Small minimal line-art icons: a tiny green circle outline with a leaf for vegetarian dishes placed beside the dish name, one to three small red chili-pepper outline icons beside the dish name indicating spice level, and a small elegant gold star-ribbon badge labeled 'CHEF'S RECOMMENDED' beside any dish marked as recommended. Consistent premium restaurant branding throughout, magazine-quality layout, no clutter. 2K quality, ultra-detailed, photorealistic food, sharp typography. No spelling mistakes. No stray watermarks, no phone UI, no random extra text. This is a SECTION DIVIDER page with no dish list and no prices — just one beautiful full-bleed atmospheric photograph: a dramatic close-up of fragrant basmati biryani rice being served from a hammered copper handi with steam rising, on a bright marble surface. Render only a small elegant section label near the bottom: 'RICE, KHICHDI & BIRYANI'."
+  },
+  {
+    "page_num": 22,
+    "type": "content",
+    "slug": "rice-khichdi-1",
+    "title": "Rice & Khichdi",
+    "items": [
+      {
+        "name": "Dal Khichdi",
+        "price_vnd_k": 180,
+        "description": "comforting rice and lentils cooked together with mild spices",
+        "veg": true,
+        "spice": 0,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/rice-khichdi/dal-khichdi.png"
+      },
+      {
+        "name": "Steamed Basmati Rice",
+        "price_vnd_k": 85,
+        "description": "light and fragrant long-grain basmati rice",
+        "veg": true,
+        "spice": 0,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/rice-khichdi/steamed-basmati-rice.png"
+      },
+      {
+        "name": "Jeera Rice",
+        "price_vnd_k": 99,
+        "description": "basmati rice tempered with cumin and aromatic spices",
+        "veg": true,
+        "spice": 0,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/rice-khichdi/jeera-rice.png"
+      }
+    ],
+    "reference_photos": [
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/rice-khichdi/dal-khichdi.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/rice-khichdi/steamed-basmati-rice.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/rice-khichdi/jeera-rice.png"
+    ],
+    "prompt": "Render this as a FLAT, front-on, full-bleed page design filling the entire frame edge-to-edge — NOT a 3D mockup, NOT shown at an angle or propped up, NO drop shadow around the page edges, NO book/binder/table framing. The image itself IS the printed page, viewed perfectly straight-on like a scanned document. Premium editorial restaurant menu page design, bright and clean. Soft white/light warm-marble background with subtle natural texture, generous whitespace, delicate thin gold-black hairline rules and dotted price leaders. Elegant modern serif headline typography for the restaurant wordmark 'THE THEATER' with small refined tracked-out caps subtitle 'INDIAN KITCHEN & BAR', and a clean modern sans-serif for dish names, descriptions and prices. High-end food photography styling for every dish shown, shot in soft bright studio light, shallow depth of field. Small minimal line-art icons: a tiny green circle outline with a leaf for vegetarian dishes placed beside the dish name, one to three small red chili-pepper outline icons beside the dish name indicating spice level, and a small elegant gold star-ribbon badge labeled 'CHEF'S RECOMMENDED' beside any dish marked as recommended. Consistent premium restaurant branding throughout, magazine-quality layout, no clutter. 2K quality, ultra-detailed, photorealistic food, sharp typography. No spelling mistakes. No stray watermarks, no phone UI, no random extra text. This page is titled 'RICE & KHICHDI' (page 1 of 1 for this section) — render the section title prominently near the top of the page beneath the restaurant wordmark. Lay out the following dishes on this single page, each with its own photo, name, price and description rendered EXACTLY as given below (render this precise text, do not invent different names/prices): - \"Dal Khichdi\" — 180K VND — \"comforting rice and lentils cooked together with mild spices\". VEGETARIAN (show the green leaf icon). Spice level: no chili icon. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Steamed Basmati Rice\" — 85K VND — \"light and fragrant long-grain basmati rice\". VEGETARIAN (show the green leaf icon). Spice level: no chili icon. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Jeera Rice\" — 99K VND — \"basmati rice tempered with cumin and aromatic spices\". VEGETARIAN (show the green leaf icon). Spice level: no chili icon. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. Footnote at the bottom in small type: 'All prices are in thousand VND (d). VAT and service charge is extra.'"
+  },
+  {
+    "page_num": 23,
+    "type": "content",
+    "slug": "biryani-1",
+    "title": "Biryani",
+    "items": [
+      {
+        "name": "Paneer Biryani",
+        "price_vnd_k": 210,
+        "description": "aromatic basmati rice layered with paneer and traditional spices",
+        "veg": true,
+        "spice": 0,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/biryani/paneer-biryani.png"
+      },
+      {
+        "name": "Veg Biryani",
+        "price_vnd_k": 190,
+        "description": "fragrant basmati rice layered with vegetables and traditional spices",
+        "veg": true,
+        "spice": 0,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/biryani/veg-biryani.png"
+      },
+      {
+        "name": "Egg Biryani",
+        "price_vnd_k": 195,
+        "description": "fragrant basmati rice layered with eggs and aromatic spices",
+        "veg": false,
+        "spice": 0,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/biryani/egg-biryani.png"
+      },
+      {
+        "name": "Chicken Biryani",
+        "price_vnd_k": 230,
+        "description": "slow-cooked basmati rice layered with chicken and aromatic spices",
+        "veg": false,
+        "spice": 0,
+        "chef_recommended": true,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/biryani/chicken-biryani.png"
+      },
+      {
+        "name": "Prawn Biryani",
+        "price_vnd_k": 250,
+        "description": "fragrant basmati rice layered with prawns and traditional spices",
+        "veg": false,
+        "spice": 0,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/biryani/prawn-biryani.png"
+      }
+    ],
+    "reference_photos": [
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/biryani/paneer-biryani.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/biryani/veg-biryani.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/biryani/egg-biryani.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/biryani/chicken-biryani.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/biryani/prawn-biryani.png"
+    ],
+    "prompt": "Render this as a FLAT, front-on, full-bleed page design filling the entire frame edge-to-edge — NOT a 3D mockup, NOT shown at an angle or propped up, NO drop shadow around the page edges, NO book/binder/table framing. The image itself IS the printed page, viewed perfectly straight-on like a scanned document. Premium editorial restaurant menu page design, bright and clean. Soft white/light warm-marble background with subtle natural texture, generous whitespace, delicate thin gold-black hairline rules and dotted price leaders. Elegant modern serif headline typography for the restaurant wordmark 'THE THEATER' with small refined tracked-out caps subtitle 'INDIAN KITCHEN & BAR', and a clean modern sans-serif for dish names, descriptions and prices. High-end food photography styling for every dish shown, shot in soft bright studio light, shallow depth of field. Small minimal line-art icons: a tiny green circle outline with a leaf for vegetarian dishes placed beside the dish name, one to three small red chili-pepper outline icons beside the dish name indicating spice level, and a small elegant gold star-ribbon badge labeled 'CHEF'S RECOMMENDED' beside any dish marked as recommended. Consistent premium restaurant branding throughout, magazine-quality layout, no clutter. 2K quality, ultra-detailed, photorealistic food, sharp typography. No spelling mistakes. No stray watermarks, no phone UI, no random extra text. This page is titled 'BIRYANI' (page 1 of 1 for this section) — render the section title prominently near the top of the page beneath the restaurant wordmark. Lay out the following dishes on this single page, each with its own photo, name, price and description rendered EXACTLY as given below (render this precise text, do not invent different names/prices): - \"Paneer Biryani\" — 210K VND — \"aromatic basmati rice layered with paneer and traditional spices\". VEGETARIAN (show the green leaf icon). Spice level: no chili icon. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Veg Biryani\" — 190K VND — \"fragrant basmati rice layered with vegetables and traditional spices\". VEGETARIAN (show the green leaf icon). Spice level: no chili icon. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Egg Biryani\" — 195K VND — \"fragrant basmati rice layered with eggs and aromatic spices\". non-vegetarian (no leaf icon). Spice level: no chili icon. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Chicken Biryani\" — 230K VND — \"slow-cooked basmati rice layered with chicken and aromatic spices\". non-vegetarian (no leaf icon). Spice level: no chili icon. Mark this dish with the CHEF'S RECOMMENDED gold ribbon badge. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Prawn Biryani\" — 250K VND — \"fragrant basmati rice layered with prawns and traditional spices\". non-vegetarian (no leaf icon). Spice level: no chili icon. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. Footnote at the bottom in small type: 'All prices are in thousand VND (d). VAT and service charge is extra.'"
+  },
+  {
+    "page_num": 24,
+    "type": "hero",
+    "slug": "divider-bar",
+    "title": "divider-bar",
+    "items": [],
+    "reference_photos": [],
+    "prompt": "Render this as a FLAT, front-on, full-bleed page design filling the entire frame edge-to-edge — NOT a 3D mockup, NOT shown at an angle or propped up, NO drop shadow around the page edges, NO book/binder/table framing. The image itself IS the printed page, viewed perfectly straight-on like a scanned document. Premium editorial restaurant menu page design, bright and clean. Soft white/light warm-marble background with subtle natural texture, generous whitespace, delicate thin gold-black hairline rules and dotted price leaders. Elegant modern serif headline typography for the restaurant wordmark 'THE THEATER' with small refined tracked-out caps subtitle 'INDIAN KITCHEN & BAR', and a clean modern sans-serif for dish names, descriptions and prices. High-end food photography styling for every dish shown, shot in soft bright studio light, shallow depth of field. Small minimal line-art icons: a tiny green circle outline with a leaf for vegetarian dishes placed beside the dish name, one to three small red chili-pepper outline icons beside the dish name indicating spice level, and a small elegant gold star-ribbon badge labeled 'CHEF'S RECOMMENDED' beside any dish marked as recommended. Consistent premium restaurant branding throughout, magazine-quality layout, no clutter. 2K quality, ultra-detailed, photorealistic food, sharp typography. No spelling mistakes. No stray watermarks, no phone UI, no random extra text. This is a SECTION DIVIDER page with no dish list and no prices — just one beautiful full-bleed atmospheric photograph: an elegant flat-lay of drink glassware — a copper mug, a tall glass of iced lassi, fresh mint and citrus — on a bright marble surface with soft light. Render only a small elegant section label near the bottom: 'DRINKS, COFFEE & JUICES'."
+  },
+  {
+    "page_num": 25,
+    "type": "content",
+    "slug": "drinks-1",
+    "title": "Drinks",
+    "items": [
+      {
+        "name": "Masala Tea",
+        "price_vnd_k": 60,
+        "description": "traditional Indian tea brewed with aromatic spices",
+        "veg": true,
+        "spice": 0,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/drinks/masala-tea.png"
+      },
+      {
+        "name": "Mango Lassi",
+        "price_vnd_k": 110,
+        "description": "creamy yogurt drink blended with ripe mango",
+        "veg": true,
+        "spice": 0,
+        "chef_recommended": true,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/drinks/mango-lassi.png"
+      },
+      {
+        "name": "Lassi",
+        "price_vnd_k": 110,
+        "description": "traditional yogurt drink served chilled",
+        "veg": true,
+        "spice": 0,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/drinks/lassi.png"
+      },
+      {
+        "name": "Cold Drink",
+        "price_vnd_k": 50,
+        "description": "choice of Coca-Cola, Sprite or Fanta",
+        "veg": true,
+        "spice": 0,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/drinks/cold-drink.png"
+      },
+      {
+        "name": "Masala Chaas",
+        "price_vnd_k": 85,
+        "description": "refreshing spiced buttermilk blended with roasted cumin and traditional Indian seasonings",
+        "veg": true,
+        "spice": 0,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/drinks/masala-chaas.png"
+      },
+      {
+        "name": "Water / Sparkling Water",
+        "price_vnd_k": 25,
+        "description": "chilled bottled still or sparkling water",
+        "veg": true,
+        "spice": 0,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/drinks/water-sparkling-water.png"
+      }
+    ],
+    "reference_photos": [
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/drinks/masala-tea.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/drinks/mango-lassi.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/drinks/lassi.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/drinks/cold-drink.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/drinks/masala-chaas.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/drinks/water-sparkling-water.png"
+    ],
+    "prompt": "Render this as a FLAT, front-on, full-bleed page design filling the entire frame edge-to-edge — NOT a 3D mockup, NOT shown at an angle or propped up, NO drop shadow around the page edges, NO book/binder/table framing. The image itself IS the printed page, viewed perfectly straight-on like a scanned document. Premium editorial restaurant menu page design, bright and clean. Soft white/light warm-marble background with subtle natural texture, generous whitespace, delicate thin gold-black hairline rules and dotted price leaders. Elegant modern serif headline typography for the restaurant wordmark 'THE THEATER' with small refined tracked-out caps subtitle 'INDIAN KITCHEN & BAR', and a clean modern sans-serif for dish names, descriptions and prices. High-end food photography styling for every dish shown, shot in soft bright studio light, shallow depth of field. Small minimal line-art icons: a tiny green circle outline with a leaf for vegetarian dishes placed beside the dish name, one to three small red chili-pepper outline icons beside the dish name indicating spice level, and a small elegant gold star-ribbon badge labeled 'CHEF'S RECOMMENDED' beside any dish marked as recommended. Consistent premium restaurant branding throughout, magazine-quality layout, no clutter. 2K quality, ultra-detailed, photorealistic food, sharp typography. No spelling mistakes. No stray watermarks, no phone UI, no random extra text. This page is titled 'DRINKS' (page 1 of 1 for this section) — render the section title prominently near the top of the page beneath the restaurant wordmark. Lay out the following dishes on this single page, each with its own photo, name, price and description rendered EXACTLY as given below (render this precise text, do not invent different names/prices): - \"Masala Tea\" — 60K VND — \"traditional Indian tea brewed with aromatic spices\". VEGETARIAN (show the green leaf icon). Spice level: no chili icon. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Mango Lassi\" — 110K VND — \"creamy yogurt drink blended with ripe mango\". VEGETARIAN (show the green leaf icon). Spice level: no chili icon. Mark this dish with the CHEF'S RECOMMENDED gold ribbon badge. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Lassi\" — 110K VND — \"traditional yogurt drink served chilled\". VEGETARIAN (show the green leaf icon). Spice level: no chili icon. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Cold Drink\" — 50K VND — \"choice of Coca-Cola, Sprite or Fanta\". VEGETARIAN (show the green leaf icon). Spice level: no chili icon. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Masala Chaas\" — 85K VND — \"refreshing spiced buttermilk blended with roasted cumin and traditional Indian seasonings\". VEGETARIAN (show the green leaf icon). Spice level: no chili icon. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Water / Sparkling Water\" — 25K VND — \"chilled bottled still or sparkling water\". VEGETARIAN (show the green leaf icon). Spice level: no chili icon. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. Footnote at the bottom in small type: 'All prices are in thousand VND (d). VAT and service charge is extra.'"
+  },
+  {
+    "page_num": 26,
+    "type": "content",
+    "slug": "coffee-1",
+    "title": "Coffee",
+    "items": [
+      {
+        "name": "Cappuccino",
+        "price_vnd_k": 85,
+        "description": "espresso with steamed milk and velvety foam",
+        "veg": true,
+        "spice": 0,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/coffee/cappuccino.png"
+      },
+      {
+        "name": "Latte",
+        "price_vnd_k": 85,
+        "description": "smooth espresso blended with silky steamed milk",
+        "veg": true,
+        "spice": 0,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/coffee/latte.png"
+      },
+      {
+        "name": "Espresso",
+        "price_vnd_k": 60,
+        "description": "rich and intense single-shot coffee",
+        "veg": true,
+        "spice": 0,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/coffee/espresso.png"
+      },
+      {
+        "name": "Americano",
+        "price_vnd_k": 75,
+        "description": "espresso balanced with hot water for a smooth finish",
+        "veg": true,
+        "spice": 0,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/coffee/americano.png"
+      }
+    ],
+    "reference_photos": [
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/coffee/cappuccino.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/coffee/latte.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/coffee/espresso.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/coffee/americano.png"
+    ],
+    "prompt": "Render this as a FLAT, front-on, full-bleed page design filling the entire frame edge-to-edge — NOT a 3D mockup, NOT shown at an angle or propped up, NO drop shadow around the page edges, NO book/binder/table framing. The image itself IS the printed page, viewed perfectly straight-on like a scanned document. Premium editorial restaurant menu page design, bright and clean. Soft white/light warm-marble background with subtle natural texture, generous whitespace, delicate thin gold-black hairline rules and dotted price leaders. Elegant modern serif headline typography for the restaurant wordmark 'THE THEATER' with small refined tracked-out caps subtitle 'INDIAN KITCHEN & BAR', and a clean modern sans-serif for dish names, descriptions and prices. High-end food photography styling for every dish shown, shot in soft bright studio light, shallow depth of field. Small minimal line-art icons: a tiny green circle outline with a leaf for vegetarian dishes placed beside the dish name, one to three small red chili-pepper outline icons beside the dish name indicating spice level, and a small elegant gold star-ribbon badge labeled 'CHEF'S RECOMMENDED' beside any dish marked as recommended. Consistent premium restaurant branding throughout, magazine-quality layout, no clutter. 2K quality, ultra-detailed, photorealistic food, sharp typography. No spelling mistakes. No stray watermarks, no phone UI, no random extra text. This page is titled 'COFFEE' (page 1 of 1 for this section) — render the section title prominently near the top of the page beneath the restaurant wordmark. Lay out the following dishes on this single page, each with its own photo, name, price and description rendered EXACTLY as given below (render this precise text, do not invent different names/prices): - \"Cappuccino\" — 85K VND — \"espresso with steamed milk and velvety foam\". VEGETARIAN (show the green leaf icon). Spice level: no chili icon. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Latte\" — 85K VND — \"smooth espresso blended with silky steamed milk\". VEGETARIAN (show the green leaf icon). Spice level: no chili icon. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Espresso\" — 60K VND — \"rich and intense single-shot coffee\". VEGETARIAN (show the green leaf icon). Spice level: no chili icon. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Americano\" — 75K VND — \"espresso balanced with hot water for a smooth finish\". VEGETARIAN (show the green leaf icon). Spice level: no chili icon. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. Footnote at the bottom in small type: 'All prices are in thousand VND (d). VAT and service charge is extra.'"
+  },
+  {
+    "page_num": 27,
+    "type": "content",
+    "slug": "juices-smoothies-iced-tea-1",
+    "title": "Juices, Smoothies & Iced Tea",
+    "items": [
+      {
+        "name": "Orange Juice",
+        "price_vnd_k": 95,
+        "description": "fresh-squeezed orange juice",
+        "veg": true,
+        "spice": 0,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/juices-smoothies-iced-tea/orange-juice.png"
+      },
+      {
+        "name": "Watermelon Juice",
+        "price_vnd_k": 95,
+        "description": "fresh watermelon juice",
+        "veg": true,
+        "spice": 0,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/juices-smoothies-iced-tea/watermelon-juice.png"
+      },
+      {
+        "name": "Pineapple Juice",
+        "price_vnd_k": 95,
+        "description": "fresh pineapple juice",
+        "veg": true,
+        "spice": 0,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/juices-smoothies-iced-tea/pineapple-juice.png"
+      },
+      {
+        "name": "Mixed Fruit Juice",
+        "price_vnd_k": 95,
+        "description": "fresh mixed fruit juice",
+        "veg": true,
+        "spice": 0,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/juices-smoothies-iced-tea/mixed-fruit-juice.png"
+      }
+    ],
+    "reference_photos": [
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/juices-smoothies-iced-tea/orange-juice.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/juices-smoothies-iced-tea/watermelon-juice.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/juices-smoothies-iced-tea/pineapple-juice.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/juices-smoothies-iced-tea/mixed-fruit-juice.png"
+    ],
+    "prompt": "Render this as a FLAT, front-on, full-bleed page design filling the entire frame edge-to-edge — NOT a 3D mockup, NOT shown at an angle or propped up, NO drop shadow around the page edges, NO book/binder/table framing. The image itself IS the printed page, viewed perfectly straight-on like a scanned document. Premium editorial restaurant menu page design, bright and clean. Soft white/light warm-marble background with subtle natural texture, generous whitespace, delicate thin gold-black hairline rules and dotted price leaders. Elegant modern serif headline typography for the restaurant wordmark 'THE THEATER' with small refined tracked-out caps subtitle 'INDIAN KITCHEN & BAR', and a clean modern sans-serif for dish names, descriptions and prices. High-end food photography styling for every dish shown, shot in soft bright studio light, shallow depth of field. Small minimal line-art icons: a tiny green circle outline with a leaf for vegetarian dishes placed beside the dish name, one to three small red chili-pepper outline icons beside the dish name indicating spice level, and a small elegant gold star-ribbon badge labeled 'CHEF'S RECOMMENDED' beside any dish marked as recommended. Consistent premium restaurant branding throughout, magazine-quality layout, no clutter. 2K quality, ultra-detailed, photorealistic food, sharp typography. No spelling mistakes. No stray watermarks, no phone UI, no random extra text. This page is titled 'JUICES, SMOOTHIES & ICED TEA' (page 1 of 3 for this section) — render the section title prominently near the top of the page beneath the restaurant wordmark. Lay out the following dishes on this single page, each with its own photo, name, price and description rendered EXACTLY as given below (render this precise text, do not invent different names/prices): - \"Orange Juice\" — 95K VND — \"fresh-squeezed orange juice\". VEGETARIAN (show the green leaf icon). Spice level: no chili icon. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Watermelon Juice\" — 95K VND — \"fresh watermelon juice\". VEGETARIAN (show the green leaf icon). Spice level: no chili icon. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Pineapple Juice\" — 95K VND — \"fresh pineapple juice\". VEGETARIAN (show the green leaf icon). Spice level: no chili icon. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Mixed Fruit Juice\" — 95K VND — \"fresh mixed fruit juice\". VEGETARIAN (show the green leaf icon). Spice level: no chili icon. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. Footnote at the bottom in small type: 'All prices are in thousand VND (d). VAT and service charge is extra.'"
+  },
+  {
+    "page_num": 28,
+    "type": "content",
+    "slug": "juices-smoothies-iced-tea-2",
+    "title": "Juices, Smoothies & Iced Tea",
+    "items": [
+      {
+        "name": "Lemon Iced Tea",
+        "price_vnd_k": 80,
+        "description": "chilled lemon iced tea",
+        "veg": true,
+        "spice": 0,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/juices-smoothies-iced-tea/lemon-iced-tea.png"
+      },
+      {
+        "name": "Peach Iced Tea",
+        "price_vnd_k": 80,
+        "description": "chilled peach iced tea",
+        "veg": true,
+        "spice": 0,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/juices-smoothies-iced-tea/peach-iced-tea.png"
+      },
+      {
+        "name": "Mango Magic Smoothie",
+        "price_vnd_k": 110,
+        "description": "mango, yogurt, honey and a touch of vanilla",
+        "veg": true,
+        "spice": 0,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/juices-smoothies-iced-tea/mango-magic-smoothie.png"
+      },
+      {
+        "name": "Berry Bliss Smoothie",
+        "price_vnd_k": 110,
+        "description": "mixed berries, yogurt, honey and apple juice",
+        "veg": true,
+        "spice": 0,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/juices-smoothies-iced-tea/berry-bliss-smoothie.png"
+      }
+    ],
+    "reference_photos": [
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/juices-smoothies-iced-tea/lemon-iced-tea.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/juices-smoothies-iced-tea/peach-iced-tea.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/juices-smoothies-iced-tea/mango-magic-smoothie.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/juices-smoothies-iced-tea/berry-bliss-smoothie.png"
+    ],
+    "prompt": "Render this as a FLAT, front-on, full-bleed page design filling the entire frame edge-to-edge — NOT a 3D mockup, NOT shown at an angle or propped up, NO drop shadow around the page edges, NO book/binder/table framing. The image itself IS the printed page, viewed perfectly straight-on like a scanned document. Premium editorial restaurant menu page design, bright and clean. Soft white/light warm-marble background with subtle natural texture, generous whitespace, delicate thin gold-black hairline rules and dotted price leaders. Elegant modern serif headline typography for the restaurant wordmark 'THE THEATER' with small refined tracked-out caps subtitle 'INDIAN KITCHEN & BAR', and a clean modern sans-serif for dish names, descriptions and prices. High-end food photography styling for every dish shown, shot in soft bright studio light, shallow depth of field. Small minimal line-art icons: a tiny green circle outline with a leaf for vegetarian dishes placed beside the dish name, one to three small red chili-pepper outline icons beside the dish name indicating spice level, and a small elegant gold star-ribbon badge labeled 'CHEF'S RECOMMENDED' beside any dish marked as recommended. Consistent premium restaurant branding throughout, magazine-quality layout, no clutter. 2K quality, ultra-detailed, photorealistic food, sharp typography. No spelling mistakes. No stray watermarks, no phone UI, no random extra text. This page is titled 'JUICES, SMOOTHIES & ICED TEA' (page 2 of 3 for this section) — render the section title prominently near the top of the page beneath the restaurant wordmark. Lay out the following dishes on this single page, each with its own photo, name, price and description rendered EXACTLY as given below (render this precise text, do not invent different names/prices): - \"Lemon Iced Tea\" — 80K VND — \"chilled lemon iced tea\". VEGETARIAN (show the green leaf icon). Spice level: no chili icon. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Peach Iced Tea\" — 80K VND — \"chilled peach iced tea\". VEGETARIAN (show the green leaf icon). Spice level: no chili icon. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Mango Magic Smoothie\" — 110K VND — \"mango, yogurt, honey and a touch of vanilla\". VEGETARIAN (show the green leaf icon). Spice level: no chili icon. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Berry Bliss Smoothie\" — 110K VND — \"mixed berries, yogurt, honey and apple juice\". VEGETARIAN (show the green leaf icon). Spice level: no chili icon. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. Footnote at the bottom in small type: 'All prices are in thousand VND (d). VAT and service charge is extra.'"
+  },
+  {
+    "page_num": 29,
+    "type": "content",
+    "slug": "juices-smoothies-iced-tea-3",
+    "title": "Juices, Smoothies & Iced Tea",
+    "items": [
+      {
+        "name": "Banana Nut Smoothie",
+        "price_vnd_k": 110,
+        "description": "banana, peanut butter, milk and honey",
+        "veg": true,
+        "spice": 0,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/juices-smoothies-iced-tea/banana-nut-smoothie.png"
+      },
+      {
+        "name": "Chocolate Mocha Smoothie",
+        "price_vnd_k": 110,
+        "description": "chocolate, coffee, banana, milk and cocoa powder",
+        "veg": true,
+        "spice": 0,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/juices-smoothies-iced-tea/chocolate-mocha-smoothie.png"
+      },
+      {
+        "name": "Strawberry Delight Smoothie",
+        "price_vnd_k": 110,
+        "description": "strawberry, yogurt, banana and a touch of honey",
+        "veg": true,
+        "spice": 0,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/juices-smoothies-iced-tea/strawberry-delight-smoothie.png"
+      }
+    ],
+    "reference_photos": [
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/juices-smoothies-iced-tea/banana-nut-smoothie.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/juices-smoothies-iced-tea/chocolate-mocha-smoothie.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/juices-smoothies-iced-tea/strawberry-delight-smoothie.png"
+    ],
+    "prompt": "Render this as a FLAT, front-on, full-bleed page design filling the entire frame edge-to-edge — NOT a 3D mockup, NOT shown at an angle or propped up, NO drop shadow around the page edges, NO book/binder/table framing. The image itself IS the printed page, viewed perfectly straight-on like a scanned document. Premium editorial restaurant menu page design, bright and clean. Soft white/light warm-marble background with subtle natural texture, generous whitespace, delicate thin gold-black hairline rules and dotted price leaders. Elegant modern serif headline typography for the restaurant wordmark 'THE THEATER' with small refined tracked-out caps subtitle 'INDIAN KITCHEN & BAR', and a clean modern sans-serif for dish names, descriptions and prices. High-end food photography styling for every dish shown, shot in soft bright studio light, shallow depth of field. Small minimal line-art icons: a tiny green circle outline with a leaf for vegetarian dishes placed beside the dish name, one to three small red chili-pepper outline icons beside the dish name indicating spice level, and a small elegant gold star-ribbon badge labeled 'CHEF'S RECOMMENDED' beside any dish marked as recommended. Consistent premium restaurant branding throughout, magazine-quality layout, no clutter. 2K quality, ultra-detailed, photorealistic food, sharp typography. No spelling mistakes. No stray watermarks, no phone UI, no random extra text. This page is titled 'JUICES, SMOOTHIES & ICED TEA' (page 3 of 3 for this section) — render the section title prominently near the top of the page beneath the restaurant wordmark. Lay out the following dishes on this single page, each with its own photo, name, price and description rendered EXACTLY as given below (render this precise text, do not invent different names/prices): - \"Banana Nut Smoothie\" — 110K VND — \"banana, peanut butter, milk and honey\". VEGETARIAN (show the green leaf icon). Spice level: no chili icon. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Chocolate Mocha Smoothie\" — 110K VND — \"chocolate, coffee, banana, milk and cocoa powder\". VEGETARIAN (show the green leaf icon). Spice level: no chili icon. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Strawberry Delight Smoothie\" — 110K VND — \"strawberry, yogurt, banana and a touch of honey\". VEGETARIAN (show the green leaf icon). Spice level: no chili icon. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. Footnote at the bottom in small type: 'All prices are in thousand VND (d). VAT and service charge is extra.'"
+  },
+  {
+    "page_num": 30,
+    "type": "hero",
+    "slug": "divider-desserts",
+    "title": "divider-desserts",
+    "items": [],
+    "reference_photos": [],
+    "prompt": "Render this as a FLAT, front-on, full-bleed page design filling the entire frame edge-to-edge — NOT a 3D mockup, NOT shown at an angle or propped up, NO drop shadow around the page edges, NO book/binder/table framing. The image itself IS the printed page, viewed perfectly straight-on like a scanned document. Premium editorial restaurant menu page design, bright and clean. Soft white/light warm-marble background with subtle natural texture, generous whitespace, delicate thin gold-black hairline rules and dotted price leaders. Elegant modern serif headline typography for the restaurant wordmark 'THE THEATER' with small refined tracked-out caps subtitle 'INDIAN KITCHEN & BAR', and a clean modern sans-serif for dish names, descriptions and prices. High-end food photography styling for every dish shown, shot in soft bright studio light, shallow depth of field. Small minimal line-art icons: a tiny green circle outline with a leaf for vegetarian dishes placed beside the dish name, one to three small red chili-pepper outline icons beside the dish name indicating spice level, and a small elegant gold star-ribbon badge labeled 'CHEF'S RECOMMENDED' beside any dish marked as recommended. Consistent premium restaurant branding throughout, magazine-quality layout, no clutter. 2K quality, ultra-detailed, photorealistic food, sharp typography. No spelling mistakes. No stray watermarks, no phone UI, no random extra text. This is a SECTION DIVIDER page with no dish list and no prices — just one beautiful full-bleed atmospheric photograph: a close-up of glossy gulab jamun in saffron syrup with a scoop of vanilla ice cream, soft bright light, shallow depth of field, on a bright marble surface. Render only a small elegant section label near the bottom: 'DESSERTS'."
+  },
+  {
+    "page_num": 31,
+    "type": "content",
+    "slug": "desserts-1",
+    "title": "Desserts",
+    "items": [
+      {
+        "name": "Gulab Jamun with Vanilla Ice Cream",
+        "price_vnd_k": 90,
+        "description": "soft milk dumplings soaked in saffron syrup, served with creamy vanilla ice cream",
+        "veg": true,
+        "spice": 0,
+        "chef_recommended": true,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/desserts/gulab-jamun-with-vanilla-ice-cream.png"
+      },
+      {
+        "name": "Ice Cream (Vanilla)",
+        "price_vnd_k": 60,
+        "description": "classic vanilla ice cream served chilled",
+        "veg": true,
+        "spice": 0,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/desserts/ice-cream-vanilla.png"
+      },
+      {
+        "name": "Ice Cream (Chocolate)",
+        "price_vnd_k": 60,
+        "description": "classic chocolate ice cream served chilled",
+        "veg": true,
+        "spice": 0,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/desserts/ice-cream-chocolate.png"
+      },
+      {
+        "name": "Kheer",
+        "price_vnd_k": 90,
+        "description": "creamy rice pudding slow-cooked with milk, garnished with nuts and saffron",
+        "veg": true,
+        "spice": 0,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/desserts/kheer.png"
+      },
+      {
+        "name": "Gajar Halwa",
+        "price_vnd_k": 110,
+        "description": "classic carrot pudding cooked with milk, garnished with nuts",
+        "veg": true,
+        "spice": 0,
+        "chef_recommended": false,
+        "photo": "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/desserts/gajar-halwa.png"
+      }
+    ],
+    "reference_photos": [
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/desserts/gulab-jamun-with-vanilla-ice-cream.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/desserts/ice-cream-vanilla.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/desserts/ice-cream-chocolate.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/desserts/kheer.png",
+      "/home/user/intunnelconsulting.github.io/theater-menu-photography/output/desserts/gajar-halwa.png"
+    ],
+    "prompt": "Render this as a FLAT, front-on, full-bleed page design filling the entire frame edge-to-edge — NOT a 3D mockup, NOT shown at an angle or propped up, NO drop shadow around the page edges, NO book/binder/table framing. The image itself IS the printed page, viewed perfectly straight-on like a scanned document. Premium editorial restaurant menu page design, bright and clean. Soft white/light warm-marble background with subtle natural texture, generous whitespace, delicate thin gold-black hairline rules and dotted price leaders. Elegant modern serif headline typography for the restaurant wordmark 'THE THEATER' with small refined tracked-out caps subtitle 'INDIAN KITCHEN & BAR', and a clean modern sans-serif for dish names, descriptions and prices. High-end food photography styling for every dish shown, shot in soft bright studio light, shallow depth of field. Small minimal line-art icons: a tiny green circle outline with a leaf for vegetarian dishes placed beside the dish name, one to three small red chili-pepper outline icons beside the dish name indicating spice level, and a small elegant gold star-ribbon badge labeled 'CHEF'S RECOMMENDED' beside any dish marked as recommended. Consistent premium restaurant branding throughout, magazine-quality layout, no clutter. 2K quality, ultra-detailed, photorealistic food, sharp typography. No spelling mistakes. No stray watermarks, no phone UI, no random extra text. This page is titled 'DESSERTS' (page 1 of 1 for this section) — render the section title prominently near the top of the page beneath the restaurant wordmark. Lay out the following dishes on this single page, each with its own photo, name, price and description rendered EXACTLY as given below (render this precise text, do not invent different names/prices): - \"Gulab Jamun with Vanilla Ice Cream\" — 90K VND — \"soft milk dumplings soaked in saffron syrup, served with creamy vanilla ice cream\". VEGETARIAN (show the green leaf icon). Spice level: no chili icon. Mark this dish with the CHEF'S RECOMMENDED gold ribbon badge. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Ice Cream (Vanilla)\" — 60K VND — \"classic vanilla ice cream served chilled\". VEGETARIAN (show the green leaf icon). Spice level: no chili icon. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Ice Cream (Chocolate)\" — 60K VND — \"classic chocolate ice cream served chilled\". VEGETARIAN (show the green leaf icon). Spice level: no chili icon. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Kheer\" — 90K VND — \"creamy rice pudding slow-cooked with milk, garnished with nuts and saffron\". VEGETARIAN (show the green leaf icon). Spice level: no chili icon. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. - \"Gajar Halwa\" — 110K VND — \"classic carrot pudding cooked with milk, garnished with nuts\". VEGETARIAN (show the green leaf icon). Spice level: no chili icon. Food styling reference for this exact dish is attached as an image; use it as the true appearance of the plated dish in this layout. Footnote at the bottom in small type: 'All prices are in thousand VND (d). VAT and service charge is extra.'"
+  },
+  {
+    "page_num": 32,
+    "type": "hero",
+    "slug": "closing",
+    "title": "closing",
+    "items": [],
+    "reference_photos": [],
+    "prompt": "Render this as a FLAT, front-on, full-bleed page design filling the entire frame edge-to-edge — NOT a 3D mockup, NOT shown at an angle or propped up, NO drop shadow around the page edges, NO book/binder/table framing. The image itself IS the printed page, viewed perfectly straight-on like a scanned document. Premium editorial restaurant menu page design, bright and clean. Soft white/light warm-marble background with subtle natural texture, generous whitespace, delicate thin gold-black hairline rules and dotted price leaders. Elegant modern serif headline typography for the restaurant wordmark 'THE THEATER' with small refined tracked-out caps subtitle 'INDIAN KITCHEN & BAR', and a clean modern sans-serif for dish names, descriptions and prices. High-end food photography styling for every dish shown, shot in soft bright studio light, shallow depth of field. Small minimal line-art icons: a tiny green circle outline with a leaf for vegetarian dishes placed beside the dish name, one to three small red chili-pepper outline icons beside the dish name indicating spice level, and a small elegant gold star-ribbon badge labeled 'CHEF'S RECOMMENDED' beside any dish marked as recommended. Consistent premium restaurant branding throughout, magazine-quality layout, no clutter. 2K quality, ultra-detailed, photorealistic food, sharp typography. No spelling mistakes. No stray watermarks, no phone UI, no random extra text. This is the CLOSING / thank-you page of the menu: a full-bleed, elegant, softly lit photograph of an empty premium table setting — folded linen napkin, cutlery, a single small candle lantern — on a warm marble surface. Centered, render in elegant serif type: 'DHANYAWAD' with smaller italic type beneath: 'Thank you for dining with us.' and beneath that the wordmark 'THE THEATER' with small caps subtitle 'INDIAN KITCHEN & BAR', and small type: '152 Đường Trần Hưng Đạo, Dương Đông, Phú Quốc'. No dish photos, no prices."
+  }
+]
