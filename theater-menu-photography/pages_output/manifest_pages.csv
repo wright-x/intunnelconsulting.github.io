@@ -27,3 +27,4 @@ page_num,slug,type,title,filename,actual_resolution,status
 26,desserts-1,content,Desserts,26-desserts-1.png,1792x2400,ok
 27,closing,hero,closing,27-closing.png,1792x2400,ok
 27,closing,hero,closing,27-closing.png,1792x2400,ok
+1,cover,hero,cover,01-cover.png,1792x2400,ok

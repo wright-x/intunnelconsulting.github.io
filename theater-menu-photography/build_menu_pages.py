@@ -277,6 +277,24 @@ def build_content_prompt(category, page_items, page_num_in_cat, total_pages_in_c
 
 
 HERO_PROMPTS = [
+    ("cover", (
+        "Design a full-bleed A4 portrait (2480x3508px @300dpi) restaurant menu "
+        "FRONT COVER page, background color #F6F3EC with a subtle warm "
+        "radial gradient top-right, flat and front-on (not a mockup, NOT a "
+        "3D book/spine rendering, NO drop shadow around the page edges, NO "
+        "gray backdrop behind the page — the image itself IS the flat "
+        "printed page, filling the entire frame edge-to-edge). Top area: "
+        "centered, the wordmark 'THE THEATER' in the display serif "
+        "(Fraunces/Canela), ink color #1A1714, with small tracked caps "
+        "subtitle beneath 'INDIAN KITCHEN & BAR', and smaller italic type "
+        "beneath that: 'Duong Dong, Phu Quoc'. Below that, filling most of "
+        "the page, one beautiful photograph: an elegant overhead flat-lay of "
+        "aromatic Indian spices (star anise, cinnamon sticks, cardamom pods, "
+        "dried red chilies, coriander seeds, saffron threads) scattered "
+        "artfully on a warm marble surface with soft directional light and "
+        "gentle shadow, trimmed tightly with no border or frame. No other "
+        "text, no dish photos, no prices, no watermark, no stock logo."
+    )),
     ("divider-small-plates", (
         "Design a full-bleed A4 portrait (2480x3508px @300dpi) restaurant menu "
         "SECTION DIVIDER page, background color #F6F3EC with a subtle warm "
@@ -387,13 +405,6 @@ DIVIDER_BEFORE = {
 pages = []
 page_num = 1
 
-# Page 1 is the existing cover — kept as a placeholder record, not regenerated.
-pages.append({
-    "page_num": page_num, "type": "hero", "slug": "cover", "title": "cover",
-    "items": [], "reference_photos": [], "prompt": "(kept from previous run — not regenerated)",
-})
-page_num += 1
-
 
 def add_hero(key):
     global page_num
@@ -404,6 +415,8 @@ def add_hero(key):
     })
     page_num += 1
 
+
+add_hero("cover")
 
 for cat in CATEGORY_ORDER:
     if cat in DIVIDER_BEFORE:
