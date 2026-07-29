@@ -27,9 +27,15 @@ PLATEWARE = {
         "reference plate provided."
     ),
     "wooden_tray": (
-        "Presented on a curved dark walnut wooden serving tray with several "
-        "round wells, each component resting in its own well, exactly like the "
-        "reference tray provided."
+        "Presented on a curved dark walnut wooden serving tray with a row of "
+        "round drilled wells, each well holding one small clear glass upright, "
+        "exactly like the reference tray provided."
+    ),
+    "round_plain_large": (
+        "Presented on a large matte white/cream ceramic oval serving platter "
+        "(a larger version of the plain white plate) with a subtle organic "
+        "hand-thrown rim texture, exactly like the reference plate provided, "
+        "sized to hold an assortment of grilled items."
     ),
     "copper_martini": (
         "Served in a polished copper martini glass with a wide tapered conical "
@@ -150,8 +156,8 @@ cat = "Chaat & Fast Sellers"
 items += [
     item("Masala Papad", 55, "crispy papad topped with onion, tomato and fresh herbs", cat, "oval_sauce_well",
          "A large thin crisp papad generously topped with finely diced onion, tomato and cilantro, sauce well filled with mint chutney."),
-    item("Pani Puri Shots", 90, "crispy puris served with tangy flavored waters and chutneys", cat, "shot_glasses",
-         "Round hollow crisp puris filled with mashed potato and chickpeas arranged beside a row of small glasses filled with tangy mint-green and tamarind-brown flavored water."),
+    item("Pani Puri Shots", 90, "crispy puris served with tangy flavored waters and chutneys", cat, "wooden_tray",
+         "Each round well of the tray holds a small clear glass filled with tangy flavored pani puri water, alternating vivid mint-green and tamarind-brown, with a few round hollow crisp puris filled with mashed potato and chickpeas arranged on a small plate beside the tray."),
     item("Dahi Papdi Chaat", 150, "crispy wafers topped with yogurt, chutneys and spices", cat, "oval_sauce_well",
          "Crisp round papdi wafers layered under a generous swirl of thick white yogurt, drizzled with tamarind and mint chutneys and dusted with spice, sauce well filled with extra chutney."),
     item("Aloo Tikki Chaat", 155, "crispy potato patties topped with yogurt and chutneys", cat, "oval_sauce_well",
@@ -191,8 +197,8 @@ items += [
          "A vivid red-orange tandoori half chicken (one breast, one leg) with visible char marks, thin red onion rings, a lemon wedge and a small metal cup of mint chutney beside."),
     item("Tandoori Fish Tikka", 265, "six boneless fish cubes marinated with spices and grilled in the tandoor", cat, "round_plain",
          "Six golden-orange char-grilled fish cubes arranged neatly, thin red onion rings, a lemon wedge and a small metal cup of mint chutney beside."),
-    item("Mixed Tandoori Platter", 399, "Chicken Tikka, Chicken Malai Tikka, Paneer Tikka and Achari Paneer Tikka served on one sizzling platter with mint chutney", cat, "wooden_tray",
-         "A generous assortment of char-grilled chicken tikka, chicken malai tikka, paneer tikka and achari paneer tikka skewer pieces arranged across the tray's wells, with mint chutney in one well and a lemon wedge tucked alongside, gentle wisps of steam suggesting it just came off the grill."),
+    item("Mixed Tandoori Platter", 399, "Chicken Tikka, Chicken Malai Tikka, Paneer Tikka and Achari Paneer Tikka served on one sizzling platter with mint chutney", cat, "round_plain_large",
+         "A generous assortment of char-grilled chicken tikka, chicken malai tikka, paneer tikka and achari paneer tikka skewer pieces fanned out across the platter, mint chutney in a small metal cup, thin red onion rings and a lemon wedge, gentle wisps of steam suggesting it just came off the grill."),
 ]
 
 # ---------------- Main Curries ----------------

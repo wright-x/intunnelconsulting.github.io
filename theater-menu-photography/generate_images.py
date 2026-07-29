@@ -27,9 +27,11 @@ OUT = os.path.join(BASE, "output")
 REFERENCE_IMAGES = {
     "oval_sauce_well": os.path.join(REFS, "oval-plate-sauce-well.jpeg"),
     "round_plain": os.path.join(REFS, "round-oval-plain-plate.jpeg"),
-    # wooden_tray and copper_martini reference photos are a cluttered warehouse
-    # shot and a dimension-spec diagram respectively; both risk bleeding text/
-    # background into the output, so we rely on the text prompt alone for them.
+    "round_plain_large": os.path.join(REFS, "round-oval-plain-plate.jpeg"),
+    "wooden_tray": os.path.join(REFS, "curved-wooden-tray.jpeg"),
+    # copper_martini reference photo is a dimension-spec diagram with
+    # measurement lines baked across the whole frame; relying on the text
+    # prompt alone for it to avoid that bleeding into the output.
 }
 
 MIN_2K_DIM = 1536  # below this we treat the result as a silent 1K fallback
