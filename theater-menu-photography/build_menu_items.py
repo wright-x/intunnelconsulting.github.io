@@ -15,14 +15,16 @@ STYLE_SUFFIX = (
 
 PLATEWARE = {
     "oval_sauce_well": (
-        "Presented on a matte dark charcoal-brown speckled ceramic oval plate "
+        "Presented on a matte white/off-white ceramic oval plate (NOT dark, "
+        "NOT black, NOT charcoal - the plate itself is white/cream colored) "
         "with a small built-in triangular sauce well on one side holding a "
         "matching chutney or dip, exactly like the reference plate provided."
     ),
     "round_plain": (
-        "Presented on a plain matte white/cream ceramic oval plate with a "
-        "subtle organic hand-thrown rim texture, exactly like the reference "
-        "plate provided."
+        "Presented on a plain matte white/cream ceramic oval plate (NOT dark, "
+        "NOT black, NOT charcoal - the plate itself is white/cream colored) "
+        "with a subtle organic hand-thrown rim texture, exactly like the "
+        "reference plate provided."
     ),
     "wooden_tray": (
         "Presented on a curved dark walnut wooden serving tray with several "

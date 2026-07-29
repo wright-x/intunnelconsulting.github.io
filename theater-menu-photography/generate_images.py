@@ -27,8 +27,9 @@ OUT = os.path.join(BASE, "output")
 REFERENCE_IMAGES = {
     "oval_sauce_well": os.path.join(REFS, "oval-plate-sauce-well.jpeg"),
     "round_plain": os.path.join(REFS, "round-oval-plain-plate.jpeg"),
-    "wooden_tray": os.path.join(REFS, "curved-wooden-tray.jpeg"),
-    "copper_martini": os.path.join(REFS, "copper-martini-glass.jpeg"),
+    # wooden_tray and copper_martini reference photos are a cluttered warehouse
+    # shot and a dimension-spec diagram respectively; both risk bleeding text/
+    # background into the output, so we rely on the text prompt alone for them.
 }
 
 MIN_2K_DIM = 1536  # below this we treat the result as a silent 1K fallback
@@ -119,6 +120,21 @@ def main():
 
         ref_part = load_ref_part(it["plateware"])
         print(f"[{idx}/{len(items)}] {it['name']} ({it['category']})", flush=True)
+
+        if os.path.exists(filepath):
+            try:
+                with Image.open(filepath) as im:
+                    w, h = im.size
+                if max(w, h) >= MIN_2K_DIM:
+                    print(f"  Already have {rel_path} ({w}x{h}), skipping", flush=True)
+                    manifest_rows.append([
+                        it["name"], it["category"], it["price_vnd_k"], rel_path,
+                        it["prompt"], f"{w}x{h}", "ok (pre-existing)",
+                    ])
+                    successes += 1
+                    continue
+            except Exception:
+                pass
 
         status = "ok"
         actual_res = ""
