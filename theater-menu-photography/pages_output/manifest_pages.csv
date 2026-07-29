@@ -1,2 +1,29 @@
 page_num,slug,type,title,filename,actual_resolution,status
-3,small-plates-bar-bites-1,content,Small Plates & Bar Bites,03-small-plates-bar-bites-1.png,1792x2400,ok
+1,cover,hero,cover,01-cover.png,1536x2752,ok (pre-existing)
+2,divider-small-plates,hero,divider-small-plates,02-divider-small-plates.png,1792x2400,ok
+3,small-plates-bar-bites-1,content,Small Plates & Bar Bites,03-small-plates-bar-bites-1.png,1792x2400,ok (pre-existing)
+4,small-plates-bar-bites-2,content,Small Plates & Bar Bites,04-small-plates-bar-bites-2.png,1792x2400,ok
+5,small-plates-bar-bites-3,content,Small Plates & Bar Bites,05-small-plates-bar-bites-3.png,1792x2400,ok
+6,chaat-fast-sellers-1,content,Chaat & Fast Sellers,06-chaat-fast-sellers-1.png,1792x2400,ok
+7,chaat-fast-sellers-2,content,Chaat & Fast Sellers,07-chaat-fast-sellers-2.png,1792x2400,ok
+8,divider-tandoor,hero,divider-tandoor,08-divider-tandoor.png,1792x2400,ok
+9,tandoor-grill-1,content,Tandoor & Grill,09-tandoor-grill-1.png,1792x2400,ok
+10,tandoor-grill-2,content,Tandoor & Grill,10-tandoor-grill-2.png,1792x2400,ok
+11,main-curries-1,content,Main Curries,11-main-curries-1.png,1792x2400,ok
+12,main-curries-2,content,Main Curries,12-main-curries-2.png,1792x2400,ok
+13,main-curries-3,content,Main Curries,13-main-curries-3.png,1792x2400,ok
+14,seafood-curries-1,content,Seafood Curries,14-seafood-curries-1.png,1792x2400,ok
+15,breads-1,content,Breads,15-breads-1.png,1792x2400,ok
+16,breads-2,content,Breads,16-breads-2.png,1792x2400,ok
+17,divider-rice,hero,divider-rice,17-divider-rice.png,1792x2400,ok
+18,rice-khichdi-1,content,Rice & Khichdi,18-rice-khichdi-1.png,1792x2400,ok
+19,biryani-1,content,Biryani,19-biryani-1.png,1792x2400,ok
+20,divider-bar,hero,divider-bar,20-divider-bar.png,1792x2400,ok
+21,drinks-1,content,Drinks,21-drinks-1.png,1792x2400,ok
+22,coffee-1,content,Coffee,22-coffee-1.png,1792x2400,ok
+23,juices-smoothies-iced-tea-1,content,"Juices, Smoothies & Iced Tea",23-juices-smoothies-iced-tea-1.png,1792x2400,ok
+24,juices-smoothies-iced-tea-2,content,"Juices, Smoothies & Iced Tea",24-juices-smoothies-iced-tea-2.png,1792x2400,ok
+25,divider-desserts,hero,divider-desserts,25-divider-desserts.png,1792x2400,ok
+26,desserts-1,content,Desserts,26-desserts-1.png,1792x2400,ok
+27,closing,hero,closing,27-closing.png,1792x2400,ok
+27,closing,hero,closing,27-closing.png,1792x2400,ok
