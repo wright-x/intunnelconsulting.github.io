@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
-"""Groups menu_items.json into full designed menu PAGES (layout + typography +
-prices + icons baked into one image), plus standalone hero/background pages,
-and writes menu_pages.json with a Nano Banana prompt per page."""
+"""Groups menu_items.json into full designed menu PAGES using an asymmetric
+editorial layout (hero dish + cascading secondary dishes, cutout photography
+with soft contact shadows, fixed A4 typography/color system), plus standalone
+hero/background pages. Writes menu_pages.json with a JSON-structured Nano
+Banana prompt per page."""
 import json
+import math
 import os
 import re
 
@@ -59,152 +62,297 @@ CHEF_RECOMMENDED = {
     "Mango Lassi", "Kadai Chicken",
 }
 
+TAGLINES = {
+    "Small Plates & Bar Bites": "Light, bold and made for sharing.",
+    "Chaat & Fast Sellers": "India's most loved street food classics.",
+    "Tandoor & Grill": "Fire-grilled flavors. Timeless indulgence.",
+    "Main Curries": "Slow-cooked Indian classics prepared with rich spices and traditional recipes.",
+    "Seafood Curries": "Coastal Indian flavors featuring fresh seafood and aromatic spices.",
+    "Breads": "Freshly baked in our tandoor; soft, flavorful and made to perfection.",
+    "Rice & Khichdi": "Fragrant basmati rice and traditional Indian rice specialties.",
+    "Biryani": "Traditional dum-cooked biryanis layered with aromatic spices and premium ingredients.",
+    "Drinks": "Refreshing beverages to complement your meal.",
+    "Coffee": "Freshly brewed coffee crafted for every mood.",
+    "Juices, Smoothies & Iced Tea": "Refreshing sips for every moment.",
+    "Desserts": "The perfect finale to your meal.",
+}
+
 
 def photo_path(item):
     p = os.path.join(BASE, "output", category_slug(item["category"]), f"{item['slug']}.png")
     return p if os.path.exists(p) else None
 
 
-def chunk(lst, size):
-    for i in range(0, len(lst), size):
-        yield lst[i:i + size]
+def balanced_chunks(lst, max_size):
+    n = len(lst)
+    if n == 0:
+        return []
+    num_pages = math.ceil(n / max_size)
+    base, rem = divmod(n, num_pages)
+    sizes = [base + 1] * rem + [base] * (num_pages - rem)
+    out, i = [], 0
+    for s in sizes:
+        out.append(lst[i:i + s])
+        i += s
+    return out
 
 
-STYLE_GUIDE = (
-    "Render this as a FLAT, front-on, full-bleed page design filling the "
-    "entire frame edge-to-edge — NOT a 3D mockup, NOT shown at an angle or "
-    "propped up, NO drop shadow around the page edges, NO book/binder/table "
-    "framing. The image itself IS the printed page, viewed perfectly "
-    "straight-on like a scanned document. "
-    "Premium editorial restaurant menu page design, bright and clean. Soft "
-    "white/light warm-marble background with subtle natural texture, generous "
-    "whitespace, delicate thin gold-black hairline rules and dotted price "
-    "leaders. Elegant modern serif headline typography for the restaurant "
-    "wordmark 'THE THEATER' with small refined tracked-out caps subtitle "
-    "'INDIAN KITCHEN & BAR', and a clean modern sans-serif for dish names, "
-    "descriptions and prices. High-end food photography styling for every "
-    "dish shown, shot in soft bright studio light, shallow depth of field. "
-    "Small minimal line-art icons: a tiny green circle outline with a leaf "
-    "for vegetarian dishes placed beside the dish name, one to three small "
-    "red chili-pepper outline icons beside the dish name indicating spice "
-    "level, and a small elegant gold star-ribbon badge labeled 'CHEF'S "
-    "RECOMMENDED' beside any dish marked as recommended. Consistent premium "
-    "restaurant branding throughout, magazine-quality layout, no clutter. "
-    "2K quality, ultra-detailed, photorealistic food, sharp typography. No "
-    "spelling mistakes. No stray watermarks, no phone UI, no random extra text."
+PAGE_MAX_ITEMS = 6
+
+NEGATIVE_PROMPT = (
+    "no watermark, no stock logo, no placeholder text, no white background "
+    "box behind photos, no uniform symmetric grid, no flat gray drop shadow, "
+    "no generic clipart icons, do not change page size or aspect ratio, no "
+    "3D mockup / no tilted book rendering / no drop shadow around the page "
+    "edges — the image IS the flat page itself, viewed straight-on."
+)
+
+PAGE_SPEC_HEADER = {
+    "format": "A4 portrait — LOCKED",
+    "dimensions_mm": [210, 297],
+    "dimensions_px_at_300dpi": [2480, 3508],
+    "orientation": "portrait, do not rotate or crop to any other aspect ratio",
+    "background_color": "#F6F3EC",
+    "background_texture": "subtle warm paper tone, faint radial gradient top-right only, no grain, no noise",
+}
+
+TYPOGRAPHY = {
+    "note": "Use this exact pairing on every page for brand consistency",
+    "display_serif": "Fraunces or Canela — for numerals, taglines, italic accents",
+    "sans": "Neue Haas Grotesk or General Sans — for dish names, prices, headline",
+    "mood": "soft, warm, boutique restaurant",
+    "sizes_pt": {
+        "eyebrow": 10, "main_title": 30, "tagline": 11.5,
+        "hero_dish_name": 21, "hero_description": 10.5, "hero_price": 13,
+        "secondary_dish_name": 13.5, "secondary_description": 9, "footer": 7.5,
+    },
+    "colors": {
+        "ink": "#1A1714", "muted_text": "#5c564c", "faint_gray": "#8a8377",
+        "veg_green": "#4b7a4a", "spice_red": "#b3402a", "hairline": "#d8d2c4",
+    },
+    "rules": [
+        "all dish names uppercase, bold weight",
+        "all descriptions in the serif at light/regular weight, never bold",
+        "numerals (1., 2., 3...) always in the display serif at light weight, pale gray, never black",
+        "no more than 2 font families total on the page",
+    ],
+}
+
+PHOTO_TREATMENT = {
+    "background_removal": (
+        "Each attached reference photo shows the true appearance of that "
+        "plated dish (plate/glass, food, garnish, dip). Extract ONLY the "
+        "plate/glass and its food contents as a clean cutout — completely "
+        "remove the reference photo's own white/light background so nothing "
+        "of it remains as a box, square or frame. Preserve the plate, dip "
+        "bowls and garnish exactly as photographed."
+    ),
+    "shadow_only": (
+        "soft realistic contact shadow beneath the plate, warm dark "
+        "brown-black (~#14100A), heavily blurred, slight downward offset — "
+        "never a hard-edged or flat gray shadow"
+    ),
+    "crop": "trimmed tightly to content bounding box, no frame, no border",
+    "size_variation": {
+        "hero": "large, ~45% of page width",
+        "secondary_items": "medium, ~28-32% of page width each, slightly varied so no two feel identical",
+    },
+}
+
+BRAND_MARKS_ROW = {
+    "count": 3,
+    "style": "small thin-line icon above a 2-line micro caption, all caps, letter-spaced, gray-brown",
+    "labels": ["Fresh Sourced", "Hand Crafted", "Made With Care"],
+}
+
+OVERALL_MOOD = (
+    "premium editorial restaurant menu, generous negative space, confident "
+    "asymmetry, dishes floating with only a soft shadow grounding them, "
+    "refined mixed serif/sans typography, art-directed not templated"
 )
 
 
-def build_content_prompt(category, page_items, page_num, total_pages_in_cat):
-    lines = [STYLE_GUIDE]
-    lines.append(
-        f"This page is titled '{category.upper()}' (page {page_num} of "
-        f"{total_pages_in_cat} for this section) — render the section title "
-        "prominently near the top of the page beneath the restaurant wordmark."
+def veg_tag(is_v):
+    return "small green outlined square + 'VEGETARIAN' label" if is_v else None
+
+
+def spice_tag(level):
+    if level <= 0:
+        return None
+    return f"{level} small outlined chili-pepper icon(s) in {TYPOGRAPHY['colors']['spice_red']}, labeled 'SPICE LEVEL' beneath in micro caption"
+
+
+def build_item_block(it, num, side=None, hero=False):
+    block = {
+        ("number_mark" if hero else "num"): f"{num}." if hero else num,
+        "name": it["name"],
+        "price": f"{it['price_vnd_k']}K",
+        "description": it["description"],
+        "reference_photo_note": (
+            "Food styling reference for this exact dish is attached as an "
+            "image; use it as the true appearance of the plated dish — do "
+            "not invent a different dish."
+        ),
+    }
+    if side:
+        block["side"] = side
+    vt = veg_tag(it["_veg"])
+    if vt:
+        block["veg_tag"] = vt
+    st = spice_tag(it["_spice"])
+    if st:
+        block["spice_tag"] = st
+    if hero and it["_chef_rec"]:
+        block["badge"] = {
+            "text": "CHEF'S RECOMMENDED",
+            "style": "small solid black pill, white bold uppercase text, overlapping top-left of photo",
+        }
+    return block
+
+
+def build_content_prompt(category, page_items, page_num_in_cat, total_pages_in_cat):
+    # pick hero: prefer a chef-recommended item, else first item
+    hero_idx = 0
+    for i, it in enumerate(page_items):
+        if it["_chef_rec"]:
+            hero_idx = i
+            break
+    hero_item = page_items[hero_idx]
+    secondary = [it for i, it in enumerate(page_items) if i != hero_idx]
+
+    secondary_blocks = []
+    for i, it in enumerate(secondary):
+        side = "left" if i % 2 == 0 else "right"
+        secondary_blocks.append(build_item_block(it, num=i + 2, side=side))
+
+    title = category.upper()
+    if total_pages_in_cat > 1:
+        title += f" ({page_num_in_cat}/{total_pages_in_cat})"
+
+    spec = {
+        "page": PAGE_SPEC_HEADER,
+        "negative_prompt": NEGATIVE_PROMPT,
+        "layout_logic": (
+            "asymmetric editorial composition — one large hero dish at top, "
+            "remaining dishes staggered in an alternating left/right cascade "
+            "down the page, connected to their text block via a short thin "
+            "leader line. NOT a symmetric grid."
+        ),
+        "header": {
+            "brand_marks_row": BRAND_MARKS_ROW,
+            "eyebrow": {
+                "text": "THE THEATER — INDIAN KITCHEN & BAR",
+                "note": "use this exact text, do not substitute a generic placeholder",
+            },
+            "title": {"text": title, "position": "top-right block, right-aligned"},
+            "tagline": {
+                "text": TAGLINES.get(category, ""),
+                "position": "left-aligned below header row, divider line beneath",
+            },
+        },
+        "typography": TYPOGRAPHY,
+        "photo_treatment": PHOTO_TREATMENT,
+        "hero_item": build_item_block(hero_item, num=1, hero=True),
+        "secondary_items": secondary_blocks,
+        "footer": {
+            "text": (
+                "All prices are in thousand VND (d). VAT and service charge "
+                "is extra. Images are for representation purposes only."
+            ),
+            "style": "small italic serif, centered, muted gray, thin hairline divider above",
+        },
+        "overall_mood": OVERALL_MOOD,
+    }
+    prompt_text = (
+        "Design this restaurant menu page precisely according to the "
+        "following JSON art-direction spec. Render all specified text "
+        "exactly as given (dish names, prices, descriptions, header/footer "
+        "copy) — do not invent different names or prices. Attached images, "
+        "in the same order as hero_item then secondary_items, are the true "
+        "food-styling references for each dish.\n\n"
+        + json.dumps(spec, indent=2, ensure_ascii=False)
     )
-    lines.append(
-        "Lay out the following dishes on this single page, each with its own "
-        "photo, name, price and description rendered EXACTLY as given below "
-        "(render this precise text, do not invent different names/prices):"
-    )
-    for it in page_items:
-        veg_txt = "VEGETARIAN (show the green leaf icon)" if it["_veg"] else "non-vegetarian (no leaf icon)"
-        spice = it["_spice"]
-        spice_txt = f"{spice} chili icon(s)" if spice > 0 else "no chili icon"
-        chef_txt = " Mark this dish with the CHEF'S RECOMMENDED gold ribbon badge." if it["_chef_rec"] else ""
-        lines.append(
-            f"- \"{it['name']}\" — {it['price_vnd_k']}K VND — \"{it['description']}\". "
-            f"{veg_txt}. Spice level: {spice_txt}.{chef_txt} "
-            f"Food styling reference for this exact dish is attached as an image; "
-            f"use it as the true appearance of the plated dish in this layout."
-        )
-    lines.append(
-        "Footnote at the bottom in small type: 'All prices are in thousand VND "
-        "(d). VAT and service charge is extra.'"
-    )
-    return " ".join(lines)
+    ordered_items = [hero_item] + secondary
+    return prompt_text, ordered_items
 
 
 HERO_PROMPTS = [
-    ("cover", (
-        STYLE_GUIDE + " This is the FRONT COVER of the menu: a full-bleed, "
-        "atmospheric, single beautiful hero image with no dish list. Show an "
-        "elegant overhead flat-lay of aromatic Indian spices (star anise, "
-        "cinnamon sticks, cardamom pods, dried red chilies, saffron threads) "
-        "scattered artfully on a warm marble surface with soft directional "
-        "light and gentle shadow. Centered near the top, render the restaurant "
-        "wordmark 'THE THEATER' in elegant serif type with the small tracked "
-        "caps subtitle 'INDIAN KITCHEN & BAR' beneath it, and beneath that in "
-        "small italic type: 'Dương Đông, Phú Quốc'. No other text, no dish "
-        "photos, no menu items on this page."
-    )),
     ("divider-small-plates", (
-        STYLE_GUIDE + " This is a SECTION DIVIDER page with no dish list and "
-        "no prices — just one beautiful full-bleed atmospheric photograph: a "
-        "close-up of golden crispy fried snacks and small plates being "
-        "plated, steam and texture visible, shallow depth of field, on a "
-        "bright marble surface. Render only a small elegant section label "
-        "near the bottom: 'SMALL PLATES, BAR BITES & CHAAT'."
+        "Design a full-bleed A4 portrait (2480x3508px @300dpi) restaurant menu "
+        "SECTION DIVIDER page, background color #F6F3EC with a subtle warm "
+        "radial gradient top-right, flat and front-on (not a mockup, no page "
+        "shadow, fills the entire frame). No dish list, no prices — just one "
+        "beautiful photograph: a close-up of golden crispy fried snacks and "
+        "small plates being plated, steam and texture visible, shallow depth "
+        "of field, shot on a warm paper-toned surface. Render only a small "
+        "elegant section label near the bottom in the serif/sans pairing "
+        "(Fraunces/Canela + Neue Haas Grotesk), ink color #1A1714: 'SMALL "
+        "PLATES, BAR BITES & CHAAT'. No watermark, no stock logo, no other text."
     )),
     ("divider-tandoor", (
-        STYLE_GUIDE + " This is a SECTION DIVIDER page with no dish list and "
-        "no prices — just one beautiful full-bleed atmospheric photograph: "
-        "glowing charcoal embers inside a traditional clay tandoor oven with "
-        "a skewer of char-grilled tikka just visible at the edge of frame, "
-        "warm dramatic light, shallow depth of field. Render only a small "
-        "elegant section label near the bottom: 'TANDOOR, GRILL & MAIN "
-        "CURRIES'."
+        "Design a full-bleed A4 portrait (2480x3508px @300dpi) restaurant menu "
+        "SECTION DIVIDER page, background color #F6F3EC with a subtle warm "
+        "radial gradient top-right, flat and front-on (not a mockup, no page "
+        "shadow, fills the entire frame). No dish list, no prices — just one "
+        "beautiful photograph: glowing charcoal embers inside a traditional "
+        "clay tandoor oven with a skewer of char-grilled tikka just visible "
+        "at the edge of frame, warm dramatic light, shallow depth of field. "
+        "Render only a small elegant section label near the bottom in the "
+        "serif/sans pairing (Fraunces/Canela + Neue Haas Grotesk), ink color "
+        "#1A1714: 'TANDOOR, GRILL & MAIN CURRIES'. No watermark, no stock "
+        "logo, no other text."
     )),
     ("divider-rice", (
-        STYLE_GUIDE + " This is a SECTION DIVIDER page with no dish list and "
-        "no prices — just one beautiful full-bleed atmospheric photograph: a "
-        "dramatic close-up of fragrant basmati biryani rice being served from "
-        "a hammered copper handi with steam rising, on a bright marble "
-        "surface. Render only a small elegant section label near the bottom: "
-        "'RICE, KHICHDI & BIRYANI'."
+        "Design a full-bleed A4 portrait (2480x3508px @300dpi) restaurant menu "
+        "SECTION DIVIDER page, background color #F6F3EC with a subtle warm "
+        "radial gradient top-right, flat and front-on (not a mockup, no page "
+        "shadow, fills the entire frame). No dish list, no prices — just one "
+        "beautiful photograph: a dramatic close-up of fragrant basmati "
+        "biryani rice being served from a hammered copper handi with steam "
+        "rising, on a warm paper-toned surface. Render only a small elegant "
+        "section label near the bottom in the serif/sans pairing "
+        "(Fraunces/Canela + Neue Haas Grotesk), ink color #1A1714: 'RICE, "
+        "KHICHDI & BIRYANI'. No watermark, no stock logo, no other text."
     )),
     ("divider-bar", (
-        STYLE_GUIDE + " This is a SECTION DIVIDER page with no dish list and "
-        "no prices — just one beautiful full-bleed atmospheric photograph: an "
-        "elegant flat-lay of drink glassware — a copper mug, a tall glass of "
-        "iced lassi, fresh mint and citrus — on a bright marble surface with "
-        "soft light. Render only a small elegant section label near the "
-        "bottom: 'DRINKS, COFFEE & JUICES'."
+        "Design a full-bleed A4 portrait (2480x3508px @300dpi) restaurant menu "
+        "SECTION DIVIDER page, background color #F6F3EC with a subtle warm "
+        "radial gradient top-right, flat and front-on (not a mockup, no page "
+        "shadow, fills the entire frame). No dish list, no prices — just one "
+        "beautiful photograph: an elegant flat-lay of drink glassware — a "
+        "copper mug, a tall glass of iced lassi, fresh mint and citrus — on "
+        "a warm paper-toned surface with soft light. Render only a small "
+        "elegant section label near the bottom in the serif/sans pairing "
+        "(Fraunces/Canela + Neue Haas Grotesk), ink color #1A1714: 'DRINKS, "
+        "COFFEE & JUICES'. No watermark, no stock logo, no other text."
     )),
     ("divider-desserts", (
-        STYLE_GUIDE + " This is a SECTION DIVIDER page with no dish list and "
-        "no prices — just one beautiful full-bleed atmospheric photograph: a "
-        "close-up of glossy gulab jamun in saffron syrup with a scoop of "
-        "vanilla ice cream, soft bright light, shallow depth of field, on a "
-        "bright marble surface. Render only a small elegant section label "
-        "near the bottom: 'DESSERTS'."
+        "Design a full-bleed A4 portrait (2480x3508px @300dpi) restaurant menu "
+        "SECTION DIVIDER page, background color #F6F3EC with a subtle warm "
+        "radial gradient top-right, flat and front-on (not a mockup, no page "
+        "shadow, fills the entire frame). No dish list, no prices — just one "
+        "beautiful photograph: a close-up of glossy gulab jamun in saffron "
+        "syrup with a scoop of vanilla ice cream, soft bright light, shallow "
+        "depth of field, on a warm paper-toned surface. Render only a small "
+        "elegant section label near the bottom in the serif/sans pairing "
+        "(Fraunces/Canela + Neue Haas Grotesk), ink color #1A1714: "
+        "'DESSERTS'. No watermark, no stock logo, no other text."
     )),
     ("closing", (
-        STYLE_GUIDE + " This is the CLOSING / thank-you page of the menu: a "
-        "full-bleed, elegant, softly lit photograph of an empty premium table "
-        "setting — folded linen napkin, cutlery, a single small candle lantern "
-        "— on a warm marble surface. Centered, render in elegant serif type: "
-        "'DHANYAWAD' with smaller italic type beneath: 'Thank you for dining "
-        "with us.' and beneath that the wordmark 'THE THEATER' with small "
-        "caps subtitle 'INDIAN KITCHEN & BAR', and small type: '152 Đường Trần "
-        "Hưng Đạo, Dương Đông, Phú Quốc'. No dish photos, no prices."
+        "Design a full-bleed A4 portrait (2480x3508px @300dpi) restaurant menu "
+        "CLOSING / thank-you page, background color #F6F3EC with a subtle "
+        "warm radial gradient top-right, flat and front-on (not a mockup, no "
+        "page shadow, fills the entire frame). A softly lit photograph of an "
+        "empty premium table setting — folded linen napkin, cutlery, a "
+        "single small candle lantern — on a warm paper-toned surface. "
+        "Centered, render in the display serif (Fraunces/Canela), ink color "
+        "#1A1714: 'DHANYAWAD' with smaller italic type beneath: 'Thank you "
+        "for dining with us.' and beneath that the wordmark 'THE THEATER' "
+        "with small tracked caps subtitle 'INDIAN KITCHEN & BAR', and small "
+        "type: '152 Duong Tran Hung Dao, Duong Dong, Phu Quoc'. No dish "
+        "photos, no prices, no watermark, no stock logo."
     )),
 ]
-
-PAGE_ITEMS_PER_PAGE = {
-    "Small Plates & Bar Bites": 4,
-    "Chaat & Fast Sellers": 4,
-    "Tandoor & Grill": 3,
-    "Main Curries": 4,
-    "Seafood Curries": 3,
-    "Breads": 4,
-    "Rice & Khichdi": 3,
-    "Biryani": 5,
-    "Drinks": 6,
-    "Coffee": 4,
-    "Juices, Smoothies & Iced Tea": 4,
-    "Desserts": 5,
-}
 
 CATEGORY_ORDER = [
     "Small Plates & Bar Bites",
@@ -221,7 +369,6 @@ CATEGORY_ORDER = [
     "Desserts",
 ]
 
-# where hero dividers get inserted, keyed by the category they precede
 DIVIDER_BEFORE = {
     "Small Plates & Bar Bites": "divider-small-plates",
     "Tandoor & Grill": "divider-tandoor",
@@ -233,23 +380,23 @@ DIVIDER_BEFORE = {
 pages = []
 page_num = 1
 
+# Page 1 is the existing cover — kept as a placeholder record, not regenerated.
+pages.append({
+    "page_num": page_num, "type": "hero", "slug": "cover", "title": "cover",
+    "items": [], "reference_photos": [], "prompt": "(kept from previous run — not regenerated)",
+})
+page_num += 1
+
 
 def add_hero(key):
     global page_num
     prompt = dict(HERO_PROMPTS)[key]
     pages.append({
-        "page_num": page_num,
-        "type": "hero",
-        "slug": key,
-        "title": key,
-        "items": [],
-        "reference_photos": [],
-        "prompt": prompt,
+        "page_num": page_num, "type": "hero", "slug": key, "title": key,
+        "items": [], "reference_photos": [], "prompt": prompt,
     })
     page_num += 1
 
-
-add_hero("cover")
 
 for cat in CATEGORY_ORDER:
     if cat in DIVIDER_BEFORE:
@@ -261,11 +408,11 @@ for cat in CATEGORY_ORDER:
         it["_spice"] = spice_level(it)
         it["_chef_rec"] = it["name"] in CHEF_RECOMMENDED
 
-    size = PAGE_ITEMS_PER_PAGE[cat]
-    page_groups = list(chunk(cat_items, size))
+    page_groups = balanced_chunks(cat_items, PAGE_MAX_ITEMS)
     total_pages_in_cat = len(page_groups)
     for i, group in enumerate(page_groups, 1):
-        refs = [photo_path(it) for it in group]
+        prompt_text, ordered_items = build_content_prompt(cat, group, i, total_pages_in_cat)
+        refs = [photo_path(it) for it in ordered_items]
         pages.append({
             "page_num": page_num,
             "type": "content",
@@ -278,10 +425,10 @@ for cat in CATEGORY_ORDER:
                     "spice": it["_spice"], "chef_recommended": it["_chef_rec"],
                     "photo": photo_path(it),
                 }
-                for it in group
+                for it in ordered_items
             ],
             "reference_photos": [r for r in refs if r],
-            "prompt": build_content_prompt(cat, group, i, total_pages_in_cat),
+            "prompt": prompt_text,
         })
         page_num += 1
 

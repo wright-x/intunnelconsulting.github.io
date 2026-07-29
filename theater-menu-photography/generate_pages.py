@@ -41,7 +41,7 @@ def call_gemini(prompt, ref_paths, max_retries=5):
         "contents": [{"parts": parts}],
         "generationConfig": {
             "responseModalities": ["TEXT", "IMAGE"],
-            "imageConfig": {"imageSize": "2K"},
+            "imageConfig": {"imageSize": "2K", "aspectRatio": "3:4"},
         },
     }
     headers = {"x-goog-api-key": API_KEY, "Content-Type": "application/json"}
@@ -83,6 +83,19 @@ def main():
         filepath = os.path.join(OUT, filename)
 
         print(f"[{p['page_num']}/{len(pages)}] {p['slug']} ({p['type']})", flush=True)
+
+        if os.path.exists(filepath):
+            try:
+                with Image.open(filepath) as im:
+                    w, h = im.size
+                if max(w, h) >= MIN_2K_DIM:
+                    print(f"  Already have {filename} ({w}x{h}), skipping", flush=True)
+                    manifest_rows.append([p["page_num"], p["slug"], p["type"], p["title"],
+                                           filename, f"{w}x{h}", "ok (pre-existing)"])
+                    successes += 1
+                    continue
+            except Exception:
+                pass
 
         img_bytes, err = call_gemini(p["prompt"], p["reference_photos"])
         if img_bytes is None:
