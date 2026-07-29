@@ -1,0 +1,4 @@
+page_num,slug,type,title,filename,actual_resolution,status
+1,cover,hero,cover,01-cover.png,1536x2752,ok
+3,small-plates-bar-bites-1,content,Small Plates & Bar Bites,03-small-plates-bar-bites-1.png,1728x2464,ok
+1,cover,hero,cover,01-cover.png,1728x2464,ok
