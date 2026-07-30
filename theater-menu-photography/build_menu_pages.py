@@ -105,7 +105,7 @@ def balanced_chunks(lst, max_size):
     return out
 
 
-PAGE_MAX_ITEMS = 4
+PAGE_MAX_ITEMS = 5
 
 STYLE_PROSE = (
     "This is one page of a printed restaurant menu, A4 portrait, full-bleed, "
@@ -175,8 +175,19 @@ TAG_SPEC_PROSE = (
 )
 
 
+PHOTO_TREATMENT_PROSE = (
+    "Each numbered reference photo shows the true appearance of that exact "
+    "dish on its plate or glass — extract it as a clean cutout with its own "
+    "white background completely removed, and place it on the page floating "
+    "on a soft realistic warm dark-brown contact shadow beneath it (never a "
+    "hard-edged box, never a visible white or gray rectangle around the "
+    "photo)."
+)
+
+
 def build_item_block_prose(num, item, hero=False):
-    parts = [f"Item {num}: '{item['name']}' — {item['price_vnd_k']}K."]
+    size_note = "LARGE (about 45% of the page width)" if hero else "smaller (about 28% of the page width, same size as the other secondary photos)"
+    parts = [f"Item {num}: '{item['name']}' — {item['price_vnd_k']}K. Photo size: {size_note}."]
     parts.append(f"Description: {item['description']}")
     if item.get("_chef_rec"):
         parts.append(
@@ -200,32 +211,43 @@ def build_content_prompt(category, page_items, page_num_in_cat, total_pages_in_c
         it["_show_tags"] = category not in NO_TAGS_CATEGORIES
 
     title = category.upper()
+    hero_idx = 0
+    for i, it in enumerate(page_items):
+        if it.get("_chef_rec"):
+            hero_idx = i
+            break
+    hero = page_items[hero_idx]
+    secondary = [it for i, it in enumerate(page_items) if i != hero_idx]
 
-    item_blocks = []
-    for i, it in enumerate(page_items, 1):
-        item_blocks.append(build_item_block_prose(i, it))
+    item_blocks = [build_item_block_prose(1, hero, hero=True)]
+    for i, it in enumerate(secondary, 2):
+        item_blocks.append(build_item_block_prose(i, it, hero=False))
+
+    ordered_items = [hero] + secondary
 
     prompt = (
-        STYLE_PROSE + " " + NEGATIVE_PROSE + " " + TAG_SPEC_PROSE + "\n\n"
+        STYLE_PROSE + " " + NEGATIVE_PROSE + " " + TAG_SPEC_PROSE + " "
+        + PHOTO_TREATMENT_PROSE + "\n\n"
         + build_header_prose(title, TAGLINES.get(category, "")) + "\n\n"
-        + "Below the header, lay out the following " + str(len(page_items))
-        + " menu items as a simple vertical list, one row per item, evenly "
-        + "spaced down the page. Every item's photo is the exact same size "
-        + "as every other item's photo on this page — no item is enlarged "
-        + "or treated as a hero, they are all equal. Each row: the numbered "
-        + "photo on the left (attached as a reference image, in the same "
-        + "order as listed below — use each reference photo only for its "
-        + "own numbered item, do not mix reference photos between items), "
-        + "and beside it on the right: the item number, the dish name in "
-        + "bold capitals with its price bold and right-aligned on the same "
-        + "line, the description in regular weight beneath, and beneath "
-        + "that any vegetarian/spice tags exactly as specified. Each dish's "
-        + "name, price and description belong only to that one dish — never "
-        + "swap or mix text between different items on the page.\n\n"
+        + "Below the header, use a confident asymmetric editorial layout, "
+        + "generous negative space, dishes floating with only a soft shadow "
+        + "grounding them — art-directed, not a rigid grid. Item 1 is the "
+        + "HERO: its large photo sits near the top of the content area, with "
+        + "its number, name, price and description in larger type beside "
+        + "it. The remaining " + str(len(secondary)) + " items are "
+        + "SECONDARY: their smaller photos (all the same smaller size as "
+        + "each other) are staggered down the rest of the page, alternating "
+        + "left and right sides for visual rhythm, each with its own "
+        + "number, name, price and description in normal type directly "
+        + "beside its own photo — normal spacing only, absolutely NO line, "
+        + "arrow, or connector drawn between any photo and its text. Each "
+        + "reference photo, in the order listed below, corresponds to "
+        + "exactly one numbered item — do not mix, duplicate, or swap "
+        + "reference photos or text between items.\n\n"
         + " ".join(item_blocks) + "\n\n"
         + FOOTER_PROSE
     )
-    return prompt, page_items
+    return prompt, ordered_items
 
 
 HERO_PROMPTS = [
