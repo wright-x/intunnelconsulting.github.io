@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
-"""Groups menu_items.json into full designed menu PAGES using a simple,
-reliable uniform-list layout (photo + text row per item, same treatment for
-every item) instead of the earlier hero+cascade approach — the cascade's
-"leader line" concept was causing stray arrows and leaked instruction text
-in generation. Prompts are plain prose (no JSON dumps, no field labels) to
-avoid the model rendering internal instruction text onto the page."""
+"""Groups menu_items.json into full designed menu PAGES using an asymmetric
+hero+cascade layout. Prompts are plain prose (no JSON dumps, no field
+labels) to avoid the model rendering internal instruction text onto the
+page. Veg and non-veg items are NEVER mixed on the same page. Categories
+that are uniformly vegetarian/non-spicy get no per-item tags at all."""
 import json
 import math
 import os
@@ -86,6 +85,21 @@ TAGLINES = {
 }
 
 
+def cap_sentence(s):
+    """Capitalize the first letter of the string and after each '. '."""
+    parts = re.split(r"(\. )", s)
+    out = []
+    cap_next = True
+    for part in parts:
+        if cap_next and part and part not in (". ",):
+            part = part[0].upper() + part[1:]
+            cap_next = False
+        if part == ". ":
+            cap_next = True
+        out.append(part)
+    return "".join(out)
+
+
 def photo_path(item):
     p = os.path.join(BASE, "output", category_slug(item["category"]), f"{item['slug']}.png")
     return p if os.path.exists(p) else None
@@ -105,7 +119,15 @@ def balanced_chunks(lst, max_size):
     return out
 
 
-PAGE_MAX_ITEMS = 5
+def veg_split_chunks(items, max_size):
+    """Split into veg-only and non-veg-only chunks — a page never mixes
+    vegetarian and non-vegetarian items."""
+    veg = [it for it in items if it["_veg"]]
+    nonveg = [it for it in items if not it["_veg"]]
+    return balanced_chunks(veg, max_size) + balanced_chunks(nonveg, max_size)
+
+
+PAGE_MAX_ITEMS = 4
 
 STYLE_PROSE = (
     "This is one page of a printed restaurant menu, A4 portrait, full-bleed, "
@@ -114,14 +136,18 @@ STYLE_PROSE = (
     "behind the page. The page background is a warm off-white/cream color "
     "(hex F6F3EC) with a very subtle warm gradient in the top-right corner "
     "only, otherwise a clean flat color, no visible texture or noise. "
-    "Typography: use exactly ONE elegant modern serif typeface for numerals "
-    "and small italic accents, and exactly ONE clean modern sans-serif "
-    "typeface for dish names, prices and body text — the same two typefaces, "
-    "same weights, same sizes, same spacing as every other page in this "
-    "menu set, so the whole set reads as one consistent printed document. "
-    "Ink color for headings and prices is a near-black warm brown (hex "
-    "1A1714); body/description text is a muted warm gray-brown (hex "
-    "5C564C); thin hairline rules are a pale warm gray (hex D8D2C4)."
+    "Typography: use exactly ONE elegant premium serif typeface for "
+    "EVERYTHING on the page — the section title, dish names, prices, "
+    "numerals, and the smaller description paragraphs — the same serif "
+    "family, same weights, same spacing as every other page in this menu "
+    "set, so the whole set reads as one consistent printed document. Do not "
+    "use a plain sans-serif anywhere; the whole page including the small "
+    "description text is set in the elegant serif. Every line of text uses "
+    "correct sentence capitalization (capital letter at the start of each "
+    "sentence), never all-lowercase. Ink color for headings, dish names and "
+    "prices is a near-black warm brown (hex 1A1714); description text is a "
+    "muted warm gray-brown (hex 5C564C); thin hairline rules are a pale warm "
+    "gray (hex D8D2C4)."
 )
 
 NEGATIVE_PROSE = (
@@ -135,7 +161,8 @@ NEGATIVE_PROSE = (
     "number, page count, or fraction like '(1/3)' anywhere on the page. Do "
     "not add any decorative background food, extra copies of a dish, or "
     "any item that is not explicitly listed below — the background stays "
-    "clean and empty apart from the listed items."
+    "clean and empty apart from the listed items. Never repeat the same "
+    "photo twice for two different items."
 )
 
 
@@ -164,16 +191,29 @@ FOOTER_PROSE = (
 )
 
 TAG_SPEC_PROSE = (
-    "Vegetarian icon: a small solid green leaf silhouette immediately "
-    "followed by the word 'VEGETARIAN' in small bold green tracked-out "
-    "capitals — use this exact same leaf icon and same wording, same size, "
-    "every single time it appears, never a different veg symbol. Spice "
-    "icon: small solid red chili-pepper silhouettes, one icon per spice "
-    "level (1 icon = mild, 2 = medium, 3 = hot) — use this exact same chili "
-    "silhouette shape every single time, never dots, never a different "
-    "shape, and never a text label next to it."
+    "Vegetarian icon (ONLY for items explicitly marked VEGETARIAN below): a "
+    "small solid green leaf silhouette immediately followed by the word "
+    "'VEGETARIAN' in small bold green tracked-out capitals — use this exact "
+    "same leaf icon and same wording, same size, every single time. For any "
+    "item that is explicitly marked NOT VEGETARIAN below (chicken, prawn, "
+    "fish, egg, or any meat/seafood dish), you must NOT show the leaf icon, "
+    "the word VEGETARIAN, or anything green near it — leave that space "
+    "completely blank instead, do not write any other word there either "
+    "(no 'non-veg', no 'mild', no 'medium', nothing). Spice icon (only "
+    "when a spice level is given below): small solid red chili-pepper "
+    "silhouettes, one icon per spice level (1 icon = mild, 2 = medium, 3 = "
+    "hot) — use this exact same chili silhouette shape every single time, "
+    "never dots, never a different shape, and never any text label next to "
+    "the chili icons — just the icons alone, no words like 'mild' or "
+    "'medium' anywhere."
 )
 
+NO_TAGS_PROSE = (
+    "IMPORTANT: every item on this page is plain and mild by default — do "
+    "NOT show any vegetarian leaf icon, the word VEGETARIAN, any chili "
+    "icon, or any spice-level indicator anywhere on this page, for any "
+    "item. No tags of any kind appear near any dish on this page."
+)
 
 PHOTO_TREATMENT_PROSE = (
     "Each numbered reference photo shows the true appearance of that exact "
@@ -181,34 +221,37 @@ PHOTO_TREATMENT_PROSE = (
     "white background completely removed, and place it on the page floating "
     "on a soft realistic warm dark-brown contact shadow beneath it (never a "
     "hard-edged box, never a visible white or gray rectangle around the "
-    "photo)."
+    "photo). Preserve the full object shown in each reference photo exactly "
+    "as it appears — if a glass has a stem, keep the stem visible; if a "
+    "dish is on a tray or in a bowl, keep the whole vessel visible; do not "
+    "crop off any part of the reference object."
 )
 
 
-def build_item_block_prose(num, item, hero=False):
+def build_item_block_prose(num, item, hero=False, show_tags=True):
     size_note = "LARGE (about 45% of the page width)" if hero else "smaller (about 28% of the page width, same size as the other secondary photos)"
+    desc = cap_sentence(item["description"])
     parts = [f"Item {num}: '{item['name']}' — {item['price_vnd_k']}K. Photo size: {size_note}."]
-    parts.append(f"Description: {item['description']}")
+    parts.append(f"Description: {desc}")
     if item.get("_chef_rec"):
         parts.append(
             "This item carries a small solid black pill badge reading "
             "'CHEF'S RECOMMENDED' in white bold small caps, placed "
             "overlapping the top-left corner of its photo."
         )
-    tags = []
-    if item.get("_show_tags"):
+    if show_tags:
         if item["_veg"]:
-            tags.append("it is VEGETARIAN (show the leaf icon)")
+            parts.append(f"This item IS VEGETARIAN — show the leaf icon and the word VEGETARIAN next to it.")
+        else:
+            parts.append(f"This item is NOT VEGETARIAN (it contains meat, egg, or seafood) — do not show any vegetarian tag or leaf icon near it, leave that space blank.")
         if item["_spice"] > 0:
-            tags.append(f"its spice level is {item['_spice']} (show {item['_spice']} chili icon(s))")
-    if tags:
-        parts.append("Tags: " + "; ".join(tags) + ".")
+            parts.append(f"Its spice level is {item['_spice']} out of 3 — show exactly {item['_spice']} chili icon(s), no text label.")
     return " ".join(parts)
 
 
-def build_content_prompt(category, page_items, page_num_in_cat, total_pages_in_cat):
+def build_content_prompt(category, page_items, show_tags):
     for it in page_items:
-        it["_show_tags"] = category not in NO_TAGS_CATEGORIES
+        it["_show_tags"] = show_tags
 
     title = category.upper()
     hero_idx = 0
@@ -219,15 +262,28 @@ def build_content_prompt(category, page_items, page_num_in_cat, total_pages_in_c
     hero = page_items[hero_idx]
     secondary = [it for i, it in enumerate(page_items) if i != hero_idx]
 
-    item_blocks = [build_item_block_prose(1, hero, hero=True)]
+    item_blocks = [build_item_block_prose(1, hero, hero=True, show_tags=show_tags)]
     for i, it in enumerate(secondary, 2):
-        item_blocks.append(build_item_block_prose(i, it, hero=False))
+        item_blocks.append(build_item_block_prose(i, it, hero=False, show_tags=show_tags))
 
     ordered_items = [hero] + secondary
 
+    ref_names = [f"{i}) {it['name']}" for i, it in enumerate(ordered_items, 1)]
+    ref_recap = (
+        f"There are exactly {len(ordered_items)} reference photos attached "
+        f"to this request, in this exact order: " + "; ".join(ref_names) + ". "
+        "Match reference photo 1 to item 1, photo 2 to item 2, and so on in "
+        "strict order — never skip one, never reuse one for a different "
+        "item, never combine two reference photos into one item's photo. "
+        "Every item listed below must have its own distinct photo visible "
+        "on the page — do not omit any item."
+    )
+
+    tags_prose = TAG_SPEC_PROSE if show_tags else NO_TAGS_PROSE
+
     prompt = (
-        STYLE_PROSE + " " + NEGATIVE_PROSE + " " + TAG_SPEC_PROSE + " "
-        + PHOTO_TREATMENT_PROSE + "\n\n"
+        STYLE_PROSE + " " + NEGATIVE_PROSE + " " + tags_prose + " "
+        + PHOTO_TREATMENT_PROSE + " " + ref_recap + "\n\n"
         + build_header_prose(title, TAGLINES.get(category, "")) + "\n\n"
         + "Below the header, use a confident asymmetric editorial layout, "
         + "generous negative space, dishes floating with only a soft shadow "
@@ -240,10 +296,7 @@ def build_content_prompt(category, page_items, page_num_in_cat, total_pages_in_c
         + "left and right sides for visual rhythm, each with its own "
         + "number, name, price and description in normal type directly "
         + "beside its own photo — normal spacing only, absolutely NO line, "
-        + "arrow, or connector drawn between any photo and its text. Each "
-        + "reference photo, in the order listed below, corresponds to "
-        + "exactly one numbered item — do not mix, duplicate, or swap "
-        + "reference photos or text between items.\n\n"
+        + "arrow, or connector drawn between any photo and its text.\n\n"
         + " ".join(item_blocks) + "\n\n"
         + FOOTER_PROSE
     )
@@ -261,21 +314,24 @@ HERO_PROMPTS = [
         "plated, steam and texture visible, shallow depth of field, shot on "
         "a warm paper-toned surface. Near the bottom, a solid dark ink-black "
         "bar spanning the page width containing one line of small elegant "
-        "bold white tracked-out capitals: 'SMALL PLATES, BAR BITES & "
-        "CHAAT'. No other text anywhere."
+        "bold white tracked-out capitals in a premium serif typeface: "
+        "'SMALL PLATES, BAR BITES & CHAAT'. No other text anywhere."
     )),
     ("divider-tandoor", (
         "Design a full-bleed A4 portrait restaurant menu SECTION DIVIDER "
         "page, background color F6F3EC with a subtle warm radial gradient "
         "top-right, flat and front-on (not a mockup, no page shadow, fills "
         "the entire frame). No dish list, no prices, no arrows, no "
-        "watermark, no stock logo — just one beautiful photograph: glowing "
-        "charcoal embers inside a traditional clay tandoor oven with a "
-        "skewer of char-grilled tikka just visible at the edge of frame, "
-        "warm dramatic light, shallow depth of field. Near the bottom, a "
+        "watermark, no stock logo — just one beautiful mouth-watering "
+        "photograph: multiple luscious skewers of char-grilled tandoori "
+        "paneer tikka, glistening with charred edges and vivid red-orange "
+        "marinade, stacked and fanned out generously filling the frame, "
+        "fresh mint and lemon wedges scattered around, warm dramatic "
+        "tandoor-style light, shallow depth of field. Near the bottom, a "
         "solid dark ink-black bar spanning the page width containing one "
-        "line of small elegant bold white tracked-out capitals: 'TANDOOR, "
-        "GRILL & MAIN CURRIES'. No other text anywhere."
+        "line of small elegant bold white tracked-out capitals in a "
+        "premium serif typeface: 'TANDOOR, GRILL & MAIN CURRIES'. No other "
+        "text anywhere."
     )),
     ("divider-rice", (
         "Design a full-bleed A4 portrait restaurant menu SECTION DIVIDER "
@@ -287,21 +343,8 @@ HERO_PROMPTS = [
         "from a hammered copper handi with steam rising, on a warm "
         "paper-toned surface. Near the bottom, a solid dark ink-black bar "
         "spanning the page width containing one line of small elegant bold "
-        "white tracked-out capitals: 'RICE, KHICHDI & BIRYANI'. No other "
-        "text anywhere."
-    )),
-    ("divider-bar", (
-        "Design a full-bleed A4 portrait restaurant menu SECTION DIVIDER "
-        "page, background color F6F3EC with a subtle warm radial gradient "
-        "top-right, flat and front-on (not a mockup, no page shadow, fills "
-        "the entire frame). No dish list, no prices, no arrows, no "
-        "watermark, no stock logo — just one beautiful photograph: an "
-        "elegant flat-lay of drink glassware — a copper mug, a tall glass "
-        "of iced lassi, fresh mint and citrus — on a warm paper-toned "
-        "surface with soft light. Near the bottom, a solid dark ink-black "
-        "bar spanning the page width containing one line of small elegant "
-        "bold white tracked-out capitals: 'DRINKS, COFFEE & JUICES'. No "
-        "other text anywhere."
+        "white tracked-out capitals in a premium serif typeface: 'RICE, "
+        "KHICHDI & BIRYANI'. No other text anywhere."
     )),
     ("divider-desserts", (
         "Design a full-bleed A4 portrait restaurant menu SECTION DIVIDER "
@@ -313,8 +356,21 @@ HERO_PROMPTS = [
         "vanilla ice cream, soft bright light, shallow depth of field, on a "
         "warm paper-toned surface. Near the bottom, a solid dark ink-black "
         "bar spanning the page width containing one line of small elegant "
-        "bold white tracked-out capitals: 'DESSERTS'. No other text "
-        "anywhere."
+        "bold white tracked-out capitals in a premium serif typeface: "
+        "'DESSERTS'. No other text anywhere."
+    )),
+    ("divider-bar", (
+        "Design a full-bleed A4 portrait restaurant menu SECTION DIVIDER "
+        "page, background color F6F3EC with a subtle warm radial gradient "
+        "top-right, flat and front-on (not a mockup, no page shadow, fills "
+        "the entire frame). No dish list, no prices, no arrows, no "
+        "watermark, no stock logo — just one beautiful photograph: an "
+        "elegant flat-lay of drink glassware — a copper mug, a tall glass "
+        "of iced lassi, fresh mint and citrus — on a warm paper-toned "
+        "surface with soft light. Near the bottom, a solid dark ink-black "
+        "bar spanning the page width containing one line of small elegant "
+        "bold white tracked-out capitals in a premium serif typeface: "
+        "'DRINKS & SPIRITS'. No other text anywhere."
     )),
     ("closing", (
         "Design a full-bleed A4 portrait restaurant menu CLOSING page, "
@@ -323,18 +379,84 @@ HERO_PROMPTS = [
         "the entire frame). No arrows, no watermark, no stock logo. "
         "Top-to-bottom, in this exact order, with EACH element appearing "
         "EXACTLY ONCE (never repeat any text block): (1) centered near the "
-        "top, large elegant serif text: 'DHANYAWAD', with smaller italic "
-        "text directly beneath: 'Thank you for dining with us.' — (2) "
-        "below that, centered, a softly lit photograph of an empty premium "
+        "top, large elegant premium serif text: 'DHANYAWAD', with smaller "
+        "italic text directly beneath: 'Thank you for dining with us.' — "
+        "(2) below that, centered, a LARGE prominent photograph (at least "
+        "60% of the page width, do not make it small) of an empty premium "
         "table setting — folded linen napkin, cutlery, a single small "
         "candle lantern — on a warm paper-toned surface, trimmed tightly "
         "with a soft contact shadow, no background box — (3) below the "
-        "photograph, centered, small bold text 'THE THEATER' with small "
-        "tracked caps subtitle 'INDIAN KITCHEN & BAR' beneath — (4) at the "
-        "very bottom, centered, small gray text: '152 Duong Tran Hung Dao, "
-        "Duong Dong, Phu Quoc'. That is the complete page."
+        "photograph, centered, small bold serif text 'THE THEATER' with "
+        "small tracked caps subtitle 'INDIAN KITCHEN & BAR' beneath — (4) "
+        "at the very bottom, centered, small gray text: '152 Duong Tran "
+        "Hung Dao, Duong Dong, Phu Quoc'. That is the complete page."
     )),
 ]
+
+SPIRITS_MENU = [
+    ("WHISKY", True, [
+        ("Johnnie Walker Red Label", 130, 240),
+        ("Johnnie Walker Black Label", 160, 290),
+        ("Jameson", 140, 250),
+        ("Jack Daniel's", 150, 270),
+        ("Glenfiddich 12 Years", 280, 500),
+    ]),
+    ("GIN & TEQUILA", True, [
+        ("Bombay Sapphire", 160, 290),
+        ("Jose Cuervo Gold", 130, 230),
+    ]),
+    ("RUM", True, [
+        ("Bacardi", 120, 200),
+        ("Captain Morgan", 120, 200),
+    ]),
+    ("VODKA", True, [
+        ("Smirnoff", 120, 200),
+        ("Absolut", 140, 250),
+        ("Grey Goose", 250, 450),
+    ]),
+    ("WINES", False, [
+        ("Red Wine (Glass)", 150, None),
+        ("White Wine (Glass)", 150, None),
+    ]),
+    ("BEERS", False, [
+        ("Red Saigon Beer", 85, None),
+        ("Green Saigon Beer", 95, None),
+        ("Heineken", 100, None),
+        ("Budweiser", 100, None),
+        ("Pale Ale", 119, None),
+        ("Good Times", 139, None),
+    ]),
+]
+
+
+def build_spirits_prompt():
+    sections = []
+    for name, has_two_col, rows in SPIRITS_MENU:
+        if has_two_col:
+            row_strs = [f"'{n}' — {p30}K (30ml) / {p60}K (60ml)" for n, p30, p60 in rows]
+        else:
+            row_strs = [f"'{n}' — {p30}K" for n, p30, _ in rows]
+        sections.append(f"Section '{name}': " + "; ".join(row_strs) + ".")
+
+    return (
+        STYLE_PROSE + " " + NEGATIVE_PROSE + "\n\n"
+        + build_header_prose("SPIRITS, WINES & BEERS", "Premium spirits, fine wines and refreshing beers.") + "\n\n"
+        + "Below the header, this page is a clean elegant two-column TEXT "
+        + "PRICE LIST — no photographs, no dish images anywhere. Lay out "
+        + "the following sections as bold serif category headers, each "
+        + "followed by a thin dotted or hairline divider, then each item's "
+        + "name left-aligned with its price(s) right-aligned on the same "
+        + "line, generous line spacing, arranged in two columns across the "
+        + "page width (left column: WHISKY, GIN & TEQUILA, RUM, VODKA; "
+        + "right column: WINES, BEERS) so the whole list fits on one page. "
+        + "For sections with two prices (30ml and 60ml), show both prices "
+        + "with small 'ml' labels above the price columns as column "
+        + "headers. Render every single item name and price exactly as "
+        + "given, spelled correctly, no invented items.\n\n"
+        + " ".join(sections) + "\n\n"
+        + FOOTER_PROSE
+    )
+
 
 CATEGORY_ORDER = [
     "Small Plates & Bar Bites",
@@ -345,25 +467,23 @@ CATEGORY_ORDER = [
     "Breads",
     "Rice & Khichdi",
     "Biryani",
-    "Drinks",
     "Coffee",
     "Juices, Smoothies & Iced Tea",
     "Desserts",
+    "Drinks",
 ]
 
 DIVIDER_BEFORE = {
     "Small Plates & Bar Bites": "divider-small-plates",
     "Tandoor & Grill": "divider-tandoor",
     "Rice & Khichdi": "divider-rice",
-    "Drinks": "divider-bar",
     "Desserts": "divider-desserts",
+    "Drinks": "divider-bar",
 }
 
 pages = []
 page_num = 1
 
-# Page 1 is the cover — background art generated separately, real logo
-# composited on top locally (not AI-rendered text), so no prompt here.
 pages.append({
     "page_num": page_num, "type": "cover", "slug": "cover", "title": "cover",
     "items": [], "reference_photos": [], "prompt": None,
@@ -391,10 +511,12 @@ for cat in CATEGORY_ORDER:
         it["_spice"] = spice_level(it)
         it["_chef_rec"] = it["name"] in CHEF_RECOMMENDED
 
-    page_groups = balanced_chunks(cat_items, PAGE_MAX_ITEMS)
-    total_pages_in_cat = len(page_groups)
+    show_tags = cat not in NO_TAGS_CATEGORIES
+    page_groups = veg_split_chunks(cat_items, PAGE_MAX_ITEMS)
     for i, group in enumerate(page_groups, 1):
-        prompt_text, ordered_items = build_content_prompt(cat, group, i, total_pages_in_cat)
+        if not group:
+            continue
+        prompt_text, ordered_items = build_content_prompt(cat, group, show_tags)
         refs = [photo_path(it) for it in ordered_items]
         pages.append({
             "page_num": page_num,
@@ -415,6 +537,14 @@ for cat in CATEGORY_ORDER:
         })
         page_num += 1
 
+# Spirits, Wines & Beers — text-only price list, no dish photos
+pages.append({
+    "page_num": page_num, "type": "spirits", "slug": "spirits-wines-beers",
+    "title": "Spirits, Wines & Beers", "items": [], "reference_photos": [],
+    "prompt": build_spirits_prompt(),
+})
+page_num += 1
+
 add_hero("closing")
 
 with open(os.path.join(BASE, "menu_pages.json"), "w") as f:
@@ -423,4 +553,5 @@ with open(os.path.join(BASE, "menu_pages.json"), "w") as f:
 n_content = sum(1 for p in pages if p["type"] == "content")
 n_hero = sum(1 for p in pages if p["type"] == "hero")
 n_cover = sum(1 for p in pages if p["type"] == "cover")
-print(f"Wrote {len(pages)} pages ({n_content} content, {n_hero} hero, {n_cover} cover) to menu_pages.json")
+n_spirits = sum(1 for p in pages if p["type"] == "spirits")
+print(f"Wrote {len(pages)} pages ({n_content} content, {n_hero} hero, {n_cover} cover, {n_spirits} spirits) to menu_pages.json")
