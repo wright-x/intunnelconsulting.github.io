@@ -58,11 +58,39 @@ def circle(page_id, top, left, d, color):
             "view_box_height": d, "color": color}
 
 
+CHILI_PATH = ("M7,0 C7,0 9,1 9,3 C9,3 13,5 12,10 C11,15 8,18 6,17 "
+              "C3,16 1,12 2,8 C3,4 5,1 7,0 Z")
+
+
+def chili_icon(page_id, top, left, size, color=SPICE_RED):
+    scale = size / 18
+    return {"type": "insert_shape", "page_id": page_id, "top": top, "left": left,
+            "width": size, "height": size * 18 / 14, "path": CHILI_PATH,
+            "view_box_width": 14, "view_box_height": 18, "color": color}
+
+
+LEAF_PATH = ("M8,0 C13,2 16,6 16,8 C16,10 13,14 8,16 C3,14 0,10 0,8 "
+             "C0,6 3,2 8,0 Z M8,2 L8,14")
+
+
+def leaf_icon(page_id, top, left, size, color=VEG_GREEN):
+    return {"type": "insert_shape", "page_id": page_id, "top": top, "left": left,
+            "width": size, "height": size, "path": LEAF_PATH,
+            "view_box_width": 16, "view_box_height": 16, "color": color,
+            "stroke_color": "#F6F3EC", "stroke_weight": 0.6}
+
+
+def photo_shadow(page_id, top, left, width, height):
+    op = rect(page_id, top + 8, left + 5, width, height, "#14100A", corner=4)
+    op["opacity"] = 0.18
+    return op
+
+
 def text(page_id, txt, top, left, width, size, color=INK, weight="normal",
           style="normal", align="start", line_height=1.3):
     return {"type": "add_text", "page_id": page_id, "text": txt, "top": top,
             "left": left, "width": width,
-            "_format": {"font_size": size, "color": color, "font_weight": weight,
+            "_format": {"font_size": round(size), "color": color, "font_weight": weight,
                         "font_style": style, "text_align": align,
                         "line_height": line_height}}
 
@@ -99,17 +127,17 @@ def build_footer(page_id):
 
 
 def build_item_tags(page_id, item, top, left, width):
-    """veg square + spice dots + optional chef badge label, returns (ops, extra_height)"""
+    """veg leaf + chili icons, returns ops"""
     ops = []
     x = left
     if item["veg"]:
-        ops.append(rect(page_id, top, x, 12, 12, CREAM, stroke_color=VEG_GREEN, stroke_weight=1.5))
-        ops.append(text(page_id, "VEGETARIAN", top - 2, x + 16, 90, 7, color=VEG_GREEN, weight="bold"))
+        ops.append(leaf_icon(page_id, top, x, 13))
+        ops.append(text(page_id, "VEGETARIAN", top - 2, x + 17, 90, 7, color=VEG_GREEN, weight="bold"))
         x += 110
     if item["spice"] > 0:
         for i in range(item["spice"]):
-            ops.append(circle(page_id, top + 1, x + i * 12, 10, SPICE_RED))
-        x += item["spice"] * 12 + 8
+            ops.append(chili_icon(page_id, top - 1, x + i * 14, 12))
+        x += item["spice"] * 14 + 8
     return ops
 
 
@@ -141,6 +169,7 @@ def build_content_page(page_id, page):
     # hero block
     hero_top = 150
     photo_w = 300
+    ops.append(photo_shadow(page_id, hero_top, MARGIN, photo_w, photo_w))
     ops.append({"__image_slot__": True, "photo": hero["photo"], "page_id": page_id,
                 "top": hero_top, "left": MARGIN, "width": photo_w})
     if hero.get("chef_recommended"):
@@ -164,6 +193,7 @@ def build_content_page(page_id, page):
     photo_s = 96
     for i, it in enumerate(secondary):
         rt = row_top0 + i * row_h
+        ops.append(photo_shadow(page_id, rt, MARGIN, photo_s, photo_s))
         ops.append({"__image_slot__": True, "photo": it["photo"], "page_id": page_id,
                      "top": rt, "left": MARGIN, "width": photo_s, "height": photo_s})
         tx = MARGIN + photo_s + 20

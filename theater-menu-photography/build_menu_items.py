@@ -38,9 +38,12 @@ PLATEWARE = {
         "sized to hold an assortment of grilled items."
     ),
     "copper_martini": (
-        "Served in a polished copper martini glass with a wide tapered conical "
-        "bowl on a slender stem and round copper base, exactly like the "
-        "reference glass provided."
+        "Served in a polished copper martini glass: a wide tapered conical "
+        "bowl at the top, connected by a clearly visible slender copper STEM "
+        "(the stem is a mandatory, prominent part of the glass — do not omit "
+        "it or show the bowl sitting directly on the table) down to a round "
+        "copper foot/base, exactly like a classic martini glass shape but in "
+        "polished copper."
     ),
     "rattan_basket": (
         "Presented in a small rectangular woven rattan/wicker bread basket "
@@ -72,6 +75,14 @@ PLATEWARE = {
     "copper_mug": (
         "Served in a hammered copper mug with a small handle, resting on a "
         "matching hammered copper saucer."
+    ),
+    "chinese_bowl": (
+        "Presented in a round shallow ceramic bowl with a warm cream/tan "
+        "speckled glaze, a wide flared rim, and two small integrated loop "
+        "handles on opposite sides (a compact rounded serving bowl, "
+        "approximately 19.5cm wide across the handles, 16cm bowl diameter, "
+        "5.5cm tall). No sauce well, no dip, no side sauce of any kind — the "
+        "dish itself is glossy and saucy, served with nothing extra beside it."
     ),
     "ceramic_cup": (
         "Served in a light speckled ceramic cup and saucer."
@@ -118,33 +129,33 @@ items = []
 cat = "Small Plates & Bar Bites"
 items += [
     item("French Fries", 125, "crispy golden fries seasoned with sea salt", cat, "oval_sauce_well",
-         "Fries stacked neatly with a light dusting of sea salt flakes, sauce well filled with garlic aioli."),
+         "Fries stacked neatly with a light dusting of sea salt flakes. The sauce well is filled with plain tomato ketchup only — no aioli, no other dip."),
     item("Peri Peri Fries", 135, "crispy fries tossed in spicy peri peri seasoning", cat, "oval_sauce_well",
          "Fries with a vivid red-orange peri peri dusting, sauce well filled with a creamy dip, fresh curry leaf garnish."),
     item("Masala Peanut Bowl", 75, "roasted peanuts tossed with curry leaves and aromatic spices", cat, "oval_sauce_well",
-         "Glossy roasted peanuts flecked with crispy fried curry leaves and mustard seeds, sauce well filled with a lemon wedge."),
+         "Glossy roasted peanuts flecked with crispy fried curry leaves and mustard seeds. The sauce well is left empty — no sauce, no dip, no lemon wedge."),
     item("Crispy Bhindi", 150, "crispy finger-cut okra strips coated in light besan batter, deep-fried to golden perfection", cat, "oval_sauce_well",
-         "Thin golden okra strips piled loosely for height and crunch, sauce well filled with a red chilli dip, a few whole dried red chillies scattered nearby."),
+         "Thin golden okra strips piled loosely for height and crunch, a few whole dried red chillies scattered nearby. The sauce well is left empty — no sauce, no dip of any kind."),
     item("Samosa with Mint Chutney", 120, "spiced potato pastry served with fresh mint chutney", cat, "oval_sauce_well",
          "Two golden triangular samosas with visible flaky layers, sauce well filled with vivid green mint chutney."),
     item("Hara Bhara Kebab", 165, "spinach and pea kebabs served with mint chutney", cat, "oval_sauce_well",
          "Deep green herbed kebab patties with a lightly charred crust, thin red onion rings on the side, sauce well filled with mint chutney."),
-    item("Chilli Paneer", 199, "cottage cheese cubes tossed in a spicy Indo-Chinese chilli sauce with bell peppers, onions and spring onions", cat, "oval_sauce_well",
-         "Glossy red-brown sauce coating golden-fried paneer cubes with vivid red and green bell pepper pieces and scattered spring onion, sauce well filled with a light yogurt dip."),
+    item("Chilli Paneer", 199, "cottage cheese cubes tossed in a spicy Indo-Chinese chilli sauce with bell peppers, onions and spring onions", cat, "chinese_bowl",
+         "Glossy red-brown sauce coating golden-fried paneer cubes with vivid red and green bell pepper pieces and scattered spring onion."),
     item("Paneer 65", 199, "crispy cottage cheese tossed with curry leaves, garlic and South Indian spices", cat, "oval_sauce_well",
          "Bright red-orange crispy paneer cubes flecked with fried curry leaves and garlic slivers, sauce well filled with a cooling yogurt dip."),
-    item("Honey Chilli Potato", 150, "crispy potato fingers tossed in honey, chilli and aromatic spices", cat, "oval_sauce_well",
-         "Glossy honey-glazed potato fingers with sesame seeds and scattered spring onion, sauce well filled with a light dip."),
+    item("Honey Chilli Potato", 150, "crispy potato fingers tossed in honey, chilli and aromatic spices", cat, "chinese_bowl",
+         "Glossy honey-glazed potato fingers with sesame seeds and scattered spring onion."),
     item("Gobhi 65", 165, "crispy cauliflower florets tossed with aromatic spices and curry leaves", cat, "oval_sauce_well",
          "Bright red-orange crispy cauliflower florets flecked with fried curry leaves, sauce well filled with a cooling yogurt dip."),
-    item("Veg Manchurian (Dry)", 195, "crispy vegetable balls tossed with garlic, peppers and a savoury sauce", cat, "oval_sauce_well",
-         "Glossy dark-glazed vegetable balls with diced bell pepper and spring onion, sauce well filled with a light dip."),
-    item("Hakka Noodles", 180, "stir-fried noodles with fresh vegetables, garlic and aromatic seasoning", cat, "oval_sauce_well",
-         "Glossy stir-fried noodles tangled with julienned carrot, cabbage and bell pepper, sauce well filled with a light chilli-vinegar dip."),
+    item("Veg Manchurian (Dry)", 195, "crispy vegetable balls tossed with garlic, peppers and a savoury sauce", cat, "chinese_bowl",
+         "Glossy dark-glazed vegetable balls with diced bell pepper and spring onion."),
+    item("Hakka Noodles", 180, "stir-fried noodles with fresh vegetables, garlic and aromatic seasoning", cat, "chinese_bowl",
+         "Glossy stir-fried noodles tangled with julienned carrot, cabbage and bell pepper."),
     item("Chicken 65", 220, "crispy fried chicken tossed with curry leaves, garlic and aromatic South Indian spices", cat, "oval_sauce_well",
          "Deep red crispy chicken pieces flecked with fried curry leaves and garlic slivers, sauce well filled with a cooling yogurt dip."),
-    item("Chilli Chicken", 220, "crispy chicken tossed in a bold chilli sauce", cat, "oval_sauce_well",
-         "Glossy dark-red sauced chicken pieces with charred bell pepper and onion petals, sauce well filled with a light dip."),
+    item("Chilli Chicken", 220, "crispy chicken tossed in a bold chilli sauce", cat, "chinese_bowl",
+         "Glossy dark-red sauced chicken pieces with charred bell pepper and onion petals."),
     item("Butter Garlic Prawns", 250, "juicy prawns sauteed with garlic, herbs and butter", cat, "oval_sauce_well",
          "Plump pink-orange prawns glistening in garlic butter with visible garlic slivers and chopped parsley, sauce well filled with a lemon wedge."),
     item("Fish Amritsari", 245, "crispy fish fingers coated in gram flour and Amritsari spices", cat, "oval_sauce_well",
@@ -252,22 +263,22 @@ items += [
 # ---------------- Breads ----------------
 cat = "Breads"
 items += [
-    item("Tandoori Roti / Tawa Roti", 55, "soft whole wheat bread baked in the tandoor", cat, "rattan_basket",
-         "A round char-flecked whole wheat flatbread with a lightly blistered surface."),
+    item("Tandoori Roti / Tawa Roti", 55, "soft whole wheat bread baked in the tandoor (add butter +5K)", cat, "rattan_basket",
+         "A round char-flecked whole wheat flatbread with a lightly blistered surface. This is ONE single item — do not show it twice or as two separate breads."),
     item("Garlic Naan", 85, "soft naan bread topped with garlic and fresh coriander", cat, "rattan_basket",
          "A pillowy oval naan with charred blister spots, topped with chopped garlic and fresh coriander."),
     item("Laccha Parantha", 80, "multi-layered whole wheat bread cooked on a tawa with a touch of ghee", cat, "rattan_basket",
          "A round layered flatbread with visible spiral flaky layers and a light ghee sheen."),
     item("Plain Naan", 75, "soft and pillowy white flour bread baked in the tandoor", cat, "rattan_basket",
-         "A pillowy oval white-flour naan with light charred blister spots."),
+         "A pillowy oval white-flour naan with light charred blister spots. Nothing else on the plate — no dip, no bowl, no garnish, no side items of any kind, just the naan alone in the basket."),
     item("Cheese Garlic Naan", 95, "soft naan topped with garlic and melted cheese, baked in the tandoor", cat, "rattan_basket",
          "An oval naan topped with melted golden cheese and chopped garlic, cut into wedges."),
     item("Chilli Cheese Naan", 95, "soft naan loaded with cheese, garlic and a touch of chili, baked in the tandoor", cat, "rattan_basket",
          "A round naan topped with melted cheese, chopped garlic and red chilli flakes, cut into wedges."),
     item("Stuffed Naan (Aloo / Mix / Paneer)", 110, "soft naan stuffed with your choice of aloo, mix or paneer, baked to perfection in the tandoor", cat, "rattan_basket",
          "A pillowy naan cut into triangular wedges revealing a golden spiced potato stuffing inside."),
-    item("Parantha", 110, "traditional layered flatbread with a soft, flaky texture, cooked on a griddle", cat, "rattan_basket",
-         "A round griddle-cooked layered flatbread with a light golden-brown flaky surface and a touch of ghee sheen."),
+    item("Parantha (Aloo / Mix / Paneer)", 110, "traditional layered flatbread with a soft, flaky texture, cooked on a griddle, with a choice of aloo, mix or paneer stuffing (+40K for paneer)", cat, "rattan_basket",
+         "A round griddle-cooked layered flatbread with a light golden-brown flaky surface and a touch of ghee sheen, cut into wedges revealing a spiced stuffing inside."),
 ]
 
 # ---------------- Rice & Khichdi ----------------
@@ -299,8 +310,8 @@ items += [
 # ---------------- Drinks ----------------
 cat = "Drinks"
 items += [
-    item("Masala Tea", 60, "traditional Indian tea brewed with aromatic spices", cat, "copper_mug",
-         "Warm reddish-brown spiced milk tea with a light steam rising, a few whole spices (cardamom, cinnamon stick) resting beside the mug."),
+    item("Masala Tea", 60, "traditional Indian tea brewed with aromatic spices", cat, "ceramic_cup",
+         "Warm reddish-brown spiced milk tea with a light steam rising, a few whole spices (cardamom, cinnamon stick) resting beside the cup. Served in the exact same light speckled ceramic cup and saucer style used for the coffee drinks — not a copper mug."),
     item("Mango Lassi", 110, "creamy yogurt drink blended with ripe mango", cat, "tall_glass",
          "A thick, bright orange creamy mango yogurt drink, topped with a light dusting of cardamom and a small mint sprig."),
     item("Lassi", 110, "traditional yogurt drink served chilled", cat, "tall_glass",
