@@ -1,21 +1,10 @@
 page_num,slug,type,title,filename,actual_resolution,status
-1,cover,cover,cover,01-cover.png,1792x2400,ok
-3,small-plates-bar-bites-1,content,Small Plates & Bar Bites,03-small-plates-bar-bites-1.png,1792x2400,ok
 4,small-plates-bar-bites-2,content,Small Plates & Bar Bites,04-small-plates-bar-bites-2.png,1792x2400,ok
-9,chaat-fast-sellers-3,content,Chaat & Fast Sellers,09-chaat-fast-sellers-3.png,1792x2400,ok
-14,main-curries-1,content,Main Curries,14-main-curries-1.png,1792x2400,ok
-17,main-curries-4,content,Main Curries,17-main-curries-4.png,1792x2400,ok
-27,desserts-1,content,Desserts,27-desserts-1.png,1792x2400,ok
-28,desserts-2,content,Desserts,28-desserts-2.png,1792x2400,ok
-29,coffee-1,content,Coffee,29-coffee-1.png,1792x2400,ok
-31,juices-smoothies-iced-tea-2,content,"Juices, Smoothies & Iced Tea",31-juices-smoothies-iced-tea-2.png,1792x2400,ok
-32,juices-smoothies-iced-tea-3,content,"Juices, Smoothies & Iced Tea",32-juices-smoothies-iced-tea-3.png,1792x2400,ok
-34,drinks-1,content,Drinks,34-drinks-1.png,1792x2400,ok
-35,drinks-2,content,Drinks,35-drinks-2.png,1792x2400,ok
-37,closing,hero,closing,37-closing.png,1792x2400,ok
-38,back-cover,hero,back-cover,38-back-cover.png,1792x2400,ok
-5,small-plates-bar-bites-3,content,Small Plates & Bar Bites,05-small-plates-bar-bites-3.png,1792x2400,ok
-6,small-plates-bar-bites-4,content,Small Plates & Bar Bites,06-small-plates-bar-bites-4.png,1792x2400,ok
 7,chaat-fast-sellers-1,content,Chaat & Fast Sellers,07-chaat-fast-sellers-1.png,1792x2400,ok
 8,chaat-fast-sellers-2,content,Chaat & Fast Sellers,08-chaat-fast-sellers-2.png,1792x2400,ok
-20,breads-1,content,Breads,20-breads-1.png,1792x2400,ok
+10,divider-tandoor,hero,divider-tandoor,10-divider-tandoor.png,1792x2400,ok
+14,main-curries-1,content,Main Curries,14-main-curries-1.png,1792x2400,ok
+18,main-curries-5,content,Main Curries,18-main-curries-5.png,1792x2400,ok
+22,divider-rice,hero,divider-rice,22-divider-rice.png,1792x2400,ok
+8,chaat-fast-sellers-2,content,Chaat & Fast Sellers,08-chaat-fast-sellers-2.png,1792x2400,ok
+18,main-curries-5,content,Main Curries,18-main-curries-5.png,1792x2400,ok

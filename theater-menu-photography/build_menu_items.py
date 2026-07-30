@@ -145,7 +145,7 @@ items += [
     item("Samosa with Mint Chutney", 119, "spiced potato pastry served with fresh mint chutney", cat, "oval_sauce_well",
          "Two large, generously sized golden triangular samosas with visible flaky layers, sauce well filled with vivid green mint chutney."),
     item("Hara Bhara Kebab", 165, "spinach and pea kebabs served with mint chutney", cat, "oval_sauce_well",
-         "Large, generously sized deep green herbed kebab patties with a lightly charred crust, thin red onion rings on the side, sauce well filled with mint chutney."),
+         "Exactly FOUR large, generously sized deep green herbed kebab patties, neatly arranged, with an appetizing lightly charred crust showing rich texture, thin red onion rings on the side, sauce well filled with mint chutney — beautiful, appealing, professional food photography."),
     item("Chilli Paneer", 199, "cottage cheese cubes tossed in a spicy Indo-Chinese chilli sauce with bell peppers, onions and spring onions", cat, "chinese_bowl",
          "A generous, abundant portion filling the bowl completely: glossy red-brown sauce coating golden-fried paneer cubes with vivid red and green bell pepper pieces and scattered spring onion."),
     item("Paneer 65", 199, "crispy cottage cheese tossed with curry leaves, garlic and South Indian spices", cat, "chinese_bowl",

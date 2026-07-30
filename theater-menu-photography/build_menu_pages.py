@@ -51,6 +51,10 @@ NO_TAGS_CATEGORIES = {
 
 SPICE_OVERRIDE = {
     "Samosa with Mint Chutney": 2,
+    "Masala Papad": 2,
+    "Papad": 1,
+    "Dal Tadka": 1,
+    "Egg Bhurji": 2,
 }
 
 
@@ -376,10 +380,16 @@ HERO_PROMPTS = [
         "shadow. No dish list, no prices, no arrows, no watermark, no "
         "stock logo — just one beautiful mouth-watering photograph: "
         "multiple luscious skewers of char-grilled tandoori paneer tikka, "
-        "glistening with charred edges and vivid red-orange marinade, "
-        "stacked and fanned out generously filling the frame, fresh mint "
-        "and lemon wedges scattered around, warm dramatic tandoor-style "
-        "light, shallow depth of field. Near the bottom, a solid dark "
+        "glistening with charred edges and vivid red-orange marinade, held "
+        "vertically right in front of the glowing open mouth of a "
+        "traditional clay tandoor oven (bhatti) — the tandoor's charcoal "
+        "embers glow bright orange-red inside the dark clay interior "
+        "directly behind the skewers, with wisps of smoke rising, so the "
+        "oven itself is clearly visible and recognizable behind the food, "
+        "not just a plain background. Fresh mint and lemon wedges "
+        "scattered in the immediate foreground, warm dramatic firelit "
+        "tandoor-style lighting, shallow depth of field with the tandoor "
+        "mouth still identifiable. Near the bottom, a solid dark "
         "ink-black bar spanning the full page width edge-to-edge "
         "containing one line of small elegant bold white tracked-out "
         "capitals in a premium serif typeface: 'TANDOOR, GRILL & MAIN "
@@ -393,10 +403,17 @@ HERO_PROMPTS = [
         "no frame, no card, no mat, no inset margin, no cream padding "
         "around it of any kind. Flat and front-on, not a mockup, no page "
         "shadow. No dish list, no prices, no arrows, no "
-        "watermark, no stock logo — just one beautiful photograph: a "
-        "dramatic close-up of fragrant basmati biryani rice being served "
-        "from a hammered copper handi with steam rising, on a warm "
-        "paper-toned surface. Near the bottom, a solid dark ink-black bar "
+        "watermark, no stock logo — just one beautiful, authentic-looking "
+        "photograph: a dramatic close-up of real fragrant basmati biryani "
+        "rice, layered long golden-yellow saffron-stained grains next to "
+        "paler rice, with visible whole spices scattered through it (bay "
+        "leaves, whole cloves, green cardamom pods, a cinnamon stick, "
+        "strands of saffron) and fried onions and fresh mint leaves on "
+        "top, served in a well-worn traditional hammered copper biryani "
+        "handi with a partially lifted lid resting beside it, gentle "
+        "steam rising, shot with warm natural light on a rustic dark wood "
+        "surface — the rice must look genuinely home-cooked and real, not "
+        "generic or stock-photo-like. Near the bottom, a solid dark ink-black bar "
         "spanning the page width containing one line of small elegant bold "
         "white tracked-out capitals in a premium serif typeface: 'RICE, "
         "KHICHDI & BIRYANI'. No other text anywhere."
@@ -566,7 +583,7 @@ DIVIDER_BEFORE = {
     "Tandoor & Grill": "divider-tandoor",
     "Rice & Khichdi": "divider-rice",
     "Desserts": "divider-desserts",
-    "Drinks": "divider-bar",
+    "Coffee": "divider-bar",
 }
 
 # Explicit page groupings for categories where the default veg/spice
