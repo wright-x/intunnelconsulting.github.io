@@ -49,7 +49,14 @@ NO_TAGS_CATEGORIES = {
 }
 
 
+SPICE_OVERRIDE = {
+    "Samosa with Mint Chutney": 2,
+}
+
+
 def spice_level(item):
+    if item["name"] in SPICE_OVERRIDE:
+        return SPICE_OVERRIDE[item["name"]]
     if item["category"] in ZERO_SPICE_CATEGORIES:
         return 0
     text = (item["name"] + " " + item["description"]).lower()
@@ -428,22 +435,45 @@ HERO_PROMPTS = [
     )),
     ("closing", (
         "Design a full-bleed A4 portrait restaurant menu CLOSING page, "
-        "background color F6F3EC with a subtle warm radial gradient "
-        "top-right, flat and front-on (not a mockup, no page shadow, fills "
-        "the entire frame). No arrows, no watermark, no stock logo. "
-        "Top-to-bottom, in this exact order, with EACH element appearing "
-        "EXACTLY ONCE (never repeat any text block): (1) centered near the "
-        "top, large elegant premium serif text: 'DHANYAWAD', with smaller "
-        "italic text directly beneath: 'Thank you for dining with us.' — "
-        "(2) below that, centered, a LARGE prominent photograph (at least "
-        "60% of the page width, do not make it small) of an empty premium "
-        "table setting — folded linen napkin, cutlery, a single small "
-        "candle lantern — on a warm paper-toned surface, trimmed tightly "
-        "with a soft contact shadow, no background box — (3) below the "
-        "photograph, centered, small bold serif text 'THE THEATER' with "
-        "small tracked caps subtitle 'INDIAN KITCHEN & BAR' beneath — (4) "
-        "at the very bottom, centered, small gray text: '152 Duong Tran "
-        "Hung Dao, Duong Dong, Phu Quoc'. That is the complete page."
+        "clean warm white/cream paper background (hex F6F3EC), flat and "
+        "front-on like a scanned printed page, not a mockup, no page "
+        "shadow, no arrows, no watermark, no photograph of any kind on "
+        "this page. In the exact center of the page, a large ornate round "
+        "mandala flourish medallion made of fine thin warm-brown line-art "
+        "petals radiating outward, with a scalloped oval badge shape cut "
+        "into the very center of the medallion containing large bold "
+        "premium serif text reading exactly 'DHANYAWAD'. Directly beneath "
+        "that, inside or just below the badge, small tracked-out capital "
+        "text reading exactly 'THANK YOU FOR DINING WITH US.' Below the "
+        "medallion, small elegant centered serif text in two lines: '152 "
+        "Đường Trần Hưng Đạo, Cửa Lấp, Phú Quốc, An Giang 92000' on the "
+        "first line and 'Phone: 0836 320 002' on the second line. Near "
+        "the very bottom of the page, a small fine black-ink line-art "
+        "architectural sketch of an ornate Indian temple archway/gateway, "
+        "centered. Each text element appears EXACTLY ONCE — no repeats. "
+        "No other text or imagery anywhere on the page."
+    )),
+    ("back-cover", (
+        "Design a full-bleed A4 portrait page, clean warm white/cream "
+        "paper background (hex F6F3EC), flat and front-on like a scanned "
+        "printed page, not a mockup, no page shadow. This page has NO "
+        "logo, NO restaurant name, NO price text, NO menu text of any "
+        "kind whatsoever — it is a purely decorative illustration and "
+        "spice flat-lay collage page. Scattered artfully across the page: "
+        "a generous pile of vivid orange-yellow turmeric powder in the "
+        "upper-left corner; a couple of cinnamon sticks and a small "
+        "ceramic bowl of whole white peppercorns in the lower-left "
+        "corner; a cluster of star anise pods and a few whole cloves near "
+        "the bottom center; a sprig of fresh curry leaves on the left "
+        "side. In the upper-left-center area, a small fine black-ink "
+        "line-art architectural sketch of an ornate South Indian temple. "
+        "In the lower-right area, a larger, more detailed fine black-ink "
+        "line-art sketch of the Taj Mahal complete with its reflecting "
+        "pool and rows of cypress trees. In the exact center of the page, "
+        "a fine, thin, light warm-brown line-art outline map of the "
+        "country of India (just the outer border outline, no cities or "
+        "state lines labeled, subtle and faint). No text, no logo, no "
+        "watermark, no page number anywhere on the page."
     )),
 ]
 
@@ -525,9 +555,9 @@ CATEGORY_ORDER = [
     "Breads",
     "Rice & Khichdi",
     "Biryani",
+    "Desserts",
     "Coffee",
     "Juices, Smoothies & Iced Tea",
-    "Desserts",
     "Drinks",
 ]
 
@@ -537,6 +567,25 @@ DIVIDER_BEFORE = {
     "Rice & Khichdi": "divider-rice",
     "Desserts": "divider-desserts",
     "Drinks": "divider-bar",
+}
+
+# Explicit page groupings for categories where the default veg/spice
+# auto-chunking doesn't match the requested layout — overrides
+# veg_split_chunks entirely when a category key is present here.
+MANUAL_GROUPS = {
+    "Desserts": [
+        ["Gulab Jamun with Vanilla Ice Cream", "Kheer", "Gajar Halwa"],
+        ["Ice Cream (Vanilla)", "Ice Cream (Chocolate)"],
+    ],
+    "Juices, Smoothies & Iced Tea": [
+        ["Orange Juice", "Watermelon Juice", "Pineapple Juice", "Mixed Fruit Juice"],
+        ["Lemon Iced Tea", "Peach Iced Tea"],
+        ["Mango Magic Smoothie", "Berry Bliss Smoothie", "Chocolate Mocha Smoothie", "Strawberry Delight Smoothie"],
+    ],
+    "Drinks": [
+        ["Masala Tea", "Mango Lassi", "Lassi", "Masala Chaas"],
+        ["Cold Drink", "Water / Sparkling Water"],
+    ],
 }
 
 pages = []
@@ -570,7 +619,11 @@ for cat in CATEGORY_ORDER:
         it["_chef_rec"] = it["name"] in CHEF_RECOMMENDED
 
     show_tags = cat not in NO_TAGS_CATEGORIES
-    page_groups = veg_split_chunks(cat_items, PAGE_MAX_ITEMS)
+    if cat in MANUAL_GROUPS:
+        by_name = {it["name"]: it for it in cat_items}
+        page_groups = [[by_name[n] for n in names] for names in MANUAL_GROUPS[cat]]
+    else:
+        page_groups = veg_split_chunks(cat_items, PAGE_MAX_ITEMS)
     for i, group in enumerate(page_groups, 1):
         if not group:
             continue
@@ -604,6 +657,7 @@ pages.append({
 page_num += 1
 
 add_hero("closing")
+add_hero("back-cover")
 
 with open(os.path.join(BASE, "menu_pages.json"), "w") as f:
     json.dump(pages, f, indent=2, ensure_ascii=False)

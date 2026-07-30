@@ -6,7 +6,7 @@
     "category": "Small Plates & Bar Bites",
     "plateware": "oval_sauce_well",
     "slug": "french-fries",
-    "prompt": "A premium editorial food photograph of French Fries: crispy golden fries seasoned with sea salt Fries stacked neatly with a light dusting of sea salt flakes. The sauce well is filled with plain tomato ketchup only — no aioli, no other dip. Presented on a matte white/off-white ceramic oval plate (NOT dark, NOT black, NOT charcoal - the plate itself is white/cream colored) with a small built-in triangular sauce well on one side holding a matching chutney or dip, exactly like the reference plate provided. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
+    "prompt": "A premium editorial food photograph of French Fries: crispy golden fries seasoned with sea salt A generous, abundant heap of fries piled high and spread across the plate exactly as full and wide as a portion of peri peri fries, light dusting of sea salt flakes. The sauce well is filled with plain tomato ketchup only — no aioli, no other dip. Presented on a matte white/off-white ceramic oval plate (NOT dark, NOT black, NOT charcoal - the plate itself is white/cream colored) with a small built-in triangular sauce well on one side holding a matching chutney or dip, exactly like the reference plate provided. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
   },
   {
     "name": "Peri Peri Fries",
@@ -15,20 +15,20 @@
     "category": "Small Plates & Bar Bites",
     "plateware": "oval_sauce_well",
     "slug": "peri-peri-fries",
-    "prompt": "A premium editorial food photograph of Peri Peri Fries: crispy fries tossed in spicy peri peri seasoning Fries with a vivid red-orange peri peri dusting, sauce well filled with a creamy dip, fresh curry leaf garnish. Presented on a matte white/off-white ceramic oval plate (NOT dark, NOT black, NOT charcoal - the plate itself is white/cream colored) with a small built-in triangular sauce well on one side holding a matching chutney or dip, exactly like the reference plate provided. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
+    "prompt": "A premium editorial food photograph of Peri Peri Fries: crispy fries tossed in spicy peri peri seasoning A generous, abundant heap of fries with a vivid red-orange peri peri dusting, piled high and spread across the plate, sauce well filled with a creamy dip, fresh curry leaf garnish. Presented on a matte white/off-white ceramic oval plate (NOT dark, NOT black, NOT charcoal - the plate itself is white/cream colored) with a small built-in triangular sauce well on one side holding a matching chutney or dip, exactly like the reference plate provided. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
   },
   {
     "name": "Masala Peanut Bowl",
     "price_vnd_k": 75,
     "description": "roasted peanuts tossed with curry leaves and aromatic spices",
     "category": "Small Plates & Bar Bites",
-    "plateware": "chinese_bowl",
+    "plateware": "small_white_bowl",
     "slug": "masala-peanut-bowl",
-    "prompt": "A premium editorial food photograph of Masala Peanut Bowl: roasted peanuts tossed with curry leaves and aromatic spices Glossy roasted peanuts flecked with crispy fried curry leaves and mustard seeds. No sauce, no dip, no lemon wedge. Presented in a round shallow ceramic bowl with a warm cream/tan speckled glaze, a wide flared rim, and two small integrated loop handles on opposite sides (a compact rounded serving bowl, approximately 19.5cm wide across the handles, 16cm bowl diameter, 5.5cm tall). No sauce well, no dip, no side sauce of any kind — the dish itself is glossy and saucy, served with nothing extra beside it. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
+    "prompt": "A premium editorial food photograph of Masala Peanut Bowl: roasted peanuts tossed with curry leaves and aromatic spices Glossy roasted peanuts flecked with crispy fried curry leaves and mustard seeds, generously filling the bowl. No sauce, no dip, no lemon wedge. Presented in a small plain matte white ceramic bowl, round with a simple smooth rim and no handles — a plain, unadorned small white bowl, exactly like a simple everyday side-dish bowl (NOT the speckled cream two-handled bowl used for other dishes). Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
   },
   {
     "name": "Crispy Bhindi",
-    "price_vnd_k": 150,
+    "price_vnd_k": 149,
     "description": "crispy finger-cut okra strips coated in light besan batter, deep-fried to golden perfection",
     "category": "Small Plates & Bar Bites",
     "plateware": "round_plain",
@@ -37,12 +37,12 @@
   },
   {
     "name": "Samosa with Mint Chutney",
-    "price_vnd_k": 120,
+    "price_vnd_k": 119,
     "description": "spiced potato pastry served with fresh mint chutney",
     "category": "Small Plates & Bar Bites",
     "plateware": "oval_sauce_well",
     "slug": "samosa-with-mint-chutney",
-    "prompt": "A premium editorial food photograph of Samosa with Mint Chutney: spiced potato pastry served with fresh mint chutney Two golden triangular samosas with visible flaky layers, sauce well filled with vivid green mint chutney. Presented on a matte white/off-white ceramic oval plate (NOT dark, NOT black, NOT charcoal - the plate itself is white/cream colored) with a small built-in triangular sauce well on one side holding a matching chutney or dip, exactly like the reference plate provided. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
+    "prompt": "A premium editorial food photograph of Samosa with Mint Chutney: spiced potato pastry served with fresh mint chutney Two large, generously sized golden triangular samosas with visible flaky layers, sauce well filled with vivid green mint chutney. Presented on a matte white/off-white ceramic oval plate (NOT dark, NOT black, NOT charcoal - the plate itself is white/cream colored) with a small built-in triangular sauce well on one side holding a matching chutney or dip, exactly like the reference plate provided. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
   },
   {
     "name": "Hara Bhara Kebab",
@@ -51,7 +51,7 @@
     "category": "Small Plates & Bar Bites",
     "plateware": "oval_sauce_well",
     "slug": "hara-bhara-kebab",
-    "prompt": "A premium editorial food photograph of Hara Bhara Kebab: spinach and pea kebabs served with mint chutney Deep green herbed kebab patties with a lightly charred crust, thin red onion rings on the side, sauce well filled with mint chutney. Presented on a matte white/off-white ceramic oval plate (NOT dark, NOT black, NOT charcoal - the plate itself is white/cream colored) with a small built-in triangular sauce well on one side holding a matching chutney or dip, exactly like the reference plate provided. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
+    "prompt": "A premium editorial food photograph of Hara Bhara Kebab: spinach and pea kebabs served with mint chutney Large, generously sized deep green herbed kebab patties with a lightly charred crust, thin red onion rings on the side, sauce well filled with mint chutney. Presented on a matte white/off-white ceramic oval plate (NOT dark, NOT black, NOT charcoal - the plate itself is white/cream colored) with a small built-in triangular sauce well on one side holding a matching chutney or dip, exactly like the reference plate provided. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
   },
   {
     "name": "Chilli Paneer",
@@ -60,7 +60,7 @@
     "category": "Small Plates & Bar Bites",
     "plateware": "chinese_bowl",
     "slug": "chilli-paneer",
-    "prompt": "A premium editorial food photograph of Chilli Paneer: cottage cheese cubes tossed in a spicy Indo-Chinese chilli sauce with bell peppers, onions and spring onions Glossy red-brown sauce coating golden-fried paneer cubes with vivid red and green bell pepper pieces and scattered spring onion. Presented in a round shallow ceramic bowl with a warm cream/tan speckled glaze, a wide flared rim, and two small integrated loop handles on opposite sides (a compact rounded serving bowl, approximately 19.5cm wide across the handles, 16cm bowl diameter, 5.5cm tall). No sauce well, no dip, no side sauce of any kind — the dish itself is glossy and saucy, served with nothing extra beside it. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
+    "prompt": "A premium editorial food photograph of Chilli Paneer: cottage cheese cubes tossed in a spicy Indo-Chinese chilli sauce with bell peppers, onions and spring onions A generous, abundant portion filling the bowl completely: glossy red-brown sauce coating golden-fried paneer cubes with vivid red and green bell pepper pieces and scattered spring onion. Presented in a round shallow ceramic bowl with a warm cream/tan speckled glaze, a wide flared rim, and two small integrated loop handles on opposite sides (a compact rounded serving bowl, approximately 19.5cm wide across the handles, 16cm bowl diameter, 5.5cm tall). No sauce well, no dip, no side sauce of any kind — the dish itself is glossy and saucy, served with nothing extra beside it. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
   },
   {
     "name": "Paneer 65",
@@ -69,7 +69,7 @@
     "category": "Small Plates & Bar Bites",
     "plateware": "chinese_bowl",
     "slug": "paneer-65",
-    "prompt": "A premium editorial food photograph of Paneer 65: crispy cottage cheese tossed with curry leaves, garlic and South Indian spices Bright red-orange crispy paneer cubes flecked with fried curry leaves and garlic slivers. Presented in a round shallow ceramic bowl with a warm cream/tan speckled glaze, a wide flared rim, and two small integrated loop handles on opposite sides (a compact rounded serving bowl, approximately 19.5cm wide across the handles, 16cm bowl diameter, 5.5cm tall). No sauce well, no dip, no side sauce of any kind — the dish itself is glossy and saucy, served with nothing extra beside it. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
+    "prompt": "A premium editorial food photograph of Paneer 65: crispy cottage cheese tossed with curry leaves, garlic and South Indian spices A generous, abundant portion filling the bowl completely: bright red-orange crispy paneer cubes flecked with fried curry leaves and garlic slivers. Presented in a round shallow ceramic bowl with a warm cream/tan speckled glaze, a wide flared rim, and two small integrated loop handles on opposite sides (a compact rounded serving bowl, approximately 19.5cm wide across the handles, 16cm bowl diameter, 5.5cm tall). No sauce well, no dip, no side sauce of any kind — the dish itself is glossy and saucy, served with nothing extra beside it. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
   },
   {
     "name": "Honey Chilli Potato",
@@ -78,7 +78,7 @@
     "category": "Small Plates & Bar Bites",
     "plateware": "chinese_bowl",
     "slug": "honey-chilli-potato",
-    "prompt": "A premium editorial food photograph of Honey Chilli Potato: crispy potato fingers tossed in honey, chilli and aromatic spices Glossy honey-glazed potato fingers with sesame seeds and scattered spring onion. Presented in a round shallow ceramic bowl with a warm cream/tan speckled glaze, a wide flared rim, and two small integrated loop handles on opposite sides (a compact rounded serving bowl, approximately 19.5cm wide across the handles, 16cm bowl diameter, 5.5cm tall). No sauce well, no dip, no side sauce of any kind — the dish itself is glossy and saucy, served with nothing extra beside it. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
+    "prompt": "A premium editorial food photograph of Honey Chilli Potato: crispy potato fingers tossed in honey, chilli and aromatic spices A generous, large portion mounded high and filling the bowl completely: glossy honey-glazed potato fingers with sesame seeds and scattered spring onion. Presented in a round shallow ceramic bowl with a warm cream/tan speckled glaze, a wide flared rim, and two small integrated loop handles on opposite sides (a compact rounded serving bowl, approximately 19.5cm wide across the handles, 16cm bowl diameter, 5.5cm tall). No sauce well, no dip, no side sauce of any kind — the dish itself is glossy and saucy, served with nothing extra beside it. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
   },
   {
     "name": "Gobhi 65",
@@ -123,7 +123,7 @@
     "category": "Small Plates & Bar Bites",
     "plateware": "chinese_bowl",
     "slug": "chilli-chicken",
-    "prompt": "A premium editorial food photograph of Chilli Chicken: crispy chicken tossed in a bold chilli sauce Glossy dark-red sauced chicken pieces with charred bell pepper and onion petals. Presented in a round shallow ceramic bowl with a warm cream/tan speckled glaze, a wide flared rim, and two small integrated loop handles on opposite sides (a compact rounded serving bowl, approximately 19.5cm wide across the handles, 16cm bowl diameter, 5.5cm tall). No sauce well, no dip, no side sauce of any kind — the dish itself is glossy and saucy, served with nothing extra beside it. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
+    "prompt": "A premium editorial food photograph of Chilli Chicken: crispy chicken tossed in a bold chilli sauce A generous, abundant portion filling the bowl completely and mounded high: glossy dark-red sauced chicken pieces with charred bell pepper and onion petals. Presented in a round shallow ceramic bowl with a warm cream/tan speckled glaze, a wide flared rim, and two small integrated loop handles on opposite sides (a compact rounded serving bowl, approximately 19.5cm wide across the handles, 16cm bowl diameter, 5.5cm tall). No sauce well, no dip, no side sauce of any kind — the dish itself is glossy and saucy, served with nothing extra beside it. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
   },
   {
     "name": "Butter Garlic Prawns",
@@ -132,7 +132,7 @@
     "category": "Small Plates & Bar Bites",
     "plateware": "oval_sauce_well",
     "slug": "butter-garlic-prawns",
-    "prompt": "A premium editorial food photograph of Butter Garlic Prawns: juicy prawns sauteed with garlic, herbs and butter Plump pink-orange prawns glistening in garlic butter with visible garlic slivers and chopped parsley, sauce well filled with a lemon wedge. Presented on a matte white/off-white ceramic oval plate (NOT dark, NOT black, NOT charcoal - the plate itself is white/cream colored) with a small built-in triangular sauce well on one side holding a matching chutney or dip, exactly like the reference plate provided. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
+    "prompt": "A premium editorial food photograph of Butter Garlic Prawns: juicy prawns sauteed with garlic, herbs and butter A generous, abundant portion of large plump pink-orange prawns glistening in garlic butter, filling the plate, with visible garlic slivers and chopped parsley, sauce well filled with a lemon wedge. Presented on a matte white/off-white ceramic oval plate (NOT dark, NOT black, NOT charcoal - the plate itself is white/cream colored) with a small built-in triangular sauce well on one side holding a matching chutney or dip, exactly like the reference plate provided. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
   },
   {
     "name": "Fish Amritsari",
@@ -159,7 +159,7 @@
     "category": "Chaat & Fast Sellers",
     "plateware": "wooden_tray",
     "slug": "pani-puri-shots",
-    "prompt": "A premium editorial food photograph of Pani Puri Shots: crispy puris served with tangy flavored waters and chutneys Each round well of the tray holds a small clear glass filled with tangy flavored pani puri water, alternating vivid mint-green and tamarind-brown, with a few round hollow crisp puris filled with mashed potato and chickpeas arranged on a small plate beside the tray. Presented on a curved dark walnut wooden serving tray with a row of round drilled wells, each well holding one small clear glass upright, exactly like the reference tray provided. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
+    "prompt": "A premium editorial food photograph of Pani Puri Shots: crispy puris served with tangy flavored waters and chutneys Each round well of the tray holds a small clear glass filled with tangy flavored pani puri water, alternating vivid mint-green and tamarind-brown, with a few round hollow crisp puris filled with mashed potato and chickpeas arranged on a small plate beside the tray. Shot from a angle that keeps the ENTIRE tray and every single glass fully inside the frame with comfortable empty margin on all four sides — zoom out enough that nothing is cropped, no glass or end of the tray touches or crosses the edge of the photo. Presented on a curved dark walnut wooden serving tray with a row of round drilled wells, each well holding one small clear glass upright, exactly like the reference tray provided. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
   },
   {
     "name": "Dahi Papdi Chaat",
@@ -193,18 +193,18 @@
     "price_vnd_k": 100,
     "description": "fresh and crisp salad with cucumbers, tomatoes, onions and carrots",
     "category": "Chaat & Fast Sellers",
-    "plateware": "chinese_bowl",
+    "plateware": "small_white_bowl",
     "slug": "green-salad",
-    "prompt": "A premium editorial food photograph of Green Salad: fresh and crisp salad with cucumbers, tomatoes, onions and carrots A generous, abundant, colorful pile heaped high — crisp cucumber rounds, tomato wedges, thin red onion rings and julienned carrot, filling the bowl completely, looking fresh and luscious. No chutney, no dressing, no dip of any kind — the vegetables alone. Presented in a round shallow ceramic bowl with a warm cream/tan speckled glaze, a wide flared rim, and two small integrated loop handles on opposite sides (a compact rounded serving bowl, approximately 19.5cm wide across the handles, 16cm bowl diameter, 5.5cm tall). No sauce well, no dip, no side sauce of any kind — the dish itself is glossy and saucy, served with nothing extra beside it. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
+    "prompt": "A premium editorial food photograph of Green Salad: fresh and crisp salad with cucumbers, tomatoes, onions and carrots A generous, abundant, colorful pile heaped high — crisp cucumber rounds, tomato wedges, thin red onion rings and julienned carrot, filling the bowl completely, looking fresh and luscious. No chutney, no dressing, no dip of any kind — the vegetables alone. Presented in a small plain matte white ceramic bowl, round with a simple smooth rim and no handles — a plain, unadorned small white bowl, exactly like a simple everyday side-dish bowl (NOT the speckled cream two-handled bowl used for other dishes). Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
   },
   {
     "name": "Crispy Corn",
     "price_vnd_k": 125,
     "description": "crispy sweet corn tossed with spices, herbs and chilli",
     "category": "Chaat & Fast Sellers",
-    "plateware": "chinese_bowl",
+    "plateware": "small_white_bowl",
     "slug": "crispy-corn",
-    "prompt": "A premium editorial food photograph of Crispy Corn: crispy sweet corn tossed with spices, herbs and chilli Golden crispy corn kernels tossed with herbs and a light chilli dusting. No sauce, no dip. Presented in a round shallow ceramic bowl with a warm cream/tan speckled glaze, a wide flared rim, and two small integrated loop handles on opposite sides (a compact rounded serving bowl, approximately 19.5cm wide across the handles, 16cm bowl diameter, 5.5cm tall). No sauce well, no dip, no side sauce of any kind — the dish itself is glossy and saucy, served with nothing extra beside it. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
+    "prompt": "A premium editorial food photograph of Crispy Corn: crispy sweet corn tossed with spices, herbs and chilli A generous portion mounded high, filling the bowl completely: golden crispy corn kernels tossed with herbs and a light chilli dusting. No sauce, no dip. Presented in a small plain matte white ceramic bowl, round with a simple smooth rim and no handles — a plain, unadorned small white bowl, exactly like a simple everyday side-dish bowl (NOT the speckled cream two-handled bowl used for other dishes). Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
   },
   {
     "name": "Chole Bhature",
@@ -213,20 +213,20 @@
     "category": "Chaat & Fast Sellers",
     "plateware": "oval_sauce_well",
     "slug": "chole-bhature",
-    "prompt": "A premium editorial food photograph of Chole Bhature: spiced chickpea curry served with fluffy fried bhature bread A rich dark-brown spiced chickpea curry in the sauce well, beside it on the plate TWO large puffed golden fried bhature breads (not one — exactly two whole puffed bhature), thin red onion rings and a lemon wedge. Presented on a matte white/off-white ceramic oval plate (NOT dark, NOT black, NOT charcoal - the plate itself is white/cream colored) with a small built-in triangular sauce well on one side holding a matching chutney or dip, exactly like the reference plate provided. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
+    "prompt": "A premium editorial food photograph of Chole Bhature: spiced chickpea curry served with fluffy fried bhature bread A generous, hearty portion: a rich dark-brown spiced chickpea curry piled high in the sauce well, beside it on the plate TWO large, extra-puffy golden fried bhature breads (not one — exactly two whole puffed bhature, each large and generously sized), thin red onion rings and a lemon wedge. Presented on a matte white/off-white ceramic oval plate (NOT dark, NOT black, NOT charcoal - the plate itself is white/cream colored) with a small built-in triangular sauce well on one side holding a matching chutney or dip, exactly like the reference plate provided. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
   },
   {
     "name": "Mix Raita",
     "price_vnd_k": 95,
     "description": "refreshing yogurt with vegetables and roasted spices",
     "category": "Chaat & Fast Sellers",
-    "plateware": "chinese_bowl",
+    "plateware": "small_white_bowl",
     "slug": "mix-raita",
-    "prompt": "A premium editorial food photograph of Mix Raita: refreshing yogurt with vegetables and roasted spices Thick white yogurt studded with finely diced cucumber, tomato and onion, dusted with roasted cumin, small mint leaf garnish on top. Presented in a round shallow ceramic bowl with a warm cream/tan speckled glaze, a wide flared rim, and two small integrated loop handles on opposite sides (a compact rounded serving bowl, approximately 19.5cm wide across the handles, 16cm bowl diameter, 5.5cm tall). No sauce well, no dip, no side sauce of any kind — the dish itself is glossy and saucy, served with nothing extra beside it. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
+    "prompt": "A premium editorial food photograph of Mix Raita: refreshing yogurt with vegetables and roasted spices A generous portion filling the bowl completely: thick white yogurt studded with finely diced cucumber, tomato and onion, dusted with roasted cumin, small mint leaf garnish on top. Presented in a small plain matte white ceramic bowl, round with a simple smooth rim and no handles — a plain, unadorned small white bowl, exactly like a simple everyday side-dish bowl (NOT the speckled cream two-handled bowl used for other dishes). Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
   },
   {
     "name": "Mix Veg Pakora",
-    "price_vnd_k": 160,
+    "price_vnd_k": 149,
     "description": "crispy mixed vegetable fritters served with mint chutney",
     "category": "Chaat & Fast Sellers",
     "plateware": "oval_sauce_well",
@@ -325,7 +325,7 @@
   },
   {
     "name": "Dal Makhani",
-    "price_vnd_k": 165,
+    "price_vnd_k": 169,
     "description": "creamy black lentils slow-cooked with butter and aromatic spices",
     "category": "Main Curries",
     "plateware": "copper_karahi",
@@ -343,7 +343,7 @@
   },
   {
     "name": "Dal Tadka",
-    "price_vnd_k": 150,
+    "price_vnd_k": 159,
     "description": "yellow lentils tempered with garlic, cumin and spices",
     "category": "Main Curries",
     "plateware": "copper_karahi",
@@ -424,7 +424,7 @@
   },
   {
     "name": "Butter Chicken",
-    "price_vnd_k": 245,
+    "price_vnd_k": 249,
     "description": "tender chicken cooked in a rich tomato and butter gravy",
     "category": "Main Curries",
     "plateware": "copper_karahi",
@@ -433,7 +433,7 @@
   },
   {
     "name": "Chicken Tikka Masala",
-    "price_vnd_k": 235,
+    "price_vnd_k": 239,
     "description": "grilled chicken tikka simmered in a rich spiced tomato gravy",
     "category": "Main Curries",
     "plateware": "copper_karahi",
@@ -442,7 +442,7 @@
   },
   {
     "name": "Kadai Chicken",
-    "price_vnd_k": 225,
+    "price_vnd_k": 229,
     "description": "chicken cooked with onions, bell peppers and aromatic Indian spices",
     "category": "Main Curries",
     "plateware": "copper_karahi",
@@ -528,7 +528,7 @@
     "category": "Breads",
     "plateware": "rattan_basket",
     "slug": "plain-naan",
-    "prompt": "A premium editorial food photograph of Plain Naan: soft and pillowy white flour bread baked in the tandoor (add butter +5K) A beautiful, appetizing, generously sized pillowy oval white-flour naan with rich golden charred blister spots and a warm buttery sheen, lightly torn open at one edge to show its soft pillowy interior, resting elegantly in the basket. Nothing else on the plate — no dip, no bowl, no garnish, no side items of any kind, just the naan alone in the basket, shot with warm inviting light. Presented in a small rectangular woven rattan/wicker bread basket lined with a neutral linen napkin. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
+    "prompt": "A premium editorial food photograph of Plain Naan: soft and pillowy white flour bread baked in the tandoor (add butter +5K) A beautiful, appetizing, generously sized pillowy oval white-flour naan, completely whole and intact with NO tears, NO broken edges, NO rips of any kind — a single smooth unbroken piece of bread with rich golden charred blister spots and a warm buttery sheen, resting elegantly in the basket. Nothing else on the plate — no dip, no bowl, no garnish, no side items of any kind, just the whole naan alone in the basket, shot with warm inviting light. Presented in a small rectangular woven rattan/wicker bread basket lined with a neutral linen napkin. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
   },
   {
     "name": "Cheese Garlic Naan",
@@ -690,11 +690,11 @@
     "category": "Drinks",
     "plateware": "glass_tumbler",
     "slug": "water-sparkling-water",
-    "prompt": "A premium editorial food photograph of Water / Sparkling Water: chilled bottled still or sparkling water A clear glass filled with chilled still water with visible condensation, ice cubes and a light mint sprig, unbranded plain glass bottle beside it. Served in a clear glass tumbler, resting on a small round copper coaster. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
+    "prompt": "A premium editorial food photograph of Water / Sparkling Water: chilled bottled still or sparkling water A clear glass filled with chilled still water with visible condensation, ice cubes and a light mint sprig, a clear glass bottle beside it with a simple small label reading 'THE THEATER' in elegant serif capitals on the front of the bottle. Served in a clear glass tumbler, resting on a small round copper coaster. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
   },
   {
     "name": "Cappuccino",
-    "price_vnd_k": 85,
+    "price_vnd_k": 75,
     "description": "espresso with steamed milk and velvety foam",
     "category": "Coffee",
     "plateware": "ceramic_cup",
@@ -703,7 +703,7 @@
   },
   {
     "name": "Latte",
-    "price_vnd_k": 85,
+    "price_vnd_k": 70,
     "description": "smooth espresso blended with silky steamed milk",
     "category": "Coffee",
     "plateware": "tall_glass",
@@ -712,7 +712,7 @@
   },
   {
     "name": "Espresso",
-    "price_vnd_k": 60,
+    "price_vnd_k": 55,
     "description": "rich and intense single-shot coffee",
     "category": "Coffee",
     "plateware": "ceramic_cup",
@@ -721,7 +721,7 @@
   },
   {
     "name": "Americano",
-    "price_vnd_k": 75,
+    "price_vnd_k": 65,
     "description": "espresso balanced with hot water for a smooth finish",
     "category": "Coffee",
     "plateware": "ceramic_cup",
@@ -807,7 +807,7 @@
     "category": "Juices, Smoothies & Iced Tea",
     "plateware": "tall_glass",
     "slug": "chocolate-mocha-smoothie",
-    "prompt": "A premium editorial food photograph of Chocolate Mocha Smoothie: chocolate, coffee, banana, milk and cocoa powder A thick rich brown chocolate-coffee smoothie topped with chocolate shavings. Served in a tall clear glass, resting on a small round wooden coaster. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
+    "prompt": "A premium editorial food photograph of Chocolate Mocha Smoothie: chocolate, coffee, banana, milk and cocoa powder A thick rich brown chocolate-coffee smoothie topped with chocolate shavings, served in the exact same tall straight-sided clear highball glass shape as the other smoothies — no footed glass, no stemmed glass, no short parfait glass, just a plain tall straight glass. Served in a tall clear glass, resting on a small round wooden coaster. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
   },
   {
     "name": "Strawberry Delight Smoothie",
@@ -861,6 +861,6 @@
     "category": "Desserts",
     "plateware": "dessert_bowl",
     "slug": "gajar-halwa",
-    "prompt": "A premium editorial food photograph of Gajar Halwa: classic carrot pudding cooked with milk, garnished with nuts Rich glossy orange-red carrot pudding topped with slivered almonds and pistachios. Served in a small light matte ceramic bowl. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
+    "prompt": "A premium editorial food photograph of Gajar Halwa: classic carrot pudding cooked with milk, garnished with nuts A generous, large portion mounded high and filling the bowl completely: rich glossy orange-red carrot pudding topped with slivered almonds and pistachios. Served in a small light matte ceramic bowl. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
   }
 ]
