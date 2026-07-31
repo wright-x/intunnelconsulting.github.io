@@ -18,6 +18,8 @@ BY_CATEGORY = {}
 for it in ITEMS:
     BY_CATEGORY.setdefault(it["category"], []).append(it)
 
+ITEMS_BY_NAME = {it["name"]: it for it in ITEMS}
+
 NON_VEG_KEYWORDS = ["chicken", "prawn", "fish", "mutton", "lamb", "egg", "seafood"]
 
 
@@ -316,11 +318,11 @@ def build_item_block_prose(num, item, hero=False, show_tags=True):
     return " ".join(parts)
 
 
-def build_content_prompt(category, page_items, show_tags, spice_legend=False):
+def build_content_prompt(category, page_items, show_tags, spice_legend=False, title=None, tagline=None):
     for it in page_items:
         it["_show_tags"] = show_tags
 
-    title = category.upper()
+    title = title or category.upper()
     hero_idx = 0
     for i, it in enumerate(page_items):
         if it.get("_chef_rec"):
@@ -358,7 +360,7 @@ def build_content_prompt(category, page_items, show_tags, spice_legend=False):
     prompt = (
         STYLE_PROSE + " " + NEGATIVE_PROSE + " " + tags_prose + " "
         + PHOTO_TREATMENT_PROSE + " " + ref_recap + "\n\n"
-        + build_header_prose(title, TAGLINES.get(category, ""), spice_legend=spice_legend) + "\n\n"
+        + build_header_prose(title, tagline if tagline is not None else TAGLINES.get(category, ""), spice_legend=spice_legend) + "\n\n"
         + "Below the header, use a confident asymmetric editorial layout, "
         + "generous negative space, dishes floating with only a soft shadow "
         + "grounding them — art-directed, not a rigid grid. These layout "
@@ -379,6 +381,37 @@ def build_content_prompt(category, page_items, show_tags, spice_legend=False):
     )
     return prompt, ordered_items
 
+
+def build_spotlight_prompt(item):
+    return (
+        "Design a full-bleed A4 portrait DISH SPOTLIGHT page — a dramatic "
+        "single-dish showcase page, not a standard menu list page. "
+        "Background: a rich, dark, moody restaurant ambiance filling the "
+        "entire page edge-to-edge — deep charcoal-brown tones, soft warm "
+        "bokeh lights blurred in the background suggesting a dim elegant "
+        "dining room. In each of the four corners, a small, thin, elegant "
+        "gold ornamental line-art flourish (a corner mark only, not a full "
+        "border or frame). The attached reference photo shows the true "
+        "appearance of this dish — feature it large, prominent and "
+        "dramatically lit in the lower two-thirds of the page, extracted "
+        "cleanly from its own reference background and placed naturally "
+        "into this dark moody scene with a realistic shadow and soft warm "
+        f"rim lighting. In the upper third of the page, centered, the dish "
+        f"name '{item['name']}' in large elegant white premium serif type, "
+        f"and directly beneath it, smaller gold tracked-out capital text "
+        f"reading '{item['price_vnd_k']}K'. No other text, no watermark, "
+        "no page number, no arrows anywhere on the page."
+    )
+
+
+SPOTLIGHT_BEFORE_SLUG = {
+    "chaat-fast-sellers-1": "Chaat Mehfil",
+    "tandoor-grill-1": "Shahi Tandoori Platter",
+    "main-curries-1": "Dum Daal Bukhara",
+    "main-curries-4": "Shahi Murgh Makhani",
+    "biryani-1": "Royal Dum Biryani",
+    "desserts-1": "Shahi Mithai Trio",
+}
 
 HERO_PROMPTS = [
     ("divider-small-plates", (
@@ -609,29 +642,19 @@ def build_spirits_prompt():
 
 
 COCKTAILS_MENU = [
-    ("The Maharaja", 179, "Whisky, saffron, honey and fresh citrus, finished with a subtle touch of Indian spice. Rich, smooth and regal."),
-    ("Bombay Sunset", 179, "Vodka, passion fruit, orange and lime blended into a bright tropical cocktail with a refreshing citrus finish."),
-    ("Jaipur Rose", 179, "Gin, rose, lychee and fresh lemon. Floral, elegant and beautifully refreshing."),
-    ("Spiced Mango Margarita", 179, "Tequila, ripe mango, fresh lime and a gentle chilli kick. Sweet, tangy and perfectly balanced."),
-    ("Theater Masala Mule", 179, "Vodka, ginger, lime and aromatic Indian spices topped with sparkling ginger ale. Fresh, spicy and lively."),
-    ("Royal Pomegranate", 179, "Gin, pomegranate, lemon and tonic. Crisp, fruity and refreshingly sophisticated."),
-    ("Goa Tropical", 179, "White rum, pineapple, coconut and lime. A smooth tropical escape inspired by the beaches of Goa."),
-    ("Saffron Sour", 179, "Whisky, fresh lemon, saffron syrup and silky foam. Bold, aromatic and luxuriously smooth."),
-    ("Delhi Old Fashioned", 179, "Whisky stirred with aromatic bitters, orange and a hint of Indian spice. Strong, smooth and timeless."),
-    ("Indian Espresso Martini", 179, "Vodka, coffee liqueur and freshly brewed espresso with a touch of cardamom. Rich, bold and indulgent."),
+    ("The Maharaja", 219, "Whisky, saffron, honey and fresh citrus, finished with a subtle touch of Indian spice. Rich, smooth and regal."),
+    ("Bombay Sunset", 219, "Vodka, passion fruit, orange and lime blended into a bright tropical cocktail with a refreshing citrus finish."),
+    ("Jaipur Rose", 219, "Gin, rose, lychee and fresh lemon. Floral, elegant and beautifully refreshing."),
+    ("Spiced Mango Margarita", 219, "Tequila, ripe mango, fresh lime and a gentle chilli kick. Sweet, tangy and perfectly balanced."),
+    ("Theater Masala Mule", 219, "Vodka, ginger, lime and aromatic Indian spices topped with sparkling ginger ale. Fresh, spicy and lively."),
 ]
 
 MOCKTAILS_MENU = [
-    ("Mango Maharaja", 89, "Ripe mango, fresh lime and a touch of mint. Rich, tropical and refreshing."),
-    ("Jaipur Rose Cooler", 89, "Rose, lychee, lemon and soda. Light, floral and beautifully refreshing."),
-    ("Bombay Berry Fizz", 89, "Mixed berries, fresh lime and sparkling soda. Fruity, vibrant and refreshing."),
-    ("Masala Mojito", 89, "Fresh mint, lime, Indian spices and soda. A refreshing Indian twist on a classic favourite."),
-    ("Passion of India", 89, "Passion fruit, orange, lime and sparkling soda. Tropical, tangy and full of flavour."),
-    ("Pomegranate Royale", 89, "Pomegranate, lemon, mint and soda. Fresh, elegant and delicately sweet."),
-    ("Goa Sunrise", 89, "Pineapple, orange and passion fruit with a splash of grenadine. Bright, tropical and colourful."),
-    ("Saffron Lemonade", 89, "Fresh lemon, saffron syrup and sparkling soda. Fragrant, refreshing and uniquely Indian."),
-    ("Ginger Mango Cooler", 89, "Mango, fresh ginger, lime and soda. Sweet, citrusy and gently spicy."),
-    ("Lychee Mint Fizz", 89, "Lychee, fresh mint, lime and sparkling soda. Light, fragrant and refreshing."),
+    ("Mango Maharaja", 149, "Ripe mango, fresh lime and a touch of mint. Rich, tropical and refreshing."),
+    ("Jaipur Rose Cooler", 149, "Rose, lychee, lemon and soda. Light, floral and beautifully refreshing."),
+    ("Bombay Berry Fizz", 149, "Mixed berries, fresh lime and sparkling soda. Fruity, vibrant and refreshing."),
+    ("Masala Mojito", 149, "Fresh mint, lime, Indian spices and soda. A refreshing Indian twist on a classic favourite."),
+    ("Passion of India", 149, "Passion fruit, orange, lime and sparkling soda. Tropical, tangy and full of flavour."),
 ]
 
 
@@ -664,7 +687,6 @@ def build_drink_list_prompt(title, tagline, items_subset, page_note):
 
 
 CATEGORY_ORDER = [
-    "Theater Signatures",
     "Small Plates & Bar Bites",
     "Chaat & Fast Sellers",
     "Tandoor & Grill",
@@ -674,9 +696,6 @@ CATEGORY_ORDER = [
     "Rice & Khichdi",
     "Biryani",
     "Desserts",
-    "Coffee",
-    "Juices, Smoothies & Iced Tea",
-    "Drinks",
 ]
 
 DIVIDER_BEFORE = {
@@ -684,7 +703,6 @@ DIVIDER_BEFORE = {
     "Tandoor & Grill": "divider-tandoor",
     "Rice & Khichdi": "divider-rice",
     "Desserts": "divider-desserts",
-    "Coffee": "divider-bar",
 }
 
 # Explicit page groupings for categories where the default veg/spice
@@ -694,15 +712,6 @@ MANUAL_GROUPS = {
     "Desserts": [
         ["Gulab Jamun with Vanilla Ice Cream", "Kheer", "Gajar Halwa"],
         ["Ice Cream (Vanilla)", "Ice Cream (Chocolate)"],
-    ],
-    "Juices, Smoothies & Iced Tea": [
-        ["Orange Juice", "Watermelon Juice", "Pineapple Juice", "Mixed Fruit Juice"],
-        ["Lemon Iced Tea", "Peach Iced Tea"],
-        ["Mango Magic Smoothie", "Berry Bliss Smoothie", "Chocolate Mocha Smoothie", "Strawberry Delight Smoothie"],
-    ],
-    "Drinks": [
-        ["Masala Tea", "Mango Lassi", "Lassi", "Masala Chaas"],
-        ["Cold Drink", "Water / Sparkling Water"],
     ],
 }
 
@@ -754,6 +763,17 @@ for cat in CATEGORY_ORDER:
     for i, group in enumerate(page_groups, 1):
         if not group:
             continue
+        slug = f"{category_slug(cat)}-{i}"
+        if slug in SPOTLIGHT_BEFORE_SLUG:
+            spot_item = ITEMS_BY_NAME[SPOTLIGHT_BEFORE_SLUG[slug]]
+            pages.append({
+                "page_num": page_num, "type": "spotlight",
+                "slug": f"spotlight-{category_slug(spot_item['name'])}",
+                "title": spot_item["name"], "items": [],
+                "reference_photos": [p for p in [photo_path(spot_item)] if p],
+                "prompt": build_spotlight_prompt(spot_item),
+            })
+            page_num += 1
         spice_legend = show_tags and not first_content_page_used
         first_content_page_used = first_content_page_used or spice_legend
         prompt_text, ordered_items = build_content_prompt(cat, group, show_tags, spice_legend=spice_legend)
@@ -761,7 +781,7 @@ for cat in CATEGORY_ORDER:
         pages.append({
             "page_num": page_num,
             "type": "content",
-            "slug": f"{category_slug(cat)}-{i}",
+            "slug": slug,
             "title": cat,
             "items": [
                 {
@@ -777,6 +797,74 @@ for cat in CATEGORY_ORDER:
         })
         page_num += 1
 
+def add_drink_list(slug, title, tagline, menu):
+    global page_num
+    pages.append({
+        "page_num": page_num, "type": "drinklist", "slug": slug,
+        "title": title, "items": [], "reference_photos": [],
+        "prompt": build_drink_list_prompt(title, tagline, menu, 1),
+    })
+    page_num += 1
+
+
+def add_bar_page(slug, title, tagline, category, names):
+    global page_num
+    by_name = {it["name"]: it for it in BY_CATEGORY[category]}
+    group = [by_name[n] for n in names]
+    for it in group:
+        it["_veg"] = is_veg(it)
+        it["_spice"] = spice_level(it)
+        it["_chef_rec"] = it["name"] in CHEF_RECOMMENDED
+    show_tags = category not in NO_TAGS_CATEGORIES
+    prompt_text, ordered_items = build_content_prompt(
+        category, group, show_tags, title=title, tagline=tagline)
+    refs = [photo_path(it) for it in ordered_items]
+    pages.append({
+        "page_num": page_num, "type": "content", "slug": slug, "title": title,
+        "items": [
+            {
+                "name": it["name"], "price_vnd_k": it["price_vnd_k"],
+                "description": it["description"], "veg": it["_veg"],
+                "spice": it["_spice"], "chef_recommended": it["_chef_rec"],
+                "photo": photo_path(it),
+            }
+            for it in ordered_items
+        ],
+        "reference_photos": [r for r in refs if r],
+        "prompt": prompt_text,
+    })
+    page_num += 1
+
+
+add_hero("divider-bar")
+
+add_drink_list("signature-cocktails", "SIGNATURE COCKTAILS",
+                "Original creations bringing Indian flavors to the bar.",
+                COCKTAILS_MENU)
+add_drink_list("signature-mocktails", "SIGNATURE MOCKTAILS",
+                "All the flavor, none of the alcohol.",
+                MOCKTAILS_MENU)
+add_bar_page("chai-lassi", "CHAI, LASSI & CHAAS",
+             "Traditional Indian drinks, freshly made.",
+             "Drinks", ["Masala Tea", "Mango Lassi", "Lassi", "Masala Chaas"])
+add_bar_page("smoothies", "SMOOTHIES",
+             "Thick, fruity and freshly blended.",
+             "Juices, Smoothies & Iced Tea",
+             ["Mango Magic Smoothie", "Berry Bliss Smoothie", "Chocolate Mocha Smoothie", "Strawberry Delight Smoothie"])
+add_bar_page("juices", "JUICES",
+             "Fresh-squeezed, every time.",
+             "Juices, Smoothies & Iced Tea",
+             ["Orange Juice", "Watermelon Juice", "Pineapple Juice", "Mixed Fruit Juice"])
+add_bar_page("iced-tea", "ICED TEA",
+             "Chilled and refreshing.",
+             "Juices, Smoothies & Iced Tea", ["Lemon Iced Tea", "Peach Iced Tea"])
+add_bar_page("sparkling-water", "SPARKLING WATER",
+             "Refreshing beverages to complement your meal.",
+             "Drinks", ["Cold Drink", "Water / Sparkling Water"])
+add_bar_page("coffee", "COFFEE",
+             "Freshly brewed coffee crafted for every mood.",
+             "Coffee", ["Cappuccino", "Latte", "Espresso", "Americano"])
+
 # Spirits, Wines & Beers — text-only price list, no dish photos
 pages.append({
     "page_num": page_num, "type": "spirits", "slug": "spirits-wines-beers",
@@ -784,32 +872,6 @@ pages.append({
     "prompt": build_spirits_prompt(),
 })
 page_num += 1
-
-
-def add_drink_list(slug_prefix, title, tagline, menu, half_idx):
-    global page_num
-    half = len(menu) // 2
-    subset = menu[:half] if half_idx == 1 else menu[half:]
-    pages.append({
-        "page_num": page_num, "type": "drinklist", "slug": f"{slug_prefix}-{half_idx}",
-        "title": title, "items": [], "reference_photos": [],
-        "prompt": build_drink_list_prompt(title, tagline, subset, half_idx),
-    })
-    page_num += 1
-
-
-add_drink_list("signature-cocktails", "SIGNATURE COCKTAILS",
-                "Original creations bringing Indian flavors to the bar.",
-                COCKTAILS_MENU, 1)
-add_drink_list("signature-cocktails", "SIGNATURE COCKTAILS",
-                "Original creations bringing Indian flavors to the bar.",
-                COCKTAILS_MENU, 2)
-add_drink_list("signature-mocktails", "SIGNATURE MOCKTAILS",
-                "All the flavor, none of the alcohol.",
-                MOCKTAILS_MENU, 1)
-add_drink_list("signature-mocktails", "SIGNATURE MOCKTAILS",
-                "All the flavor, none of the alcohol.",
-                MOCKTAILS_MENU, 2)
 
 add_hero("closing")
 add_hero("back-cover")

@@ -21,3 +21,18 @@ page_num,slug,type,title,filename,actual_resolution,status
 24,breads-3,content,Breads,24-breads-3.png,1792x2400,ok
 40,signature-cocktails-1,drinklist,SIGNATURE COCKTAILS,40-signature-cocktails-1.png,1792x2400,ok
 2,theater-signatures-1,content,Theater Signatures,02-theater-signatures-1.png,1792x2400,ok
+1,cover,cover,cover,01-cover.png,1792x2400,ok
+3,small-plates-bar-bites-1,content,Small Plates & Bar Bites,03-small-plates-bar-bites-1.png,1792x2400,ok
+7,spotlight-chaat-mehfil,spotlight,Chaat Mehfil,07-spotlight-chaat-mehfil.png,1792x2400,ok
+12,spotlight-shahi-tandoori-platter,spotlight,Shahi Tandoori Platter,12-spotlight-shahi-tandoori-platter.png,1792x2400,ok
+16,spotlight-dum-daal-bukhara,spotlight,Dum Daal Bukhara,16-spotlight-dum-daal-bukhara.png,1792x2400,ok
+20,spotlight-shahi-murgh-makhani,spotlight,Shahi Murgh Makhani,20-spotlight-shahi-murgh-makhani.png,1792x2400,ok
+29,spotlight-royal-dum-biryani,spotlight,Royal Dum Biryani,29-spotlight-royal-dum-biryani.png,1792x2400,ok
+33,spotlight-shahi-mithai-trio,spotlight,Shahi Mithai Trio,33-spotlight-shahi-mithai-trio.png,1792x2400,ok
+37,signature-cocktails,drinklist,SIGNATURE COCKTAILS,37-signature-cocktails.png,1792x2400,ok
+38,signature-mocktails,drinklist,SIGNATURE MOCKTAILS,38-signature-mocktails.png,1792x2400,ok
+39,chai-lassi,content,"CHAI, LASSI & CHAAS",39-chai-lassi.png,1792x2400,ok
+40,smoothies,content,SMOOTHIES,40-smoothies.png,1792x2400,ok
+41,juices,content,JUICES,41-juices.png,1792x2400,ok
+42,iced-tea,content,ICED TEA,42-iced-tea.png,1792x2400,ok
+43,sparkling-water,content,SPARKLING WATER,43-sparkling-water.png,1792x2400,ok

@@ -134,17 +134,17 @@ items = []
 # ---------------- Theater Signatures ----------------
 cat = "Theater Signatures"
 items += [
-    item("Theater Signature Dal", 185, "our slow-simmered black lentils, finished tableside with a smoking butter tadka", cat, "copper_karahi",
+    item("Dum Daal Bukhara", 185, "our slow-simmered black lentils, finished tableside with a smoking butter tadka", cat, "copper_karahi",
          "Deep brown creamy black lentils with a swirl of cream and a generous pat of butter melting into a dramatic curl of visible smoke rising from the center, finished with fresh cilantro — an elevated, dramatic tableside presentation."),
-    item("Signature Chaat Experience", 220, "a curated trio of pani puri, aloo tikki chaat and dahi papdi chaat, plated together", cat, "round_plain",
-         "Three generous, abundant clusters filling the plate: a full portion of pani puri shots with several golden puris piled together, a hearty portion of golden aloo tikki topped with a generous swirl of yogurt and chutneys, and a full portion of papdi chaat layered thickly with yogurt and chutney drizzles, garnished with fresh coriander and fine sev — a generously portioned tasting trio, no empty space on the plate."),
-    item("Theater Dessert", 165, "a chef's tasting trio of warm gulab jamun, silky kheer and rich gajar halwa, plated together", cat, "round_plain",
+    item("Chaat Mehfil", 220, "a curated trio of pani puri shots, aloo tikki chaat and dahi papdi chaat, plated together", cat, "round_plain_large",
+         "A generous spread filling the platter: the same small wooden gol gappa tray with a row of shot glasses filled with tangy pani puri water alongside crisp puris, set beside a hearty portion of golden aloo tikki topped with a generous swirl of yogurt and chutneys, and a full portion of papdi chaat layered thickly with yogurt and chutney drizzles, garnished with fresh coriander and fine sev — a generously portioned tasting trio, no empty space on the platter."),
+    item("Shahi Mithai Trio", 165, "a chef's tasting trio of warm gulab jamun, silky kheer and rich gajar halwa, plated together", cat, "round_plain",
          "Three generous, hearty portions filling the plate: two glossy gulab jamun in syrup, a full generous scoop of creamy kheer garnished with saffron and nuts, and a large mound of rich gajar halwa garnished with pistachios — a generously portioned dessert finale, no empty space on the plate."),
-    item("Royal Butter Chicken", 279, "tender tandoor-charred chicken in a silky tomato-butter gravy, presented with a flourish", cat, "copper_karahi",
+    item("Shahi Murgh Makhani", 279, "tender tandoor-charred chicken in a silky tomato-butter gravy, presented with a flourish", cat, "copper_karahi",
          "Tender char-grilled chicken pieces in a smooth vivid orange-red tomato-butter gravy with an elegant swirl of cream and a delicate flourish of fresh cilantro, an elevated, dramatic presentation of the classic."),
-    item("Theater Tandoori Sharing Platter", 459, "an abundant sharing spread of Chicken Tikka, Chicken Malai Tikka, Tangdi Kebab, Paneer Tikka and Achari Paneer Tikka on one grand sizzling platter", cat, "round_plain_large",
+    item("Shahi Tandoori Platter", 459, "an abundant sharing spread of Chicken Tikka, Chicken Malai Tikka, Tangdi Kebab, Paneer Tikka and Achari Paneer Tikka on one grand sizzling platter", cat, "round_plain_large",
          "A grand, abundant assortment of char-grilled chicken tikka, chicken malai tikka, tandoori chicken drumsticks, paneer tikka and achari paneer tikka fanned out dramatically across a large sizzling platter, mint chutney in a small metal cup, thin red onion rings and lemon wedges, generous wisps of steam — a showstopping sharing presentation."),
-    item("Theater Dum Biryani", 259, "fragrant basmati and tender chicken sealed and slow-cooked in a dough-covered handi, cracked open tableside", cat, "copper_biryani_handi",
+    item("Royal Dum Biryani", 259, "fragrant basmati and tender chicken sealed and slow-cooked in a dough-covered handi, cracked open tableside", cat, "copper_biryani_handi",
          "A hammered copper biryani handi with a golden baked dough seal visibly cracked open at the rim, fragrant saffron basmati rice and tender chicken pieces spilling into view, dramatic steam rising, fried onions, mint and whole spices visible — a theatrical tableside reveal."),
 ]
 
