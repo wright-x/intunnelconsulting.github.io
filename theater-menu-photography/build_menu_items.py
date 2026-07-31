@@ -152,7 +152,7 @@ items += [
 cat = "Small Plates & Bar Bites"
 items += [
     item("French Fries", 125, "crispy golden fries seasoned with sea salt", cat, "oval_sauce_well",
-         "A generous, abundant heap of fries piled high and spread across the plate exactly as full and wide as a portion of peri peri fries, light dusting of sea salt flakes. The sauce well is filled with plain tomato ketchup only — no aioli, no other dip."),
+         "A generous, abundant heap of fries, neatly stacked in tidy parallel rows rather than scattered or crisscrossed messily, spread across the plate exactly as full and wide as a portion of peri peri fries, light dusting of sea salt flakes, clean and appetizing. The sauce well is filled with plain tomato ketchup only — no aioli, no other dip, no herb sprig or garnish beside it."),
     item("Peri Peri Fries", 135, "crispy fries tossed in spicy peri peri seasoning", cat, "oval_sauce_well",
          "A generous, abundant heap of fries with a vivid red-orange peri peri dusting, piled high and spread across the plate, sauce well filled with a creamy dip, fresh curry leaf garnish."),
     item("Masala Peanut Bowl", 75, "roasted peanuts tossed with curry leaves and aromatic spices", cat, "small_white_bowl",

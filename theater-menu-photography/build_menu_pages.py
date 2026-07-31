@@ -213,13 +213,19 @@ def build_header_prose(title, tagline, spice_legend=False):
     legend_note = ""
     if spice_legend:
         legend_note = (
-            " Directly beneath the tagline, one small line of tracked-out "
-            "capital text explaining the spice icons used throughout this "
-            "menu, formatted exactly like this: 'ONE CHILI = MILD   TWO "
-            "CHILIES = MEDIUM   THREE CHILIES = HOT', with one small solid "
-            "red chili-pepper icon actually rendered before 'MILD', two "
-            "before 'MEDIUM', and three before 'HOT', generous spacing "
-            "between the three groups, small italic gray text."
+            " Directly beneath the tagline, one small line explaining the "
+            "spice icons, set in the same plain serif body font as the "
+            "rest of the page (not italic, not tracked-out capitals, "
+            "small and simple, muted gray-brown color), with three groups "
+            "spaced generously apart left to right: group one shows "
+            "exactly ONE small red chili-pepper icon followed by the "
+            "word 'Mild'; group two shows exactly TWO small red "
+            "chili-pepper icons side by side followed by the word "
+            "'Medium'; group three shows exactly THREE small red "
+            "chili-pepper icons side by side followed by the word 'Hot'. "
+            "Double-check the icon count in each group before finalizing "
+            "— group one has 1 icon, group two has 2 icons, group three "
+            "has 3 icons, never any other count."
         )
     return (
         f"At the very top of the page: a small row of three tiny line-icon "
