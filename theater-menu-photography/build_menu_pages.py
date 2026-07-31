@@ -81,6 +81,7 @@ CHEF_RECOMMENDED = {
 }
 
 TAGLINES = {
+    "Theater Signatures": "Our most celebrated dishes, presented with a little drama.",
     "Small Plates & Bar Bites": "Light, bold and made for sharing.",
     "Chaat & Fast Sellers": "India's most loved street food classics.",
     "Tandoor & Grill": "Fire-grilled flavors. Timeless indulgence.",
@@ -187,11 +188,37 @@ NEGATIVE_PROSE = (
     "Print each dish name exactly as given, character for character — "
     "never append extra words after it, never merge it with another "
     "item's name or description, never invent a second title for the "
-    "same dish."
+    "same dish. Never add an apostrophe, quotation mark, or any other "
+    "stray punctuation mark to a dish name that isn't part of the name "
+    "itself. Every item number on this page must use the exact same "
+    "format: a plain arabic numeral followed by a period, like '1.', "
+    "'2.', '3.' — never a leading zero like '01.', never a numeral "
+    "without its period, never a different numbering style for "
+    "different items on the same page. Every price on this page must "
+    "use the exact same format: the item name, then an em dash '—', "
+    "then the price, like 'Item Name — 199K' — never omit the dash for "
+    "some items while using it for others. The vegetarian leaf tag (when "
+    "present) and the chili icons (when present) always sit together on "
+    "their own single line placed directly beneath the price line, in "
+    "this fixed order every single time: the leaf icon and 'VEGETARIAN' "
+    "first, then any chili icons after — never place these tags in a "
+    "different position, order, or line from one item to another on the "
+    "same page."
 )
 
 
-def build_header_prose(title, tagline):
+def build_header_prose(title, tagline, spice_legend=False):
+    legend_note = ""
+    if spice_legend:
+        legend_note = (
+            " Directly beneath the tagline, one small line of tracked-out "
+            "capital text explaining the spice icons used throughout this "
+            "menu, formatted exactly like this: 'ONE CHILI = MILD   TWO "
+            "CHILIES = MEDIUM   THREE CHILIES = HOT', with one small solid "
+            "red chili-pepper icon actually rendered before 'MILD', two "
+            "before 'MEDIUM', and three before 'HOT', generous spacing "
+            "between the three groups, small italic gray text."
+        )
     return (
         f"At the very top of the page: a small row of three tiny line-icon "
         f"marks (a leaf, a hand, and a heart), each with a short two-word "
@@ -203,7 +230,7 @@ def build_header_prose(title, tagline):
         f"this exact title text and nothing else, no page numbers or "
         f"fractions next to it. Beneath that row, a thin horizontal hairline "
         f"rule spanning the page width. Beneath the rule, left-aligned in "
-        f"small italic text: '{tagline}'."
+        f"small italic text: '{tagline}'." + legend_note
     )
 
 
@@ -289,7 +316,7 @@ def build_item_block_prose(num, item, hero=False, show_tags=True):
     return " ".join(parts)
 
 
-def build_content_prompt(category, page_items, show_tags):
+def build_content_prompt(category, page_items, show_tags, spice_legend=False):
     for it in page_items:
         it["_show_tags"] = show_tags
 
@@ -331,7 +358,7 @@ def build_content_prompt(category, page_items, show_tags):
     prompt = (
         STYLE_PROSE + " " + NEGATIVE_PROSE + " " + tags_prose + " "
         + PHOTO_TREATMENT_PROSE + " " + ref_recap + "\n\n"
-        + build_header_prose(title, TAGLINES.get(category, "")) + "\n\n"
+        + build_header_prose(title, TAGLINES.get(category, ""), spice_legend=spice_legend) + "\n\n"
         + "Below the header, use a confident asymmetric editorial layout, "
         + "generous negative space, dishes floating with only a soft shadow "
         + "grounding them — art-directed, not a rigid grid. These layout "
@@ -471,26 +498,44 @@ HERO_PROMPTS = [
         "No other text or imagery anywhere on the page."
     )),
     ("back-cover", (
-        "Design a full-bleed A4 portrait page, clean warm white/cream "
-        "paper background (hex F6F3EC), flat and front-on like a scanned "
-        "printed page, not a mockup, no page shadow. This page has NO "
-        "logo, NO restaurant name, NO price text, NO menu text of any "
-        "kind whatsoever — it is a purely decorative illustration and "
-        "spice flat-lay collage page. Scattered artfully across the page: "
-        "a generous pile of vivid orange-yellow turmeric powder in the "
-        "upper-left corner; a couple of cinnamon sticks and a small "
-        "ceramic bowl of whole white peppercorns in the lower-left "
-        "corner; a cluster of star anise pods and a few whole cloves near "
-        "the bottom center; a sprig of fresh curry leaves on the left "
-        "side. In the upper-left-center area, a small fine black-ink "
-        "line-art architectural sketch of an ornate South Indian temple. "
-        "In the lower-right area, a larger, more detailed fine black-ink "
-        "line-art sketch of the Taj Mahal complete with its reflecting "
-        "pool and rows of cypress trees. In the exact center of the page, "
-        "a fine, thin, light warm-brown line-art outline map of the "
-        "country of India (just the outer border outline, no cities or "
-        "state lines labeled, subtle and faint). No text, no logo, no "
-        "watermark, no page number anywhere on the page."
+        "Design a full-bleed A4 portrait restaurant menu BACK COVER page, "
+        "clean warm white/cream paper background (hex F6F3EC) with a very "
+        "subtle warm radial gradient top-right, flat and front-on like a "
+        "scanned printed page, not a mockup, no page shadow. This is a "
+        "commercially useful closing page, not a decorative one. "
+        "Top-to-bottom, in this exact order, each element appearing "
+        "EXACTLY ONCE: "
+        "(1) Centered near the top: the attached reference image is the "
+        "restaurant's exact logo lockup — reproduce it exactly "
+        "(letterforms, font, 'INDIAN KITCHEN & BAR' subtitle, small star "
+        "divider), pixel-faithful, sized to about 45% of the page width, "
+        "with small elegant italic text directly beneath reading 'Phu "
+        "Quoc'. "
+        "(2) Below that, centered, elegant italic serif text in two "
+        "lines: 'From India, with warmth.' and beneath it 'From The "
+        "Theater, with a little drama.' "
+        "(3) Below that, two square QR-code-style graphics placed "
+        "side by side with generous space between them — each a crisp "
+        "black-and-white square QR-code pattern (a generic decorative "
+        "QR-code-like grid of small black modules on white, not required "
+        "to be a real scannable code), each with a small tracked-out "
+        "capital caption centered beneath it: the left one captioned "
+        "'FOLLOW US ON INSTAGRAM', the right one captioned 'LEAVE US A "
+        "GOOGLE REVIEW'. "
+        "(4) Below that, a thin horizontal hairline rule spanning about "
+        "half the page width, centered. "
+        "(5) Below the rule, centered, small bold tracked-out capital "
+        "text: 'RESERVATIONS & WHATSAPP' with the phone number '0836 320 "
+        "002' directly beneath it in slightly larger serif type. "
+        "(6) Below that, centered, small tracked-out capital text on one "
+        "or two lines: 'PRIVATE DINING   ·   WEDDINGS & GROUP DINING   ·  "
+        " GALA DINNERS   ·   DMC & TOUR GROUPS' with generous letter "
+        "spacing and thin dot separators exactly as shown. "
+        "(7) At the very bottom, centered, small gray serif text: '152 "
+        "Đường Trần Hưng Đạo, Cửa Lấp, Phú Quốc, An Giang 92000'. "
+        "No other text, no illustration, no spice photography, no map, "
+        "no watermark, no page number anywhere on the page — this page "
+        "is clean, elegant, and text/QR-focused only."
     )),
 ]
 
@@ -563,7 +608,63 @@ def build_spirits_prompt():
     )
 
 
+COCKTAILS_MENU = [
+    ("The Maharaja", 179, "Whisky, saffron, honey and fresh citrus, finished with a subtle touch of Indian spice. Rich, smooth and regal."),
+    ("Bombay Sunset", 179, "Vodka, passion fruit, orange and lime blended into a bright tropical cocktail with a refreshing citrus finish."),
+    ("Jaipur Rose", 179, "Gin, rose, lychee and fresh lemon. Floral, elegant and beautifully refreshing."),
+    ("Spiced Mango Margarita", 179, "Tequila, ripe mango, fresh lime and a gentle chilli kick. Sweet, tangy and perfectly balanced."),
+    ("Theater Masala Mule", 179, "Vodka, ginger, lime and aromatic Indian spices topped with sparkling ginger ale. Fresh, spicy and lively."),
+    ("Royal Pomegranate", 179, "Gin, pomegranate, lemon and tonic. Crisp, fruity and refreshingly sophisticated."),
+    ("Goa Tropical", 179, "White rum, pineapple, coconut and lime. A smooth tropical escape inspired by the beaches of Goa."),
+    ("Saffron Sour", 179, "Whisky, fresh lemon, saffron syrup and silky foam. Bold, aromatic and luxuriously smooth."),
+    ("Delhi Old Fashioned", 179, "Whisky stirred with aromatic bitters, orange and a hint of Indian spice. Strong, smooth and timeless."),
+    ("Indian Espresso Martini", 179, "Vodka, coffee liqueur and freshly brewed espresso with a touch of cardamom. Rich, bold and indulgent."),
+]
+
+MOCKTAILS_MENU = [
+    ("Mango Maharaja", 89, "Ripe mango, fresh lime and a touch of mint. Rich, tropical and refreshing."),
+    ("Jaipur Rose Cooler", 89, "Rose, lychee, lemon and soda. Light, floral and beautifully refreshing."),
+    ("Bombay Berry Fizz", 89, "Mixed berries, fresh lime and sparkling soda. Fruity, vibrant and refreshing."),
+    ("Masala Mojito", 89, "Fresh mint, lime, Indian spices and soda. A refreshing Indian twist on a classic favourite."),
+    ("Passion of India", 89, "Passion fruit, orange, lime and sparkling soda. Tropical, tangy and full of flavour."),
+    ("Pomegranate Royale", 89, "Pomegranate, lemon, mint and soda. Fresh, elegant and delicately sweet."),
+    ("Goa Sunrise", 89, "Pineapple, orange and passion fruit with a splash of grenadine. Bright, tropical and colourful."),
+    ("Saffron Lemonade", 89, "Fresh lemon, saffron syrup and sparkling soda. Fragrant, refreshing and uniquely Indian."),
+    ("Ginger Mango Cooler", 89, "Mango, fresh ginger, lime and soda. Sweet, citrusy and gently spicy."),
+    ("Lychee Mint Fizz", 89, "Lychee, fresh mint, lime and sparkling soda. Light, fragrant and refreshing."),
+]
+
+
+def build_drink_list_prompt(title, tagline, items_subset, page_note):
+    rows = []
+    for name, price, desc in items_subset:
+        rows.append(f"'{name}' — {price}K. Description: {desc}")
+    return (
+        STYLE_PROSE + " " + NEGATIVE_PROSE + "\n\n"
+        + build_header_prose(title, tagline) + "\n\n"
+        + "Below the header, this page is a clean elegant single-column TEXT "
+        + "LIST — no photographs, no dish images, no icons of any kind "
+        + "anywhere on this page, including no vegetarian leaf icon, no "
+        + "'VEGETARIAN' word, and no chili-pepper spice icons — those tags "
+        + "are used elsewhere in this menu for food dishes only, never on "
+        + "this drinks list page. List "
+        + f"exactly {len(items_subset)} items, generously spaced down the "
+        + "page. Each entry: the drink name in bold serif type with its "
+        + "price right-aligned on the same line (name left-aligned, price "
+        + "right-aligned, joined visually by a short thin dotted leader "
+        + "line or generous spacing — never a plain hyphen), and directly "
+        + "beneath it, in smaller italic gray type, its one-sentence "
+        + "description exactly as given. Render every name, price and "
+        + "description exactly as given, spelled correctly, no invented "
+        + "items, no invented extra text. A thin hairline rule separates "
+        + "each entry from the next.\n\n"
+        + " ".join(rows) + "\n\n"
+        + FOOTER_PROSE
+    )
+
+
 CATEGORY_ORDER = [
+    "Theater Signatures",
     "Small Plates & Bar Bites",
     "Chaat & Fast Sellers",
     "Tandoor & Grill",
@@ -615,15 +716,24 @@ pages.append({
 page_num += 1
 
 
+LOGO_PATH = os.path.join(BASE, "references", "brand-logo-alpha.png")
+
+HERO_REFS = {
+    "back-cover": [LOGO_PATH],
+}
+
+
 def add_hero(key):
     global page_num
     prompt = dict(HERO_PROMPTS)[key]
     pages.append({
         "page_num": page_num, "type": "hero", "slug": key, "title": key,
-        "items": [], "reference_photos": [], "prompt": prompt,
+        "items": [], "reference_photos": HERO_REFS.get(key, []), "prompt": prompt,
     })
     page_num += 1
 
+
+first_content_page_used = False
 
 for cat in CATEGORY_ORDER:
     if cat in DIVIDER_BEFORE:
@@ -644,7 +754,9 @@ for cat in CATEGORY_ORDER:
     for i, group in enumerate(page_groups, 1):
         if not group:
             continue
-        prompt_text, ordered_items = build_content_prompt(cat, group, show_tags)
+        spice_legend = show_tags and not first_content_page_used
+        first_content_page_used = first_content_page_used or spice_legend
+        prompt_text, ordered_items = build_content_prompt(cat, group, show_tags, spice_legend=spice_legend)
         refs = [photo_path(it) for it in ordered_items]
         pages.append({
             "page_num": page_num,
@@ -672,6 +784,32 @@ pages.append({
     "prompt": build_spirits_prompt(),
 })
 page_num += 1
+
+
+def add_drink_list(slug_prefix, title, tagline, menu, half_idx):
+    global page_num
+    half = len(menu) // 2
+    subset = menu[:half] if half_idx == 1 else menu[half:]
+    pages.append({
+        "page_num": page_num, "type": "drinklist", "slug": f"{slug_prefix}-{half_idx}",
+        "title": title, "items": [], "reference_photos": [],
+        "prompt": build_drink_list_prompt(title, tagline, subset, half_idx),
+    })
+    page_num += 1
+
+
+add_drink_list("signature-cocktails", "SIGNATURE COCKTAILS",
+                "Original creations bringing Indian flavors to the bar.",
+                COCKTAILS_MENU, 1)
+add_drink_list("signature-cocktails", "SIGNATURE COCKTAILS",
+                "Original creations bringing Indian flavors to the bar.",
+                COCKTAILS_MENU, 2)
+add_drink_list("signature-mocktails", "SIGNATURE MOCKTAILS",
+                "All the flavor, none of the alcohol.",
+                MOCKTAILS_MENU, 1)
+add_drink_list("signature-mocktails", "SIGNATURE MOCKTAILS",
+                "All the flavor, none of the alcohol.",
+                MOCKTAILS_MENU, 2)
 
 add_hero("closing")
 add_hero("back-cover")

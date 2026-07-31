@@ -131,6 +131,23 @@ def item(name, price, desc, category, plateware_key, garnish_note=""):
 
 items = []
 
+# ---------------- Theater Signatures ----------------
+cat = "Theater Signatures"
+items += [
+    item("Theater Signature Dal", 185, "our slow-simmered black lentils, finished tableside with a smoking butter tadka", cat, "copper_karahi",
+         "Deep brown creamy black lentils with a swirl of cream and a generous pat of butter melting into a dramatic curl of visible smoke rising from the center, finished with fresh cilantro — an elevated, dramatic tableside presentation."),
+    item("Signature Chaat Experience", 220, "a curated trio of pani puri, aloo tikki chaat and dahi papdi chaat, plated together", cat, "round_plain_large",
+         "Three small elegant clusters arranged on one large platter: a few pani puri shots with golden puris, a portion of golden aloo tikki topped with yogurt and chutneys, and papdi chaat layered with yogurt and chutney drizzles, garnished with fresh coriander and fine sev — a beautiful tasting trio."),
+    item("Theater Dessert", 165, "a chef's tasting trio of warm gulab jamun, silky kheer and rich gajar halwa, plated together", cat, "round_plain_large",
+         "Three small elegant portions arranged on one platter: a glossy gulab jamun in syrup, a small quenelle of creamy kheer garnished with saffron and nuts, and a mound of rich gajar halwa garnished with pistachios — a grand dessert finale."),
+    item("Royal Butter Chicken", 279, "tender tandoor-charred chicken in a silky tomato-butter gravy, presented with a flourish", cat, "copper_karahi",
+         "Tender char-grilled chicken pieces in a smooth vivid orange-red tomato-butter gravy with an elegant swirl of cream and a delicate flourish of fresh cilantro, an elevated, dramatic presentation of the classic."),
+    item("Theater Tandoori Sharing Platter", 459, "an abundant sharing spread of Chicken Tikka, Chicken Malai Tikka, Tangdi Kebab, Paneer Tikka and Achari Paneer Tikka on one grand sizzling platter", cat, "round_plain_large",
+         "A grand, abundant assortment of char-grilled chicken tikka, chicken malai tikka, tandoori chicken drumsticks, paneer tikka and achari paneer tikka fanned out dramatically across a large sizzling platter, mint chutney in a small metal cup, thin red onion rings and lemon wedges, generous wisps of steam — a showstopping sharing presentation."),
+    item("Theater Dum Biryani", 259, "fragrant basmati and tender chicken sealed and slow-cooked in a dough-covered handi, cracked open tableside", cat, "copper_biryani_handi",
+         "A hammered copper biryani handi with a golden baked dough seal visibly cracked open at the rim, fragrant saffron basmati rice and tender chicken pieces spilling into view, dramatic steam rising, fried onions, mint and whole spices visible — a theatrical tableside reveal."),
+]
+
 # ---------------- Small Plates & Bar Bites ----------------
 cat = "Small Plates & Bar Bites"
 items += [
@@ -216,6 +233,8 @@ items += [
          "Six golden-orange char-grilled fish cubes arranged neatly, thin red onion rings, a lemon wedge and a small metal cup of mint chutney beside."),
     item("Mixed Tandoori Platter", 399, "Chicken Tikka, Chicken Malai Tikka, Paneer Tikka and Achari Paneer Tikka served on one sizzling platter with mint chutney", cat, "round_plain_large",
          "A generous assortment of char-grilled chicken tikka, chicken malai tikka, paneer tikka and achari paneer tikka skewer pieces fanned out across the platter, mint chutney in a small metal cup, thin red onion rings and a lemon wedge, gentle wisps of steam suggesting it just came off the grill."),
+    item("Vegetarian Tandoori Platter", 349, "Paneer Tikka, Achari Paneer Tikka, Mushroom Tikka and Hara Bhara Kebab served on one sizzling platter with mint chutney", cat, "round_plain_large",
+         "A generous assortment of char-grilled paneer tikka, achari paneer tikka, mushroom tikka skewer pieces and hara bhara kebab patties fanned out across the platter, mint chutney in a small metal cup, thin red onion rings and a lemon wedge, gentle wisps of steam suggesting it just came off the grill — an entirely vegetarian spread, no meat, no chicken, no fish of any kind anywhere on the platter."),
 ]
 
 # ---------------- Main Curries ----------------
@@ -281,10 +300,14 @@ items += [
          "An oval naan topped with melted golden cheese and chopped garlic, cut into wedges."),
     item("Chilli Cheese Naan", 95, "soft naan loaded with cheese, garlic and a touch of chili, baked in the tandoor", cat, "rattan_basket",
          "A round naan topped with melted cheese, chopped garlic and red chilli flakes, cut into wedges."),
-    item("Stuffed Naan (Aloo / Mix / Paneer)", 110, "soft naan stuffed with your choice of aloo, mix or paneer, baked to perfection in the tandoor (+40K for paneer)", cat, "rattan_basket",
+    item("Stuffed Naan (Aloo / Mix)", 110, "soft naan stuffed with your choice of aloo or mix vegetables, baked to perfection in the tandoor", cat, "rattan_basket",
          "A pillowy naan cut into triangular wedges revealing a golden spiced potato stuffing inside, shot on a completely clean plain white/cream studio background with no texture or clutter behind it."),
-    item("Parantha (Aloo / Mix / Paneer)", 110, "traditional layered flatbread with a soft, flaky texture, cooked on a griddle, with a choice of aloo, mix or paneer stuffing (+40K for paneer)", cat, "rattan_basket",
-         "A round griddle-cooked layered flatbread with a light golden-brown flaky surface and a touch of ghee sheen, cut into wedges revealing a spiced stuffing inside."),
+    item("Stuffed Naan (Paneer)", 150, "soft naan stuffed with spiced paneer, baked to perfection in the tandoor", cat, "rattan_basket",
+         "A pillowy naan cut into triangular wedges revealing a golden spiced paneer stuffing studded with visible paneer crumbles inside, shot on a completely clean plain white/cream studio background with no texture or clutter behind it."),
+    item("Parantha (Aloo / Mix)", 110, "traditional layered flatbread with a soft, flaky texture, cooked on a griddle, with a choice of aloo or mix vegetable stuffing", cat, "rattan_basket",
+         "A round griddle-cooked layered flatbread with a light golden-brown flaky surface and a touch of ghee sheen, cut into wedges revealing a spiced potato stuffing inside."),
+    item("Parantha (Paneer)", 150, "traditional layered flatbread with a soft, flaky texture, cooked on a griddle, stuffed with spiced paneer", cat, "rattan_basket",
+         "A round griddle-cooked layered flatbread with a light golden-brown flaky surface and a touch of ghee sheen, cut into wedges revealing a spiced paneer stuffing studded with visible paneer crumbles inside."),
 ]
 
 # ---------------- Rice & Khichdi ----------------

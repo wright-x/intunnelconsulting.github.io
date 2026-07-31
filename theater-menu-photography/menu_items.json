@@ -1,5 +1,59 @@
 [
   {
+    "name": "Theater Signature Dal",
+    "price_vnd_k": 185,
+    "description": "our slow-simmered black lentils, finished tableside with a smoking butter tadka",
+    "category": "Theater Signatures",
+    "plateware": "copper_karahi",
+    "slug": "theater-signature-dal",
+    "prompt": "A premium editorial food photograph of Theater Signature Dal: our slow-simmered black lentils, finished tableside with a smoking butter tadka Deep brown creamy black lentils with a swirl of cream and a generous pat of butter melting into a dramatic curl of visible smoke rising from the center, finished with fresh cilantro — an elevated, dramatic tableside presentation. Served in a small hammered copper karahi (traditional Indian wok-shaped serving bowl) with polished brass ring handles, resting on a round wooden coaster. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
+  },
+  {
+    "name": "Signature Chaat Experience",
+    "price_vnd_k": 220,
+    "description": "a curated trio of pani puri, aloo tikki chaat and dahi papdi chaat, plated together",
+    "category": "Theater Signatures",
+    "plateware": "round_plain_large",
+    "slug": "signature-chaat-experience",
+    "prompt": "A premium editorial food photograph of Signature Chaat Experience: a curated trio of pani puri, aloo tikki chaat and dahi papdi chaat, plated together Three small elegant clusters arranged on one large platter: a few pani puri shots with golden puris, a portion of golden aloo tikki topped with yogurt and chutneys, and papdi chaat layered with yogurt and chutney drizzles, garnished with fresh coriander and fine sev — a beautiful tasting trio. Presented on a large matte white/cream ceramic oval serving platter (a larger version of the plain white plate) with a subtle organic hand-thrown rim texture, exactly like the reference plate provided, sized to hold an assortment of grilled items. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
+  },
+  {
+    "name": "Theater Dessert",
+    "price_vnd_k": 165,
+    "description": "a chef's tasting trio of warm gulab jamun, silky kheer and rich gajar halwa, plated together",
+    "category": "Theater Signatures",
+    "plateware": "round_plain_large",
+    "slug": "theater-dessert",
+    "prompt": "A premium editorial food photograph of Theater Dessert: a chef's tasting trio of warm gulab jamun, silky kheer and rich gajar halwa, plated together Three small elegant portions arranged on one platter: a glossy gulab jamun in syrup, a small quenelle of creamy kheer garnished with saffron and nuts, and a mound of rich gajar halwa garnished with pistachios — a grand dessert finale. Presented on a large matte white/cream ceramic oval serving platter (a larger version of the plain white plate) with a subtle organic hand-thrown rim texture, exactly like the reference plate provided, sized to hold an assortment of grilled items. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
+  },
+  {
+    "name": "Royal Butter Chicken",
+    "price_vnd_k": 279,
+    "description": "tender tandoor-charred chicken in a silky tomato-butter gravy, presented with a flourish",
+    "category": "Theater Signatures",
+    "plateware": "copper_karahi",
+    "slug": "royal-butter-chicken",
+    "prompt": "A premium editorial food photograph of Royal Butter Chicken: tender tandoor-charred chicken in a silky tomato-butter gravy, presented with a flourish Tender char-grilled chicken pieces in a smooth vivid orange-red tomato-butter gravy with an elegant swirl of cream and a delicate flourish of fresh cilantro, an elevated, dramatic presentation of the classic. Served in a small hammered copper karahi (traditional Indian wok-shaped serving bowl) with polished brass ring handles, resting on a round wooden coaster. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
+  },
+  {
+    "name": "Theater Tandoori Sharing Platter",
+    "price_vnd_k": 459,
+    "description": "an abundant sharing spread of Chicken Tikka, Chicken Malai Tikka, Tangdi Kebab, Paneer Tikka and Achari Paneer Tikka on one grand sizzling platter",
+    "category": "Theater Signatures",
+    "plateware": "round_plain_large",
+    "slug": "theater-tandoori-sharing-platter",
+    "prompt": "A premium editorial food photograph of Theater Tandoori Sharing Platter: an abundant sharing spread of Chicken Tikka, Chicken Malai Tikka, Tangdi Kebab, Paneer Tikka and Achari Paneer Tikka on one grand sizzling platter A grand, abundant assortment of char-grilled chicken tikka, chicken malai tikka, tandoori chicken drumsticks, paneer tikka and achari paneer tikka fanned out dramatically across a large sizzling platter, mint chutney in a small metal cup, thin red onion rings and lemon wedges, generous wisps of steam — a showstopping sharing presentation. Presented on a large matte white/cream ceramic oval serving platter (a larger version of the plain white plate) with a subtle organic hand-thrown rim texture, exactly like the reference plate provided, sized to hold an assortment of grilled items. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
+  },
+  {
+    "name": "Theater Dum Biryani",
+    "price_vnd_k": 259,
+    "description": "fragrant basmati and tender chicken sealed and slow-cooked in a dough-covered handi, cracked open tableside",
+    "category": "Theater Signatures",
+    "plateware": "copper_biryani_handi",
+    "slug": "theater-dum-biryani",
+    "prompt": "A premium editorial food photograph of Theater Dum Biryani: fragrant basmati and tender chicken sealed and slow-cooked in a dough-covered handi, cracked open tableside A hammered copper biryani handi with a golden baked dough seal visibly cracked open at the rim, fragrant saffron basmati rice and tender chicken pieces spilling into view, dramatic steam rising, fried onions, mint and whole spices visible — a theatrical tableside reveal. Served in a hammered copper biryani handi (rounded pot) with a domed hammered-copper lid propped partially open beside it, fragrant rice visibly steaming, resting on a round wooden coaster. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
+  },
+  {
     "name": "French Fries",
     "price_vnd_k": 125,
     "description": "crispy golden fries seasoned with sea salt",
@@ -324,6 +378,15 @@
     "prompt": "A premium editorial food photograph of Mixed Tandoori Platter: Chicken Tikka, Chicken Malai Tikka, Paneer Tikka and Achari Paneer Tikka served on one sizzling platter with mint chutney A generous assortment of char-grilled chicken tikka, chicken malai tikka, paneer tikka and achari paneer tikka skewer pieces fanned out across the platter, mint chutney in a small metal cup, thin red onion rings and a lemon wedge, gentle wisps of steam suggesting it just came off the grill. Presented on a large matte white/cream ceramic oval serving platter (a larger version of the plain white plate) with a subtle organic hand-thrown rim texture, exactly like the reference plate provided, sized to hold an assortment of grilled items. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
   },
   {
+    "name": "Vegetarian Tandoori Platter",
+    "price_vnd_k": 349,
+    "description": "Paneer Tikka, Achari Paneer Tikka, Mushroom Tikka and Hara Bhara Kebab served on one sizzling platter with mint chutney",
+    "category": "Tandoor & Grill",
+    "plateware": "round_plain_large",
+    "slug": "vegetarian-tandoori-platter",
+    "prompt": "A premium editorial food photograph of Vegetarian Tandoori Platter: Paneer Tikka, Achari Paneer Tikka, Mushroom Tikka and Hara Bhara Kebab served on one sizzling platter with mint chutney A generous assortment of char-grilled paneer tikka, achari paneer tikka, mushroom tikka skewer pieces and hara bhara kebab patties fanned out across the platter, mint chutney in a small metal cup, thin red onion rings and a lemon wedge, gentle wisps of steam suggesting it just came off the grill — an entirely vegetarian spread, no meat, no chicken, no fish of any kind anywhere on the platter. Presented on a large matte white/cream ceramic oval serving platter (a larger version of the plain white plate) with a subtle organic hand-thrown rim texture, exactly like the reference plate provided, sized to hold an assortment of grilled items. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
+  },
+  {
     "name": "Dal Makhani",
     "price_vnd_k": 169,
     "description": "creamy black lentils slow-cooked with butter and aromatic spices",
@@ -549,22 +612,40 @@
     "prompt": "A premium editorial food photograph of Chilli Cheese Naan: soft naan loaded with cheese, garlic and a touch of chili, baked in the tandoor A round naan topped with melted cheese, chopped garlic and red chilli flakes, cut into wedges. Presented in a small rectangular woven rattan/wicker bread basket lined with a neutral linen napkin. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
   },
   {
-    "name": "Stuffed Naan (Aloo / Mix / Paneer)",
+    "name": "Stuffed Naan (Aloo / Mix)",
     "price_vnd_k": 110,
-    "description": "soft naan stuffed with your choice of aloo, mix or paneer, baked to perfection in the tandoor (+40K for paneer)",
+    "description": "soft naan stuffed with your choice of aloo or mix vegetables, baked to perfection in the tandoor",
     "category": "Breads",
     "plateware": "rattan_basket",
-    "slug": "stuffed-naan-aloo-mix-paneer",
-    "prompt": "A premium editorial food photograph of Stuffed Naan (Aloo / Mix / Paneer): soft naan stuffed with your choice of aloo, mix or paneer, baked to perfection in the tandoor (+40K for paneer) A pillowy naan cut into triangular wedges revealing a golden spiced potato stuffing inside, shot on a completely clean plain white/cream studio background with no texture or clutter behind it. Presented in a small rectangular woven rattan/wicker bread basket lined with a neutral linen napkin. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
+    "slug": "stuffed-naan-aloo-mix",
+    "prompt": "A premium editorial food photograph of Stuffed Naan (Aloo / Mix): soft naan stuffed with your choice of aloo or mix vegetables, baked to perfection in the tandoor A pillowy naan cut into triangular wedges revealing a golden spiced potato stuffing inside, shot on a completely clean plain white/cream studio background with no texture or clutter behind it. Presented in a small rectangular woven rattan/wicker bread basket lined with a neutral linen napkin. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
   },
   {
-    "name": "Parantha (Aloo / Mix / Paneer)",
-    "price_vnd_k": 110,
-    "description": "traditional layered flatbread with a soft, flaky texture, cooked on a griddle, with a choice of aloo, mix or paneer stuffing (+40K for paneer)",
+    "name": "Stuffed Naan (Paneer)",
+    "price_vnd_k": 150,
+    "description": "soft naan stuffed with spiced paneer, baked to perfection in the tandoor",
     "category": "Breads",
     "plateware": "rattan_basket",
-    "slug": "parantha-aloo-mix-paneer",
-    "prompt": "A premium editorial food photograph of Parantha (Aloo / Mix / Paneer): traditional layered flatbread with a soft, flaky texture, cooked on a griddle, with a choice of aloo, mix or paneer stuffing (+40K for paneer) A round griddle-cooked layered flatbread with a light golden-brown flaky surface and a touch of ghee sheen, cut into wedges revealing a spiced stuffing inside. Presented in a small rectangular woven rattan/wicker bread basket lined with a neutral linen napkin. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
+    "slug": "stuffed-naan-paneer",
+    "prompt": "A premium editorial food photograph of Stuffed Naan (Paneer): soft naan stuffed with spiced paneer, baked to perfection in the tandoor A pillowy naan cut into triangular wedges revealing a golden spiced paneer stuffing studded with visible paneer crumbles inside, shot on a completely clean plain white/cream studio background with no texture or clutter behind it. Presented in a small rectangular woven rattan/wicker bread basket lined with a neutral linen napkin. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
+  },
+  {
+    "name": "Parantha (Aloo / Mix)",
+    "price_vnd_k": 110,
+    "description": "traditional layered flatbread with a soft, flaky texture, cooked on a griddle, with a choice of aloo or mix vegetable stuffing",
+    "category": "Breads",
+    "plateware": "rattan_basket",
+    "slug": "parantha-aloo-mix",
+    "prompt": "A premium editorial food photograph of Parantha (Aloo / Mix): traditional layered flatbread with a soft, flaky texture, cooked on a griddle, with a choice of aloo or mix vegetable stuffing A round griddle-cooked layered flatbread with a light golden-brown flaky surface and a touch of ghee sheen, cut into wedges revealing a spiced potato stuffing inside. Presented in a small rectangular woven rattan/wicker bread basket lined with a neutral linen napkin. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
+  },
+  {
+    "name": "Parantha (Paneer)",
+    "price_vnd_k": 150,
+    "description": "traditional layered flatbread with a soft, flaky texture, cooked on a griddle, stuffed with spiced paneer",
+    "category": "Breads",
+    "plateware": "rattan_basket",
+    "slug": "parantha-paneer",
+    "prompt": "A premium editorial food photograph of Parantha (Paneer): traditional layered flatbread with a soft, flaky texture, cooked on a griddle, stuffed with spiced paneer A round griddle-cooked layered flatbread with a light golden-brown flaky surface and a touch of ghee sheen, cut into wedges revealing a spiced paneer stuffing studded with visible paneer crumbles inside. Presented in a small rectangular woven rattan/wicker bread basket lined with a neutral linen napkin. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
   },
   {
     "name": "Dal Khichdi",
