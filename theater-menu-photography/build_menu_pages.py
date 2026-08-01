@@ -76,9 +76,9 @@ def spice_level(item):
 
 
 CHEF_RECOMMENDED = {
-    "Butter Chicken", "Tandoori Chicken", "Chicken Biryani", "Dal Makhani",
+    "Tandoori Chicken", "Chicken Biryani",
     "Paneer Tikka Skewers", "Chole Bhature", "Gulab Jamun with Vanilla Ice Cream",
-    "Mixed Tandoori Platter", "Goan Prawn Curry", "Pani Puri Shots",
+    "Non-Veg Mixed Platter", "Goan Prawn Curry", "Pani Puri Shots",
     "Mango Lassi", "Kadai Chicken",
 }
 
@@ -246,7 +246,7 @@ FOOTER_PROSE = (
     "At the very bottom of the page: a thin horizontal hairline rule "
     "spanning the page width, and beneath it, centered, small italic gray "
     "text reading exactly: 'All prices are in thousand VND (d). VAT and "
-    "service charge is extra. Images are for representation purposes "
+    "service charge are extra. Images are for representation purposes "
     "only.'"
 )
 
@@ -388,35 +388,76 @@ def build_content_prompt(category, page_items, show_tags, spice_legend=False, ti
     return prompt, ordered_items
 
 
+SPOTLIGHT_ALLERGENS = {
+    "Daal Bukhara": "Dairy",
+    "Royal Butter Chicken": "Dairy, Nuts",
+    "Shahi Dum Biryani": "Dairy, Gluten",
+}
+
+SPOTLIGHT_BACKDROP = (
+    "Background: a rich, dark, moody restaurant ambiance filling the "
+    "entire page edge-to-edge — deep charcoal-brown tones, soft warm "
+    "bokeh lights blurred in the background suggesting a dim elegant "
+    "dining room. In each of the four corners, a small, thin, elegant "
+    "gold ornamental line-art flourish (a corner mark only, not a full "
+    "border or frame)."
+)
+
+
 def build_spotlight_prompt(item):
+    allergens = SPOTLIGHT_ALLERGENS.get(item["name"], "")
     return (
         "Design a full-bleed A4 portrait DISH SPOTLIGHT page — a dramatic "
         "single-dish showcase page, not a standard menu list page. "
-        "Background: a rich, dark, moody restaurant ambiance filling the "
-        "entire page edge-to-edge — deep charcoal-brown tones, soft warm "
-        "bokeh lights blurred in the background suggesting a dim elegant "
-        "dining room. In each of the four corners, a small, thin, elegant "
-        "gold ornamental line-art flourish (a corner mark only, not a full "
-        "border or frame). The attached reference photo shows the true "
+        + SPOTLIGHT_BACKDROP + " The attached reference photo shows the true "
         "appearance of this dish — feature it large, prominent and "
-        "dramatically lit in the lower two-thirds of the page, extracted "
+        "dramatically lit in the lower half of the page, extracted "
         "cleanly from its own reference background and placed naturally "
         "into this dark moody scene with a realistic shadow and soft warm "
         f"rim lighting. In the upper third of the page, centered, the dish "
-        f"name '{item['name']}' in large elegant white premium serif type, "
-        f"and directly beneath it, smaller gold tracked-out capital text "
-        f"reading '{item['price_vnd_k']}K'. No other text, no watermark, "
-        "no page number, no arrows anywhere on the page."
+        f"name '{item['name']}' in large elegant white premium serif type; "
+        f"directly beneath it, smaller gold tracked-out capital text "
+        f"reading '{item['price_vnd_k']}K'; directly beneath that, in "
+        f"small light gray serif type spanning no more than four lines, "
+        f"the description '{cap_sentence(item['description'])}'; and "
+        f"directly beneath the description, in small muted gold italic "
+        f"text, 'Contains: {allergens}.' Each of these four text blocks "
+        "appears EXACTLY ONCE, in this order, nowhere else on the page. "
+        "No other text, no watermark, no page number, no arrows anywhere."
+    )
+
+
+def build_biryani_spotlight_prompt(chicken_item, veg_item):
+    allergens = SPOTLIGHT_ALLERGENS.get("Shahi Dum Biryani", "")
+    return (
+        "Design a full-bleed A4 portrait DISH SPOTLIGHT page — a dramatic "
+        "single-dish showcase page with TWO menu options, not a standard "
+        "menu list page. " + SPOTLIGHT_BACKDROP + " The attached reference "
+        "photo shows the true appearance of this dish — feature it large, "
+        "prominent and dramatically lit in the lower half of the page, "
+        "extracted cleanly from its own reference background and placed "
+        "naturally into this dark moody scene with a realistic shadow and "
+        "soft warm rim lighting. In the upper third of the page, centered, "
+        "the dish name 'Shahi Dum Biryani' in large elegant white premium "
+        "serif type. Directly beneath it, two option blocks side by side "
+        "or stacked, clearly separated by a thin gold hairline: LEFT/FIRST "
+        f"option in gold tracked-out capitals 'CHICKEN — {chicken_item['price_vnd_k']}K', "
+        f"with small light gray serif text beneath it (no more than three "
+        f"lines) reading '{cap_sentence(chicken_item['description'])}'; "
+        f"RIGHT/SECOND option in gold tracked-out capitals 'VEGETARIAN "
+        f"(PANEER) — {veg_item['price_vnd_k']}K', with small light gray "
+        f"serif text beneath it (no more than three lines) reading "
+        f"'{cap_sentence(veg_item['description'])}'. Beneath both options, "
+        f"in small muted gold italic text, 'Contains: {allergens}.' Each "
+        "text block appears EXACTLY ONCE. No other text, no watermark, no "
+        "page number, no arrows anywhere."
     )
 
 
 SPOTLIGHT_BEFORE_SLUG = {
-    "chaat-fast-sellers-1": "Chaat Mehfil",
-    "tandoor-grill-1": "Shahi Tandoori Platter",
-    "main-curries-1": "Dum Daal Bukhara",
-    "main-curries-4": "Shahi Murgh Makhani",
-    "biryani-1": "Royal Dum Biryani",
-    "desserts-1": "Shahi Mithai Trio",
+    "main-curries-1": "Daal Bukhara",
+    "main-curries-4": "Royal Butter Chicken",
+    "biryani-1": "__biryani_spotlight__",
 }
 
 HERO_PROMPTS = [
@@ -516,44 +557,34 @@ HERO_PROMPTS = [
         "bold white tracked-out capitals in a premium serif typeface: "
         "'DRINKS & SPIRITS'. No other text anywhere."
     )),
-    ("closing", (
-        "Design a full-bleed A4 portrait restaurant menu CLOSING page, "
-        "clean warm white/cream paper background (hex F6F3EC), flat and "
-        "front-on like a scanned printed page, not a mockup, no page "
-        "shadow, no arrows, no watermark, no photograph of any kind on "
-        "this page. In the exact center of the page, a large ornate round "
-        "mandala flourish medallion made of fine thin warm-brown line-art "
-        "petals radiating outward, with a scalloped oval badge shape cut "
-        "into the very center of the medallion containing large bold "
-        "premium serif text reading exactly 'DHANYAWAD'. Directly beneath "
-        "that, inside or just below the badge, small tracked-out capital "
-        "text reading exactly 'THANK YOU FOR DINING WITH US.' Below the "
-        "medallion, small elegant centered serif text in two lines: '152 "
-        "Đường Trần Hưng Đạo, Cửa Lấp, Phú Quốc, An Giang 92000' on the "
-        "first line and 'Phone: 0836 320 002' on the second line. Near "
-        "the very bottom of the page, a small fine black-ink line-art "
-        "architectural sketch of an ornate Indian temple archway/gateway, "
-        "centered. Each text element appears EXACTLY ONCE — no repeats. "
-        "No other text or imagery anywhere on the page."
-    )),
     ("back-cover", (
         "Design a full-bleed A4 portrait restaurant menu BACK COVER page, "
         "clean warm white/cream paper background (hex F6F3EC) with a very "
         "subtle warm radial gradient top-right, flat and front-on like a "
-        "scanned printed page, not a mockup, no page shadow. This is a "
-        "commercially useful closing page, not a decorative one. "
-        "Top-to-bottom, in this exact order, each element appearing "
-        "EXACTLY ONCE: "
+        "scanned printed page, not a mockup, no page shadow. This is the "
+        "final page of the menu — both a warm thank-you and a commercially "
+        "useful closing page. Behind all the text described below, very "
+        "faint and subtle in the background (light warm-gray, low "
+        "contrast, watermark-like, not competing with the text in front "
+        "of it), a large detailed fine line-art illustration of the Taj "
+        "Mahal with its reflecting pool, positioned so it fills much of "
+        "the lower two-thirds of the page as a gentle atmospheric "
+        "backdrop. "
+        "Top-to-bottom in front of that backdrop, in this exact order, "
+        "each element appearing EXACTLY ONCE: "
         "(1) Centered near the top: the attached reference image is the "
         "restaurant's exact logo lockup — reproduce it exactly "
         "(letterforms, font, 'INDIAN KITCHEN & BAR' subtitle, small star "
-        "divider), pixel-faithful, sized to about 45% of the page width, "
+        "divider), pixel-faithful, sized to about 40% of the page width, "
         "with small elegant italic text directly beneath reading 'Phu "
         "Quoc'. "
-        "(2) Below that, centered, elegant italic serif text in two "
+        "(2) Below that, centered, large elegant premium serif text "
+        "reading exactly 'DHANYAWAD', with smaller tracked-out capital "
+        "text directly beneath reading 'THANK YOU FOR DINING WITH US.' "
+        "(3) Below that, centered, elegant italic serif text in two "
         "lines: 'From India, with warmth.' and beneath it 'From The "
         "Theater, with a little drama.' "
-        "(3) Below that, two square QR-code-style graphics placed "
+        "(4) Below that, two square QR-code-style graphics placed "
         "side by side with generous space between them — each a crisp "
         "black-and-white square QR-code pattern (a generic decorative "
         "QR-code-like grid of small black modules on white, not required "
@@ -561,20 +592,20 @@ HERO_PROMPTS = [
         "capital caption centered beneath it: the left one captioned "
         "'FOLLOW US ON INSTAGRAM', the right one captioned 'LEAVE US A "
         "GOOGLE REVIEW'. "
-        "(4) Below that, a thin horizontal hairline rule spanning about "
+        "(5) Below that, a thin horizontal hairline rule spanning about "
         "half the page width, centered. "
-        "(5) Below the rule, centered, small bold tracked-out capital "
+        "(6) Below the rule, centered, small bold tracked-out capital "
         "text: 'RESERVATIONS & WHATSAPP' with the phone number '0836 320 "
         "002' directly beneath it in slightly larger serif type. "
-        "(6) Below that, centered, small tracked-out capital text on one "
+        "(7) Below that, centered, small tracked-out capital text on one "
         "or two lines: 'PRIVATE DINING   ·   WEDDINGS & GROUP DINING   ·  "
         " GALA DINNERS   ·   DMC & TOUR GROUPS' with generous letter "
         "spacing and thin dot separators exactly as shown. "
-        "(7) At the very bottom, centered, small gray serif text: '152 "
+        "(8) At the very bottom, centered, small gray serif text: '152 "
         "Đường Trần Hưng Đạo, Cửa Lấp, Phú Quốc, An Giang 92000'. "
-        "No other text, no illustration, no spice photography, no map, "
-        "no watermark, no page number anywhere on the page — this page "
-        "is clean, elegant, and text/QR-focused only."
+        "No other text, no watermark logo, no page number anywhere on the "
+        "page — every element listed above appears exactly once and "
+        "nowhere else."
     )),
 ]
 
@@ -771,14 +802,26 @@ for cat in CATEGORY_ORDER:
             continue
         slug = f"{category_slug(cat)}-{i}"
         if slug in SPOTLIGHT_BEFORE_SLUG:
-            spot_item = ITEMS_BY_NAME[SPOTLIGHT_BEFORE_SLUG[slug]]
-            pages.append({
-                "page_num": page_num, "type": "spotlight",
-                "slug": f"spotlight-{category_slug(spot_item['name'])}",
-                "title": spot_item["name"], "items": [],
-                "reference_photos": [p for p in [photo_path(spot_item)] if p],
-                "prompt": build_spotlight_prompt(spot_item),
-            })
+            target = SPOTLIGHT_BEFORE_SLUG[slug]
+            if target == "__biryani_spotlight__":
+                chicken_item = ITEMS_BY_NAME["Shahi Dum Biryani (Chicken)"]
+                veg_item = ITEMS_BY_NAME["Shahi Dum Biryani (Vegetarian, Paneer)"]
+                pages.append({
+                    "page_num": page_num, "type": "spotlight",
+                    "slug": "spotlight-shahi-dum-biryani",
+                    "title": "Shahi Dum Biryani", "items": [],
+                    "reference_photos": [p for p in [photo_path(chicken_item), photo_path(veg_item)] if p],
+                    "prompt": build_biryani_spotlight_prompt(chicken_item, veg_item),
+                })
+            else:
+                spot_item = ITEMS_BY_NAME[target]
+                pages.append({
+                    "page_num": page_num, "type": "spotlight",
+                    "slug": f"spotlight-{category_slug(spot_item['name'])}",
+                    "title": spot_item["name"], "items": [],
+                    "reference_photos": [p for p in [photo_path(spot_item)] if p],
+                    "prompt": build_spotlight_prompt(spot_item),
+                })
             page_num += 1
         spice_legend = show_tags and not first_content_page_used
         first_content_page_used = first_content_page_used or spice_legend
@@ -864,7 +907,7 @@ add_bar_page("juices", "JUICES",
 add_bar_page("iced-tea", "ICED TEA",
              "Chilled and refreshing.",
              "Juices, Smoothies & Iced Tea", ["Lemon Iced Tea", "Peach Iced Tea"])
-add_bar_page("sparkling-water", "SPARKLING WATER",
+add_bar_page("sparkling-water", "SOFT DRINKS & WATER",
              "Refreshing beverages to complement your meal.",
              "Drinks", ["Cold Drink", "Water / Sparkling Water"])
 add_bar_page("coffee", "COFFEE",
@@ -879,7 +922,6 @@ pages.append({
 })
 page_num += 1
 
-add_hero("closing")
 add_hero("back-cover")
 
 with open(os.path.join(BASE, "menu_pages.json"), "w") as f:

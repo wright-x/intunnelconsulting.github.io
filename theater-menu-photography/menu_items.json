@@ -1,57 +1,39 @@
 [
   {
-    "name": "Dum Daal Bukhara",
+    "name": "Daal Bukhara",
     "price_vnd_k": 185,
-    "description": "our slow-simmered black lentils, finished tableside with a smoking butter tadka",
+    "description": "whole black lentils, slow-simmered for ten to twelve hours until velvety and rich, finished with butter, cream and a whisper of charcoal smoke — a Peshawari classic, elevated. Serves 1.",
     "category": "Theater Signatures",
     "plateware": "copper_karahi",
-    "slug": "dum-daal-bukhara",
-    "prompt": "A premium editorial food photograph of Dum Daal Bukhara: our slow-simmered black lentils, finished tableside with a smoking butter tadka Deep brown creamy black lentils with a swirl of cream and a generous pat of butter melting into a dramatic curl of visible smoke rising from the center, finished with fresh cilantro — an elevated, dramatic tableside presentation. Served in a small hammered copper karahi (traditional Indian wok-shaped serving bowl) with polished brass ring handles, resting on a round wooden coaster. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
+    "slug": "daal-bukhara",
+    "prompt": "A premium editorial food photograph of Daal Bukhara: whole black lentils, slow-simmered for ten to twelve hours until velvety and rich, finished with butter, cream and a whisper of charcoal smoke — a Peshawari classic, elevated. Serves 1. Deep brown creamy black lentils with a swirl of cream and a generous pat of butter melting into a dramatic curl of visible smoke rising from the center, finished with fresh cilantro — an elevated, dramatic tableside presentation. Served in a small hammered copper karahi (traditional Indian wok-shaped serving bowl) with polished brass ring handles, resting on a round wooden coaster. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
   },
   {
-    "name": "Chaat Mehfil",
-    "price_vnd_k": 220,
-    "description": "a curated trio of pani puri shots, aloo tikki chaat and dahi papdi chaat, plated together",
-    "category": "Theater Signatures",
-    "plateware": "round_plain_large",
-    "slug": "chaat-mehfil",
-    "prompt": "A premium editorial food photograph of Chaat Mehfil: a curated trio of pani puri shots, aloo tikki chaat and dahi papdi chaat, plated together A generous spread filling the platter: the same small wooden gol gappa tray with a row of shot glasses filled with tangy pani puri water alongside crisp puris, set beside a hearty portion of golden aloo tikki topped with a generous swirl of yogurt and chutneys, and a full portion of papdi chaat layered thickly with yogurt and chutney drizzles, garnished with fresh coriander and fine sev — a generously portioned tasting trio, no empty space on the platter. Presented on a large matte white/cream ceramic oval serving platter (a larger version of the plain white plate) with a subtle organic hand-thrown rim texture, exactly like the reference plate provided, sized to hold an assortment of grilled items. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
-  },
-  {
-    "name": "Shahi Mithai Trio",
-    "price_vnd_k": 165,
-    "description": "a chef's tasting trio of warm gulab jamun, silky kheer and rich gajar halwa, plated together",
-    "category": "Theater Signatures",
-    "plateware": "round_plain",
-    "slug": "shahi-mithai-trio",
-    "prompt": "A premium editorial food photograph of Shahi Mithai Trio: a chef's tasting trio of warm gulab jamun, silky kheer and rich gajar halwa, plated together Three generous, hearty portions filling the plate: two glossy gulab jamun in syrup, a full generous scoop of creamy kheer garnished with saffron and nuts, and a large mound of rich gajar halwa garnished with pistachios — a generously portioned dessert finale, no empty space on the plate. Presented on a plain matte white/cream ceramic oval plate (NOT dark, NOT black, NOT charcoal - the plate itself is white/cream colored) with a subtle organic hand-thrown rim texture, exactly like the reference plate provided. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
-  },
-  {
-    "name": "Shahi Murgh Makhani",
+    "name": "Royal Butter Chicken",
     "price_vnd_k": 279,
-    "description": "tender tandoor-charred chicken in a silky tomato-butter gravy, presented with a flourish",
+    "description": "chicken thigh, charcoal-grilled and simmered in a silky tomato gravy enriched with cashew, saffron and a final touch of smoked butter — our most celebrated curry, made the way royalty once demanded it. Serves 1.",
     "category": "Theater Signatures",
     "plateware": "copper_karahi",
-    "slug": "shahi-murgh-makhani",
-    "prompt": "A premium editorial food photograph of Shahi Murgh Makhani: tender tandoor-charred chicken in a silky tomato-butter gravy, presented with a flourish Tender char-grilled chicken pieces in a smooth vivid orange-red tomato-butter gravy with an elegant swirl of cream and a delicate flourish of fresh cilantro, an elevated, dramatic presentation of the classic. Served in a small hammered copper karahi (traditional Indian wok-shaped serving bowl) with polished brass ring handles, resting on a round wooden coaster. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
+    "slug": "royal-butter-chicken",
+    "prompt": "A premium editorial food photograph of Royal Butter Chicken: chicken thigh, charcoal-grilled and simmered in a silky tomato gravy enriched with cashew, saffron and a final touch of smoked butter — our most celebrated curry, made the way royalty once demanded it. Serves 1. Tender char-grilled chicken pieces in a smooth vivid orange-red tomato-butter gravy with an elegant swirl of cream and a delicate flourish of fresh cilantro, an elevated, dramatic presentation of the classic. Served in a small hammered copper karahi (traditional Indian wok-shaped serving bowl) with polished brass ring handles, resting on a round wooden coaster. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
   },
   {
-    "name": "Shahi Tandoori Platter",
-    "price_vnd_k": 459,
-    "description": "an abundant sharing spread of Chicken Tikka, Chicken Malai Tikka, Tangdi Kebab, Paneer Tikka and Achari Paneer Tikka on one grand sizzling platter",
-    "category": "Theater Signatures",
-    "plateware": "round_plain_large",
-    "slug": "shahi-tandoori-platter",
-    "prompt": "A premium editorial food photograph of Shahi Tandoori Platter: an abundant sharing spread of Chicken Tikka, Chicken Malai Tikka, Tangdi Kebab, Paneer Tikka and Achari Paneer Tikka on one grand sizzling platter A grand, abundant assortment of char-grilled chicken tikka, chicken malai tikka, tandoori chicken drumsticks, paneer tikka and achari paneer tikka fanned out dramatically across a large sizzling platter, mint chutney in a small metal cup, thin red onion rings and lemon wedges, generous wisps of steam — a showstopping sharing presentation. Presented on a large matte white/cream ceramic oval serving platter (a larger version of the plain white plate) with a subtle organic hand-thrown rim texture, exactly like the reference plate provided, sized to hold an assortment of grilled items. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
-  },
-  {
-    "name": "Royal Dum Biryani",
+    "name": "Shahi Dum Biryani (Chicken)",
     "price_vnd_k": 259,
-    "description": "fragrant basmati and tender chicken sealed and slow-cooked in a dough-covered handi, cracked open tableside",
+    "description": "fragrant basmati rice and tender chicken, layered with saffron, mint and golden fried onion, sealed in dough and slow-cooked on dum until the aromas fully infuse the rice. Served with raita. Serves 1.",
     "category": "Theater Signatures",
     "plateware": "copper_biryani_handi",
-    "slug": "royal-dum-biryani",
-    "prompt": "A premium editorial food photograph of Royal Dum Biryani: fragrant basmati and tender chicken sealed and slow-cooked in a dough-covered handi, cracked open tableside A hammered copper biryani handi with a golden baked dough seal visibly cracked open at the rim, fragrant saffron basmati rice and tender chicken pieces spilling into view, dramatic steam rising, fried onions, mint and whole spices visible — a theatrical tableside reveal. Served in a hammered copper biryani handi (rounded pot) with a domed hammered-copper lid propped partially open beside it, fragrant rice visibly steaming, resting on a round wooden coaster. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
+    "slug": "shahi-dum-biryani-chicken",
+    "prompt": "A premium editorial food photograph of Shahi Dum Biryani (Chicken): fragrant basmati rice and tender chicken, layered with saffron, mint and golden fried onion, sealed in dough and slow-cooked on dum until the aromas fully infuse the rice. Served with raita. Serves 1. A hammered copper biryani handi with a golden baked dough seal visibly cracked open at the rim, fragrant saffron basmati rice and tender chicken pieces spilling into view, dramatic steam rising, fried onions, mint and whole spices visible — a theatrical tableside reveal. Served in a hammered copper biryani handi (rounded pot) with a domed hammered-copper lid propped partially open beside it, fragrant rice visibly steaming, resting on a round wooden coaster. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
+  },
+  {
+    "name": "Shahi Dum Biryani (Vegetarian, Paneer)",
+    "price_vnd_k": 249,
+    "description": "fragrant basmati rice and paneer, layered with saffron, mint and golden fried onion, sealed in dough and slow-cooked on dum until the aromas fully infuse the rice. Served with raita. Serves 1.",
+    "category": "Theater Signatures",
+    "plateware": "copper_biryani_handi",
+    "slug": "shahi-dum-biryani-vegetarian-paneer",
+    "prompt": "A premium editorial food photograph of Shahi Dum Biryani (Vegetarian, Paneer): fragrant basmati rice and paneer, layered with saffron, mint and golden fried onion, sealed in dough and slow-cooked on dum until the aromas fully infuse the rice. Served with raita. Serves 1. A hammered copper biryani handi with a golden baked dough seal visibly cracked open at the rim, fragrant saffron basmati rice and golden paneer cubes spilling into view, dramatic steam rising, fried onions, mint and whole spices visible — a theatrical tableside reveal. Served in a hammered copper biryani handi (rounded pot) with a domed hammered-copper lid propped partially open beside it, fragrant rice visibly steaming, resting on a round wooden coaster. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
   },
   {
     "name": "French Fries",
@@ -369,31 +351,22 @@
     "prompt": "A premium editorial food photograph of Tandoori Fish Tikka: six boneless fish cubes marinated with spices and grilled in the tandoor Six golden-orange char-grilled fish cubes arranged neatly, thin red onion rings, a lemon wedge and a small metal cup of mint chutney beside. Presented on a plain matte white/cream ceramic oval plate (NOT dark, NOT black, NOT charcoal - the plate itself is white/cream colored) with a subtle organic hand-thrown rim texture, exactly like the reference plate provided. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
   },
   {
-    "name": "Mixed Tandoori Platter",
+    "name": "Non-Veg Mixed Platter",
     "price_vnd_k": 399,
-    "description": "Chicken Tikka, Chicken Malai Tikka, Paneer Tikka and Achari Paneer Tikka served on one sizzling platter with mint chutney",
+    "description": "chicken tikka (2pc), chicken malai tikka (2pc), paneer tikka (2pc) and achari paneer tikka (2pc) on one sizzling platter with mint chutney. Serves 2.",
     "category": "Tandoor & Grill",
-    "plateware": "round_plain_large",
-    "slug": "mixed-tandoori-platter",
-    "prompt": "A premium editorial food photograph of Mixed Tandoori Platter: Chicken Tikka, Chicken Malai Tikka, Paneer Tikka and Achari Paneer Tikka served on one sizzling platter with mint chutney A generous assortment of char-grilled chicken tikka, chicken malai tikka, paneer tikka and achari paneer tikka skewer pieces fanned out across the platter, mint chutney in a small metal cup, thin red onion rings and a lemon wedge, gentle wisps of steam suggesting it just came off the grill. Presented on a large matte white/cream ceramic oval serving platter (a larger version of the plain white plate) with a subtle organic hand-thrown rim texture, exactly like the reference plate provided, sized to hold an assortment of grilled items. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
+    "plateware": "square_plain",
+    "slug": "non-veg-mixed-platter",
+    "prompt": "A premium editorial food photograph of Non-Veg Mixed Platter: chicken tikka (2pc), chicken malai tikka (2pc), paneer tikka (2pc) and achari paneer tikka (2pc) on one sizzling platter with mint chutney. Serves 2. A generous assortment of char-grilled chicken tikka, chicken malai tikka, paneer tikka and achari paneer tikka skewer pieces fanned out across a square platter, mint chutney in a small metal cup, thin red onion rings and a lemon wedge, gentle wisps of steam suggesting it just came off the grill. Presented on a large plain matte white/cream ceramic SQUARE plate with slightly rounded corners (NOT dark, NOT black, NOT round or oval — a square platter shape) with the same subtle organic hand-thrown rim texture as the other ceramic plates in this set. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
   },
   {
     "name": "Vegetarian Tandoori Platter",
     "price_vnd_k": 349,
-    "description": "Paneer Tikka, Achari Paneer Tikka, Mushroom Tikka and Hara Bhara Kebab served on one sizzling platter with mint chutney",
+    "description": "tandoori stuffed aloo sticks (3pc), paneer tikka sticks (3pc), mushroom sticks (3pc) and hara bhara kebab (3pc) on one large sizzling platter with mint chutney. Serves 2.",
     "category": "Tandoor & Grill",
-    "plateware": "round_plain_large",
+    "plateware": "square_plain",
     "slug": "vegetarian-tandoori-platter",
-    "prompt": "A premium editorial food photograph of Vegetarian Tandoori Platter: Paneer Tikka, Achari Paneer Tikka, Mushroom Tikka and Hara Bhara Kebab served on one sizzling platter with mint chutney A generous assortment of char-grilled paneer tikka, achari paneer tikka, mushroom tikka skewer pieces and hara bhara kebab patties fanned out across the platter, mint chutney in a small metal cup, thin red onion rings and a lemon wedge, gentle wisps of steam suggesting it just came off the grill — an entirely vegetarian spread, no meat, no chicken, no fish of any kind anywhere on the platter. Presented on a large matte white/cream ceramic oval serving platter (a larger version of the plain white plate) with a subtle organic hand-thrown rim texture, exactly like the reference plate provided, sized to hold an assortment of grilled items. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
-  },
-  {
-    "name": "Dal Makhani",
-    "price_vnd_k": 169,
-    "description": "creamy black lentils slow-cooked with butter and aromatic spices",
-    "category": "Main Curries",
-    "plateware": "copper_karahi",
-    "slug": "dal-makhani",
-    "prompt": "A premium editorial food photograph of Dal Makhani: creamy black lentils slow-cooked with butter and aromatic spices Deep brown creamy lentils with a swirl of cream on top and a small pat of melting butter in the center, finished with fresh cilantro. Served in a small hammered copper karahi (traditional Indian wok-shaped serving bowl) with polished brass ring handles, resting on a round wooden coaster. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
+    "prompt": "A premium editorial food photograph of Vegetarian Tandoori Platter: tandoori stuffed aloo sticks (3pc), paneer tikka sticks (3pc), mushroom sticks (3pc) and hara bhara kebab (3pc) on one large sizzling platter with mint chutney. Serves 2. A large, generous assortment filling a square platter completely: char-grilled tandoori stuffed aloo skewers with a golden roasted crust, paneer tikka skewers, whole mushroom skewers and hara bhara kebab patties, mint chutney in a small metal cup, thin red onion rings and a lemon wedge, gentle wisps of steam suggesting it just came off the grill — a substantial, generously portioned entirely vegetarian spread, no meat, no chicken, no fish of any kind anywhere on the platter. Presented on a large plain matte white/cream ceramic SQUARE plate with slightly rounded corners (NOT dark, NOT black, NOT round or oval — a square platter shape) with the same subtle organic hand-thrown rim texture as the other ceramic plates in this set. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
   },
   {
     "name": "Paneer Butter Masala",
@@ -414,13 +387,13 @@
     "prompt": "A premium editorial food photograph of Dal Tadka: yellow lentils tempered with garlic, cumin and spices Smooth golden-yellow lentils topped with a sizzling tempering of garlic slivers, cumin seeds and dried red chilli in ghee, finished with fresh cilantro. Served in a small hammered copper karahi (traditional Indian wok-shaped serving bowl) with polished brass ring handles, resting on a round wooden coaster. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
   },
   {
-    "name": "Kadhai Paneer",
+    "name": "Kadai Paneer",
     "price_vnd_k": 199,
     "description": "cottage cheese cooked with bell peppers, onions and traditional spices",
     "category": "Main Curries",
     "plateware": "copper_karahi",
-    "slug": "kadhai-paneer",
-    "prompt": "A premium editorial food photograph of Kadhai Paneer: cottage cheese cooked with bell peppers, onions and traditional spices Golden paneer cubes tossed with colorful bell pepper and onion pieces in a thick reddish-brown masala, finished with fresh cilantro. Served in a small hammered copper karahi (traditional Indian wok-shaped serving bowl) with polished brass ring handles, resting on a round wooden coaster. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
+    "slug": "kadai-paneer",
+    "prompt": "A premium editorial food photograph of Kadai Paneer: cottage cheese cooked with bell peppers, onions and traditional spices Golden paneer cubes tossed with colorful bell pepper and onion pieces in a thick reddish-brown masala, finished with fresh cilantro. Served in a small hammered copper karahi (traditional Indian wok-shaped serving bowl) with polished brass ring handles, resting on a round wooden coaster. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
   },
   {
     "name": "Palak Paneer",
@@ -484,15 +457,6 @@
     "plateware": "copper_karahi",
     "slug": "aloo-gobhi",
     "prompt": "A premium editorial food photograph of Aloo Gobhi: potatoes and cauliflower cooked with traditional Indian spices Golden potato and cauliflower florets tossed in a light turmeric-spiced dry masala, finished with fresh cilantro. Served in a small hammered copper karahi (traditional Indian wok-shaped serving bowl) with polished brass ring handles, resting on a round wooden coaster. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
-  },
-  {
-    "name": "Butter Chicken",
-    "price_vnd_k": 249,
-    "description": "tender chicken cooked in a rich tomato and butter gravy",
-    "category": "Main Curries",
-    "plateware": "copper_karahi",
-    "slug": "butter-chicken",
-    "prompt": "A premium editorial food photograph of Butter Chicken: tender chicken cooked in a rich tomato and butter gravy Tender chicken pieces in a smooth vivid orange-red tomato-butter gravy, finished with a swirl of cream and fresh cilantro. Served in a small hammered copper karahi (traditional Indian wok-shaped serving bowl) with polished brass ring handles, resting on a round wooden coaster. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
   },
   {
     "name": "Chicken Tikka Masala",

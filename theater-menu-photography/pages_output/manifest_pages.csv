@@ -1,39 +1,44 @@
 page_num,slug,type,title,filename,actual_resolution,status
-2,theater-signatures-1,content,Theater Signatures,02-theater-signatures-1.png,1792x2400,ok
-3,theater-signatures-2,content,Theater Signatures,03-theater-signatures-2.png,1792x2400,ok
-5,small-plates-bar-bites-1,content,Small Plates & Bar Bites,05-small-plates-bar-bites-1.png,1792x2400,ok
-9,chaat-fast-sellers-1,content,Chaat & Fast Sellers,09-chaat-fast-sellers-1.png,1792x2400,ok
-13,tandoor-grill-1,content,Tandoor & Grill,13-tandoor-grill-1.png,1792x2400,ok
-23,breads-2,content,Breads,23-breads-2.png,1792x2400,ok
-24,breads-3,content,Breads,24-breads-3.png,1792x2400,ok
-34,juices-smoothies-iced-tea-1,content,"Juices, Smoothies & Iced Tea",34-juices-smoothies-iced-tea-1.png,1792x2400,ok
-37,drinks-1,content,Drinks,37-drinks-1.png,1792x2400,ok
-40,signature-cocktails-1,drinklist,SIGNATURE COCKTAILS,40-signature-cocktails-1.png,1792x2400,ok
-41,signature-cocktails-2,drinklist,SIGNATURE COCKTAILS,41-signature-cocktails-2.png,1792x2400,ok
-42,signature-mocktails-1,drinklist,SIGNATURE MOCKTAILS,42-signature-mocktails-1.png,1792x2400,ok
-43,signature-mocktails-2,drinklist,SIGNATURE MOCKTAILS,43-signature-mocktails-2.png,1792x2400,ok
-45,back-cover,hero,back-cover,45-back-cover.png,1792x2400,ok
-5,small-plates-bar-bites-1,content,Small Plates & Bar Bites,05-small-plates-bar-bites-1.png,1792x2400,ok (pre-existing)
-13,tandoor-grill-1,content,Tandoor & Grill,13-tandoor-grill-1.png,1792x2400,ok (pre-existing)
-5,small-plates-bar-bites-1,content,Small Plates & Bar Bites,05-small-plates-bar-bites-1.png,1792x2400,ok
-13,tandoor-grill-1,content,Tandoor & Grill,13-tandoor-grill-1.png,1792x2400,ok
-2,theater-signatures-1,content,Theater Signatures,02-theater-signatures-1.png,1792x2400,ok
-24,breads-3,content,Breads,24-breads-3.png,1792x2400,ok
-40,signature-cocktails-1,drinklist,SIGNATURE COCKTAILS,40-signature-cocktails-1.png,1792x2400,ok
-2,theater-signatures-1,content,Theater Signatures,02-theater-signatures-1.png,1792x2400,ok
-1,cover,cover,cover,01-cover.png,1792x2400,ok
-3,small-plates-bar-bites-1,content,Small Plates & Bar Bites,03-small-plates-bar-bites-1.png,1792x2400,ok
-7,spotlight-chaat-mehfil,spotlight,Chaat Mehfil,07-spotlight-chaat-mehfil.png,1792x2400,ok
-12,spotlight-shahi-tandoori-platter,spotlight,Shahi Tandoori Platter,12-spotlight-shahi-tandoori-platter.png,1792x2400,ok
-16,spotlight-dum-daal-bukhara,spotlight,Dum Daal Bukhara,16-spotlight-dum-daal-bukhara.png,1792x2400,ok
-20,spotlight-shahi-murgh-makhani,spotlight,Shahi Murgh Makhani,20-spotlight-shahi-murgh-makhani.png,1792x2400,ok
-29,spotlight-royal-dum-biryani,spotlight,Royal Dum Biryani,29-spotlight-royal-dum-biryani.png,1792x2400,ok
-33,spotlight-shahi-mithai-trio,spotlight,Shahi Mithai Trio,33-spotlight-shahi-mithai-trio.png,1792x2400,ok
-37,signature-cocktails,drinklist,SIGNATURE COCKTAILS,37-signature-cocktails.png,1792x2400,ok
-38,signature-mocktails,drinklist,SIGNATURE MOCKTAILS,38-signature-mocktails.png,1792x2400,ok
-39,chai-lassi,content,"CHAI, LASSI & CHAAS",39-chai-lassi.png,1792x2400,ok
-40,smoothies,content,SMOOTHIES,40-smoothies.png,1792x2400,ok
-41,juices,content,JUICES,41-juices.png,1792x2400,ok
-42,iced-tea,content,ICED TEA,42-iced-tea.png,1792x2400,ok
-43,sparkling-water,content,SPARKLING WATER,43-sparkling-water.png,1792x2400,ok
-3,small-plates-bar-bites-1,content,Small Plates & Bar Bites,03-small-plates-bar-bites-1.png,1792x2400,ok
+1,cover,cover,cover,01-cover.png,1792x2400,ok (pre-existing)
+2,divider-small-plates,hero,divider-small-plates,02-divider-small-plates.png,1792x2400,ok (pre-existing)
+3,small-plates-bar-bites-1,content,Small Plates & Bar Bites,03-small-plates-bar-bites-1.png,1792x2400,ok (pre-existing)
+4,small-plates-bar-bites-2,content,Small Plates & Bar Bites,04-small-plates-bar-bites-2.png,1792x2400,ok (pre-existing)
+5,small-plates-bar-bites-3,content,Small Plates & Bar Bites,05-small-plates-bar-bites-3.png,1792x2400,ok (pre-existing)
+6,small-plates-bar-bites-4,content,Small Plates & Bar Bites,06-small-plates-bar-bites-4.png,1792x2400,ok
+7,chaat-fast-sellers-1,content,Chaat & Fast Sellers,07-chaat-fast-sellers-1.png,1792x2400,ok
+8,chaat-fast-sellers-2,content,Chaat & Fast Sellers,08-chaat-fast-sellers-2.png,1792x2400,ok
+9,chaat-fast-sellers-3,content,Chaat & Fast Sellers,09-chaat-fast-sellers-3.png,1792x2400,ok
+10,divider-tandoor,hero,divider-tandoor,10-divider-tandoor.png,1792x2400,ok (pre-existing)
+11,tandoor-grill-1,content,Tandoor & Grill,11-tandoor-grill-1.png,1792x2400,ok
+12,tandoor-grill-2,content,Tandoor & Grill,12-tandoor-grill-2.png,1792x2400,ok
+13,tandoor-grill-3,content,Tandoor & Grill,13-tandoor-grill-3.png,1792x2400,ok
+14,spotlight-daal-bukhara,spotlight,Daal Bukhara,14-spotlight-daal-bukhara.png,1792x2400,ok
+15,main-curries-1,content,Main Curries,15-main-curries-1.png,1792x2400,ok
+16,main-curries-2,content,Main Curries,16-main-curries-2.png,1792x2400,ok
+17,main-curries-3,content,Main Curries,17-main-curries-3.png,1792x2400,ok
+18,spotlight-royal-butter-chicken,spotlight,Royal Butter Chicken,18-spotlight-royal-butter-chicken.png,1792x2400,ok
+19,main-curries-4,content,Main Curries,19-main-curries-4.png,1792x2400,ok
+20,seafood-curries-1,content,Seafood Curries,20-seafood-curries-1.png,1792x2400,ok
+21,breads-1,content,Breads,21-breads-1.png,1792x2400,ok
+22,breads-2,content,Breads,22-breads-2.png,1792x2400,ok
+23,breads-3,content,Breads,23-breads-3.png,1792x2400,ok
+24,divider-rice,hero,divider-rice,24-divider-rice.png,1792x2400,ok (pre-existing)
+25,rice-khichdi-1,content,Rice & Khichdi,25-rice-khichdi-1.png,1792x2400,ok
+26,spotlight-shahi-dum-biryani,spotlight,Shahi Dum Biryani,26-spotlight-shahi-dum-biryani.png,1792x2400,ok
+27,biryani-1,content,Biryani,27-biryani-1.png,1792x2400,ok
+28,biryani-2,content,Biryani,28-biryani-2.png,1792x2400,ok
+29,divider-desserts,hero,divider-desserts,29-divider-desserts.png,1792x2400,ok (pre-existing)
+30,desserts-1,content,Desserts,30-desserts-1.png,1792x2400,ok
+31,desserts-2,content,Desserts,31-desserts-2.png,1792x2400,ok
+32,divider-bar,hero,divider-bar,32-divider-bar.png,1792x2400,ok (pre-existing)
+33,signature-cocktails,drinklist,SIGNATURE COCKTAILS,33-signature-cocktails.png,1792x2400,ok
+34,signature-mocktails,drinklist,SIGNATURE MOCKTAILS,34-signature-mocktails.png,1792x2400,ok
+35,chai-lassi,content,"CHAI, LASSI & CHAAS",35-chai-lassi.png,1792x2400,ok
+36,smoothies,content,SMOOTHIES,36-smoothies.png,1792x2400,ok
+37,juices,content,JUICES,37-juices.png,1792x2400,ok
+38,iced-tea,content,ICED TEA,38-iced-tea.png,1792x2400,ok
+39,sparkling-water,content,SOFT DRINKS & WATER,39-sparkling-water.png,1792x2400,ok
+40,coffee,content,COFFEE,40-coffee.png,1792x2400,ok
+41,spirits-wines-beers,spirits,"Spirits, Wines & Beers",41-spirits-wines-beers.png,1792x2400,ok
+42,back-cover,hero,back-cover,42-back-cover.png,1792x2400,ok
+15,main-curries-1,content,Main Curries,15-main-curries-1.png,1792x2400,ok

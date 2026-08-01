@@ -26,6 +26,12 @@ PLATEWARE = {
         "with a subtle organic hand-thrown rim texture, exactly like the "
         "reference plate provided."
     ),
+    "square_plain": (
+        "Presented on a large plain matte white/cream ceramic SQUARE plate "
+        "with slightly rounded corners (NOT dark, NOT black, NOT round or "
+        "oval — a square platter shape) with the same subtle organic "
+        "hand-thrown rim texture as the other ceramic plates in this set."
+    ),
     "wooden_tray": (
         "Presented on a curved dark walnut wooden serving tray with a row of "
         "round drilled wells, each well holding one small clear glass upright, "
@@ -134,18 +140,14 @@ items = []
 # ---------------- Theater Signatures ----------------
 cat = "Theater Signatures"
 items += [
-    item("Dum Daal Bukhara", 185, "our slow-simmered black lentils, finished tableside with a smoking butter tadka", cat, "copper_karahi",
+    item("Daal Bukhara", 185, "whole black lentils, slow-simmered for ten to twelve hours until velvety and rich, finished with butter, cream and a whisper of charcoal smoke — a Peshawari classic, elevated. Serves 1.", cat, "copper_karahi",
          "Deep brown creamy black lentils with a swirl of cream and a generous pat of butter melting into a dramatic curl of visible smoke rising from the center, finished with fresh cilantro — an elevated, dramatic tableside presentation."),
-    item("Chaat Mehfil", 220, "a curated trio of pani puri shots, aloo tikki chaat and dahi papdi chaat, plated together", cat, "round_plain_large",
-         "A generous spread filling the platter: the same small wooden gol gappa tray with a row of shot glasses filled with tangy pani puri water alongside crisp puris, set beside a hearty portion of golden aloo tikki topped with a generous swirl of yogurt and chutneys, and a full portion of papdi chaat layered thickly with yogurt and chutney drizzles, garnished with fresh coriander and fine sev — a generously portioned tasting trio, no empty space on the platter."),
-    item("Shahi Mithai Trio", 165, "a chef's tasting trio of warm gulab jamun, silky kheer and rich gajar halwa, plated together", cat, "round_plain",
-         "Three generous, hearty portions filling the plate: two glossy gulab jamun in syrup, a full generous scoop of creamy kheer garnished with saffron and nuts, and a large mound of rich gajar halwa garnished with pistachios — a generously portioned dessert finale, no empty space on the plate."),
-    item("Shahi Murgh Makhani", 279, "tender tandoor-charred chicken in a silky tomato-butter gravy, presented with a flourish", cat, "copper_karahi",
+    item("Royal Butter Chicken", 279, "chicken thigh, charcoal-grilled and simmered in a silky tomato gravy enriched with cashew, saffron and a final touch of smoked butter — our most celebrated curry, made the way royalty once demanded it. Serves 1.", cat, "copper_karahi",
          "Tender char-grilled chicken pieces in a smooth vivid orange-red tomato-butter gravy with an elegant swirl of cream and a delicate flourish of fresh cilantro, an elevated, dramatic presentation of the classic."),
-    item("Shahi Tandoori Platter", 459, "an abundant sharing spread of Chicken Tikka, Chicken Malai Tikka, Tangdi Kebab, Paneer Tikka and Achari Paneer Tikka on one grand sizzling platter", cat, "round_plain_large",
-         "A grand, abundant assortment of char-grilled chicken tikka, chicken malai tikka, tandoori chicken drumsticks, paneer tikka and achari paneer tikka fanned out dramatically across a large sizzling platter, mint chutney in a small metal cup, thin red onion rings and lemon wedges, generous wisps of steam — a showstopping sharing presentation."),
-    item("Royal Dum Biryani", 259, "fragrant basmati and tender chicken sealed and slow-cooked in a dough-covered handi, cracked open tableside", cat, "copper_biryani_handi",
+    item("Shahi Dum Biryani (Chicken)", 259, "fragrant basmati rice and tender chicken, layered with saffron, mint and golden fried onion, sealed in dough and slow-cooked on dum until the aromas fully infuse the rice. Served with raita. Serves 1.", cat, "copper_biryani_handi",
          "A hammered copper biryani handi with a golden baked dough seal visibly cracked open at the rim, fragrant saffron basmati rice and tender chicken pieces spilling into view, dramatic steam rising, fried onions, mint and whole spices visible — a theatrical tableside reveal."),
+    item("Shahi Dum Biryani (Vegetarian, Paneer)", 249, "fragrant basmati rice and paneer, layered with saffron, mint and golden fried onion, sealed in dough and slow-cooked on dum until the aromas fully infuse the rice. Served with raita. Serves 1.", cat, "copper_biryani_handi",
+         "A hammered copper biryani handi with a golden baked dough seal visibly cracked open at the rim, fragrant saffron basmati rice and golden paneer cubes spilling into view, dramatic steam rising, fried onions, mint and whole spices visible — a theatrical tableside reveal."),
 ]
 
 # ---------------- Small Plates & Bar Bites ----------------
@@ -231,22 +233,20 @@ items += [
          "A vivid red-orange tandoori half chicken (one breast, one leg) with visible char marks, thin red onion rings, a lemon wedge and a small metal cup of mint chutney beside."),
     item("Tandoori Fish Tikka", 265, "six boneless fish cubes marinated with spices and grilled in the tandoor", cat, "round_plain",
          "Six golden-orange char-grilled fish cubes arranged neatly, thin red onion rings, a lemon wedge and a small metal cup of mint chutney beside."),
-    item("Mixed Tandoori Platter", 399, "Chicken Tikka, Chicken Malai Tikka, Paneer Tikka and Achari Paneer Tikka served on one sizzling platter with mint chutney", cat, "round_plain_large",
-         "A generous assortment of char-grilled chicken tikka, chicken malai tikka, paneer tikka and achari paneer tikka skewer pieces fanned out across the platter, mint chutney in a small metal cup, thin red onion rings and a lemon wedge, gentle wisps of steam suggesting it just came off the grill."),
-    item("Vegetarian Tandoori Platter", 349, "Paneer Tikka, Achari Paneer Tikka, Mushroom Tikka and Hara Bhara Kebab served on one sizzling platter with mint chutney", cat, "round_plain_large",
-         "A generous assortment of char-grilled paneer tikka, achari paneer tikka, mushroom tikka skewer pieces and hara bhara kebab patties fanned out across the platter, mint chutney in a small metal cup, thin red onion rings and a lemon wedge, gentle wisps of steam suggesting it just came off the grill — an entirely vegetarian spread, no meat, no chicken, no fish of any kind anywhere on the platter."),
+    item("Non-Veg Mixed Platter", 399, "chicken tikka (2pc), chicken malai tikka (2pc), paneer tikka (2pc) and achari paneer tikka (2pc) on one sizzling platter with mint chutney. Serves 2.", cat, "square_plain",
+         "A generous assortment of char-grilled chicken tikka, chicken malai tikka, paneer tikka and achari paneer tikka skewer pieces fanned out across a square platter, mint chutney in a small metal cup, thin red onion rings and a lemon wedge, gentle wisps of steam suggesting it just came off the grill."),
+    item("Vegetarian Tandoori Platter", 349, "tandoori stuffed aloo sticks (3pc), paneer tikka sticks (3pc), mushroom sticks (3pc) and hara bhara kebab (3pc) on one large sizzling platter with mint chutney. Serves 2.", cat, "square_plain",
+         "A large, generous assortment filling a square platter completely: char-grilled tandoori stuffed aloo skewers with a golden roasted crust, paneer tikka skewers, whole mushroom skewers and hara bhara kebab patties, mint chutney in a small metal cup, thin red onion rings and a lemon wedge, gentle wisps of steam suggesting it just came off the grill — a substantial, generously portioned entirely vegetarian spread, no meat, no chicken, no fish of any kind anywhere on the platter."),
 ]
 
 # ---------------- Main Curries ----------------
 cat = "Main Curries"
 items += [
-    item("Dal Makhani", 169, "creamy black lentils slow-cooked with butter and aromatic spices", cat, "copper_karahi",
-         "Deep brown creamy lentils with a swirl of cream on top and a small pat of melting butter in the center, finished with fresh cilantro."),
     item("Paneer Butter Masala", 199, "cottage cheese cooked in a rich tomato and butter gravy", cat, "copper_karahi",
          "Soft paneer cubes in a smooth vivid orange-red tomato-butter gravy, finished with a swirl of cream and fresh cilantro. Nothing else in frame — no naan, no bread, no other food in the background, just the karahi on its coaster against the plain studio background."),
     item("Dal Tadka", 159, "yellow lentils tempered with garlic, cumin and spices", cat, "copper_karahi",
          "Smooth golden-yellow lentils topped with a sizzling tempering of garlic slivers, cumin seeds and dried red chilli in ghee, finished with fresh cilantro."),
-    item("Kadhai Paneer", 199, "cottage cheese cooked with bell peppers, onions and traditional spices", cat, "copper_karahi",
+    item("Kadai Paneer", 199, "cottage cheese cooked with bell peppers, onions and traditional spices", cat, "copper_karahi",
          "Golden paneer cubes tossed with colorful bell pepper and onion pieces in a thick reddish-brown masala, finished with fresh cilantro."),
     item("Palak Paneer", 199, "cottage cheese simmered in a creamy spinach gravy", cat, "copper_karahi",
          "Soft paneer cubes set in a smooth vivid green spinach gravy, finished with a swirl of cream and a fresh cilantro leaf."),
@@ -262,8 +262,6 @@ items += [
          "Sliced okra sauteed with onion and tomato in a dry masala coating, finished with fresh cilantro."),
     item("Aloo Gobhi", 170, "potatoes and cauliflower cooked with traditional Indian spices", cat, "copper_karahi",
          "Golden potato and cauliflower florets tossed in a light turmeric-spiced dry masala, finished with fresh cilantro."),
-    item("Butter Chicken", 249, "tender chicken cooked in a rich tomato and butter gravy", cat, "copper_karahi",
-         "Tender chicken pieces in a smooth vivid orange-red tomato-butter gravy, finished with a swirl of cream and fresh cilantro."),
     item("Chicken Tikka Masala", 239, "grilled chicken tikka simmered in a rich spiced tomato gravy", cat, "copper_karahi",
          "Char-grilled chicken tikka pieces with visible smoky edges in a thick spiced tomato gravy, finished with fresh cilantro."),
     item("Kadai Chicken", 229, "chicken cooked with onions, bell peppers and aromatic Indian spices", cat, "copper_karahi",
