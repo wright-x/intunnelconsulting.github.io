@@ -208,6 +208,24 @@ NEGATIVE_PROSE = (
     "same page."
 )
 
+# Trimmed negative block for pure text price-list pages (spirits, cocktails,
+# mocktails) — omits the vegetarian-leaf/chili-icon paragraph entirely, since
+# even describing that tag system primes the model to add it here.
+NEGATIVE_PROSE_TEXTLIST = (
+    "Do not include any watermark, stock-photo logo, placeholder lorem "
+    "ipsum text, or UI elements, and no icons of any kind — no vegetarian "
+    "leaf icon, no 'VEGETARIAN' word, no chili-pepper icons; those belong "
+    "only on food-dish pages elsewhere in this menu, never on this page. "
+    "Do not draw any arrows, pointer lines, leader lines, or connector "
+    "lines anywhere. Do not render any internal instruction text, field "
+    "labels, brackets, or quotation marks anywhere on the page — only the "
+    "restaurant copy specified below should appear as visible text. Do "
+    "not add any page number, page count, or fraction anywhere. Never "
+    "repeat the same item twice. Each item's name and price must appear "
+    "EXACTLY ONCE. Every price must use the exact same format: the item "
+    "name, then an em dash '—', then the price, like 'Item Name — 199K'."
+)
+
 
 def build_header_prose(title, tagline, spice_legend=False):
     legend_note = ""
@@ -655,7 +673,7 @@ def build_spirits_prompt():
         sections.append(f"Section '{name}': " + "; ".join(row_strs) + ".")
 
     return (
-        STYLE_PROSE + " " + NEGATIVE_PROSE + "\n\n"
+        STYLE_PROSE + " " + NEGATIVE_PROSE_TEXTLIST + "\n\n"
         + build_header_prose("SPIRITS, WINES & BEERS", "Premium spirits, fine wines and refreshing beers.") + "\n\n"
         + "Below the header, this page is a clean elegant two-column TEXT "
         + "PRICE LIST — no photographs, no dish images anywhere. Lay out "
@@ -672,7 +690,11 @@ def build_spirits_prompt():
         + "SINGLE line: name and price(s) only — do NOT add any second "
         + "line, subtitle, description, or extra text of any kind beneath "
         + "any item name. There is no description for any item on this "
-        + "page, only the name and price.\n\n"
+        + "page, only the name and price. Do NOT add any icons of any "
+        + "kind anywhere on this page — no vegetarian leaf icon, no "
+        + "'VEGETARIAN' word, no chili-pepper spice icons. Those tags are "
+        + "used elsewhere in this menu for food dishes only; this is a "
+        + "pure spirits/wine/beer price list with no icons whatsoever.\n\n"
         + " ".join(sections) + "\n\n"
         + FOOTER_PROSE
     )
@@ -700,7 +722,7 @@ def build_drink_list_prompt(title, tagline, items_subset, page_note):
     for name, price, desc in items_subset:
         rows.append(f"'{name}' — {price}K. Description: {desc}")
     return (
-        STYLE_PROSE + " " + NEGATIVE_PROSE + "\n\n"
+        STYLE_PROSE + " " + NEGATIVE_PROSE_TEXTLIST + "\n\n"
         + build_header_prose(title, tagline) + "\n\n"
         + "Below the header, this page is a clean elegant single-column TEXT "
         + "LIST — no photographs, no dish images, no icons of any kind "
