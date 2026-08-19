@@ -57,6 +57,8 @@ SPICE_OVERRIDE = {
     "Papad": 1,
     "Dal Tadka": 1,
     "Egg Bhurji": 2,
+    "Chilli Paneer": 2,
+    "French Fries": 0,
 }
 
 
@@ -231,19 +233,15 @@ def build_header_prose(title, tagline, spice_legend=False):
     legend_note = ""
     if spice_legend:
         legend_note = (
-            " Directly beneath the tagline, one small line explaining the "
-            "spice icons, set in the same plain serif body font as the "
-            "rest of the page (not italic, not tracked-out capitals, "
-            "small and simple, muted gray-brown color), with three groups "
-            "spaced generously apart left to right: group one shows "
-            "exactly ONE small red chili-pepper icon followed by the "
-            "word 'Mild'; group two shows exactly TWO small red "
-            "chili-pepper icons side by side followed by the word "
-            "'Medium'; group three shows exactly THREE small red "
-            "chili-pepper icons side by side followed by the word 'Hot'. "
-            "Double-check the icon count in each group before finalizing "
-            "— group one has 1 icon, group two has 2 icons, group three "
-            "has 3 icons, never any other count."
+            " Directly beneath the tagline, one small line, plain serif "
+            "body font, small and simple, containing ONLY three short "
+            "visible phrases side by side with generous spacing between "
+            "them and nothing else — no other words, no extra sentence "
+            "around them: first '🌶️ Mild', second '🌶️🌶️ Medium', third "
+            "'🌶️🌶️🌶️ Hot' — rendered as one red chili-pepper icon then "
+            "the word Mild, then two red chili-pepper icons then the "
+            "word Medium, then three red chili-pepper icons then the "
+            "word Hot."
         )
     return (
         f"At the very top of the page: a small row of three tiny line-icon "
