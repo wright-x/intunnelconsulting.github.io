@@ -212,6 +212,12 @@ items += [
          "Irregular golden-brown crispy vegetable fritters piled loosely for height, sauce well filled with vivid green mint chutney."),
     item("Samosa Chaat", 150, "crushed samosas topped with yogurt, chutneys and spices", cat, "oval_sauce_well",
          "Crushed golden samosa pieces topped with thick yogurt, tamarind and mint chutney drizzles and fine sev, sauce well filled with extra chutney."),
+    item("Maggi", 100, "classic Indian-style masala instant noodles", cat, "chinese_bowl",
+         "A generous tangle of golden masala-tossed instant noodles in a rich orange-red masala coating, garnished with fresh coriander."),
+    item("Vegetable Maggi", 125, "Indian-style masala instant noodles tossed with mixed vegetables", cat, "chinese_bowl",
+         "A generous tangle of golden masala-tossed instant noodles studded with colorful diced carrot, peas, bell pepper and onion, garnished with fresh coriander."),
+    item("Cheese and Vegetable Maggi", 150, "Indian-style masala instant noodles tossed with mixed vegetables and melted cheese", cat, "chinese_bowl",
+         "A generous tangle of golden masala-tossed instant noodles studded with colorful diced vegetables, topped with a generous drift of melted cheese, garnished with fresh coriander."),
 ]
 
 # ---------------- Tandoor & Grill ----------------
@@ -317,6 +323,8 @@ items += [
          "Fluffy separate long-grain white basmati rice mounded gently, finished with a single fresh cilantro leaf."),
     item("Jeera Rice", 99, "basmati rice tempered with cumin and aromatic spices", cat, "copper_handi_rice",
          "Fluffy basmati rice flecked with visible toasted cumin seeds, finished with a dried red chilli and fresh cilantro."),
+    item("Curd Rice and Pickle", 149, "creamy yogurt rice tempered with mustard seeds and curry leaves, served with tangy Indian pickle", cat, "small_white_bowl",
+         "Smooth, creamy white curd rice studded with a mustard seed and curry leaf tempering, a small dollop of vivid red-orange mixed pickle on the side, garnished with a few curry leaves."),
 ]
 
 # ---------------- Biryani ----------------

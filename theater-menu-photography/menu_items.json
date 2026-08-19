@@ -279,6 +279,33 @@
     "prompt": "A premium editorial food photograph of Samosa Chaat: crushed samosas topped with yogurt, chutneys and spices Crushed golden samosa pieces topped with thick yogurt, tamarind and mint chutney drizzles and fine sev, sauce well filled with extra chutney. Presented on a matte white/off-white ceramic oval plate (NOT dark, NOT black, NOT charcoal - the plate itself is white/cream colored) with a small built-in triangular sauce well on one side holding a matching chutney or dip, exactly like the reference plate provided. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
   },
   {
+    "name": "Maggi",
+    "price_vnd_k": 100,
+    "description": "classic Indian-style masala instant noodles",
+    "category": "Chaat & Fast Sellers",
+    "plateware": "chinese_bowl",
+    "slug": "maggi",
+    "prompt": "A premium editorial food photograph of Maggi: classic Indian-style masala instant noodles A generous tangle of golden masala-tossed instant noodles in a rich orange-red masala coating, garnished with fresh coriander. Presented in a round shallow ceramic bowl with a warm cream/tan speckled glaze, a wide flared rim, and two small integrated loop handles on opposite sides (a compact rounded serving bowl, approximately 19.5cm wide across the handles, 16cm bowl diameter, 5.5cm tall). No sauce well, no dip, no side sauce of any kind — the dish itself is glossy and saucy, served with nothing extra beside it. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
+  },
+  {
+    "name": "Vegetable Maggi",
+    "price_vnd_k": 125,
+    "description": "Indian-style masala instant noodles tossed with mixed vegetables",
+    "category": "Chaat & Fast Sellers",
+    "plateware": "chinese_bowl",
+    "slug": "vegetable-maggi",
+    "prompt": "A premium editorial food photograph of Vegetable Maggi: Indian-style masala instant noodles tossed with mixed vegetables A generous tangle of golden masala-tossed instant noodles studded with colorful diced carrot, peas, bell pepper and onion, garnished with fresh coriander. Presented in a round shallow ceramic bowl with a warm cream/tan speckled glaze, a wide flared rim, and two small integrated loop handles on opposite sides (a compact rounded serving bowl, approximately 19.5cm wide across the handles, 16cm bowl diameter, 5.5cm tall). No sauce well, no dip, no side sauce of any kind — the dish itself is glossy and saucy, served with nothing extra beside it. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
+  },
+  {
+    "name": "Cheese and Vegetable Maggi",
+    "price_vnd_k": 150,
+    "description": "Indian-style masala instant noodles tossed with mixed vegetables and melted cheese",
+    "category": "Chaat & Fast Sellers",
+    "plateware": "chinese_bowl",
+    "slug": "cheese-and-vegetable-maggi",
+    "prompt": "A premium editorial food photograph of Cheese and Vegetable Maggi: Indian-style masala instant noodles tossed with mixed vegetables and melted cheese A generous tangle of golden masala-tossed instant noodles studded with colorful diced vegetables, topped with a generous drift of melted cheese, garnished with fresh coriander. Presented in a round shallow ceramic bowl with a warm cream/tan speckled glaze, a wide flared rim, and two small integrated loop handles on opposite sides (a compact rounded serving bowl, approximately 19.5cm wide across the handles, 16cm bowl diameter, 5.5cm tall). No sauce well, no dip, no side sauce of any kind — the dish itself is glossy and saucy, served with nothing extra beside it. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
+  },
+  {
     "name": "Paneer Tikka Skewers",
     "price_vnd_k": 220,
     "description": "cottage cheese cubes marinated in yogurt and aromatic Indian spices, grilled in the traditional tandoor",
@@ -637,6 +664,15 @@
     "plateware": "copper_handi_rice",
     "slug": "jeera-rice",
     "prompt": "A premium editorial food photograph of Jeera Rice: basmati rice tempered with cumin and aromatic spices Fluffy basmati rice flecked with visible toasted cumin seeds, finished with a dried red chilli and fresh cilantro. Served in a small hammered copper handi bowl (rounded, no handles), the rice mounded gently, resting on a round wooden coaster. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
+  },
+  {
+    "name": "Curd Rice and Pickle",
+    "price_vnd_k": 149,
+    "description": "creamy yogurt rice tempered with mustard seeds and curry leaves, served with tangy Indian pickle",
+    "category": "Rice & Khichdi",
+    "plateware": "small_white_bowl",
+    "slug": "curd-rice-and-pickle",
+    "prompt": "A premium editorial food photograph of Curd Rice and Pickle: creamy yogurt rice tempered with mustard seeds and curry leaves, served with tangy Indian pickle Smooth, creamy white curd rice studded with a mustard seed and curry leaf tempering, a small dollop of vivid red-orange mixed pickle on the side, garnished with a few curry leaves. Presented in a small plain matte white ceramic bowl, round with a simple smooth rim and no handles — a plain, unadorned small white bowl, exactly like a simple everyday side-dish bowl (NOT the speckled cream two-handled bowl used for other dishes). Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
   },
   {
     "name": "Paneer Biryani",
