@@ -323,8 +323,8 @@ items += [
          "Fluffy separate long-grain white basmati rice mounded gently, finished with a single fresh cilantro leaf."),
     item("Jeera Rice", 99, "basmati rice tempered with cumin and aromatic spices", cat, "copper_handi_rice",
          "Fluffy basmati rice flecked with visible toasted cumin seeds, finished with a dried red chilli and fresh cilantro."),
-    item("Curd Rice and Pickle", 175, "creamy yogurt rice tempered with mustard seeds and curry leaves, served with tangy Indian pickle", cat, "small_white_bowl",
-         "Smooth, creamy white curd rice studded with a mustard seed and curry leaf tempering, a small dollop of vivid red-orange mixed pickle on the side, garnished with a few curry leaves."),
+    item("Curd Rice and Pickle", 179, "creamy yogurt rice tempered with mustard seeds and curry leaves, served with tangy Indian pickle", cat, "small_white_bowl",
+         "A generous, large portion filling the bowl completely and mounded high — curd rice where individual grains of rice are clearly visible and distinct throughout (never a smooth, pureed, or pudding-like texture like a kheer or rice pudding — this must look like whole grains of rice coated in thick yogurt, not a blended dessert), studded with a visible mustard seed and curry leaf tempering and fresh curry leaves, with a generous, prominent dollop of vivid red-orange mixed pickle on top so the pickle is clearly visible, not hidden."),
 ]
 
 # ---------------- Biryani ----------------
