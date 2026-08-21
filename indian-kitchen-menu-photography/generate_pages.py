@@ -149,6 +149,9 @@ def build_section_prompt(title, kicker, tag_prefix, dish_names, start_tag):
     dish_text_block = "\n".join(lines)
     badge_text_block = ("\n" + "\n".join(badge_lines)) if badge_lines else ""
 
+    letters = title.replace(" ", "")
+    spelled = "-".join(letters)
+
     return (
         "Design a tall vertical portrait print restaurant menu page, full-bleed, "
         "flat and front-on like a scanned printed page, never a 3D mockup. "
@@ -191,11 +194,13 @@ def build_section_prompt(title, kicker, tag_prefix, dish_names, start_tag):
         "serif in soft cream. Prices use the same gold serif as the display "
         "type. Keep the tone restrained and fine-dining, never bold or heavy, "
         "with plenty of empty burgundy space around every text block.\n\n"
-        f"Layout: the words '{title}' (render this exact spelling, letter by "
-        "letter, double-check every letter before finalizing) set very large "
-        "in gold, stacked vertically down the left edge of the page, one line "
+        f"Layout: the words '{title}', spelled exactly {spelled} "
+        f"({len(letters)} letters, double-check every single letter including "
+        "any doubled letters before finalizing — do not drop or merge any "
+        "letter), set very large in gold, stacked vertically down the left "
+        "edge of the page, one line "
         "of the title directly above the next if it wraps. Beside that "
-        f"stacked title, ONCE only, at the very top, a short line of small "
+        f"stacked title, at the very top, a single short line of small "
         f"gold text rotated vertically reading exactly '{kicker}' and "
         f"nothing else — render precisely these words, no more, no fewer, "
         f"no substituted or added words. This text must appear exactly once "
