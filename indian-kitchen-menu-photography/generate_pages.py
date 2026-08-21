@@ -65,49 +65,89 @@ DESCRIPTIONS = {
     "Pani Puri Flight": "Six crisp puris, spiced potato and chickpea, three chilled waters — mint, tamarind, raw mango",
     "Spiced Lamb Keema Samosas": "Crisp pastry, spiced minced lamb and peas, mint-coriander chutney",
     "Aloo Tikki Chaat": "Golden potato patties, chickpea curry, yogurt, tamarind and mint chutney",
+    "Crispy Okra Fries, Chaat Masala": "Crisp fried okra strips, chaat masala, cooling mint yogurt",
+    "Corn Bhel, Puffed Rice & Peanut": "Puffed rice, sweet corn, peanuts, tamarind and mint chutney",
+    "Papadum Trio, Three Chutneys": "Three roasted papadums, mango pickle, chilli-garlic, mint yogurt",
     "Charred Sweet Potato & Chickpea Salad": "Charred sweet potato, crispy chickpeas, yogurt, tamarind-date glaze",
     "Charred Broccoli, Almond & Herb Cream": "Charred broccoli, toasted almonds, herb cream, curry-leaf oil",
     "Whole Roasted Cauliflower, Cashew Curry": "Whole roasted cauliflower, cashew curry, crisp curry leaves",
+    "Charred Baby Eggplant, Peanut Curry": "Charred baby eggplant, peanut curry, crushed peanuts",
+    "Tandoori Mushroom, Garlic Yogurt": "Charcoal-grilled king oyster mushroom, roasted garlic yogurt",
+    "Beetroot Tikki, Goat Cheese": "Beetroot and potato tikki, soft goat cheese, toasted walnuts",
     "Charcoal Paneer Tikka": "Charcoal-grilled paneer, mint yogurt, pomegranate",
     "Tandoori Chicken Thigh, Kashmiri Chilli": "Charcoal-grilled chicken thigh, Kashmiri chilli marinade, yogurt",
     "Lamb Seekh Kebab, Pickled Onion": "Minced lamb kebab, mint chutney, pickled onion",
+    "Tandoori Prawns, Chilli-Garlic": "Charcoal-grilled jumbo prawns, chilli-garlic marinade, garlic yogurt",
+    "Malai Chicken Tikka, Cashew Cream": "Charcoal-grilled chicken tikka, malai marinade, cashew cream",
+    "Charcoal Lamb Chops, Mint": "Charcoal-grilled French-trimmed lamb chops, mint chutney",
     "Charcoal Butter Chicken": "Charcoal-grilled chicken, tomato-butter gravy, cream",
     "Malabar Fish Curry, Banana Leaf": "White fish, coconut Malabar spice, curry leaf, banana leaf",
     "Lamb Rogan Josh, Kashmiri Chilli": "Braised lamb, Kashmiri chilli gravy, cream",
+    "Goan Prawn Curry, Coconut": "Prawns, golden coconut curry, curry leaf, mustard seed",
+    "Dal Makhani, Smoked Butter": "Slow-cooked black lentils, cream, smoked butter",
+    "Palak Paneer, Charred Spinach": "Paneer, charred spinach gravy, cream, toasted pine nuts",
     "Hyderabadi Chicken Dum Biryani": "Saffron basmati, bone-in chicken, fried onion, dum-sealed",
     "Vegetable Dum Biryani, Saffron": "Saffron basmati, charred vegetables, paneer, dum-sealed",
     "Jeera Rice, Toasted Cumin": "Basmati rice, toasted cumin, dried chilli",
+    "Lamb Biryani, Dum-Sealed": "Saffron basmati, braised lamb, fried onion, dum-sealed",
+    "Prawn Biryani, Coastal Spice": "Saffron basmati, coastal-spiced prawns, curry leaf, fried onion",
+    "Curd Rice, Pomegranate & Curry Leaf": "Creamy curd rice, curry-leaf tempering, pomegranate",
     "Deconstructed Gulab Jamun, Saffron Cream": "Saffron-soaked gulab jamun, chilled saffron cream, pistachio",
     "Pistachio Kulfi, Rose, Vermicelli": "Pistachio kulfi, rose petal, crisp vermicelli",
     "Chai-Spiced Crème Brûlée": "Chai-spiced custard, caramelized sugar, cinnamon",
+    "Mango Cheesecake, Cardamom": "Mango cheesecake, biscuit base, cardamom",
+    "Chocolate Samosa, Salted Caramel": "Molten chocolate samosa, salted caramel",
+    "Saffron Rice Pudding, Pistachio": "Saffron rice pudding, pistachio, almond",
+    "Smoked Old Fashioned, Chai Bitters": "Smoked whisky old fashioned, chai bitters, orange peel",
+    "Tamarind Margarita": "Tamarind margarita, salt-chilli rim, lime",
+    "Rose Lassi Martini": "Rose-yogurt martini, foam, pistachio",
+    "Cucumber Mint Cooler": "Cucumber, mint, non-alcoholic cooler",
+    "Spiced Chai": "Rich milky spiced chai, cinnamon, star anise",
+    "Mango Lassi": "Mango yogurt, cardamom",
 }
 
-SECTIONS = [
-    ("beginnings-1", "BEGINNINGS", "PART ONE", "IK",
-     ["Pani Puri Flight", "Spiced Lamb Keema Samosas", "Aloo Tikki Chaat"]),
-    ("vegetable-garden-1", "VEGETABLE GARDEN", "PART TWO", "VG",
-     ["Charred Sweet Potato & Chickpea Salad", "Charred Broccoli, Almond & Herb Cream", "Whole Roasted Cauliflower, Cashew Curry"]),
-    ("tandoor-1", "FROM THE TANDOOR", "PART THREE", "TD",
-     ["Charcoal Paneer Tikka", "Tandoori Chicken Thigh, Kashmiri Chilli", "Lamb Seekh Kebab, Pickled Onion"]),
-    ("curries-mains-1", "CURRIES & MAINS", "PART FOUR", "CM",
-     ["Charcoal Butter Chicken", "Malabar Fish Curry, Banana Leaf", "Lamb Rogan Josh, Kashmiri Chilli"]),
-    ("rice-biryani-1", "RICE & BIRYANI", "PART FIVE", "RB",
-     ["Hyderabadi Chicken Dum Biryani", "Vegetable Dum Biryani, Saffron", "Jeera Rice, Toasted Cumin"]),
-    ("sweet-endings-1", "SWEET ENDINGS", "PART SIX", "SE",
-     ["Deconstructed Gulab Jamun, Saffron Cream", "Pistachio Kulfi, Rose, Vermicelli", "Chai-Spiced Crème Brûlée"]),
+CATEGORIES = [
+    ("BEGINNINGS", "BEGINNINGS", "PART ONE", "IK", "beginnings"),
+    ("VEGETABLE GARDEN", "VEGETABLE GARDEN", "PART TWO", "VG", "vegetable-garden"),
+    ("TANDOOR", "FROM THE TANDOOR", "PART THREE", "TD", "tandoor"),
+    ("CURRIES & MAINS", "CURRIES & MAINS", "PART FOUR", "CM", "curries-mains"),
+    ("RICE & BIRYANI", "RICE & BIRYANI", "PART FIVE", "RB", "rice-biryani"),
+    ("SWEET ENDINGS", "SWEET ENDINGS", "PART SIX", "SE", "sweet-endings"),
+    ("DRINKS", "DRINKS", "PART SEVEN", "DR", "drinks"),
 ]
 
+SECTIONS = []
+for cat_key, title, kicker, tag_prefix, slug_prefix in CATEGORIES:
+    cat_items = [it["name"] for it in ITEMS if it["category"] == cat_key]
+    for page_idx in range(0, len(cat_items), 3):
+        chunk = cat_items[page_idx:page_idx + 3]
+        page_num = page_idx // 3 + 1
+        start_tag = page_idx + 1
+        SECTIONS.append(
+            (f"{slug_prefix}-{page_num}", title, kicker, tag_prefix, chunk, start_tag)
+        )
 
-def build_section_prompt(title, kicker, tag_prefix, dish_names):
+
+def build_section_prompt(title, kicker, tag_prefix, dish_names, start_tag):
     d1, d2, d3 = dish_names
     lines = []
+    badge_lines = []
     for i, name in enumerate(dish_names, 1):
         it = ITEMS_BY_NAME[name]
+        tag_num = start_tag + i - 1
+        veg_txt = "yes" if it["veg"] else "no"
+        badge = it.get("badge")
+        badge_txt = f"'{badge}'" if badge else "none"
         lines.append(
-            f"Dish {i} — tag '{tag_prefix} {i:02d}', name '{name}', "
-            f"description '{DESCRIPTIONS[name]}', price '{it['price_k']}K'"
+            f"Dish {i} — tag '{tag_prefix} {tag_num:02d}', name '{name}', "
+            f"description '{DESCRIPTIONS[name]}', price '{it['price_k']}K', "
+            f"vegetarian: {veg_txt}, spice level: {it['spice']} (0-3, 0 means no chilli icons), "
+            f"badge: {badge_txt}"
         )
+        if badge:
+            badge_lines.append(f"Dish {i} badge text: '{badge}'")
     dish_text_block = "\n".join(lines)
+    badge_text_block = ("\n" + "\n".join(badge_lines)) if badge_lines else ""
 
     return (
         "Design a tall vertical portrait print restaurant menu page, full-bleed, "
@@ -171,17 +211,28 @@ def build_section_prompt(title, kicker, tag_prefix, dish_names):
         "within a thin gold horizontal rule spanning the page width. Do not "
         "render any full logo lockup, brand name, or tagline at the top of "
         "the page.\n\n"
-        "On the dish 2 plate and the dish 3 plate only: a small circular gold "
-        "double-ring seal containing one small muted-red oil-lamp flame icon, "
-        "no text of any kind inside or around the ring, overlapping the outer "
-        "rim of the plate at its upper right, half on the plate and half on "
-        "the burgundy, tilted slightly off upright.\n\n"
+        "Icon system: for every dish that is vegetarian, place one small "
+        "gold-outlined circular icon of a single leaf directly to the left "
+        "of that dish's tag, immediately followed by the small gold tracked "
+        "capital word 'VEG' — for non-vegetarian dishes, render no leaf icon "
+        "and no VEG word at all. For every dish with a spice level above "
+        "zero, place that many small solid red chilli-pepper icons (one "
+        "icon per spice level, one to three icons total, never more) "
+        "directly to the right of that dish's tag, with no text or numbers "
+        "beside them — for dishes with spice level zero, render no chilli "
+        "icons at all. For any dish with a badge listed below, render one "
+        "small gold-outlined pill-shaped badge containing that dish's exact "
+        "badge text in small gold tracked-out capitals, overlapping the "
+        "upper corner of that dish's photo, half on the photo and half on "
+        "the burgundy background, tilted slightly — dishes with badge "
+        "'none' get no pill badge anywhere on their photo.\n\n"
         "Render ONLY the following text, exactly as written, nowhere else on "
         "the page — no other words, numbers, letters, measurements, "
         "percentages, page numbers, or watermark text of any kind:\n"
         f"Section title: '{title}'\n"
         f"Kicker: '{kicker}'\n"
         f"{dish_text_block}"
+        f"{badge_text_block}"
     )
 
 
@@ -230,10 +281,10 @@ def main():
     if not only or "cover" in only:
         gen("cover", COVER_PROMPT, [])
 
-    for slug, title, kicker, tag_prefix, dish_names in SECTIONS:
+    for slug, title, kicker, tag_prefix, dish_names, start_tag in SECTIONS:
         if only and slug not in only:
             continue
-        prompt = build_section_prompt(title, kicker, tag_prefix, dish_names)
+        prompt = build_section_prompt(title, kicker, tag_prefix, dish_names, start_tag)
         refs = [os.path.join(OUT, f"{ITEMS_BY_NAME[n]['slug']}.png") for n in dish_names]
         gen(slug, prompt, refs)
 
