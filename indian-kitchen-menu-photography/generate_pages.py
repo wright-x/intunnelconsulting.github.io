@@ -104,6 +104,51 @@ DESCRIPTIONS = {
     "Cucumber Mint Cooler": "Cucumber, mint, non-alcoholic cooler",
     "Spiced Chai": "Rich milky spiced chai, cinnamon, star anise",
     "Mango Lassi": "Mango yogurt, cardamom",
+    "Papad & The Pickle Pantry": "Roasted urad papad, mango pickle, chilli-garlic chutney, mint yogurt",
+    "Charred Pineapple Chaat": "Fire-roasted pineapple, tamarind, coconut, mustard seed, curry leaf",
+    "Smoked Sweet Potato Chaat": "Charred sweet potato, date-tamarind, whipped yogurt, peanut, crispy chickpea",
+    "Dahi Kachori": "Moong-filled kachori, chilled yogurt, mint, tamarind, pomegranate",
+    "Three Faces of Paneer Tikka": "Charcoal paneer, three marinades — saffron, achari, green herb",
+    "Kasundi Broccoli": "Charred broccoli, mustard kasundi, hung yogurt, toasted almond",
+    "Gobi Musallam": "Whole charred cauliflower, makhani glaze, cashew, fenugreek",
+    "House Tandoori Chicken": "Half chicken, Kashmiri chilli marinade, smoked ghee",
+    "Kashmiri Lamb Chops": "Charcoal lamb chops, Kashmiri chilli, black cardamom, tamarind-shallot chutney",
+    "Guntur Chilli King Prawns": "King prawns, Guntur chilli, curry leaf, lime, smoked butter",
+    "Tandoori Da Nang Oysters": "Charcoal-grilled oysters, coconut-chilli butter, mustard, curry leaf",
+    "Banana Leaf Sea Bass Pollichathu": "Sea bass, shallot, coconut, curry leaf, black pepper, banana leaf",
+    "Malabar Lobster Moilee": "Lobster, coconut milk, turmeric, ginger, green chilli, curry leaf",
+    "Mud Crab Chettinad": "Mud crab, black pepper, fennel, roasted coconut, curry leaf",
+    "18-Hour Black Dal": "Black lentils slow-cooked overnight, cultured butter, smoked ghee tadka",
+    "Chicken Tikka Masala": "Charred chicken tikka, tomato, onion, toasted spices",
+    "Old Delhi Chole": "Dark chickpeas, black tea, amchur, ginger, green chilli",
+    "Paneer Makhani": "Paneer, silky tomato-cashew gravy, fenugreek butter",
+    "Malai Kofta": "Paneer-vegetable kofta, saffron cashew gravy, pomegranate",
+    "Goat Keema Methi": "Goat mince, fenugreek, green peas, ginger",
+    "Awadhi Chicken Dum Biryani": "Aged basmati, chicken, saffron, mint, fried onion, raita",
+    "Jackfruit & Wild Mushroom Dum Biryani": "Young jackfruit, wild mushrooms, saffron, mint, fried onion",
+    "Steamed Aged Basmati": "Aged basmati rice, steamed long-grain and fluffy",
+    "Tandoori Roti": "Whole-wheat flatbread, tandoor-charred",
+    "Butter Naan": "Soft tandoor naan, melted butter",
+    "Garlic & Coriander Naan": "Soft naan, garlic, coriander, butter",
+    "Laccha Paratha": "Flaky layered whole-wheat paratha",
+    "Amul Chilli Cheese Kulcha": "Tandoor kulcha, Amul cheese, green chilli",
+    "Saffron Sheermal": "Lightly sweet saffron-scented flatbread",
+    "Cucumber & Cumin Raita": "Chilled yogurt, cucumber, roasted cumin, herbs",
+    "Kachumber Salad": "Cucumber, tomato, onion, herbs, lime",
+    "Da Nang Coffee Kulfi": "Vietnamese coffee cardamom kulfi, cacao nib brittle, jaggery caramel",
+    "Tender Coconut Rasmalai": "Soft chenna, coconut rabri, pistachio, rose",
+    "Hot Jalebi & Saffron Rabri": "Hot jalebi, saffron milk, pistachio",
+    "Vietnam Mango Shrikhand": "Mango, saffron yogurt, pistachio, chilli-lime granita",
+    "Dark Chocolate & Cardamom Tart": "Dark chocolate, cardamom, salted jaggery, vanilla ice cream",
+    "Da Nang Nimbu": "Fresh lime, citrus, lightly spiced house soda",
+    "Kokum & Ginger Fizz": "Kokum, fresh ginger, lime, sparkling soda",
+    "Salted Masala Chaas": "Spiced buttermilk, roasted cumin, coriander, black salt",
+    "Passion Fruit Jaljeera": "Passion fruit, mint, cumin, lime, jaljeera spice",
+    "Monsoon in Da Nang": "Tropical Da Nang fruit, Indian spice",
+    "Old Delhi Sour": "Indian-spiced whisky sour, citrus, bitters",
+    "Filter Coffee Old Fashioned": "Old fashioned, Indian filter-coffee character, bitters",
+    "Mango & Chilli Margarita": "Mango margarita, chilli heat, tequila, lime",
+    "Malabar Highball": "Malabar-spiced highball, coastal citrus, soda",
 }
 
 CATEGORIES = [
@@ -114,6 +159,7 @@ CATEGORIES = [
     ("RICE & BIRYANI", "RICE & BIRYANI", "PART FIVE", "RB", "rice-biryani"),
     ("SWEET ENDINGS", "SWEET ENDINGS", "PART SIX", "SE", "sweet-endings"),
     ("DRINKS", "DRINKS", "PART SEVEN", "DR", "drinks"),
+    ("BREADS & SIDES", "BREADS & SIDES", "PART EIGHT", "BS", "breads-sides"),
 ]
 
 SECTIONS = []
@@ -129,7 +175,7 @@ for cat_key, title, kicker, tag_prefix, slug_prefix in CATEGORIES:
 
 
 def build_section_prompt(title, kicker, tag_prefix, dish_names, start_tag):
-    d1, d2, d3 = dish_names
+    n = len(dish_names)
     lines = []
     badge_lines = []
     for i, name in enumerate(dish_names, 1):
@@ -165,24 +211,38 @@ def build_section_prompt(title, kicker, tag_prefix, dish_names, start_tag):
         "bleeding off the bottom-left corner of the page, so subtle it reads as "
         "texture and never competes with the food or text — do not add any "
         "other script, lettering, characters, or symbols to the background.\n\n"
-        "Three dishes, each cut out cleanly from its reference photo with no "
-        f"background, floating directly on the burgundy: reference photo 1 is "
-        f"'{d1}', reference photo 2 is '{d2}', reference photo 3 is '{d3}' — "
-        "match each exactly to its own text block below, never swap or combine "
-        "them. Preserve each reference photo's exact plating, garnish, side "
-        "condiments and composition precisely as shown — do not simplify, "
+        f"{'One dish' if n == 1 else ('Two dishes' if n == 2 else 'Three dishes')}, "
+        "each cut out cleanly from its reference photo with no background, "
+        "floating directly on the burgundy: " +
+        "; ".join(f"reference photo {i} is '{name}'" for i, name in enumerate(dish_names, 1)) +
+        " — match each exactly to its own text block below, never swap or "
+        "combine them. Preserve each reference photo's exact plating, garnish, "
+        "side condiments and composition precisely as shown — do not simplify, "
         "remove, or alter any element of the plate; the cutout must look "
         "identical to its reference, just extracted from its white background. "
-        "All three plates are the same scale as each other, same elevated "
-        "three-quarter camera angle looking down, same key light from the "
-        "upper left matching the page lighting, each casting one soft diffuse "
-        "elliptical shadow toward the lower right. Arrange them in a gentle "
-        "S-curve down the page rather than a straight column: dish 1 sits high "
-        "and to the right, bleeding off the right edge of the page; dish 2 "
-        "sits centered-left, bleeding off the left edge; dish 3 sits low and "
-        "to the right, bleeding off the right edge. Each plate is tilted only "
-        "a few degrees, never perfectly square, and the plates overlap each "
-        "other's shadow pools slightly for depth.\n\n"
+        f"{'The plates are the same scale as each other, all with the ' if n > 1 else 'Shot at the '}"
+        "same elevated three-quarter camera angle looking down, same key "
+        "light from the upper left matching the page lighting, each casting "
+        "one soft diffuse elliptical shadow toward the lower right. " + (
+            "Arrange them in a gentle S-curve down the page rather than a "
+            "straight column: dish 1 sits high and to the right, bleeding off "
+            "the right edge of the page; dish 2 sits centered-left, bleeding "
+            "off the left edge; dish 3 sits low and to the right, bleeding off "
+            "the right edge. Each plate is tilted only a few degrees, never "
+            "perfectly square, and the plates overlap each other's shadow "
+            "pools slightly for depth.\n\n"
+            if n == 3 else
+            "Arrange them one above the other with generous burgundy space "
+            "between: dish 1 sits high and to the right, bleeding off the "
+            "right edge of the page; dish 2 sits lower and to the left, "
+            "bleeding off the left edge. Each plate is tilted only a few "
+            "degrees, never perfectly square.\n\n"
+            if n == 2 else
+            "The single dish is large and confident, positioned right of "
+            "center and bleeding off the right edge of the page, tilted only "
+            "a few degrees, never perfectly square, with generous empty "
+            "burgundy space to its left for the text block.\n\n"
+        ),
         "Props: a small scattering of whole spices near the bottom left of the "
         "page resting directly on the burgundy — one star anise, a few green "
         "cardamom pods, a few black peppercorns — each with its own tiny "
@@ -205,7 +265,7 @@ def build_section_prompt(title, kicker, tag_prefix, dish_names, start_tag):
         f"nothing else — render precisely these words, no more, no fewer, "
         f"no substituted or added words. This text must appear exactly once "
         "on the entire page, never repeated a second time anywhere else. "
-        "Each of the three dishes has its own text block "
+        f"{'The dish has' if n == 1 else f'Each of the {n} dishes has'} its own text block "
         "placed on the side of the page opposite its plate, containing, top "
         "to bottom: a small gold-outlined pill-shaped tag, the dish name in "
         "the gold display serif, a short thin gold hairline rule, the "
