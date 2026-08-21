@@ -242,7 +242,7 @@ def build_section_prompt(title, kicker, tag_prefix, dish_names, start_tag):
             "center and bleeding off the right edge of the page, tilted only "
             "a few degrees, never perfectly square, with generous empty "
             "burgundy space to its left for the text block.\n\n"
-        ),
+        ) +
         "Props: a small scattering of whole spices near the bottom left of the "
         "page resting directly on the burgundy — one star anise, a few green "
         "cardamom pods, a few black peppercorns — each with its own tiny "
