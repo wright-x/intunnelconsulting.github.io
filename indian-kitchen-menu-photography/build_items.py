@@ -1,51 +1,76 @@
 #!/usr/bin/env python3
 """Builds items.json for the SAPA PREMIUM INDIAN KITCHEN menu photo shoot.
-White studio background for all photos so they can be cleanly cut out.
-Plating is deliberately LESS elaborate than fine-dining — warm, comforting,
-mountain-lodge home-style Indian food, simple honest garnish, not editorial."""
+White studio background for all dish photos so they can be cleanly cut out
+and composited onto the burgundy/gold page layouts later. Plating is the
+ORIGINAL premium, elevated style — thoughtful composition, confident
+garnish — just with the SAPA dish list and mountain-town vessel touches."""
 import json
 import re
 
 STYLE_SUFFIX = (
-    "Warm, comforting home-style Indian restaurant food photography — "
-    "natural and appetizing but simply, honestly plated rather than "
-    "elaborate fine-dining: minimal garnish (at most a few fresh herb "
-    "leaves, a lime wedge, or a light dusting of spice), no sauce "
-    "artwork, no scattered edible flowers, no multi-element compositions. "
-    "Bright, clean white studio background: seamless white backdrop, "
-    "soft natural lighting, gentle soft shadow, elevated three-quarter "
-    "angle looking down at the dish. Photorealistic, natural food "
-    "texture, 2K quality. No text, no logos, no hands, no watermark, no "
-    "restaurant background of any kind — pure white studio only."
+    "Ultra-premium, fine-dining editorial food photography — thoughtful, "
+    "confident plating, everything composed on the ONE plate (no side "
+    "cups, no extra dishes, no props scattered around it) with "
+    "intentional asymmetry, sauce swooshed or pooled with a spoon, height "
+    "and texture contrast, a few deliberate garnishes (fresh herbs, one "
+    "or two edible flowers, toasted nuts) placed like a chef would place "
+    "them, never scattered randomly. Bright, clean white studio "
+    "background: seamless white backdrop, soft directional studio "
+    "lighting from one side, soft natural shadow, elevated three-quarter "
+    "angle looking down at the plate. Photorealistic, shot on a "
+    "full-frame camera, ultra-detailed, natural food texture, 2K "
+    "quality. No text, no logos, no hands, no watermark, no restaurant "
+    "background of any kind — pure white studio only."
 )
 
 DRINK_STYLE_SUFFIX = (
-    "Warm, comforting home-style Indian restaurant beverage photography — "
-    "simple, honest presentation, at most one small garnish. Bright, "
-    "clean white studio background: seamless white backdrop, soft "
-    "natural lighting, gentle shadow, straight-on eye-level angle. "
-    "Photorealistic, natural condensation and ice clarity where "
-    "relevant, 2K quality. No text, no logos, no hands, no watermark, no "
-    "restaurant background of any kind — pure white studio only."
+    "Ultra-premium, fine-dining editorial beverage photography — the "
+    "glass or cup styled thoughtfully with a well-placed garnish, never "
+    "cluttered. Bright, clean white studio background: seamless white "
+    "backdrop, soft directional studio lighting from one side, soft "
+    "natural shadow, straight-on eye-level angle. Photorealistic, shot "
+    "on a full-frame camera, ultra-detailed, natural condensation and "
+    "ice clarity where relevant, 2K quality. No text, no logos, no "
+    "hands, no watermark, no restaurant background of any kind — pure "
+    "white studio only."
 )
 
 CATEGORY_VESSEL = {
-    "BREAKFAST": "a simple round white ceramic plate",
-    "WARMERS": "a simple white ceramic soup bowl with a small side handle",
-    "MAGGI": "a simple round steel bowl with two small loop handles",
-    "SMALL PLATES": "a simple round white ceramic plate",
-    "TANDOOR VEG": "a simple dark steel plate resting on a wooden board",
-    "TANDOOR NONVEG": "a simple dark steel plate resting on a wooden board",
-    "DALS": "a simple steel karahi bowl resting on a wooden coaster",
-    "VEG CURRIES": "a simple steel karahi bowl resting on a wooden coaster",
-    "MEAT CURRIES": "a simple steel karahi bowl resting on a wooden coaster",
-    "BREADS": "a simple round steel plate lined with a folded cloth",
-    "RICE": "a simple round steel bowl",
-    "BIRYANI": "a simple steel handi pot with its lid resting open beside it",
-    "SWEETS": "a simple round white ceramic bowl",
-    "CHAI": "a traditional clay kulhad cup",
-    "COLD DRINKS": "a simple tall steel tumbler",
-    "ZERO PROOF": "a simple tall clear glass over ice",
+    "BREAKFAST": "a wide, shallow, matte artisanal stoneware plate with a warm cream speckled glaze",
+    "WARMERS": "a rustic handmade ceramic soup bowl with a small integrated side handle",
+    "MAGGI": "a compact hammered copper bowl with two small loop handles",
+    "SMALL PLATES": "a dark charcoal speckled matte stoneware plate with a glossy glazed rim",
+    "TANDOOR VEG": "a dark charcoal speckled stoneware plate resting on a dark wooden board",
+    "TANDOOR NONVEG": "a dark charcoal speckled stoneware plate resting on a dark wooden board",
+    "DALS": "a small hammered copper karahi bowl with polished brass ring handles, resting on a round dark wooden coaster",
+    "VEG CURRIES": "a small hammered copper karahi bowl with polished brass ring handles, resting on a round dark wooden coaster",
+    "MEAT CURRIES": "a small hammered copper karahi bowl with polished brass ring handles, resting on a round dark wooden coaster",
+    "BREADS": "a rustic dark wooden board with a small folded linen cloth",
+    "RICE": "a hammered copper bowl resting on a round dark wooden coaster",
+    "BIRYANI": "a traditional dark clay handi pot with a thick dough-sealed rim, the lid propped open beside it, resting on a dark wooden board",
+    "SWEETS": "a dark slate-grey matte stoneware plate",
+    "CHAI": "a traditional handmade clay kulhad cup resting on a small wooden saucer",
+    "COLD DRINKS": "a tall clear glass or brushed steel tumbler over ice",
+    "ZERO PROOF": "an elegant tall glass or coupe glass",
+}
+
+CATEGORY_GARNISH = {
+    "BREAKFAST": "finished with a few fresh coriander leaves and a small side quenelle of yoghurt and pickle",
+    "WARMERS": "finished with a swirl of cream, a scatter of fresh coriander and one edible flower",
+    "MAGGI": "finished with a scatter of fresh coriander and a light dusting of masala",
+    "SMALL PLATES": "finished with a swooshed pool of chutney, fresh coriander and one edible flower",
+    "TANDOOR VEG": "finished with a smear of mint yoghurt, a scatter of pomegranate arils and fresh coriander, a lime wedge tucked beside it",
+    "TANDOOR NONVEG": "finished with a smear of mint yoghurt, a scatter of pomegranate arils and fresh coriander, a lime wedge tucked beside it",
+    "DALS": "finished with a swirl of cream, a pat of butter melting on top and fresh coriander, gentle wisps of steam rising",
+    "VEG CURRIES": "finished with a swirl of cream, toasted nuts and fresh coriander, gentle wisps of steam rising",
+    "MEAT CURRIES": "finished with a swirl of cream, toasted cashews and fresh coriander, gentle wisps of steam rising",
+    "BREADS": "brushed lightly with ghee, a light dusting of flour, fresh from the tandoor with charred blister spots",
+    "RICE": "finished with a single fresh coriander leaf",
+    "BIRYANI": "topped with golden fried onions, fresh mint and coriander leaves, whole star anise and green cardamom visible on top, gentle wisps of steam rising",
+    "SWEETS": "finished with a scatter of chopped nuts, a few saffron strands and one edible flower",
+    "CHAI": "with a thin layer of froth, a cinnamon stick or star anise resting beside it",
+    "COLD DRINKS": "garnished with a mint sprig and a citrus wheel on the rim",
+    "ZERO PROOF": "garnished thoughtfully with a fresh herb sprig and a citrus twist",
 }
 
 
@@ -59,10 +84,11 @@ def slug(name):
 def item(name, price, category, description, veg=True, jain=False, spice=0, hero=False):
     drink = category in ("CHAI", "COLD DRINKS", "ZERO PROOF")
     vessel = CATEGORY_VESSEL[category]
+    garnish = CATEGORY_GARNISH[category]
     style = DRINK_STYLE_SUFFIX if drink else STYLE_SUFFIX
     prompt = (
-        f"A simple, appetizing photograph of {name}: {description} Served in/on "
-        f"{vessel}. {style}"
+        f"A premium editorial {'beverage' if drink else 'food'} photograph of {name}: "
+        f"{description} Presented in/on {vessel}, {garnish}. {style}"
     )
     return {
         "name": name, "price_k": price, "slug": slug(name), "category": category,

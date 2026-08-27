@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Generates every page for SAPA PREMIUM INDIAN KITCHEN: cover, 8 hero
-spotlight pages, and grid pages for every other item, all sharing one
-burgundy/gold template with a subtle mountain-range motif."""
+spotlight pages, and 1-3-dish S-curve pages for every other item — the
+proven burgundy/gold cutout template, with a subtle mountain-range motif."""
 import base64
 import json
 import os
@@ -116,7 +116,7 @@ RENDER_DISCIPLINE = (
 
 
 def title_spelling(title):
-    letters = title.replace(" ", "").replace("&", "AND")
+    letters = title.replace(" ", "").replace("&", "AND").replace("—", "")
     return "-".join(letters), len(letters)
 
 
@@ -130,7 +130,8 @@ def build_hero_prompt(name, tag_prefix, tag_num, title, kicker):
         "One single dish, cut out cleanly from its reference photo with no "
         f"background, floating large and confident on the burgundy: "
         f"reference photo 1 is '{name}'. Preserve the reference photo's "
-        "exact plating and composition precisely as shown — the cutout "
+        "exact plating and composition precisely as shown — do not "
+        "simplify, remove, or alter any element of the plate; the cutout "
         "must look identical to its reference, just extracted from its "
         "white background. The dish sits right of center, bleeding off "
         "the right edge of the page, shot at the same elevated "
@@ -163,7 +164,7 @@ def build_hero_prompt(name, tag_prefix, tag_num, title, kicker):
     )
 
 
-def build_grid_prompt(title, kicker, tag_prefix, dish_names, start_tag, note=None):
+def build_section_prompt(title, kicker, tag_prefix, dish_names, start_tag):
     n = len(dish_names)
     spelled, n_letters = title_spelling(title)
     lines = []
@@ -173,39 +174,77 @@ def build_grid_prompt(title, kicker, tag_prefix, dish_names, start_tag, note=Non
         veg_txt = "yes" if it["veg"] else "no"
         jain_txt = "yes" if it.get("jain") else "no"
         lines.append(
-            f"Item {i} — tag '{tag_prefix} {tag_num:02d}', name '{name}', "
+            f"Dish {i} — tag '{tag_prefix} {tag_num:02d}', name '{name}', "
             f"description '{it['description']}', price '{it['price_k']}K', "
             f"vegetarian: {veg_txt}, jain-adaptable: {jain_txt}, "
-            f"spice level: {it['spice']} (0-3)"
+            f"spice level: {it['spice']} (0-3, 0 means no chilli icons)"
         )
     dish_text_block = "\n".join(lines)
     refs_line = "; ".join(f"reference photo {i} is '{name}'" for i, name in enumerate(dish_names, 1))
-    note_line = f"\n\nAt the bottom of the item list, small italic cream text reading exactly: '{note}'" if note else ""
-    note_render = f"\nFooter note: '{note}'" if note else ""
+
+    arrange = (
+        "Arrange them in a gentle S-curve down the page rather than a "
+        "straight column: dish 1 sits high and to the right, bleeding off "
+        "the right edge of the page; dish 2 sits centered-left, bleeding "
+        "off the left edge; dish 3 sits low and to the right, bleeding off "
+        "the right edge. Each plate is tilted only a few degrees, never "
+        "perfectly square, and the plates overlap each other's shadow "
+        "pools slightly for depth.\n\n"
+        if n == 3 else
+        "Arrange them one above the other with generous burgundy space "
+        "between: dish 1 sits high and to the right, bleeding off the "
+        "right edge of the page; dish 2 sits lower and to the left, "
+        "bleeding off the left edge. Each plate is tilted only a few "
+        "degrees, never perfectly square.\n\n"
+        if n == 2 else
+        "The single dish is large and confident, positioned right of "
+        "center and bleeding off the right edge of the page, tilted only "
+        "a few degrees, never perfectly square, with generous empty "
+        "burgundy space to its left for the text block.\n\n"
+    )
 
     return (
         BACKGROUND +
-        f"{n} small dishes, each cut out cleanly from its reference photo "
-        f"with no background: {refs_line} — match each exactly to its own "
-        "row below, never swap or combine them. Preserve each reference "
-        "photo's exact plating precisely as shown, just extracted from "
-        "its white background.\n\n"
-        f"Layout: a clean two-column list grid of {n} rows (fill down "
-        "the left column top to bottom, then the right column), each row "
-        "containing a small square photo of that dish on one side and, "
-        "beside it, its own text block: a small gold-outlined pill tag, "
-        "the item name in gold serif, the description in cream italic "
-        "serif underneath, then the price in gold serif, with the veg/"
-        "jain/spice icon row directly beneath the price. Generous even "
-        "spacing between rows, no dish photo touching another. " +
-        f"The words '{title}', spelled exactly {spelled} ({n_letters} "
-        "letters, double-check every letter), set very large in gold, "
-        "stacked vertically down the left edge of the page. Beside that "
-        "stacked title, at the very top, a single short line of small "
-        f"gold text rotated vertically reading exactly '{kicker}' and "
-        "nothing else, appearing exactly once on the page." + note_line + "\n\n" +
+        f"{'One dish' if n == 1 else ('Two dishes' if n == 2 else 'Three dishes')}, "
+        "each cut out cleanly from its reference photo with no background, "
+        f"floating directly on the burgundy: {refs_line} — match each "
+        "exactly to its own text block below, never swap or combine them. "
+        "Preserve each reference photo's exact plating, garnish, side "
+        "condiments and composition precisely as shown — do not simplify, "
+        "remove, or alter any element of the plate; the cutout must look "
+        "identical to its reference, just extracted from its white "
+        "background. "
+        f"{'The plates are the same scale as each other, all with the ' if n > 1 else 'Shot at the '}"
+        "same elevated three-quarter camera angle looking down, same key "
+        "light from the upper left matching the page lighting, each "
+        "casting one soft diffuse elliptical shadow toward the lower "
+        "right. " + arrange +
+        "Props: a small scattering of whole spices near the bottom left "
+        "of the page resting directly on the burgundy — one star anise, "
+        "a few green cardamom pods, a few black peppercorns — each with "
+        "its own tiny shadow toward the lower right. No cutlery, no "
+        "hands, no linen, no table surface, no glassware anywhere on the "
+        "page.\n\n" +
+        f"Layout: the words '{title}', spelled exactly {spelled} "
+        f"({n_letters} letters, double-check every single letter "
+        "including any doubled letters before finalizing — do not drop "
+        "or merge any letter), set very large in gold, stacked "
+        "vertically down the left edge of the page, one line of the "
+        "title directly above the next if it wraps. Beside that stacked "
+        f"title, at the very top, a single short line of small gold text "
+        f"rotated vertically reading exactly '{kicker}' and nothing "
+        "else — render precisely these words, no more, no fewer, no "
+        "substituted or added words. This text must appear exactly once "
+        "on the entire page, never repeated a second time anywhere "
+        f"else. {'The dish has' if n == 1 else f'Each of the {n} dishes has'} "
+        "its own text block placed on the side of the page opposite its "
+        "plate, containing, top to bottom: a small gold-outlined "
+        "pill-shaped tag, the dish name in the gold display serif, a "
+        "short thin gold hairline rule, the description in cream italic "
+        "serif, then the price in gold serif. Text blocks align to the "
+        "nearest page edge, with their ragged edge facing the food.\n\n" +
         ICON_SYSTEM + FOOTER + RENDER_DISCIPLINE +
-        f"Section title: '{title}'\nKicker: '{kicker}'\n{dish_text_block}{note_render}"
+        f"Section title: '{title}'\nKicker: '{kicker}'\n{dish_text_block}"
     )
 
 
@@ -299,36 +338,27 @@ def balanced_chunks(lst, max_size):
     return chunks
 
 
-PAGES = []  # list of (slug, kind, prompt_fn_args, ref_names)
+PAGES = []
 
 for cat_key, title, kicker, tag_prefix, slug_prefix, note in CATEGORIES:
     cat_items = [it for it in ITEMS if it["category"] == cat_key]
     heroes = [it for it in cat_items if it["hero"]]
     normal = [it["name"] for it in cat_items if not it["hero"]]
-    # index within category (1-based) preserved for tag numbering
     name_to_idx = {it["name"]: i + 1 for i, it in enumerate(cat_items)}
 
     for h in heroes:
         PAGES.append({
-            "slug": f"{slug_prefix}-hero",
-            "kind": "hero",
-            "name": h["name"],
-            "tag_prefix": tag_prefix,
-            "tag_num": name_to_idx[h["name"]],
-            "title": title,
-            "kicker": kicker,
+            "slug": f"{slug_prefix}-hero", "kind": "hero", "name": h["name"],
+            "tag_prefix": tag_prefix, "tag_num": name_to_idx[h["name"]],
+            "title": title, "kicker": kicker,
         })
 
-    for page_num, chunk in enumerate(balanced_chunks(normal, 6), 1):
+    chunks = balanced_chunks(normal, 3)
+    for page_num, chunk in enumerate(chunks, 1):
         PAGES.append({
-            "slug": f"{slug_prefix}-{page_num}",
-            "kind": "grid",
-            "names": chunk,
-            "tag_prefix": tag_prefix,
-            "start_tag": name_to_idx[chunk[0]],
-            "title": title,
-            "kicker": kicker,
-            "note": note if page_num == len(balanced_chunks(normal, 6)) else None,
+            "slug": f"{slug_prefix}-{page_num}", "kind": "section", "names": chunk,
+            "tag_prefix": tag_prefix, "start_tag": name_to_idx[chunk[0]],
+            "title": title, "kicker": kicker,
         })
 
 
@@ -364,7 +394,7 @@ def main():
             prompt = build_hero_prompt(p["name"], p["tag_prefix"], p["tag_num"], p["title"], p["kicker"])
             refs = [os.path.join(OUT, f"{ITEMS_BY_NAME[p['name']]['slug']}.png")]
         else:
-            prompt = build_grid_prompt(p["title"], p["kicker"], p["tag_prefix"], p["names"], p["start_tag"], p.get("note"))
+            prompt = build_section_prompt(p["title"], p["kicker"], p["tag_prefix"], p["names"], p["start_tag"])
             refs = [os.path.join(OUT, f"{ITEMS_BY_NAME[n]['slug']}.png") for n in p["names"]]
         gen(p["slug"], prompt, refs)
 
