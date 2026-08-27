@@ -1,651 +1,177 @@
 #!/usr/bin/env python3
-"""Builds items.json for the Indian Kitchen menu photo shoot. White studio
-background for all dish photos so they can be cleanly cut out and
-composited onto the burgundy/gold page layouts later. Plating is inspired
-by top modern Indian restaurants (Semma, Bungalow, Dhamaka) but stays on
-ONE plate — no side cups/trays except where a dish genuinely requires
-separate vessels (pani puri's waters)."""
+"""Builds items.json for the SAPA PREMIUM INDIAN KITCHEN menu photo shoot.
+White studio background for all photos so they can be cleanly cut out.
+Plating is deliberately LESS elaborate than fine-dining — warm, comforting,
+mountain-lodge home-style Indian food, simple honest garnish, not editorial."""
 import json
 import re
 
 STYLE_SUFFIX = (
-    "Ultra-premium, fine-dining editorial food photography in the style "
-    "of top modern Indian restaurants like Semma, Bungalow and Dhamaka — "
-    "thoughtful, confident plating, everything composed on the ONE plate "
-    "(no side cups, no extra dishes, no props scattered around it) with "
-    "intentional asymmetry, sauce swooshed or pooled with a spoon, height "
-    "and texture contrast, a few deliberate garnishes (fresh herbs, one "
-    "or two edible flowers, toasted nuts) placed like a chef would place "
-    "them, never scattered randomly. Bright, clean white studio "
-    "background: seamless white backdrop, soft directional studio "
-    "lighting from one side, soft natural shadow, elevated three-quarter "
-    "angle looking down at the plate. Photorealistic, shot on a "
-    "full-frame camera, ultra-detailed, natural food texture, 2K "
-    "quality. No text, no logos, no hands, no watermark, no restaurant "
-    "background of any kind — pure white studio only."
+    "Warm, comforting home-style Indian restaurant food photography — "
+    "natural and appetizing but simply, honestly plated rather than "
+    "elaborate fine-dining: minimal garnish (at most a few fresh herb "
+    "leaves, a lime wedge, or a light dusting of spice), no sauce "
+    "artwork, no scattered edible flowers, no multi-element compositions. "
+    "Bright, clean white studio background: seamless white backdrop, "
+    "soft natural lighting, gentle soft shadow, elevated three-quarter "
+    "angle looking down at the dish. Photorealistic, natural food "
+    "texture, 2K quality. No text, no logos, no hands, no watermark, no "
+    "restaurant background of any kind — pure white studio only."
 )
 
 DRINK_STYLE_SUFFIX = (
-    "Ultra-premium, fine-dining editorial beverage photography in the "
-    "style of a top modern Indian restaurant bar program — the glass "
-    "styled thoughtfully with a well-placed garnish, never cluttered. "
-    "Bright, clean white studio background: seamless white backdrop, "
-    "soft directional studio lighting from one side, soft natural "
-    "shadow, straight-on eye-level angle. Photorealistic, shot on a "
-    "full-frame camera, ultra-detailed, natural condensation and ice "
-    "clarity where relevant, 2K quality. No text, no logos, no hands, "
-    "no watermark, no restaurant background of any kind — pure white "
-    "studio only."
+    "Warm, comforting home-style Indian restaurant beverage photography — "
+    "simple, honest presentation, at most one small garnish. Bright, "
+    "clean white studio background: seamless white backdrop, soft "
+    "natural lighting, gentle shadow, straight-on eye-level angle. "
+    "Photorealistic, natural condensation and ice clarity where "
+    "relevant, 2K quality. No text, no logos, no hands, no watermark, no "
+    "restaurant background of any kind — pure white studio only."
 )
 
-PLATEWARE = {
-    "speckled_pale_bowl": (
-        "Presented on a wide, shallow, matte artisanal stoneware bowl "
-        "with a pale oat/cream speckled glaze and a slightly darker "
-        "raw-clay rim, exactly the kind of handmade ceramic bowl used "
-        "for elevated modern restaurant salads and roasted vegetables."
-    ),
-    "speckled_charcoal_plate": (
-        "Presented on a dark charcoal/deep-green speckled matte stoneware "
-        "plate with a glossy dark glazed rim, the kind of moody artisanal "
-        "plate used for fried starters and shareable bites."
-    ),
-    "speckled_tan_bowl": (
-        "Presented on a wide, shallow tan/khaki speckled matte stoneware "
-        "bowl with a raw-clay rim, the kind of earthy handmade bowl used "
-        "for chaat and street-food style dishes."
-    ),
-    "clay_biryani_pot": (
-        "Served in a traditional dark clay handi pot with a thick "
-        "dough-sealed rim, the lid propped open beside it, resting on a "
-        "dark wooden board."
-    ),
-    "earthy_curry_plate": (
-        "Presented on a wide, shallow, matte speckled stoneware plate in "
-        "a warm earthy tan glaze, the kind of rustic handmade plate used "
-        "for whole-piece fish and curry preparations."
-    ),
-    "charcoal_tandoor_board": (
-        "Presented on a dark charcoal speckled matte stoneware plate "
-        "resting on a dark wooden board, the kind of rustic plate used "
-        "for tandoor-grilled dishes."
-    ),
-    "curry_karahi_bowl": (
-        "Served in a small hammered copper karahi bowl with polished "
-        "brass ring handles, resting on a round dark wooden coaster."
-    ),
-    "copper_rice_bowl": (
-        "Served in a hammered copper bowl, resting on a round dark "
-        "wooden coaster."
-    ),
-    "dessert_slate": (
-        "Presented on a dark slate-grey matte stoneware plate, the kind "
-        "of moody plate used for a modern plated dessert."
-    ),
-    "bread_board": (
-        "Presented on a rustic dark wooden board with a small linen cloth "
-        "folded at one edge, the kind of board used for tandoor breads."
-    ),
-    "side_bowl": (
-        "Presented in a small, shallow ivory ceramic bowl, the kind of "
-        "petite bowl used for a raita or fresh side salad."
-    ),
-    "rocks_glass": "Served in a heavy cut-crystal rocks glass over one large clear ice cube.",
-    "coupe_glass": "Served in an elegant crystal coupe glass.",
-    "martini_glass": "Served in a classic crystal martini glass.",
-    "tall_glass": "Served in a tall clear glass over ice.",
-    "chai_cup": "Served in a small speckled ceramic cup and saucer.",
-    "lassi_glass": "Served in a tall clear glass, no ice.",
+CATEGORY_VESSEL = {
+    "BREAKFAST": "a simple round white ceramic plate",
+    "WARMERS": "a simple white ceramic soup bowl with a small side handle",
+    "MAGGI": "a simple round steel bowl with two small loop handles",
+    "SMALL PLATES": "a simple round white ceramic plate",
+    "TANDOOR VEG": "a simple dark steel plate resting on a wooden board",
+    "TANDOOR NONVEG": "a simple dark steel plate resting on a wooden board",
+    "DALS": "a simple steel karahi bowl resting on a wooden coaster",
+    "VEG CURRIES": "a simple steel karahi bowl resting on a wooden coaster",
+    "MEAT CURRIES": "a simple steel karahi bowl resting on a wooden coaster",
+    "BREADS": "a simple round steel plate lined with a folded cloth",
+    "RICE": "a simple round steel bowl",
+    "BIRYANI": "a simple steel handi pot with its lid resting open beside it",
+    "SWEETS": "a simple round white ceramic bowl",
+    "CHAI": "a traditional clay kulhad cup",
+    "COLD DRINKS": "a simple tall steel tumbler",
+    "ZERO PROOF": "a simple tall clear glass over ice",
 }
 
 
 def slug(name):
     s = name.lower()
-    s = re.sub(r"[()/]", " ", s)
+    s = re.sub(r"[()/&]", " ", s)
     s = re.sub(r"[^a-z0-9]+", "-", s)
     return s.strip("-")
 
 
-def item(name, price, plateware_key, subject, category, veg=True, spice=0, badge=None, drink=False):
-    plateware = PLATEWARE[plateware_key]
+def item(name, price, category, description, veg=True, jain=False, spice=0, hero=False):
+    drink = category in ("CHAI", "COLD DRINKS", "ZERO PROOF")
+    vessel = CATEGORY_VESSEL[category]
     style = DRINK_STYLE_SUFFIX if drink else STYLE_SUFFIX
-    prompt = f"A premium editorial {'beverage' if drink else 'food'} photograph of {name}: {subject} {plateware} {style}"
+    prompt = (
+        f"A simple, appetizing photograph of {name}: {description} Served in/on "
+        f"{vessel}. {style}"
+    )
     return {
-        "name": name, "price_k": price, "slug": slug(name), "plateware": plateware_key,
-        "category": category, "veg": veg, "spice": spice, "badge": badge, "prompt": prompt,
+        "name": name, "price_k": price, "slug": slug(name), "category": category,
+        "veg": veg, "jain": jain, "spice": spice, "hero": hero, "description": description,
+        "prompt": prompt,
     }
 
 
 items = [
-    # ---------------- BEGINNINGS ----------------
-    item(
-        "Pani Puri Flight", 175, "speckled_charcoal_plate",
-        "Six crisp round puri shells, each with a small opening on top filled with spiced potato, chickpea "
-        "and a sprig of micro herb, arranged in a tight cluster on the plate beside three small ceramic cups "
-        "(the only vessels this dish needs, since three separate waters cannot be poured together) each "
-        "holding a different colored pani — vivid green mint-jaljeera, deep reddish-brown tamarind, and pale "
-        "yellow-green raw mango-coriander — each dotted with a few boondi and a floating mint leaf, with a "
-        "small quenelle of tamarind chutney, mint chutney and a scatter of finely diced onion placed directly "
-        "on the same plate rather than in a separate tray, finished with coriander microgreens and two "
-        "edible flowers.", "BEGINNINGS", True, 1, "RECOMMENDED",
-    ),
-    item(
-        "Spiced Lamb Keema Samosas", 165, "speckled_charcoal_plate",
-        "Two large golden-fried triangular samosas with a crisp blistered shell, one cut open to reveal a "
-        "rich spiced minced lamb filling studded with peas, resting over a swooshed pool of vivid green "
-        "mint-coriander chutney and a small drizzle of tamarind chutney directly on the same plate, finished "
-        "with a few coriander microgreens and one edible flower — everything on the one plate, no side bowls.",
-        "BEGINNINGS", False, 2,
-    ),
-    item(
-        "Aloo Tikki Chaat", 145, "speckled_tan_bowl",
-        "Exactly TWO large golden-crusted potato tikki patties set over a bed of spiced chickpea curry, "
-        "drizzled with thick yogurt, tangy tamarind chutney and vivid green mint chutney, topped with fine "
-        "crispy sev, finely diced red onion and a scatter of pomegranate arils, finished with coriander "
-        "microgreens and one edible flower, all within the one bowl.", "BEGINNINGS", True, 1,
-    ),
-    item(
-        "Crispy Okra Fries, Chaat Masala", 125, "speckled_charcoal_plate",
-        "A tall mound of thin, crisp-fried okra strips dusted with vivid red chaat masala, resting on a "
-        "smear of cooling mint yogurt, finished with fresh coriander and a lime wedge tucked beside it.",
-        "BEGINNINGS", True, 2,
-    ),
-    item(
-        "Corn Bhel, Puffed Rice & Peanut", 115, "speckled_tan_bowl",
-        "A generous mound of puffed rice tossed with sweet corn, roasted peanuts, diced onion and tomato, "
-        "tamarind and mint chutney, finished with crispy sev, fresh coriander and one edible flower.",
-        "BEGINNINGS", True, 1,
-    ),
-    item(
-        "Papadum Trio, Three Chutneys", 105, "speckled_charcoal_plate",
-        "Three large crisp roasted lentil papadums leaning against each other, with three small quenelles "
-        "along the front of the plate — glossy amber mango pickle, bright red chilli-garlic chutney, pale "
-        "green mint yogurt — finished with fresh coriander.", "BEGINNINGS", True, 0,
-    ),
-    # ---------------- VEGETABLE GARDEN ----------------
-    item(
-        "Charred Sweet Potato & Chickpea Salad", 155, "speckled_pale_bowl",
-        "Thick roasted sweet potato wedges with deeply charred edges, tossed with crispy roasted chickpeas, "
-        "toasted cashews and bright pomegranate arils, swooshed thick yogurt across the base of the bowl "
-        "with a spoon, a dark glossy tamarind-date glaze drizzled over the top, finished with a few fresh "
-        "mint and coriander leaves and one edible flower, plated with confident intentional asymmetry.",
-        "VEGETABLE GARDEN", True, 1,
-    ),
-    item(
-        "Charred Broccoli, Almond & Herb Cream", 135, "speckled_pale_bowl",
-        "Deeply charred broccoli florets with blistered edges mounded over a smooth pale herb cream "
-        "swooshed across the plate, scattered with toasted sliced almonds and cashews, a light drizzle of "
-        "sizzling curry-leaf and mustard-seed tempering oil directly over the top, finished with a few fresh "
-        "micro herb leaves and one edible flower.", "VEGETABLE GARDEN", True, 0,
-    ),
-    item(
-        "Whole Roasted Cauliflower, Cashew Curry", 175, "speckled_pale_bowl",
-        "One whole roasted cauliflower head with a deeply charred golden-brown spiced crust, sitting in a "
-        "pool of rich creamy cashew curry sauce on the same plate, topped with crisp-fried curry leaves, "
-        "whole roasted cashews and a wedge of lime tucked beside it, finished with fresh coriander and one "
-        "edible flower.", "VEGETABLE GARDEN", True, 2,
-    ),
-    item(
-        "Charred Baby Eggplant, Peanut Curry", 165, "speckled_pale_bowl",
-        "Two halved baby eggplants with deeply charred skin, nestled in a rich reddish-brown peanut curry "
-        "sauce, topped with crushed roasted peanuts, fresh coriander and one edible flower.",
-        "VEGETABLE GARDEN", True, 2,
-    ),
-    item(
-        "Tandoori Mushroom, Garlic Yogurt", 175, "speckled_pale_bowl",
-        "Whole charcoal-grilled king oyster mushrooms with a deep red tandoori marinade and visible char, "
-        "fanned over a smear of roasted garlic yogurt, finished with fresh coriander, toasted sesame and one "
-        "edible flower.", "VEGETABLE GARDEN", True, 1,
-    ),
-    item(
-        "Beetroot Tikki, Goat Cheese", 155, "speckled_pale_bowl",
-        "Two golden-crusted beetroot and potato tikki patties with a vivid magenta interior just visible at "
-        "the cut edge, resting on a quenelle of soft goat cheese, finished with micro herbs, toasted walnuts "
-        "and one edible flower.", "VEGETABLE GARDEN", True, 1,
-    ),
-    # ---------------- FROM THE TANDOOR ----------------
-    item(
-        "Charcoal Paneer Tikka", 185, "charcoal_tandoor_board",
-        "Skewered cubes of charcoal-grilled paneer with deeply charred edges and a vivid orange-red marinade, "
-        "off the skewer and fanned across the plate, resting on a smear of pale mint-yogurt sauce, finished "
-        "with a scatter of pomegranate arils, fresh coriander and one edible flower, a lime wedge tucked "
-        "beside it.", "TANDOOR", True, 2,
-    ),
-    item(
-        "Tandoori Chicken Thigh, Kashmiri Chilli", 225, "charcoal_tandoor_board",
-        "One large boneless charcoal-grilled chicken thigh with a deep red Kashmiri chilli marinade and "
-        "visible char, sliced and fanned open, resting on a smear of pale yogurt sauce, finished with fresh "
-        "coriander, a scatter of fried curry leaves and one edible flower, a lime wedge tucked beside it.",
-        "TANDOOR", False, 3,
-    ),
-    item(
-        "Lamb Seekh Kebab, Pickled Onion", 245, "charcoal_tandoor_board",
-        "Two long charcoal-grilled minced lamb seekh kebabs with a deeply charred crust, sliced on the "
-        "diagonal, resting on a smear of vivid green mint chutney with a small scatter of quick-pickled red "
-        "onion directly on the plate, finished with fresh coriander and one edible flower.",
-        "TANDOOR", False, 2,
-    ),
-    item(
-        "Tandoori Prawns, Chilli-Garlic", 285, "charcoal_tandoor_board",
-        "Skewered jumbo prawns off the skewer, charcoal-grilled with a vivid red chilli-garlic marinade and "
-        "visible char, fanned across a smear of pale garlic yogurt, finished with fresh coriander, a scatter "
-        "of chilli flakes and a lime wedge.", "TANDOOR", False, 2, "RECOMMENDED",
-    ),
-    item(
-        "Malai Chicken Tikka, Cashew Cream", 235, "charcoal_tandoor_board",
-        "Skewered boneless chicken pieces off the skewer, charcoal-grilled with a pale creamy malai marinade "
-        "and light char, fanned over a smear of cashew cream, finished with fresh coriander, toasted cashews "
-        "and one edible flower.", "TANDOOR", False, 1,
-    ),
-    item(
-        "Charcoal Lamb Chops, Mint", 325, "charcoal_tandoor_board",
-        "Three charcoal-grilled French-trimmed lamb chops with a deep char and visible bone, fanned across "
-        "a smear of vivid green mint chutney, finished with flaky salt, fresh coriander and one edible "
-        "flower.", "TANDOOR", False, 2, "CHEF'S SPECIAL",
-    ),
-    # ---------------- CURRIES & MAINS ----------------
-    item(
-        "Charcoal Butter Chicken", 265, "curry_karahi_bowl",
-        "Tender charcoal-grilled chicken pieces in a smooth, rich tomato-butter gravy with a swirl of cream "
-        "and a small pat of butter melting on top, finished with fresh coriander and a light scatter of "
-        "toasted cashews, gentle wisps of steam rising.", "CURRIES & MAINS", False, 1, "CHEF'S SPECIAL",
-    ),
-    item(
-        "Malabar Fish Curry, Banana Leaf", 265, "earthy_curry_plate",
-        "One thick, skin-on white fish fillet generously coated in a rich reddish-brown coconut-based "
-        "Malabar spice paste with visible curry leaves pressed into the crust, nestled in a bed of the same "
-        "glossy curry sauce, plated directly on a single fresh banana leaf that lines the plate, finished "
-        "with a scatter of fried curry leaves and one edible flower, gentle wisps of steam rising.",
-        "CURRIES & MAINS", False, 2, "CHEF'S SPECIAL",
-    ),
-    item(
-        "Lamb Rogan Josh, Kashmiri Chilli", 285, "curry_karahi_bowl",
-        "Tender braised lamb pieces in a deep reddish-brown Kashmiri chilli gravy, glossy and rich, finished "
-        "with fresh coriander and a light drizzle of cream, gentle wisps of steam rising.",
-        "CURRIES & MAINS", False, 3,
-    ),
-    item(
-        "Goan Prawn Curry, Coconut", 285, "curry_karahi_bowl",
-        "Plump prawns in a golden-yellow coconut curry sauce flecked with fresh curry leaves and mustard "
-        "seed, finished with fresh coriander, gentle wisps of steam rising.", "CURRIES & MAINS", False, 2,
-    ),
-    item(
-        "Dal Makhani, Smoked Butter", 145, "curry_karahi_bowl",
-        "Deep brown creamy black lentils slow-cooked until velvety, finished with a swirl of cream and a "
-        "small pat of smoked butter melting on top, finished with fresh coriander, gentle wisps of steam "
-        "rising.", "CURRIES & MAINS", True, 1,
-    ),
-    item(
-        "Palak Paneer, Charred Spinach", 175, "curry_karahi_bowl",
-        "Soft paneer cubes set in a smooth vivid green charred-spinach gravy, finished with a swirl of "
-        "cream, a few toasted pine nuts and one edible flower.", "CURRIES & MAINS", True, 1,
-    ),
-    # ---------------- RICE & BIRYANI ----------------
-    item(
-        "Hyderabadi Chicken Dum Biryani", 245, "clay_biryani_pot",
-        "Fragrant saffron and turmeric basmati rice generously layered with tender bone-in chicken pieces, "
-        "topped with golden fried onions, fresh mint and coriander leaves, whole star anise and green "
-        "cardamom pods visible on top, gentle wisps of steam rising, the dough-sealed clay lid propped open "
-        "beside the pot to reveal the biryani inside.", "RICE & BIRYANI", False, 2,
-    ),
-    item(
-        "Vegetable Dum Biryani, Saffron", 195, "clay_biryani_pot",
-        "Fragrant saffron and turmeric basmati rice generously layered with charred mixed vegetables and "
-        "paneer, topped with golden fried onions, fresh mint and coriander leaves, whole star anise visible "
-        "on top, gentle wisps of steam rising, the dough-sealed clay lid propped open beside the pot.",
-        "RICE & BIRYANI", True, 1,
-    ),
-    item(
-        "Jeera Rice, Toasted Cumin", 95, "copper_rice_bowl",
-        "Fluffy long-grain basmati rice tempered with visible toasted cumin seeds and a dried red chilli, "
-        "mounded gently, finished with a single fresh coriander leaf.", "RICE & BIRYANI", True, 0,
-    ),
-    item(
-        "Lamb Biryani, Dum-Sealed", 285, "clay_biryani_pot",
-        "Fragrant saffron basmati rice generously layered with tender braised lamb pieces, topped with "
-        "golden fried onions, fresh mint and whole spices, gentle wisps of steam rising, the dough-sealed "
-        "clay lid propped open beside the pot.", "RICE & BIRYANI", False, 2, "CHEF'S SPECIAL",
-    ),
-    item(
-        "Prawn Biryani, Coastal Spice", 265, "clay_biryani_pot",
-        "Fragrant saffron basmati rice generously layered with plump coastal-spiced prawns, topped with "
-        "golden fried onions, fresh mint and curry leaves, gentle wisps of steam rising, the dough-sealed "
-        "clay lid propped open beside the pot.", "RICE & BIRYANI", False, 2,
-    ),
-    item(
-        "Curd Rice, Pomegranate & Curry Leaf", 125, "copper_rice_bowl",
-        "Smooth, creamy curd rice tempered with mustard seed and crisp curry leaves, topped with a scatter "
-        "of bright pomegranate arils, finished with a single fresh coriander leaf.", "RICE & BIRYANI", True, 0,
-    ),
-    # ---------------- SWEET ENDINGS ----------------
-    item(
-        "Deconstructed Gulab Jamun, Saffron Cream", 135, "dessert_slate",
-        "Two warm glossy gulab jamun dumplings soaked in saffron syrup, set beside a quenelle of chilled "
-        "saffron cream, finished with a scatter of chopped pistachios, a few saffron strands and one edible "
-        "flower.", "SWEET ENDINGS", True, 0, "RECOMMENDED",
-    ),
-    item(
-        "Pistachio Kulfi, Rose, Vermicelli", 125, "dessert_slate",
-        "One elegant cone of dense pistachio kulfi standing upright, finished with crushed pistachios, a "
-        "scatter of crisp golden vermicelli, a few dried rose petals and one edible flower.",
-        "SWEET ENDINGS", True, 0,
-    ),
-    item(
-        "Chai-Spiced Crème Brûlée", 145, "dessert_slate",
-        "One chai-spiced crème brûlée in a shallow dish with a glossy, cracked caramelized sugar top, "
-        "finished with a light dusting of cinnamon, a small sprig of mint and one edible flower.",
-        "SWEET ENDINGS", True, 0,
-    ),
-    item(
-        "Mango Cheesecake, Cardamom", 155, "dessert_slate",
-        "One neat wedge of pale golden mango cheesecake with a visible biscuit base, topped with a smooth "
-        "mango glaze, a light dusting of ground cardamom and one edible flower.", "SWEET ENDINGS", True, 0,
-    ),
-    item(
-        "Chocolate Samosa, Salted Caramel", 145, "dessert_slate",
-        "Two small golden-fried triangular samosas with a crisp shell, one cut open to reveal a molten dark "
-        "chocolate filling, resting beside a swooshed pool of glossy salted caramel sauce, finished with a "
-        "light dusting of powdered sugar.", "SWEET ENDINGS", True, 0,
-    ),
-    item(
-        "Saffron Rice Pudding, Pistachio", 125, "dessert_slate",
-        "A smooth, creamy pale saffron-hued rice pudding, topped with slivered pistachios, almonds and a "
-        "few saffron strands, finished with one edible flower.", "SWEET ENDINGS", True, 0,
-    ),
-    # ---------------- DRINKS ----------------
-    item(
-        "Smoked Old Fashioned, Chai Bitters", 245, "rocks_glass",
-        "A deep amber whisky cocktail over one large clear ice cube, a light wisp of smoke still lingering "
-        "in the glass, garnished with an orange peel twist and a star anise pod.", "DRINKS", True, 0,
-        "RECOMMENDED", True,
-    ),
-    item(
-        "Tamarind Margarita", 225, "coupe_glass",
-        "A cloudy amber-orange tamarind margarita with a fine salt-chilli rim, garnished with a lime wheel "
-        "and a small tamarind pod.", "DRINKS", True, 1, None, True,
-    ),
-    item(
-        "Rose Lassi Martini", 205, "martini_glass",
-        "A pale pink, creamy rose-yogurt martini with a delicate foam top, garnished with a few dried rose "
-        "petals and a light dusting of ground pistachio.", "DRINKS", True, 0, None, True,
-    ),
-    item(
-        "Cucumber Mint Cooler", 145, "tall_glass",
-        "A pale green non-alcoholic cooler over ice, visibly studded with cucumber ribbons and fresh mint "
-        "leaves, garnished with a mint sprig and a thin cucumber wheel on the rim.", "DRINKS", True, 0,
-        None, True,
-    ),
-    item(
-        "Spiced Chai", 95, "chai_cup",
-        "A cup of rich, milky spiced chai with a thin layer of froth, a cinnamon stick and a star anise pod "
-        "resting on the saucer beside it.", "DRINKS", True, 0, None, True,
-    ),
-    item(
-        "Mango Lassi", 105, "lassi_glass",
-        "A thick, bright orange-yellow mango yogurt drink, topped with a light dusting of ground cardamom "
-        "and a small mint sprig.", "DRINKS", True, 0, None, True,
-    ),
-    # ============== ADDED FROM RESTAURANT'S FULL MENU (cross-check pass) ==============
-    # ---------------- BEGINNINGS (additions) ----------------
-    item(
-        "Papad & The Pickle Pantry", 95, "speckled_charcoal_plate",
-        "Two large roasted urad papads leaning against each other, with three small quenelles along the "
-        "front of the plate — glossy amber house mango pickle, bright red chilli-garlic chutney, pale green "
-        "mint yogurt — finished with a scatter of fresh coriander.", "BEGINNINGS", True, 1,
-    ),
-    item(
-        "Charred Pineapple Chaat", 185, "speckled_tan_bowl",
-        "Thick fire-roasted pineapple wedges with deeply charred edges, tossed with tamarind and toasted "
-        "coconut flakes, a light tempering of mustard seed and crisp curry leaf scattered over the top, "
-        "finished with a scatter of red chilli and fresh coriander, plated with confident asymmetry.",
-        "BEGINNINGS", True, 2, "RECOMMENDED",
-    ),
-    item(
-        "Smoked Sweet Potato Chaat", 185, "speckled_tan_bowl",
-        "Charred sweet potato cubes with visibly smoky edges, swooshed thick whipped yogurt across the base "
-        "with a spoon, a dark glossy date-tamarind glaze drizzled over the top, finished with roasted "
-        "peanuts, crispy chickpeas and fresh coriander.", "BEGINNINGS", True, 1,
-    ),
-    item(
-        "Dahi Kachori", 195, "speckled_pale_bowl",
-        "Two golden-fried moong-filled kachori, cracked open and drizzled with chilled whipped yogurt, "
-        "tangy tamarind chutney and vivid green mint chutney, finished with a scatter of pomegranate arils "
-        "and fresh coriander, all within the one bowl.", "BEGINNINGS", True, 0,
-    ),
-    # ---------------- VEGETABLE GARDEN (From the Fire — Vegetarian, additions) ----------------
-    item(
-        "Three Faces of Paneer Tikka", 259, "charcoal_tandoor_board",
-        "Three skewers of charcoal-grilled paneer cubes off the skewer and fanned across the board, each "
-        "with a distinct marinade clearly visible — golden saffron, deep red achari, and vivid green herb — "
-        "finished with fresh coriander, a scatter of pomegranate arils and a lime wedge tucked beside them.",
-        "VEGETABLE GARDEN", True, 2, "RECOMMENDED",
-    ),
-    item(
-        "Kasundi Broccoli", 229, "speckled_pale_bowl",
-        "Deeply charred broccoli florets with blistered edges, tossed in a sharp mustard kasundi glaze, "
-        "resting over a smear of hung yogurt, finished with toasted sliced almonds and fresh micro herbs.",
-        "VEGETABLE GARDEN", True, 1,
-    ),
-    item(
-        "Gobi Musallam", 239, "speckled_pale_bowl",
-        "One whole charred cauliflower head with a deep golden-brown crust, coated in a glossy makhani "
-        "glaze, topped with toasted cashews and crisp fenugreek, finished with fresh coriander and one "
-        "edible flower.", "VEGETABLE GARDEN", True, 1,
-    ),
-    # ---------------- TANDOOR (From the Fire, additions) ----------------
-    item(
-        "House Tandoori Chicken", 329, "charcoal_tandoor_board",
-        "One overnight-marinated half chicken, charcoal-grilled with a deep red Kashmiri chilli crust and "
-        "visible char, brushed with smoked ghee, finished with fresh coriander, a scatter of chaat masala "
-        "and a lime wedge tucked beside it.", "TANDOOR", False, 2,
-    ),
-    item(
-        "Kashmiri Lamb Chops", 449, "charcoal_tandoor_board",
-        "Three charcoal-grilled French-trimmed lamb chops with a deep Kashmiri chilli and black cardamom "
-        "crust, fanned across a swooshed pool of tamarind-shallot chutney, finished with flaky salt and "
-        "fresh coriander.", "TANDOOR", False, 2, "CHEF'S SPECIAL",
-    ),
-    item(
-        "Guntur Chilli King Prawns", 389, "charcoal_tandoor_board",
-        "Skewered jumbo king prawns off the skewer, charcoal-grilled with a vivid red Guntur chilli "
-        "marinade and visible char, fanned over a pool of melted smoked butter with crisp curry leaves, "
-        "finished with fresh coriander and a lime wedge.", "TANDOOR", False, 3, "RECOMMENDED",
-    ),
-    item(
-        "Tandoori Da Nang Oysters", 349, "charcoal_tandoor_board",
-        "A row of charcoal-grilled local oysters on the half shell, glazed with coconut-chilli butter, "
-        "topped with a light mustard tempering and crisp curry leaves, finished with fresh coriander and a "
-        "lime wedge.", "TANDOOR", False, 1,
-    ),
-    # ---------------- CURRIES & MAINS (Coast + Classics, additions) ----------------
-    item(
-        "Banana Leaf Sea Bass Pollichathu", 389, "earthy_curry_plate",
-        "One thick, skin-on sea bass fillet coated in a coconut-shallot spice paste with visible black "
-        "pepper and curry leaf, wrapped and plated directly on a single seared banana leaf, gentle wisps of "
-        "steam rising, finished with a scatter of fried curry leaves.", "CURRIES & MAINS", False, 2,
-        "CHEF'S SPECIAL",
-    ),
-    item(
-        "Malabar Lobster Moilee", 749, "curry_karahi_bowl",
-        "Half a lobster tail in its shell, glossy golden-yellow coconut-milk moilee sauce with visible "
-        "turmeric, ginger and green chilli, finished with crisp curry leaves and fresh coriander, gentle "
-        "wisps of steam rising.", "CURRIES & MAINS", False, 1, "CHEF'S SPECIAL",
-    ),
-    item(
-        "Mud Crab Chettinad", 729, "curry_karahi_bowl",
-        "Cracked mud crab claws and body pieces in a deep reddish-brown Chettinad sauce flecked with "
-        "roasted coconut and fennel, finished with crisp curry leaves and fresh coriander, gentle wisps of "
-        "steam rising.", "CURRIES & MAINS", False, 3, "RECOMMENDED",
-    ),
-    item(
-        "18-Hour Black Dal", 229, "curry_karahi_bowl",
-        "Deep brown-black lentils slow-cooked until velvety and glossy, finished with a swirl of cultured "
-        "butter and a smoked ghee tempering poured tableside, a light scatter of fresh coriander, gentle "
-        "wisps of steam rising.", "CURRIES & MAINS", True, 1, "RECOMMENDED",
-    ),
-    item(
-        "Chicken Tikka Masala", 309, "curry_karahi_bowl",
-        "Charred chicken tikka pieces in a smooth reddish-orange tomato-onion gravy with toasted whole "
-        "spices, finished with a swirl of cream and fresh coriander, gentle wisps of steam rising.",
-        "CURRIES & MAINS", False, 1,
-    ),
-    item(
-        "Old Delhi Chole", 219, "curry_karahi_bowl",
-        "Dark, deeply spiced chickpeas in a black-tea-stained gravy with amchur and ginger, finished with "
-        "sliced green chilli and fresh coriander, gentle wisps of steam rising.", "CURRIES & MAINS", True, 2,
-    ),
-    item(
-        "Paneer Makhani", 259, "curry_karahi_bowl",
-        "Soft paneer cubes in a silky tomato-cashew gravy, finished with a swirl of cream, a pat of "
-        "fenugreek butter melting on top and fresh coriander, gentle wisps of steam rising.",
-        "CURRIES & MAINS", True, 0,
-    ),
-    item(
-        "Malai Kofta", 269, "curry_karahi_bowl",
-        "Two golden paneer-vegetable kofta in a rich saffron cashew gravy, finished with a swirl of cream, "
-        "a scatter of pomegranate arils and fresh coriander.", "CURRIES & MAINS", True, 0,
-    ),
-    item(
-        "Goat Keema Methi", 349, "curry_karahi_bowl",
-        "Slow-cooked minced goat with fresh green peas and fenugreek leaves in a deep brown gravy, finished "
-        "with fresh ginger juliennes and coriander, gentle wisps of steam rising.", "CURRIES & MAINS", False, 2,
-    ),
-    # ---------------- RICE & BIRYANI (additions) ----------------
-    item(
-        "Awadhi Chicken Dum Biryani", 319, "clay_biryani_pot",
-        "Fragrant saffron basmati rice generously layered with tender bone-in chicken, topped with golden "
-        "fried onions, fresh mint and coriander leaves, gentle wisps of steam rising, the dough-sealed clay "
-        "lid propped open beside the pot with a small bowl of raita beside it.", "RICE & BIRYANI", False, 1,
-        "RECOMMENDED",
-    ),
-    item(
-        "Jackfruit & Wild Mushroom Dum Biryani", 279, "clay_biryani_pot",
-        "Fragrant saffron basmati rice generously layered with charred young jackfruit and wild mushrooms, "
-        "topped with golden fried onions, fresh mint and coriander leaves, gentle wisps of steam rising, the "
-        "dough-sealed clay lid propped open beside the pot.", "RICE & BIRYANI", True, 1,
-    ),
-    item(
-        "Steamed Aged Basmati", 95, "copper_rice_bowl",
-        "A fluffy mound of long-grain aged basmati rice, each grain separate and glossy, finished with a "
-        "single fresh coriander leaf.", "RICE & BIRYANI", True, 0,
-    ),
-    # ---------------- BREADS & SIDES (new section) ----------------
-    item(
-        "Tandoori Roti", 65, "bread_board",
-        "One whole-wheat flatbread fresh from the tandoor, lightly charred and blistered at the edges, "
-        "brushed with a trace of ghee, resting on the board with a light dusting of flour.",
-        "BREADS & SIDES", True, 0,
-    ),
-    item(
-        "Butter Naan", 85, "bread_board",
-        "One soft, pillowy tandoor-baked naan with charred blister spots, a pat of butter melting across "
-        "the surface, resting on the board.", "BREADS & SIDES", True, 0,
-    ),
-    item(
-        "Garlic & Coriander Naan", 95, "bread_board",
-        "One soft tandoor-baked naan topped with visible chopped garlic, fresh coriander and a brush of "
-        "butter, charred blister spots across the surface, resting on the board.", "BREADS & SIDES", True, 0,
-    ),
-    item(
-        "Laccha Paratha", 90, "bread_board",
-        "One flaky, golden layered whole-wheat paratha with its spiral layers visibly separating at the "
-        "edge, a light brush of ghee, resting on the board.", "BREADS & SIDES", True, 0,
-    ),
-    item(
-        "Amul Chilli Cheese Kulcha", 145, "bread_board",
-        "One tandoor-baked kulcha torn open to reveal molten cheese and flecks of green chilli inside, "
-        "charred blister spots on the crust, resting on the board.", "BREADS & SIDES", True, 1,
-    ),
-    item(
-        "Saffron Sheermal", 110, "bread_board",
-        "One soft, lightly sweet saffron-hued flatbread with a golden glazed surface and faint saffron "
-        "strands visible, resting on the board.", "BREADS & SIDES", True, 0,
-    ),
-    item(
-        "Cucumber & Cumin Raita", 95, "side_bowl",
-        "Smooth chilled yogurt studded with finely diced cucumber, a light dusting of roasted cumin and "
-        "fresh herbs across the top, all within the one small bowl.", "BREADS & SIDES", True, 0,
-    ),
-    item(
-        "Kachumber Salad", 105, "side_bowl",
-        "A fresh, finely diced salad of cucumber, tomato and onion tossed with herbs and a squeeze of lime, "
-        "glistening and bright, all within the one small bowl.", "BREADS & SIDES", True, 0,
-    ),
-    # ---------------- SWEET ENDINGS (additions) ----------------
-    item(
-        "Da Nang Coffee Kulfi", 169, "dessert_slate",
-        "One cone of dense Vietnamese-coffee and cardamom kulfi standing upright, finished with shards of "
-        "cacao nib brittle and a drizzle of glossy jaggery caramel.", "SWEET ENDINGS", True, 0, "RECOMMENDED",
-    ),
-    item(
-        "Tender Coconut Rasmalai", 179, "dessert_slate",
-        "Two soft chenna discs soaking in a pool of coconut rabri, finished with slivered pistachios and a "
-        "scatter of dried rose petals.", "SWEET ENDINGS", True, 0, "RECOMMENDED",
-    ),
-    item(
-        "Hot Jalebi & Saffron Rabri", 179, "dessert_slate",
-        "A coiled stack of hot, glossy orange jalebi resting beside a quenelle of chilled saffron rabri, "
-        "finished with slivered pistachios and a few saffron strands.", "SWEET ENDINGS", True, 0,
-    ),
-    item(
-        "Vietnam Mango Shrikhand", 169, "dessert_slate",
-        "A smooth quenelle of mango saffron yogurt shrikhand, finished with a scatter of chopped pistachios "
-        "and a small pool of vivid chilli-lime granita beside it.", "SWEET ENDINGS", True, 1,
-    ),
-    item(
-        "Dark Chocolate & Cardamom Tart", 189, "dessert_slate",
-        "One neat wedge of dark chocolate cardamom tart with a glossy ganache top, a small scoop of vanilla "
-        "ice cream and a drizzle of salted jaggery caramel beside it.", "SWEET ENDINGS", True, 0,
-    ),
-    # ---------------- DRINKS (Signature Zero-Proof + Cocktails, additions) ----------------
-    item(
-        "Da Nang Nimbu", 135, "tall_glass",
-        "A pale, cloudy lime and citrus soda over ice, visibly effervescent, garnished with a lime wheel "
-        "and a mint sprig.", "DRINKS", True, 0, None, True,
-    ),
-    item(
-        "Kokum & Ginger Fizz", 145, "tall_glass",
-        "A vivid magenta-pink kokum and ginger sparkling soda over ice, garnished with a thin ginger slice "
-        "and a mint sprig.", "DRINKS", True, 1, None, True,
-    ),
-    item(
-        "Salted Masala Chaas", 95, "lassi_glass",
-        "A pale, frothy spiced buttermilk with visible roasted cumin flecks, garnished with a coriander "
-        "leaf and a light dusting of black salt.", "DRINKS", True, 1, None, True,
-    ),
-    item(
-        "Passion Fruit Jaljeera", 145, "tall_glass",
-        "A tangy amber-green passion fruit jaljeera over ice, visible passion fruit seeds suspended in the "
-        "glass, garnished with a mint sprig and a lime wheel.", "DRINKS", True, 1, None, True,
-    ),
-    item(
-        "Monsoon in Da Nang", 239, "tall_glass",
-        "A layered tropical cocktail in vivid orange and green tones over ice, garnished with a skewered "
-        "pineapple wedge and a mint sprig.", "DRINKS", True, 0, None, True,
-    ),
-    item(
-        "Old Delhi Sour", 249, "rocks_glass",
-        "An amber whisky sour with a thin frothy top, over one large clear ice cube, garnished with an "
-        "orange peel twist and a few dashes of bitters visible on the foam.", "DRINKS", True, 0, None, True,
-    ),
-    item(
-        "Filter Coffee Old Fashioned", 259, "rocks_glass",
-        "A deep amber old fashioned with a visible coffee tint over one large clear ice cube, garnished "
-        "with an orange peel twist and a few coffee beans.", "DRINKS", True, 0, "RECOMMENDED", True,
-    ),
-    item(
-        "Mango & Chilli Margarita", 239, "coupe_glass",
-        "A vivid orange mango margarita with a fine chilli-salt rim, garnished with a thin red chilli "
-        "slice and a lime wheel.", "DRINKS", True, 1, None, True,
-    ),
-    item(
-        "Malabar Highball", 239, "tall_glass",
-        "A pale golden Malabar-spiced highball over ice with visible curry leaf and citrus peel, topped "
-        "with soda, garnished with a curry leaf sprig and a lime wheel.", "DRINKS", True, 0, None, True,
-    ),
+    # ---------------- BREAKFAST ----------------
+    item("Aloo Paratha", 115, "BREAKFAST", "Flaky whole-wheat paratha stuffed with spiced potato, served with yoghurt and pickle."),
+    item("Paneer Paratha", 145, "BREAKFAST", "Whole-wheat paratha generously filled with seasoned cottage cheese."),
+    item("Poha", 105, "BREAKFAST", "Light flattened rice cooked with vegetables, peanuts, curry leaves and fresh lime."),
+    item("Masala Omelette & Toast", 120, "BREAKFAST", "Indian-style omelette with onion, tomato, coriander and green chilli.", veg=False),
+    item("Chole Bhature", 185, "BREAKFAST", "Spiced chickpea curry with hot, fluffy bhature."),
+    # ---------------- SAPA WARMERS ----------------
+    item("Tomato Dhaniya Shorba", 95, "WARMERS", "Slow-cooked tomato soup finished with coriander and warming Indian spices.", jain=True),
+    item("Vegetable Manchow Soup", 105, "WARMERS", "Hot Indo-Chinese vegetable soup with garlic, chilli and crispy noodles.", spice=1),
+    item("Chicken Shorba", 120, "WARMERS", "Comforting Indian chicken broth with ginger, coriander and aromatic spices.", veg=False),
+    # ---------------- MAGGI IN THE MOUNTAINS ----------------
+    item("Masala Maggi", 105, "MAGGI", "Classic Indian-style masala instant noodles.", hero=True),
+    item("Vegetable Masala Maggi", 125, "MAGGI", "Masala Maggi cooked with fresh vegetables."),
+    item("Cheese & Vegetable Maggi", 145, "MAGGI", "Hot masala noodles with vegetables and melted cheese."),
+    # ---------------- SMALL PLATES & CHAAT ----------------
+    item("Vegetable Samosa with Mint Chutney", 99, "SMALL PLATES", "Crisp pastry stuffed with spiced potato and peas."),
+    item("Pani Puri Shots", 95, "SMALL PLATES", "Crispy puris with potato filling, chutneys and tangy flavoured waters."),
+    item("Aloo Tikki Chaat", 145, "SMALL PLATES", "Crispy potato patties with yoghurt and chutneys."),
+    item("Mix Vegetable Pakora", 149, "SMALL PLATES", "Crispy vegetable fritters served with mint chutney."),
+    item("Honey Chilli Potato", 150, "SMALL PLATES", "Crispy potato fingers tossed with honey, chilli and aromatic spices.", spice=2),
+    item("Gobi 65", 165, "SMALL PLATES", "Crispy cauliflower tossed with curry leaves and South Indian spices.", spice=2),
+    item("Chilli Paneer", 199, "SMALL PLATES", "Cottage cheese tossed with peppers, onion and chilli sauce.", spice=2),
+    item("Chilli Chicken", 220, "SMALL PLATES", "Crispy chicken tossed in a bold Indo-Chinese chilli sauce.", veg=False, spice=2),
+    # ---------------- FROM THE TANDOOR — VEGETARIAN ----------------
+    item("Paneer Tikka", 220, "TANDOOR VEG", "Paneer marinated in yoghurt and aromatic spices, grilled in the tandoor.", hero=True),
+    item("Achari Paneer Tikka", 220, "TANDOOR VEG", "Paneer marinated with traditional Indian pickling spices.", spice=1),
+    item("Mushroom Tikka", 190, "TANDOOR VEG", "Yoghurt-marinated mushrooms grilled until smoky and tender."),
+    item("Vegetarian Tandoori Platter", 349, "TANDOOR VEG", "Paneer tikka, mushroom tikka and assorted vegetable kebabs."),
+    # ---------------- FROM THE TANDOOR — NON-VEGETARIAN ----------------
+    item("Chicken Tikka", 230, "TANDOOR NONVEG", "Boneless chicken marinated in yoghurt and Indian spices.", veg=False),
+    item("Chicken Malai Tikka", 240, "TANDOOR NONVEG", "Creamy, delicately spiced chicken grilled until lightly charred.", veg=False, hero=True),
+    item("Tandoori Chicken", 265, "TANDOOR NONVEG", "Half chicken marinated overnight and roasted in the tandoor.", veg=False),
+    item("Royal Mixed Grill", 399, "TANDOOR NONVEG", "Chicken tikka, malai tikka, tandoori chicken and chef's kebab selection.", veg=False),
+    # ---------------- OUR SIGNATURE DALS ----------------
+    item("Daal Bukhara", 195, "DALS", "Black lentils slowly simmered until velvety and rich, finished with butter and cream.", hero=True),
+    item("Dal Tadka", 159, "DALS", "Yellow lentils tempered with garlic, cumin and spices."),
+    item("Rajma Masala", 175, "DALS", "Red kidney beans simmered in a traditional North Indian masala."),
+    item("Chana Masala", 175, "DALS", "Chickpeas cooked with tomato, ginger and aromatic spices."),
+    # ---------------- VEGETARIAN CURRIES ----------------
+    item("Paneer Butter Masala", 209, "VEG CURRIES", "Paneer simmered in silky tomato-butter gravy."),
+    item("Kadai Paneer", 209, "VEG CURRIES", "Paneer with onions and bell peppers in aromatic kadai masala.", spice=2),
+    item("Palak Paneer", 209, "VEG CURRIES", "Paneer cooked in smooth, lightly spiced spinach gravy."),
+    item("Malai Kofta", 199, "VEG CURRIES", "Vegetable dumplings served in rich, creamy curry."),
+    item("Veg Jalfrezi", 175, "VEG CURRIES", "Fresh vegetables tossed in a vibrant tomato-spice gravy.", spice=1),
+    item("Jeera Aloo", 155, "VEG CURRIES", "Potatoes sautéed with cumin and aromatic spices.", jain=True),
+    # ---------------- CHICKEN & MEAT CURRIES ----------------
+    item("Royal Butter Chicken", 279, "MEAT CURRIES", "Tandoor-grilled chicken simmered in a silky tomato-butter gravy enriched with cashew and a touch of cream.", veg=False, hero=True),
+    item("Chicken Tikka Masala", 239, "MEAT CURRIES", "Tandoori chicken tikka simmered in a rich spiced tomato gravy.", veg=False, spice=2),
+    item("Kadai Chicken", 229, "MEAT CURRIES", "Chicken cooked with onion, bell pepper and traditional kadai spices.", veg=False, spice=2),
+    item("Home-Style Chicken Curry", 219, "MEAT CURRIES", "Comforting Indian chicken curry cooked slowly with traditional spices.", veg=False),
+    item("Mutton Rogan Josh", 299, "MEAT CURRIES", "Tender mutton slow-cooked in a fragrant Kashmiri-style gravy.", veg=False, spice=1),
+    item("Traditional Mutton Curry", 289, "MEAT CURRIES", "Slow-cooked mutton in a rich North Indian onion and tomato masala.", veg=False, spice=2),
+    item("Egg Curry", 175, "MEAT CURRIES", "Boiled eggs simmered in a traditional Indian curry.", veg=False),
+    # ---------------- BREADS FROM THE TANDOOR ----------------
+    item("Tandoori Roti", 55, "BREADS", "Whole-wheat flatbread baked in the tandoor."),
+    item("Plain Naan", 75, "BREADS", "Classic soft tandoor-baked naan."),
+    item("Butter Naan", 80, "BREADS", "Soft tandoor-baked naan finished with melted butter."),
+    item("Garlic Naan", 85, "BREADS", "Soft tandoor-baked naan topped with fresh garlic and coriander."),
+    item("Lachha Paratha", 80, "BREADS", "Flaky layered whole-wheat paratha."),
+    item("Cheese Garlic Naan", 95, "BREADS", "Tandoor-baked naan topped with melted cheese and fresh garlic."),
+    item("Chilli Cheese Naan", 95, "BREADS", "Tandoor-baked naan topped with melted cheese and green chilli.", spice=1),
+    item("Stuffed Aloo Naan", 110, "BREADS", "Tandoor-baked naan stuffed with spiced potato."),
+    item("Stuffed Paneer Naan", 145, "BREADS", "Tandoor-baked naan stuffed with seasoned cottage cheese."),
+    # ---------------- RICE & COMFORT BOWLS ----------------
+    item("Steamed Basmati Rice", 85, "RICE", "Fluffy steamed basmati rice."),
+    item("Jeera Rice", 99, "RICE", "Basmati rice tempered with toasted cumin."),
+    item("Dal Khichdi", 180, "RICE", "Basmati rice and lentils cooked together into warming Indian comfort food."),
+    item("Curd Rice & Pickle", 179, "RICE", "Cooling yoghurt rice tempered with mustard seeds and curry leaves."),
+    item("Rajma Chawal", 195, "RICE", "North Indian kidney-bean curry served with steamed basmati rice.", hero=True),
+    # ---------------- DUM BIRYANI ----------------
+    item("Vegetable Dum Biryani", 190, "BIRYANI", "Fragrant basmati rice, layered and slow-cooked with charred vegetables."),
+    item("Paneer Dum Biryani", 239, "BIRYANI", "Fragrant basmati rice, layered and slow-cooked with paneer."),
+    item("Chicken Dum Biryani", 259, "BIRYANI", "Fragrant basmati rice, layered and slow-cooked with tender chicken.", veg=False, hero=True),
+    item("Mutton Dum Biryani", 299, "BIRYANI", "Fragrant basmati rice, layered and slow-cooked with tender mutton.", veg=False),
+    # ---------------- SOMETHING SWEET ----------------
+    item("Hot Gulab Jamun", 85, "SWEETS", "Warm milk dumplings soaked in saffron-cardamom syrup."),
+    item("Gulab Jamun with Vanilla Ice Cream", 95, "SWEETS", "Warm gulab jamun with cold vanilla ice cream."),
+    item("Gajar Halwa", 110, "SWEETS", "Traditional warm carrot pudding cooked with milk, cardamom and nuts.", hero=True),
+    item("Kheer", 90, "SWEETS", "Slow-cooked Indian rice pudding with cardamom and nuts."),
+    # ---------------- CHAI & MOUNTAIN WARMERS ----------------
+    item("Masala Chai", 60, "CHAI", "Indian milk tea brewed with aromatic spices."),
+    item("Adrak Ginger Chai", 65, "CHAI", "Strong Indian tea brewed with fresh ginger."),
+    item("Kashmiri Kahwa", 75, "CHAI", "Fragrant warming tea with saffron and traditional spices."),
+    item("Kesar Badam Milk", 95, "CHAI", "Warm saffron milk with almond and cardamom."),
+    item("Hot Chocolate", 90, "CHAI", "Rich warm hot chocolate."),
+    # ---------------- LASSI & COLD DRINKS ----------------
+    item("Traditional Sweet Lassi", 105, "COLD DRINKS", "Traditional sweetened yoghurt drink."),
+    item("Mango Lassi", 110, "COLD DRINKS", "Thick mango and yoghurt drink."),
+    item("Masala Chaas", 85, "COLD DRINKS", "Chilled spiced buttermilk."),
+    item("Fresh Lime Soda", 75, "COLD DRINKS", "Fresh lime with soda, sweet or salted."),
+    item("Lemon Iced Tea", 80, "COLD DRINKS", "Chilled lemon iced tea."),
+    item("Soft Drink", 50, "COLD DRINKS", "Choice of soft drink."),
+    item("Still / Sparkling Water", 25, "COLD DRINKS", "Still or sparkling water."),
+    # ---------------- SIGNATURE ZERO-PROOF DRINKS ----------------
+    item("Mango Maharaja", 129, "ZERO PROOF", "Mango, fresh lime and mint."),
+    item("Masala Mojito", 129, "ZERO PROOF", "Fresh mint, lime, Indian spices and soda."),
+    item("Sapa Berry Fizz", 129, "ZERO PROOF", "Mixed berries, citrus and sparkling soda."),
 ]
 
 if __name__ == "__main__":
     with open("items.json", "w") as f:
         json.dump(items, f, indent=2, ensure_ascii=False)
-    print(f"Wrote {len(items)} items to items.json")
+    print(f"Wrote {len(items)} items to items.json ({sum(1 for i in items if i['hero'])} heroes)")
