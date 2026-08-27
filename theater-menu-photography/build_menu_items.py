@@ -212,11 +212,11 @@ items += [
          "Irregular golden-brown crispy vegetable fritters piled loosely for height, sauce well filled with vivid green mint chutney."),
     item("Samosa Chaat", 150, "crushed samosas topped with yogurt, chutneys and spices", cat, "oval_sauce_well",
          "Crushed golden samosa pieces topped with thick yogurt, tamarind and mint chutney drizzles and fine sev, sauce well filled with extra chutney."),
-    item("Maggi", 100, "classic Indian-style masala instant noodles", cat, "chinese_bowl",
+    item("Maggi", 125, "classic Indian-style masala instant noodles", cat, "chinese_bowl",
          "A generous tangle of golden masala-tossed instant noodles in a rich orange-red masala coating, garnished with fresh coriander."),
-    item("Vegetable Maggi", 125, "Indian-style masala instant noodles tossed with mixed vegetables", cat, "chinese_bowl",
+    item("Vegetable Maggi", 150, "Indian-style masala instant noodles tossed with mixed vegetables", cat, "chinese_bowl",
          "A generous tangle of golden masala-tossed instant noodles studded with colorful diced carrot, peas, bell pepper and onion, garnished with fresh coriander."),
-    item("Cheese and Vegetable Maggi", 150, "Indian-style masala instant noodles tossed with mixed vegetables and melted cheese", cat, "chinese_bowl",
+    item("Cheese and Vegetable Maggi", 175, "Indian-style masala instant noodles tossed with mixed vegetables and melted cheese", cat, "chinese_bowl",
          "A generous tangle of golden masala-tossed instant noodles studded with colorful diced vegetables, topped with a generous drift of melted cheese, garnished with fresh coriander."),
 ]
 
