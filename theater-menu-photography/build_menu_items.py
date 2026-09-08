@@ -185,6 +185,10 @@ items += [
          "A generous, abundant portion of large plump pink-orange prawns glistening in garlic butter, filling the plate, with visible garlic slivers and chopped parsley, sauce well filled with a lemon wedge."),
     item("Fish Amritsari", 245, "crispy fish fingers coated in gram flour and Amritsari spices", cat, "oval_sauce_well",
          "Golden-battered fish fingers stacked neatly, thin red onion rings and a lemon wedge beside them, sauce well filled with mint chutney."),
+    item("Hyderabadi Achari Chicken", 229, "boneless chicken marinated with Hyderabadi pickling spices, grilled to a smoky char", cat, "round_plain",
+         "Skewers of char-grilled chicken pieces with a deep mustard-yellow pickled-spice crust, thin red onion rings, a lemon wedge and a small metal cup of mint chutney beside."),
+    item("Hyderabadi Achari Paneer", 229, "cottage cheese marinated with Hyderabadi pickling spices, grilled to a smoky char", cat, "round_plain",
+         "Skewers of char-grilled paneer cubes with a deep mustard-yellow pickled-spice crust, thin red onion rings, a lemon wedge and a small metal cup of mint chutney beside."),
 ]
 
 # ---------------- Chaat & Fast Sellers ----------------
@@ -268,6 +272,10 @@ items += [
          "Sliced okra sauteed with onion and tomato in a dry masala coating, finished with fresh cilantro."),
     item("Aloo Gobhi", 170, "potatoes and cauliflower cooked with traditional Indian spices", cat, "copper_karahi",
          "Golden potato and cauliflower florets tossed in a light turmeric-spiced dry masala, finished with fresh cilantro."),
+    item("Chana Masala", 185, "chickpeas simmered in a spiced tomato and onion masala", cat, "copper_karahi",
+         "Dark reddish-brown chickpeas in a thick spiced tomato-onion masala, finished with fresh cilantro and a few thin ginger juliennes."),
+    item("Rajma Masala", 185, "red kidney beans simmered in a rich North Indian spiced gravy", cat, "copper_karahi",
+         "Deep red kidney beans in a thick reddish-brown spiced gravy, finished with a swirl of cream and fresh cilantro."),
     item("Chicken Tikka Masala", 239, "grilled chicken tikka simmered in a rich spiced tomato gravy", cat, "copper_karahi",
          "Char-grilled chicken tikka pieces with visible smoky edges in a thick spiced tomato gravy, finished with fresh cilantro."),
     item("Kadai Chicken", 229, "chicken cooked with onions, bell peppers and aromatic Indian spices", cat, "copper_karahi",

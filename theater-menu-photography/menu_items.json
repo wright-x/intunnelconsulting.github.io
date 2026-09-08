@@ -180,6 +180,24 @@
     "prompt": "A premium editorial food photograph of Fish Amritsari: crispy fish fingers coated in gram flour and Amritsari spices Golden-battered fish fingers stacked neatly, thin red onion rings and a lemon wedge beside them, sauce well filled with mint chutney. Presented on a matte white/off-white ceramic oval plate (NOT dark, NOT black, NOT charcoal - the plate itself is white/cream colored) with a small built-in triangular sauce well on one side holding a matching chutney or dip, exactly like the reference plate provided. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
   },
   {
+    "name": "Hyderabadi Achari Chicken",
+    "price_vnd_k": 229,
+    "description": "boneless chicken marinated with Hyderabadi pickling spices, grilled to a smoky char",
+    "category": "Small Plates & Bar Bites",
+    "plateware": "round_plain",
+    "slug": "hyderabadi-achari-chicken",
+    "prompt": "A premium editorial food photograph of Hyderabadi Achari Chicken: boneless chicken marinated with Hyderabadi pickling spices, grilled to a smoky char Skewers of char-grilled chicken pieces with a deep mustard-yellow pickled-spice crust, thin red onion rings, a lemon wedge and a small metal cup of mint chutney beside. Presented on a plain matte white/cream ceramic oval plate (NOT dark, NOT black, NOT charcoal - the plate itself is white/cream colored) with a subtle organic hand-thrown rim texture, exactly like the reference plate provided. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
+  },
+  {
+    "name": "Hyderabadi Achari Paneer",
+    "price_vnd_k": 229,
+    "description": "cottage cheese marinated with Hyderabadi pickling spices, grilled to a smoky char",
+    "category": "Small Plates & Bar Bites",
+    "plateware": "round_plain",
+    "slug": "hyderabadi-achari-paneer",
+    "prompt": "A premium editorial food photograph of Hyderabadi Achari Paneer: cottage cheese marinated with Hyderabadi pickling spices, grilled to a smoky char Skewers of char-grilled paneer cubes with a deep mustard-yellow pickled-spice crust, thin red onion rings, a lemon wedge and a small metal cup of mint chutney beside. Presented on a plain matte white/cream ceramic oval plate (NOT dark, NOT black, NOT charcoal - the plate itself is white/cream colored) with a subtle organic hand-thrown rim texture, exactly like the reference plate provided. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
+  },
+  {
     "name": "Masala Papad",
     "price_vnd_k": 55,
     "description": "crispy papad topped with onion, tomato and fresh herbs",
@@ -484,6 +502,24 @@
     "plateware": "copper_karahi",
     "slug": "aloo-gobhi",
     "prompt": "A premium editorial food photograph of Aloo Gobhi: potatoes and cauliflower cooked with traditional Indian spices Golden potato and cauliflower florets tossed in a light turmeric-spiced dry masala, finished with fresh cilantro. Served in a small hammered copper karahi (traditional Indian wok-shaped serving bowl) with polished brass ring handles, resting on a round wooden coaster. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
+  },
+  {
+    "name": "Chana Masala",
+    "price_vnd_k": 185,
+    "description": "chickpeas simmered in a spiced tomato and onion masala",
+    "category": "Main Curries",
+    "plateware": "copper_karahi",
+    "slug": "chana-masala",
+    "prompt": "A premium editorial food photograph of Chana Masala: chickpeas simmered in a spiced tomato and onion masala Dark reddish-brown chickpeas in a thick spiced tomato-onion masala, finished with fresh cilantro and a few thin ginger juliennes. Served in a small hammered copper karahi (traditional Indian wok-shaped serving bowl) with polished brass ring handles, resting on a round wooden coaster. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
+  },
+  {
+    "name": "Rajma Masala",
+    "price_vnd_k": 185,
+    "description": "red kidney beans simmered in a rich North Indian spiced gravy",
+    "category": "Main Curries",
+    "plateware": "copper_karahi",
+    "slug": "rajma-masala",
+    "prompt": "A premium editorial food photograph of Rajma Masala: red kidney beans simmered in a rich North Indian spiced gravy Deep red kidney beans in a thick reddish-brown spiced gravy, finished with a swirl of cream and fresh cilantro. Served in a small hammered copper karahi (traditional Indian wok-shaped serving bowl) with polished brass ring handles, resting on a round wooden coaster. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
   },
   {
     "name": "Chicken Tikka Masala",
