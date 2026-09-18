@@ -300,13 +300,13 @@ items += [
 # ---------------- Breads ----------------
 cat = "Breads"
 items += [
-    item("Tandoori Roti / Tawa Roti", 55, "soft whole wheat bread baked in the tandoor (add butter +5K)", cat, "rattan_basket",
+    item("Tandoori Roti / Tawa Roti", 55, "soft whole wheat bread baked in the tandoor (add butter +10K)", cat, "rattan_basket",
          "Exactly ONE single round char-flecked whole wheat flatbread with a lightly blistered surface, alone in the basket. Do not show two rotis, do not duplicate it — only one piece of bread in the entire photo."),
     item("Garlic Naan", 85, "soft naan bread topped with garlic and fresh coriander", cat, "rattan_basket",
          "A pillowy oval naan with charred blister spots, topped with chopped garlic and fresh coriander."),
     item("Laccha Parantha", 80, "multi-layered whole wheat bread cooked on a tawa with a touch of ghee", cat, "rattan_basket",
          "A round layered flatbread with visible spiral flaky layers and a light ghee sheen."),
-    item("Plain Naan", 75, "soft and pillowy white flour bread baked in the tandoor (add butter +5K)", cat, "rattan_basket",
+    item("Plain Naan", 75, "soft and pillowy white flour bread baked in the tandoor (add butter +10K)", cat, "rattan_basket",
          "A beautiful, appetizing, generously sized pillowy oval white-flour naan, completely whole and intact with NO tears, NO broken edges, NO rips of any kind — a single smooth unbroken piece of bread with rich golden charred blister spots and a warm buttery sheen, resting elegantly in the basket. Nothing else on the plate — no dip, no bowl, no garnish, no side items of any kind, just the whole naan alone in the basket, shot with warm inviting light."),
     item("Cheese Garlic Naan", 95, "soft naan topped with garlic and melted cheese, baked in the tandoor", cat, "rattan_basket",
          "An oval naan topped with melted golden cheese and chopped garlic, cut into wedges."),
@@ -344,7 +344,7 @@ items += [
          "Fragrant saffron-streaked basmati rice layered with colorful mixed vegetables, fried onions, mint leaves and whole spices."),
     item("Egg Biryani", 195, "fragrant basmati rice layered with eggs and aromatic spices", cat, "copper_biryani_handi",
          "Fragrant saffron-streaked basmati rice topped with halved boiled eggs, fried onions, mint leaves and whole spices."),
-    item("Chicken Biryani", 230, "slow-cooked basmati rice layered with chicken and aromatic spices", cat, "copper_biryani_handi",
+    item("Chicken Biryani", 259, "slow-cooked basmati rice layered with chicken and aromatic spices", cat, "copper_biryani_handi",
          "Fragrant saffron-streaked basmati rice layered with tender bone-in chicken pieces, fried onions, mint leaves and whole spices."),
     item("Prawn Biryani", 250, "fragrant basmati rice layered with prawns and traditional spices", cat, "copper_biryani_handi",
          "Fragrant saffron-streaked basmati rice layered with plump prawns, fried onions, mint leaves and whole spices."),

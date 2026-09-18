@@ -587,11 +587,11 @@
   {
     "name": "Tandoori Roti / Tawa Roti",
     "price_vnd_k": 55,
-    "description": "soft whole wheat bread baked in the tandoor (add butter +5K)",
+    "description": "soft whole wheat bread baked in the tandoor (add butter +10K)",
     "category": "Breads",
     "plateware": "rattan_basket",
     "slug": "tandoori-roti-tawa-roti",
-    "prompt": "A premium editorial food photograph of Tandoori Roti / Tawa Roti: soft whole wheat bread baked in the tandoor (add butter +5K) Exactly ONE single round char-flecked whole wheat flatbread with a lightly blistered surface, alone in the basket. Do not show two rotis, do not duplicate it — only one piece of bread in the entire photo. Presented in a small rectangular woven rattan/wicker bread basket lined with a neutral linen napkin. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
+    "prompt": "A premium editorial food photograph of Tandoori Roti / Tawa Roti: soft whole wheat bread baked in the tandoor (add butter +10K) Exactly ONE single round char-flecked whole wheat flatbread with a lightly blistered surface, alone in the basket. Do not show two rotis, do not duplicate it — only one piece of bread in the entire photo. Presented in a small rectangular woven rattan/wicker bread basket lined with a neutral linen napkin. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
   },
   {
     "name": "Garlic Naan",
@@ -614,11 +614,11 @@
   {
     "name": "Plain Naan",
     "price_vnd_k": 75,
-    "description": "soft and pillowy white flour bread baked in the tandoor (add butter +5K)",
+    "description": "soft and pillowy white flour bread baked in the tandoor (add butter +10K)",
     "category": "Breads",
     "plateware": "rattan_basket",
     "slug": "plain-naan",
-    "prompt": "A premium editorial food photograph of Plain Naan: soft and pillowy white flour bread baked in the tandoor (add butter +5K) A beautiful, appetizing, generously sized pillowy oval white-flour naan, completely whole and intact with NO tears, NO broken edges, NO rips of any kind — a single smooth unbroken piece of bread with rich golden charred blister spots and a warm buttery sheen, resting elegantly in the basket. Nothing else on the plate — no dip, no bowl, no garnish, no side items of any kind, just the whole naan alone in the basket, shot with warm inviting light. Presented in a small rectangular woven rattan/wicker bread basket lined with a neutral linen napkin. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
+    "prompt": "A premium editorial food photograph of Plain Naan: soft and pillowy white flour bread baked in the tandoor (add butter +10K) A beautiful, appetizing, generously sized pillowy oval white-flour naan, completely whole and intact with NO tears, NO broken edges, NO rips of any kind — a single smooth unbroken piece of bread with rich golden charred blister spots and a warm buttery sheen, resting elegantly in the basket. Nothing else on the plate — no dip, no bowl, no garnish, no side items of any kind, just the whole naan alone in the basket, shot with warm inviting light. Presented in a small rectangular woven rattan/wicker bread basket lined with a neutral linen napkin. Bright, premium, LIGHT and WHITE studio background: clean white seamless backdrop, soft even studio lighting, minimal soft shadow, high-end editorial food/product photography look. Shallow depth of field, tack-sharp focus on the food with a softly blurred background. Natural, fresh garnish exactly as described. No text, no logos, no hands, no plate labels, no watermarks. Photorealistic, professional restaurant menu photography, ultra-detailed, 2K quality."
   },
   {
     "name": "Cheese Garlic Naan",
@@ -739,7 +739,7 @@
   },
   {
     "name": "Chicken Biryani",
-    "price_vnd_k": 230,
+    "price_vnd_k": 259,
     "description": "slow-cooked basmati rice layered with chicken and aromatic spices",
     "category": "Biryani",
     "plateware": "copper_biryani_handi",
