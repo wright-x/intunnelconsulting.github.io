@@ -148,8 +148,8 @@ items = [
     item("Chicken Tikka Masala", 239, "MEAT CURRIES", "Tandoori chicken tikka simmered in a rich spiced tomato gravy.", veg=False, spice=2),
     item("Kadai Chicken", 229, "MEAT CURRIES", "Chicken cooked with onion, bell pepper and traditional kadai spices.", veg=False, spice=2),
     item("Home-Style Chicken Curry", 219, "MEAT CURRIES", "Comforting Indian chicken curry cooked slowly with traditional spices.", veg=False),
-    item("Mutton Rogan Josh", 299, "MEAT CURRIES", "Tender mutton slow-cooked in a fragrant Kashmiri-style gravy.", veg=False, spice=1),
-    item("Traditional Mutton Curry", 289, "MEAT CURRIES", "Slow-cooked mutton in a rich North Indian onion and tomato masala.", veg=False, spice=2),
+    item("Kashmiri Fish Curry", 259, "MEAT CURRIES", "Tender fish slow-cooked in a fragrant Kashmiri-style gravy.", veg=False, spice=1),
+    item("Goan Fish Curry", 249, "MEAT CURRIES", "Fish simmered in a tangy coconut and tomato curry.", veg=False, spice=2),
     item("Egg Curry", 175, "MEAT CURRIES", "Boiled eggs simmered in a traditional Indian curry.", veg=False),
     # ---------------- BREADS FROM THE TANDOOR ----------------
     item("Tandoori Roti", 55, "BREADS", "Whole-wheat flatbread baked in the tandoor."),
@@ -171,7 +171,7 @@ items = [
     item("Vegetable Dum Biryani", 190, "BIRYANI", "Fragrant basmati rice, layered and slow-cooked with charred vegetables."),
     item("Paneer Dum Biryani", 239, "BIRYANI", "Fragrant basmati rice, layered and slow-cooked with paneer."),
     item("Chicken Dum Biryani", 259, "BIRYANI", "Fragrant basmati rice, layered and slow-cooked with tender chicken.", veg=False, hero=True),
-    item("Mutton Dum Biryani", 299, "BIRYANI", "Fragrant basmati rice, layered and slow-cooked with tender mutton.", veg=False),
+    item("Fish Dum Biryani", 269, "BIRYANI", "Fragrant basmati rice, layered and slow-cooked with tender fish.", veg=False),
     # ---------------- SOMETHING SWEET ----------------
     item("Hot Gulab Jamun", 85, "SWEETS", "Warm milk dumplings soaked in saffron-cardamom syrup."),
     item("Gulab Jamun with Vanilla Ice Cream", 95, "SWEETS", "Warm gulab jamun with cold vanilla ice cream."),

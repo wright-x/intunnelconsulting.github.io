@@ -492,28 +492,28 @@
     "prompt": "A premium editorial food photograph of Home-Style Chicken Curry: Comforting Indian chicken curry cooked slowly with traditional spices. Presented in/on a small hammered copper karahi bowl with polished brass ring handles, resting on a round dark wooden coaster, finished with a swirl of cream, toasted cashews and fresh coriander, gentle wisps of steam rising. Ultra-premium, fine-dining editorial food photography — thoughtful, confident plating, everything composed on the ONE plate (no side cups, no extra dishes, no props scattered around it) with intentional asymmetry, sauce swooshed or pooled with a spoon, height and texture contrast, a few deliberate garnishes (fresh herbs, one or two edible flowers, toasted nuts) placed like a chef would place them, never scattered randomly. Bright, clean white studio background: seamless white backdrop, soft directional studio lighting from one side, soft natural shadow, elevated three-quarter angle looking down at the plate. Photorealistic, shot on a full-frame camera, ultra-detailed, natural food texture, 2K quality. No text, no logos, no hands, no watermark, no restaurant background of any kind — pure white studio only."
   },
   {
-    "name": "Mutton Rogan Josh",
-    "price_k": 299,
-    "slug": "mutton-rogan-josh",
+    "name": "Kashmiri Fish Curry",
+    "price_k": 259,
+    "slug": "kashmiri-fish-curry",
     "category": "MEAT CURRIES",
     "veg": false,
     "jain": false,
     "spice": 1,
     "hero": false,
-    "description": "Tender mutton slow-cooked in a fragrant Kashmiri-style gravy.",
-    "prompt": "A premium editorial food photograph of Mutton Rogan Josh: Tender mutton slow-cooked in a fragrant Kashmiri-style gravy. Presented in/on a small hammered copper karahi bowl with polished brass ring handles, resting on a round dark wooden coaster, finished with a swirl of cream, toasted cashews and fresh coriander, gentle wisps of steam rising. Ultra-premium, fine-dining editorial food photography — thoughtful, confident plating, everything composed on the ONE plate (no side cups, no extra dishes, no props scattered around it) with intentional asymmetry, sauce swooshed or pooled with a spoon, height and texture contrast, a few deliberate garnishes (fresh herbs, one or two edible flowers, toasted nuts) placed like a chef would place them, never scattered randomly. Bright, clean white studio background: seamless white backdrop, soft directional studio lighting from one side, soft natural shadow, elevated three-quarter angle looking down at the plate. Photorealistic, shot on a full-frame camera, ultra-detailed, natural food texture, 2K quality. No text, no logos, no hands, no watermark, no restaurant background of any kind — pure white studio only."
+    "description": "Tender fish slow-cooked in a fragrant Kashmiri-style gravy.",
+    "prompt": "A premium editorial food photograph of Kashmiri Fish Curry: Tender fish slow-cooked in a fragrant Kashmiri-style gravy. Presented in/on a small hammered copper karahi bowl with polished brass ring handles, resting on a round dark wooden coaster, finished with a swirl of cream, toasted cashews and fresh coriander, gentle wisps of steam rising. Ultra-premium, fine-dining editorial food photography — thoughtful, confident plating, everything composed on the ONE plate (no side cups, no extra dishes, no props scattered around it) with intentional asymmetry, sauce swooshed or pooled with a spoon, height and texture contrast, a few deliberate garnishes (fresh herbs, one or two edible flowers, toasted nuts) placed like a chef would place them, never scattered randomly. Bright, clean white studio background: seamless white backdrop, soft directional studio lighting from one side, soft natural shadow, elevated three-quarter angle looking down at the plate. Photorealistic, shot on a full-frame camera, ultra-detailed, natural food texture, 2K quality. No text, no logos, no hands, no watermark, no restaurant background of any kind — pure white studio only."
   },
   {
-    "name": "Traditional Mutton Curry",
-    "price_k": 289,
-    "slug": "traditional-mutton-curry",
+    "name": "Goan Fish Curry",
+    "price_k": 249,
+    "slug": "goan-fish-curry",
     "category": "MEAT CURRIES",
     "veg": false,
     "jain": false,
     "spice": 2,
     "hero": false,
-    "description": "Slow-cooked mutton in a rich North Indian onion and tomato masala.",
-    "prompt": "A premium editorial food photograph of Traditional Mutton Curry: Slow-cooked mutton in a rich North Indian onion and tomato masala. Presented in/on a small hammered copper karahi bowl with polished brass ring handles, resting on a round dark wooden coaster, finished with a swirl of cream, toasted cashews and fresh coriander, gentle wisps of steam rising. Ultra-premium, fine-dining editorial food photography — thoughtful, confident plating, everything composed on the ONE plate (no side cups, no extra dishes, no props scattered around it) with intentional asymmetry, sauce swooshed or pooled with a spoon, height and texture contrast, a few deliberate garnishes (fresh herbs, one or two edible flowers, toasted nuts) placed like a chef would place them, never scattered randomly. Bright, clean white studio background: seamless white backdrop, soft directional studio lighting from one side, soft natural shadow, elevated three-quarter angle looking down at the plate. Photorealistic, shot on a full-frame camera, ultra-detailed, natural food texture, 2K quality. No text, no logos, no hands, no watermark, no restaurant background of any kind — pure white studio only."
+    "description": "Fish simmered in a tangy coconut and tomato curry.",
+    "prompt": "A premium editorial food photograph of Goan Fish Curry: Fish simmered in a tangy coconut and tomato curry. Presented in/on a small hammered copper karahi bowl with polished brass ring handles, resting on a round dark wooden coaster, finished with a swirl of cream, toasted cashews and fresh coriander, gentle wisps of steam rising. Ultra-premium, fine-dining editorial food photography — thoughtful, confident plating, everything composed on the ONE plate (no side cups, no extra dishes, no props scattered around it) with intentional asymmetry, sauce swooshed or pooled with a spoon, height and texture contrast, a few deliberate garnishes (fresh herbs, one or two edible flowers, toasted nuts) placed like a chef would place them, never scattered randomly. Bright, clean white studio background: seamless white backdrop, soft directional studio lighting from one side, soft natural shadow, elevated three-quarter angle looking down at the plate. Photorealistic, shot on a full-frame camera, ultra-detailed, natural food texture, 2K quality. No text, no logos, no hands, no watermark, no restaurant background of any kind — pure white studio only."
   },
   {
     "name": "Egg Curry",
@@ -732,16 +732,16 @@
     "prompt": "A premium editorial food photograph of Chicken Dum Biryani: Fragrant basmati rice, layered and slow-cooked with tender chicken. Presented in/on a traditional dark clay handi pot with a thick dough-sealed rim, the lid propped open beside it, resting on a dark wooden board, topped with golden fried onions, fresh mint and coriander leaves, whole star anise and green cardamom visible on top, gentle wisps of steam rising. Ultra-premium, fine-dining editorial food photography — thoughtful, confident plating, everything composed on the ONE plate (no side cups, no extra dishes, no props scattered around it) with intentional asymmetry, sauce swooshed or pooled with a spoon, height and texture contrast, a few deliberate garnishes (fresh herbs, one or two edible flowers, toasted nuts) placed like a chef would place them, never scattered randomly. Bright, clean white studio background: seamless white backdrop, soft directional studio lighting from one side, soft natural shadow, elevated three-quarter angle looking down at the plate. Photorealistic, shot on a full-frame camera, ultra-detailed, natural food texture, 2K quality. No text, no logos, no hands, no watermark, no restaurant background of any kind — pure white studio only."
   },
   {
-    "name": "Mutton Dum Biryani",
-    "price_k": 299,
-    "slug": "mutton-dum-biryani",
+    "name": "Fish Dum Biryani",
+    "price_k": 269,
+    "slug": "fish-dum-biryani",
     "category": "BIRYANI",
     "veg": false,
     "jain": false,
     "spice": 0,
     "hero": false,
-    "description": "Fragrant basmati rice, layered and slow-cooked with tender mutton.",
-    "prompt": "A premium editorial food photograph of Mutton Dum Biryani: Fragrant basmati rice, layered and slow-cooked with tender mutton. Presented in/on a traditional dark clay handi pot with a thick dough-sealed rim, the lid propped open beside it, resting on a dark wooden board, topped with golden fried onions, fresh mint and coriander leaves, whole star anise and green cardamom visible on top, gentle wisps of steam rising. Ultra-premium, fine-dining editorial food photography — thoughtful, confident plating, everything composed on the ONE plate (no side cups, no extra dishes, no props scattered around it) with intentional asymmetry, sauce swooshed or pooled with a spoon, height and texture contrast, a few deliberate garnishes (fresh herbs, one or two edible flowers, toasted nuts) placed like a chef would place them, never scattered randomly. Bright, clean white studio background: seamless white backdrop, soft directional studio lighting from one side, soft natural shadow, elevated three-quarter angle looking down at the plate. Photorealistic, shot on a full-frame camera, ultra-detailed, natural food texture, 2K quality. No text, no logos, no hands, no watermark, no restaurant background of any kind — pure white studio only."
+    "description": "Fragrant basmati rice, layered and slow-cooked with tender fish.",
+    "prompt": "A premium editorial food photograph of Fish Dum Biryani: Fragrant basmati rice, layered and slow-cooked with tender fish. Presented in/on a traditional dark clay handi pot with a thick dough-sealed rim, the lid propped open beside it, resting on a dark wooden board, topped with golden fried onions, fresh mint and coriander leaves, whole star anise and green cardamom visible on top, gentle wisps of steam rising. Ultra-premium, fine-dining editorial food photography — thoughtful, confident plating, everything composed on the ONE plate (no side cups, no extra dishes, no props scattered around it) with intentional asymmetry, sauce swooshed or pooled with a spoon, height and texture contrast, a few deliberate garnishes (fresh herbs, one or two edible flowers, toasted nuts) placed like a chef would place them, never scattered randomly. Bright, clean white studio background: seamless white backdrop, soft directional studio lighting from one side, soft natural shadow, elevated three-quarter angle looking down at the plate. Photorealistic, shot on a full-frame camera, ultra-detailed, natural food texture, 2K quality. No text, no logos, no hands, no watermark, no restaurant background of any kind — pure white studio only."
   },
   {
     "name": "Hot Gulab Jamun",

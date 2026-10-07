@@ -71,8 +71,9 @@ BACKGROUND = (
     "the whole page for a tactile printed feel. The ONLY background "
     "graphic: a faint, barely-perceptible thin gold outline of a "
     "mountain-range silhouette running low along the bottom edge of the "
-    "page, with one small gold lotus-flower-above-a-cup emblem (echoing "
-    "the brand mark) sitting just above the peaks in the bottom-left "
+    "page, with one small gold line-art lotus flower sitting directly "
+    "above a short plain horizontal bar (the brand mark, no cup or bowl "
+    "shape beneath it) sitting just above the peaks in the bottom-left "
     "corner — both so subtle they read as texture and never compete with "
     "the food or text. Do not add any other script, lettering, "
     "characters, or symbols to the background.\n\n"
@@ -100,8 +101,10 @@ ICON_SYSTEM = (
 
 FOOTER = (
     "At the very bottom of the page, centered, a single small gold "
-    "line-icon of a lotus sitting in a bowl (the brand mark), sitting in "
-    "a gap within a thin gold horizontal rule spanning the page width. Do "
+    "line-icon of a lotus flower sitting directly above a short plain "
+    "horizontal bar (the brand mark, no cup or bowl shape beneath it), "
+    "sitting in a gap within a thin gold horizontal rule spanning the "
+    "page width. Do "
     "not render any full logo lockup, brand name, or tagline elsewhere on "
     "this page.\n\n"
 )
@@ -255,26 +258,27 @@ COVER_PROMPT = (
     "plaster-like matte texture, soft light glowing gently from the "
     "center, fading to near-black at the corners, fine film grain for a "
     "tactile printed feel. The attached reference image is the "
-    "restaurant's exact logo lockup — reproduce it pixel-faithful: the "
-    "same gold lotus-flower-above-a-cup emblem, the exact wordmark "
-    "'INDIAN KITCHEN' in the same serif letterforms, the same 'SAPA' "
-    "line with its flanking hairline dashes beneath it, and the same "
-    "'SOUL OF INDIA' line beneath that — centered in the upper two-thirds "
-    "of the page, sized generously. Beneath the reproduced logo, in "
-    "smaller tracked-out gold capitals, three centered lines of text: "
-    "'SAPA PREMIUM INDIAN KITCHEN', then a thin gold hairline rule, then "
-    "'INDIAN COMFORT FOOD · TANDOOR · CHAI', then a line of small cream "
-    "italic serif text reading 'Freshly prepared. Warmly served. Made "
-    "for the mountains.' Near the very bottom of the page, a faint thin "
-    "gold outline of a mountain-range silhouette spanning the page width, "
-    "with a small scattering of whole spices — one star anise, a few "
-    "green cardamom pods, a few black peppercorns — resting just above "
-    "it. No photograph of food anywhere on this page, no other text, no "
-    "other graphic elements, no watermark, no page number.\n\n"
+    "restaurant's exact logo lockup — reproduce it pixel-faithful, "
+    "simply recolored from black to the same warm antique gold used "
+    "throughout this menu (with a faint engraved quality as if pressed "
+    "into the page): the same thin line-art lotus flower sitting "
+    "directly above a short plain horizontal bar (no cup or bowl shape "
+    "beneath the lotus, no mandala pattern, nothing added), the exact "
+    "wordmark 'INDIAN KITCHEN' in the same serif letterforms, the same "
+    "'SAPA' line with its flanking hairline dashes beneath it, and the "
+    "same 'SOUL OF INDIA' line beneath that — centered in the upper half "
+    "of the page, sized generously. Do not add any other text, line, or "
+    "tagline beneath the logo. Near the very bottom of the page, a faint "
+    "thin gold outline of a mountain-range silhouette spanning the page "
+    "width, with a small scattering of whole spices — one star anise, a "
+    "few green cardamom pods, a few black peppercorns — resting just "
+    "above it, and directly above that, one line of small cream italic "
+    "serif text reading 'Freshly prepared. Warmly served. Made for the "
+    "mountains.' No photograph of food anywhere on this page, no other "
+    "text, no other graphic elements, no watermark, no page number.\n\n"
     "Render ONLY this exact text, nowhere else: the reproduced logo "
-    "lockup exactly as in the reference image, 'SAPA PREMIUM INDIAN "
-    "KITCHEN', 'INDIAN COMFORT FOOD · TANDOOR · CHAI', and 'Freshly "
-    "prepared. Warmly served. Made for the mountains.'"
+    "lockup exactly as in the reference image (recolored gold), and "
+    "'Freshly prepared. Warmly served. Made for the mountains.'"
 )
 
 CLOSING_PROMPT = (
@@ -382,7 +386,7 @@ def main():
     only = sys.argv[1:]
 
     if not only or "cover" in only:
-        gen("cover", COVER_PROMPT, [os.path.join(REFS, "sapa-logo.jpg")])
+        gen("cover", COVER_PROMPT, [os.path.join(REFS, "sapa-logo.png")])
 
     if not only or "closing" in only:
         gen("closing", CLOSING_PROMPT, [])
