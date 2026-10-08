@@ -167,7 +167,7 @@ def build_hero_prompt(name, tag_prefix, tag_num, title, kicker):
     )
 
 
-def build_section_prompt(title, kicker, tag_prefix, dish_names, start_tag):
+def build_section_prompt(title, kicker, tag_prefix, dish_names, start_tag, note=None):
     n = len(dish_names)
     spelled, n_letters = title_spelling(title)
     lines = []
@@ -246,8 +246,12 @@ def build_section_prompt(title, kicker, tag_prefix, dish_names, start_tag):
         "short thin gold hairline rule, the description in cream italic "
         "serif, then the price in gold serif. Text blocks align to the "
         "nearest page edge, with their ragged edge facing the food.\n\n" +
+        (f"Below the dish text blocks, a single small line of cream "
+         f"italic serif text reading exactly '{note}', appearing once "
+         "only.\n\n" if note else "") +
         ICON_SYSTEM + FOOTER + RENDER_DISCIPLINE +
-        f"Section title: '{title}'\nKicker: '{kicker}'\n{dish_text_block}"
+        f"Section title: '{title}'\nKicker: '{kicker}'\n{dish_text_block}" +
+        (f"\nFooter note: '{note}'" if note else "")
     )
 
 
@@ -315,7 +319,6 @@ CLOSING_PROMPT = (
 CATEGORIES = [
     ("BREAKFAST", "BREAKFAST IN THE MOUNTAINS", "PART ONE", "BR", "breakfast", None),
     ("WARMERS", "SAPA WARMERS", "PART TWO", "SW", "warmers", None),
-    ("MAGGI", "MAGGI IN THE MOUNTAINS", "PART THREE", "MG", "maggi", None),
     ("SMALL PLATES", "SMALL PLATES & CHAAT", "PART FOUR", "SP", "small-plates", None),
     ("TANDOOR VEG", "FROM THE TANDOOR — VEGETARIAN", "PART FIVE", "TV", "tandoor-veg", None),
     ("TANDOOR NONVEG", "FROM THE TANDOOR — NON-VEGETARIAN", "PART SIX", "TN", "tandoor-nonveg", None),
@@ -329,7 +332,10 @@ CATEGORIES = [
     ("CHAI", "CHAI & MOUNTAIN WARMERS", "PART FOURTEEN", "CH", "chai", None),
     ("COLD DRINKS", "LASSI & COLD DRINKS", "PART FIFTEEN", "CD", "cold-drinks", None),
     ("ZERO PROOF", "SIGNATURE ZERO-PROOF DRINKS", "PART SIXTEEN", "ZP", "zero-proof", None),
+    ("CHINESE", "CHINESE SPECIALS", "PART SEVENTEEN", "CN", "chinese", None),
 ]
+
+BREAKFAST_TIME_NOTE = "Poha, omelette and Maggi are served 9:00 AM - 12:00 PM only."
 
 
 def balanced_chunks(lst, max_size):
@@ -361,12 +367,22 @@ for cat_key, title, kicker, tag_prefix, slug_prefix, note in CATEGORIES:
             "title": title, "kicker": kicker,
         })
 
-    chunks = balanced_chunks(normal, 3)
-    for page_num, chunk in enumerate(chunks, 1):
+    if cat_key == "BREAKFAST":
+        all_day = [n for n in normal if n in ("Aloo Paratha", "Paneer Paratha", "Chole Bhature")]
+        timed = [n for n in normal if n not in all_day]
+        chunks = [(all_day, None)] + [(c, BREAKFAST_TIME_NOTE) for c in balanced_chunks(timed, 3)]
+    else:
+        chunks = [(c, note if i == len(balanced_chunks(normal, 3)) else None)
+                  for i, c in enumerate(balanced_chunks(normal, 3), 1)]
+
+    for page_num, (chunk, page_note) in enumerate(chunks, 1):
+        if not chunk:
+            continue
         PAGES.append({
             "slug": f"{slug_prefix}-{page_num}", "kind": "section", "names": chunk,
             "tag_prefix": tag_prefix, "start_tag": name_to_idx[chunk[0]],
             "title": title, "kicker": kicker,
+            "note": page_note,
         })
 
 
@@ -402,7 +418,7 @@ def main():
             prompt = build_hero_prompt(p["name"], p["tag_prefix"], p["tag_num"], p["title"], p["kicker"])
             refs = [os.path.join(OUT, f"{ITEMS_BY_NAME[p['name']]['slug']}.png")]
         else:
-            prompt = build_section_prompt(p["title"], p["kicker"], p["tag_prefix"], p["names"], p["start_tag"])
+            prompt = build_section_prompt(p["title"], p["kicker"], p["tag_prefix"], p["names"], p["start_tag"], p.get("note"))
             refs = [os.path.join(OUT, f"{ITEMS_BY_NAME[n]['slug']}.png") for n in p["names"]]
         gen(p["slug"], prompt, refs)
 

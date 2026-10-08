@@ -18,7 +18,10 @@ STYLE_SUFFIX = (
     "brushstrokes, or dragged dots of sauce anywhere on the plate or "
     "bowl — any chutney, yoghurt or dip is served neatly spooned into a "
     "small side ramekin or quenelle, never painted directly onto the "
-    "plate's surface. Bright, clean white studio "
+    "plate's surface. The dish must look generously portioned and "
+    "genuinely irresistible — never sparse, never skimpy, never "
+    "sad-looking — exactly the kind of plate that makes you want to "
+    "order it immediately. Bright, clean white studio "
     "background: seamless white backdrop, soft directional studio "
     "lighting from one side, soft natural shadow, elevated three-quarter "
     "angle looking down at the plate. Photorealistic, shot on a "
@@ -42,8 +45,8 @@ DRINK_STYLE_SUFFIX = (
 CATEGORY_VESSEL = {
     "BREAKFAST": "a plain white ceramic plate with a simple matte finish and a clean rim",
     "WARMERS": "a plain white ceramic soup bowl, wide and shallow with a simple rim — a proper restaurant soup bowl shape, NOT a teacup, NOT a mug, no handle",
-    "MAGGI": "a plain white ceramic bowl with a simple rim",
     "SMALL PLATES": "a plain white ceramic plate with a simple matte finish and a clean rim",
+    "CHINESE": "a plain white ceramic plate with a simple matte finish and a clean rim",
     "TANDOOR VEG": "a plain white ceramic plate with a simple matte finish and a clean rim",
     "TANDOOR NONVEG": "a plain white ceramic plate with a simple matte finish and a clean rim",
     "DALS": "a plain white ceramic bowl with a simple matte finish",
@@ -61,16 +64,16 @@ CATEGORY_VESSEL = {
 CATEGORY_GARNISH = {
     "BREAKFAST": "finished with a few fresh coriander leaves, with yoghurt and pickle served neatly in small side ramekins rather than on the plate itself",
     "WARMERS": "finished with a swirl of cream, a scatter of fresh coriander and one edible flower",
-    "MAGGI": "finished with a scatter of fresh coriander only — absolutely no sesame seeds anywhere on the dish",
     "SMALL PLATES": "finished with fresh coriander and one edible flower, any chutney served neatly in a small side ramekin rather than painted on the plate",
-    "TANDOOR VEG": "finished with a scatter of pomegranate arils and fresh coriander, a lime wedge tucked beside it, any yoghurt dip served neatly in a small side ramekin rather than smeared on the plate",
-    "TANDOOR NONVEG": "finished with a scatter of pomegranate arils and fresh coriander, a lime wedge tucked beside it, any yoghurt dip served neatly in a small side ramekin rather than smeared on the plate",
-    "DALS": "finished with a swirl of cream, a pat of butter melting on top and fresh coriander, gentle wisps of steam rising",
-    "VEG CURRIES": "finished with a swirl of cream, toasted nuts and fresh coriander, gentle wisps of steam rising",
-    "MEAT CURRIES": "finished with a swirl of cream, toasted cashews and fresh coriander, gentle wisps of steam rising",
+    "CHINESE": "finished with fresh coriander and spring onion, a generous, hearty, abundant portion mounded high on the plate",
+    "TANDOOR VEG": "finished with a scatter of pomegranate arils and fresh coriander, a lime wedge tucked beside it, a small side ramekin of vivid green mint chutney (NOT white yoghurt) served neatly rather than smeared on the plate, a few wisps of smoke still curling up from the char",
+    "TANDOOR NONVEG": "finished with a scatter of pomegranate arils and fresh coriander, a lime wedge tucked beside it, a small side ramekin of vivid green mint chutney (NOT white yoghurt) served neatly rather than smeared on the plate, a few wisps of smoke still curling up from the char",
+    "DALS": "finished with a swirl of cream, a generous pat of butter melting on top and fresh coriander, dramatic, clearly visible wisps of hot steam rising, a generous, hearty, abundant portion that fills the bowl",
+    "VEG CURRIES": "finished with a swirl of cream, toasted nuts and fresh coriander, dramatic, clearly visible wisps of hot steam rising, a generous, hearty, abundant portion that fills the bowl",
+    "MEAT CURRIES": "finished with a swirl of cream, toasted cashews and fresh coriander, dramatic, clearly visible wisps of hot steam rising, a generous, hearty, abundant portion that fills the bowl",
     "BREADS": "brushed lightly with ghee, a light dusting of flour, fresh from the tandoor with charred blister spots",
-    "RICE": "finished with a single fresh coriander leaf",
-    "BIRYANI": "topped with golden fried onions, fresh mint and coriander leaves, whole star anise and green cardamom visible on top, gentle wisps of steam rising",
+    "RICE": "finished with a single fresh coriander leaf, a generous, hearty, abundant portion mounded high rather than a thin scatter, dramatic wisps of steam rising",
+    "BIRYANI": "topped with golden fried onions, fresh mint and coriander leaves, whole star anise and green cardamom visible on top, dramatic, clearly visible wisps of hot steam rising",
     "SWEETS": "finished with a scatter of chopped nuts, a few saffron strands and one edible flower — no sauce, caramel, or paste of any kind drizzled or swooshed on the plate",
     "CHAI": "with a thin layer of froth, a cinnamon stick or star anise resting beside it",
     "COLD DRINKS": "garnished with a mint sprig and a citrus wheel on the rim",
@@ -85,9 +88,9 @@ def slug(name):
     return s.strip("-")
 
 
-def item(name, price, category, description, veg=True, jain=False, spice=0, hero=False, extra=""):
+def item(name, price, category, description, veg=True, jain=False, spice=0, hero=False, extra="", vessel=None):
     drink = category in ("CHAI", "COLD DRINKS", "ZERO PROOF")
-    vessel = CATEGORY_VESSEL[category]
+    vessel = vessel or CATEGORY_VESSEL[category]
     garnish = CATEGORY_GARNISH[category]
     style = DRINK_STYLE_SUFFIX if drink else STYLE_SUFFIX
     extra_text = f" {extra}" if extra else ""
@@ -102,49 +105,57 @@ def item(name, price, category, description, veg=True, jain=False, spice=0, hero
     }
 
 
+TIKKA_PORTION = (
+    "A generous, tempting portion: exactly six large, generously sized "
+    "skewered pieces (never more than eight), arranged attractively "
+    "side by side so the portion looks substantial and inviting, a few "
+    "wisps of smoke still curling up from the char."
+)
+
 items = [
-    # ---------------- BREAKFAST ----------------
+    # ---------------- BREAKFAST (all-day parathas) ----------------
     item("Aloo Paratha", 115, "BREAKFAST", "Flaky whole-wheat paratha stuffed with spiced potato, served with yoghurt and pickle."),
     item("Paneer Paratha", 145, "BREAKFAST", "Whole-wheat paratha generously filled with seasoned cottage cheese."),
+    item("Chole Bhature", 185, "BREAKFAST", "Spiced chickpea curry with hot, fluffy bhature."),
+    # ---------------- BREAKFAST (served 9:00 AM - 12:00 PM only) ----------------
     item("Poha", 105, "BREAKFAST", "Light flattened rice cooked with vegetables, peanuts, curry leaves and fresh lime."),
     item("Masala Omelette & Toast", 120, "BREAKFAST", "Indian-style omelette with onion, tomato, coriander and green chilli.", veg=False),
-    item("Chole Bhature", 185, "BREAKFAST", "Spiced chickpea curry with hot, fluffy bhature."),
+    item("Masala Maggi", 105, "BREAKFAST", "Classic Indian-style masala instant noodles.",
+         extra="No sesame seeds anywhere on the dish."),
+    item("Vegetable Masala Maggi", 125, "BREAKFAST", "Masala Maggi cooked with fresh vegetables."),
+    item("Cheese & Vegetable Maggi", 145, "BREAKFAST", "Hot masala noodles with vegetables and melted cheese."),
     # ---------------- SAPA WARMERS ----------------
     item("Tomato Dhaniya Shorba", 95, "WARMERS", "Slow-cooked tomato soup finished with coriander and warming Indian spices.", jain=True),
     item("Vegetable Manchow Soup", 105, "WARMERS", "Hot Indo-Chinese vegetable soup with garlic, chilli and crispy noodles.", spice=1),
     item("Chicken Shorba", 120, "WARMERS", "Comforting Indian chicken broth with ginger, coriander and aromatic spices.", veg=False),
-    # ---------------- MAGGI IN THE MOUNTAINS ----------------
-    item("Masala Maggi", 105, "MAGGI", "Classic Indian-style masala instant noodles.", hero=True,
-         extra="No sesame seeds anywhere on the dish."),
-    item("Vegetable Masala Maggi", 125, "MAGGI", "Masala Maggi cooked with fresh vegetables."),
-    item("Cheese & Vegetable Maggi", 145, "MAGGI", "Hot masala noodles with vegetables and melted cheese."),
     # ---------------- SMALL PLATES & CHAAT ----------------
     item("Vegetable Samosa with Mint Chutney", 99, "SMALL PLATES", "Crisp pastry stuffed with spiced potato and peas."),
     item("Pani Puri Shots", 95, "SMALL PLATES", "Crispy puris with potato filling, chutneys and tangy flavoured waters."),
-    item("Aloo Tikki Chaat", 145, "SMALL PLATES", "Crispy potato patties with yoghurt and chutneys."),
+    item("Aloo Tikki Chaat", 145, "SMALL PLATES", "Crispy potato patties with yoghurt and chutneys.", hero=True),
     item("Mix Vegetable Pakora", 149, "SMALL PLATES", "Crispy vegetable fritters served with mint chutney."),
-    item("Honey Chilli Potato", 150, "SMALL PLATES", "Crispy potato fingers tossed with honey, chilli and aromatic spices.", spice=2),
-    item("Gobi 65", 165, "SMALL PLATES", "Crispy cauliflower tossed with curry leaves and South Indian spices.", spice=2),
-    item("Chilli Paneer", 199, "SMALL PLATES", "Cottage cheese tossed with peppers, onion and chilli sauce.", spice=2),
-    item("Chilli Chicken", 220, "SMALL PLATES", "Crispy chicken tossed in a bold Indo-Chinese chilli sauce.", veg=False, spice=2),
+    item("Papdi Chaat", 145, "SMALL PLATES", "Crispy wafers layered with potato, chickpeas, yoghurt and tangy chutneys."),
     # ---------------- FROM THE TANDOOR — VEGETARIAN ----------------
     item("Paneer Tikka", 220, "TANDOOR VEG", "Paneer marinated in yoghurt and aromatic spices, grilled in the tandoor.", hero=True,
-         extra="A generous portion: the skewered paneer pieces arranged in two full rows side by side rather than a single row — a substantial, generous serving."),
+         extra=TIKKA_PORTION),
     item("Achari Paneer Tikka", 220, "TANDOOR VEG", "Paneer marinated with traditional Indian pickling spices.", spice=1,
-         extra="A generous portion: the skewered paneer pieces arranged in two full rows side by side rather than a single row — a substantial, generous serving."),
+         extra=TIKKA_PORTION),
     item("Mushroom Tikka", 190, "TANDOOR VEG", "Yoghurt-marinated mushrooms grilled until smoky and tender.",
-         extra="A generous portion: the skewered mushrooms arranged in two full rows side by side rather than a single row — a substantial, generous serving."),
-    item("Vegetarian Tandoori Platter", 349, "TANDOOR VEG", "Paneer tikka, mushroom tikka and assorted vegetable kebabs."),
+         extra=TIKKA_PORTION),
+    item("Vegetarian Tandoori Platter", 349, "TANDOOR VEG", "Paneer tikka, mushroom tikka, tandoori aloo and assorted vegetable kebabs.",
+         extra="A large, generous sharing portion, abundant and impressive, filling the whole plate — never looking small or sparse."),
     # ---------------- FROM THE TANDOOR — NON-VEGETARIAN ----------------
     item("Chicken Tikka", 230, "TANDOOR NONVEG", "Boneless chicken marinated in yoghurt and Indian spices.", veg=False,
-         extra="A generous portion: the skewered chicken pieces arranged in two full rows side by side rather than a single row — a substantial, generous serving."),
+         extra=TIKKA_PORTION),
     item("Chicken Malai Tikka", 240, "TANDOOR NONVEG", "Creamy, delicately spiced chicken grilled until lightly charred.", veg=False, hero=True,
-         extra="A generous portion: the skewered chicken pieces arranged in two full rows side by side rather than a single row — a substantial, generous serving."),
+         extra=TIKKA_PORTION),
     item("Tandoori Chicken", 265, "TANDOOR NONVEG", "Half chicken marinated overnight and roasted in the tandoor.", veg=False,
-         extra="A generous, substantial portion of half chicken."),
-    item("Royal Mixed Grill", 399, "TANDOOR NONVEG", "Chicken tikka, malai tikka, tandoori chicken and chef's kebab selection.", veg=False),
+         extra="A generous, substantial portion of half chicken, a few wisps of smoke still curling up from the char."),
+    item("Royal Mixed Grill", 399, "TANDOOR NONVEG", "Chicken tikka, malai tikka, tandoori chicken and chef's kebab selection.", veg=False,
+         extra="A large, generous sharing portion, abundant and impressive, filling the whole plate — never looking small or sparse."),
     # ---------------- OUR SIGNATURE DALS ----------------
-    item("Daal Bukhara", 195, "DALS", "Black lentils slowly simmered until velvety and rich, finished with butter and cream.", hero=True),
+    item("Daal Bukhara", 195, "DALS", "Black lentils slowly simmered until velvety and rich, finished with butter and cream.", hero=True,
+         vessel="a traditional hammered metal balti bowl with polished brass ring handles, resting on a round wooden coaster",
+         extra="Glossy, rich and deeply tempting, with a generous pat of butter melting into the center and dramatic wisps of hot steam rising — a genuinely irresistible, hearty portion."),
     item("Dal Tadka", 159, "DALS", "Yellow lentils tempered with garlic, cumin and spices."),
     item("Rajma Masala", 175, "DALS", "Red kidney beans simmered in a traditional North Indian masala."),
     item("Chana Masala", 175, "DALS", "Chickpeas cooked with tomato, ginger and aromatic spices."),
@@ -156,7 +167,9 @@ items = [
     item("Veg Jalfrezi", 175, "VEG CURRIES", "Fresh vegetables tossed in a vibrant tomato-spice gravy.", spice=1),
     item("Jeera Aloo", 155, "VEG CURRIES", "Potatoes sautéed with cumin and aromatic spices.", jain=True),
     # ---------------- CHICKEN & MEAT CURRIES ----------------
-    item("Royal Butter Chicken", 279, "MEAT CURRIES", "Tandoor-grilled chicken simmered in a silky tomato-butter gravy enriched with cashew and a touch of cream.", veg=False, hero=True),
+    item("Royal Butter Chicken", 279, "MEAT CURRIES", "Tandoor-grilled chicken simmered in a silky tomato-butter gravy enriched with cashew and a touch of cream.", veg=False, hero=True,
+         vessel="a traditional hammered copper handi pot with polished brass ring handles, resting on a round wooden coaster",
+         extra="Glossy, rich and deeply tempting, with a generous swirl of cream and dramatic wisps of hot steam rising — a genuinely irresistible, hearty portion."),
     item("Chicken Tikka Masala", 239, "MEAT CURRIES", "Tandoori chicken tikka simmered in a rich spiced tomato gravy.", veg=False, spice=2),
     item("Kadai Chicken", 229, "MEAT CURRIES", "Chicken cooked with onion, bell pepper and traditional kadai spices.", veg=False, spice=2),
     item("Home-Style Chicken Curry", 219, "MEAT CURRIES", "Comforting Indian chicken curry cooked slowly with traditional spices.", veg=False),
@@ -184,8 +197,10 @@ items = [
     # ---------------- RICE & COMFORT BOWLS ----------------
     item("Steamed Basmati Rice", 85, "RICE", "Fluffy steamed basmati rice."),
     item("Jeera Rice", 99, "RICE", "Basmati rice tempered with toasted cumin."),
-    item("Dal Khichdi", 180, "RICE", "Basmati rice and lentils cooked together into warming Indian comfort food."),
-    item("Curd Rice & Pickle", 179, "RICE", "Cooling yoghurt rice tempered with mustard seeds and curry leaves."),
+    item("Dal Khichdi", 180, "RICE", "Basmati rice and lentils cooked together into warming Indian comfort food.",
+         extra="A generous, hearty, inviting portion mounded high in the bowl — never looking small or thin."),
+    item("Curd Rice & Pickle", 179, "RICE", "Cooling yoghurt rice tempered with mustard seeds and curry leaves.",
+         extra="A generous, inviting portion mounded high in the bowl — never looking small or thin."),
     item("Rajma Chawal", 195, "RICE", "North Indian kidney-bean curry served with steamed basmati rice.", hero=True),
     # ---------------- DUM BIRYANI ----------------
     item("Vegetable Dum Biryani", 190, "BIRYANI", "Fragrant basmati rice, layered and slow-cooked with charred vegetables."),
@@ -215,6 +230,15 @@ items = [
     item("Mango Maharaja", 129, "ZERO PROOF", "Mango, fresh lime and mint."),
     item("Masala Mojito", 129, "ZERO PROOF", "Fresh mint, lime, Indian spices and soda."),
     item("Sapa Berry Fizz", 129, "ZERO PROOF", "Mixed berries, citrus and sparkling soda."),
+    # ---------------- CHINESE SPECIALS ----------------
+    item("Honey Chilli Potato", 150, "CHINESE", "Crispy potato fingers tossed with honey, chilli and aromatic spices.", spice=2),
+    item("Gobi 65", 165, "CHINESE", "Crispy cauliflower tossed with curry leaves and South Indian spices.", spice=2),
+    item("Chilli Paneer", 199, "CHINESE", "Cottage cheese tossed with peppers, onion and chilli sauce.", spice=2),
+    item("Chilli Chicken", 220, "CHINESE", "Crispy chicken tossed in a bold Indo-Chinese chilli sauce.", veg=False, spice=2),
+    item("Veg Manchurian (Dry)", 185, "CHINESE", "Crispy fried vegetable balls tossed in a bold garlic-soy sauce.", spice=1),
+    item("Veg Manchurian (Gravy)", 195, "CHINESE", "Crispy vegetable balls simmered in a bold garlic-soy gravy.", spice=1),
+    item("Hakka Noodles", 165, "CHINESE", "Stir-fried noodles with vegetables, garlic and soy."),
+    item("Fried Rice", 175, "CHINESE", "Wok-tossed rice with vegetables, garlic and soy."),
 ]
 
 if __name__ == "__main__":
