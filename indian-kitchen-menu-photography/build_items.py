@@ -11,10 +11,14 @@ STYLE_SUFFIX = (
     "Ultra-premium, fine-dining editorial food photography — thoughtful, "
     "confident plating, everything composed on the ONE plate (no side "
     "cups, no extra dishes, no props scattered around it) with "
-    "intentional asymmetry, sauce swooshed or pooled with a spoon, height "
-    "and texture contrast, a few deliberate garnishes (fresh herbs, one "
-    "or two edible flowers, toasted nuts) placed like a chef would place "
-    "them, never scattered randomly. Bright, clean white studio "
+    "intentional asymmetry, height and texture contrast, a few "
+    "deliberate garnishes (fresh herbs, one or two edible flowers, "
+    "toasted nuts) placed like a chef would place them, never scattered "
+    "randomly. Absolutely no painted sauce swooshes, smears, purée "
+    "brushstrokes, or dragged dots of sauce anywhere on the plate or "
+    "bowl — any chutney, yoghurt or dip is served neatly spooned into a "
+    "small side ramekin or quenelle, never painted directly onto the "
+    "plate's surface. Bright, clean white studio "
     "background: seamless white backdrop, soft directional studio "
     "lighting from one side, soft natural shadow, elevated three-quarter "
     "angle looking down at the plate. Photorealistic, shot on a "
@@ -36,38 +40,38 @@ DRINK_STYLE_SUFFIX = (
 )
 
 CATEGORY_VESSEL = {
-    "BREAKFAST": "a wide, shallow, matte artisanal stoneware plate with a warm cream speckled glaze",
-    "WARMERS": "a rustic handmade ceramic soup bowl with a small integrated side handle",
-    "MAGGI": "a compact hammered copper bowl with two small loop handles",
-    "SMALL PLATES": "a dark charcoal speckled matte stoneware plate with a glossy glazed rim",
-    "TANDOOR VEG": "a dark charcoal speckled stoneware plate resting on a dark wooden board",
-    "TANDOOR NONVEG": "a dark charcoal speckled stoneware plate resting on a dark wooden board",
-    "DALS": "a small hammered copper karahi bowl with polished brass ring handles, resting on a round dark wooden coaster",
-    "VEG CURRIES": "a small hammered copper karahi bowl with polished brass ring handles, resting on a round dark wooden coaster",
-    "MEAT CURRIES": "a small hammered copper karahi bowl with polished brass ring handles, resting on a round dark wooden coaster",
-    "BREADS": "a rustic dark wooden board with a small folded linen cloth",
-    "RICE": "a hammered copper bowl resting on a round dark wooden coaster",
-    "BIRYANI": "a traditional dark clay handi pot with a thick dough-sealed rim, the lid propped open beside it, resting on a dark wooden board",
-    "SWEETS": "a dark slate-grey matte stoneware plate",
+    "BREAKFAST": "a plain white ceramic plate with a simple matte finish and a clean rim",
+    "WARMERS": "a plain white ceramic soup bowl, wide and shallow with a simple rim — a proper restaurant soup bowl shape, NOT a teacup, NOT a mug, no handle",
+    "MAGGI": "a plain white ceramic bowl with a simple rim",
+    "SMALL PLATES": "a plain white ceramic plate with a simple matte finish and a clean rim",
+    "TANDOOR VEG": "a plain white ceramic plate with a simple matte finish and a clean rim",
+    "TANDOOR NONVEG": "a plain white ceramic plate with a simple matte finish and a clean rim",
+    "DALS": "a plain white ceramic bowl with a simple matte finish",
+    "VEG CURRIES": "a plain white ceramic bowl with a simple matte finish",
+    "MEAT CURRIES": "a plain white ceramic bowl with a simple matte finish",
+    "BREADS": "a plain white ceramic plate with a simple matte finish and a clean rim",
+    "RICE": "a plain white ceramic bowl with a simple matte finish",
+    "BIRYANI": "a plain white ceramic bowl with a simple matte finish",
+    "SWEETS": "a plain white ceramic plate with a simple matte finish and a clean rim",
     "CHAI": "a traditional handmade clay kulhad cup resting on a small wooden saucer",
     "COLD DRINKS": "a tall clear glass or brushed steel tumbler over ice",
     "ZERO PROOF": "an elegant tall glass or coupe glass",
 }
 
 CATEGORY_GARNISH = {
-    "BREAKFAST": "finished with a few fresh coriander leaves and a small side quenelle of yoghurt and pickle",
+    "BREAKFAST": "finished with a few fresh coriander leaves, with yoghurt and pickle served neatly in small side ramekins rather than on the plate itself",
     "WARMERS": "finished with a swirl of cream, a scatter of fresh coriander and one edible flower",
-    "MAGGI": "finished with a scatter of fresh coriander and a light dusting of masala",
-    "SMALL PLATES": "finished with a swooshed pool of chutney, fresh coriander and one edible flower",
-    "TANDOOR VEG": "finished with a smear of mint yoghurt, a scatter of pomegranate arils and fresh coriander, a lime wedge tucked beside it",
-    "TANDOOR NONVEG": "finished with a smear of mint yoghurt, a scatter of pomegranate arils and fresh coriander, a lime wedge tucked beside it",
+    "MAGGI": "finished with a scatter of fresh coriander only — absolutely no sesame seeds anywhere on the dish",
+    "SMALL PLATES": "finished with fresh coriander and one edible flower, any chutney served neatly in a small side ramekin rather than painted on the plate",
+    "TANDOOR VEG": "finished with a scatter of pomegranate arils and fresh coriander, a lime wedge tucked beside it, any yoghurt dip served neatly in a small side ramekin rather than smeared on the plate",
+    "TANDOOR NONVEG": "finished with a scatter of pomegranate arils and fresh coriander, a lime wedge tucked beside it, any yoghurt dip served neatly in a small side ramekin rather than smeared on the plate",
     "DALS": "finished with a swirl of cream, a pat of butter melting on top and fresh coriander, gentle wisps of steam rising",
     "VEG CURRIES": "finished with a swirl of cream, toasted nuts and fresh coriander, gentle wisps of steam rising",
     "MEAT CURRIES": "finished with a swirl of cream, toasted cashews and fresh coriander, gentle wisps of steam rising",
     "BREADS": "brushed lightly with ghee, a light dusting of flour, fresh from the tandoor with charred blister spots",
     "RICE": "finished with a single fresh coriander leaf",
     "BIRYANI": "topped with golden fried onions, fresh mint and coriander leaves, whole star anise and green cardamom visible on top, gentle wisps of steam rising",
-    "SWEETS": "finished with a scatter of chopped nuts, a few saffron strands and one edible flower",
+    "SWEETS": "finished with a scatter of chopped nuts, a few saffron strands and one edible flower — no sauce, caramel, or paste of any kind drizzled or swooshed on the plate",
     "CHAI": "with a thin layer of froth, a cinnamon stick or star anise resting beside it",
     "COLD DRINKS": "garnished with a mint sprig and a citrus wheel on the rim",
     "ZERO PROOF": "garnished thoughtfully with a fresh herb sprig and a citrus twist",
@@ -81,14 +85,15 @@ def slug(name):
     return s.strip("-")
 
 
-def item(name, price, category, description, veg=True, jain=False, spice=0, hero=False):
+def item(name, price, category, description, veg=True, jain=False, spice=0, hero=False, extra=""):
     drink = category in ("CHAI", "COLD DRINKS", "ZERO PROOF")
     vessel = CATEGORY_VESSEL[category]
     garnish = CATEGORY_GARNISH[category]
     style = DRINK_STYLE_SUFFIX if drink else STYLE_SUFFIX
+    extra_text = f" {extra}" if extra else ""
     prompt = (
         f"A premium editorial {'beverage' if drink else 'food'} photograph of {name}: "
-        f"{description} Presented in/on {vessel}, {garnish}. {style}"
+        f"{description} Presented in/on {vessel}, {garnish}.{extra_text} {style}"
     )
     return {
         "name": name, "price_k": price, "slug": slug(name), "category": category,
@@ -109,7 +114,8 @@ items = [
     item("Vegetable Manchow Soup", 105, "WARMERS", "Hot Indo-Chinese vegetable soup with garlic, chilli and crispy noodles.", spice=1),
     item("Chicken Shorba", 120, "WARMERS", "Comforting Indian chicken broth with ginger, coriander and aromatic spices.", veg=False),
     # ---------------- MAGGI IN THE MOUNTAINS ----------------
-    item("Masala Maggi", 105, "MAGGI", "Classic Indian-style masala instant noodles.", hero=True),
+    item("Masala Maggi", 105, "MAGGI", "Classic Indian-style masala instant noodles.", hero=True,
+         extra="No sesame seeds anywhere on the dish."),
     item("Vegetable Masala Maggi", 125, "MAGGI", "Masala Maggi cooked with fresh vegetables."),
     item("Cheese & Vegetable Maggi", 145, "MAGGI", "Hot masala noodles with vegetables and melted cheese."),
     # ---------------- SMALL PLATES & CHAAT ----------------
@@ -122,14 +128,20 @@ items = [
     item("Chilli Paneer", 199, "SMALL PLATES", "Cottage cheese tossed with peppers, onion and chilli sauce.", spice=2),
     item("Chilli Chicken", 220, "SMALL PLATES", "Crispy chicken tossed in a bold Indo-Chinese chilli sauce.", veg=False, spice=2),
     # ---------------- FROM THE TANDOOR — VEGETARIAN ----------------
-    item("Paneer Tikka", 220, "TANDOOR VEG", "Paneer marinated in yoghurt and aromatic spices, grilled in the tandoor.", hero=True),
-    item("Achari Paneer Tikka", 220, "TANDOOR VEG", "Paneer marinated with traditional Indian pickling spices.", spice=1),
-    item("Mushroom Tikka", 190, "TANDOOR VEG", "Yoghurt-marinated mushrooms grilled until smoky and tender."),
+    item("Paneer Tikka", 220, "TANDOOR VEG", "Paneer marinated in yoghurt and aromatic spices, grilled in the tandoor.", hero=True,
+         extra="A generous portion: the skewered paneer pieces arranged in two full rows side by side rather than a single row — a substantial, generous serving."),
+    item("Achari Paneer Tikka", 220, "TANDOOR VEG", "Paneer marinated with traditional Indian pickling spices.", spice=1,
+         extra="A generous portion: the skewered paneer pieces arranged in two full rows side by side rather than a single row — a substantial, generous serving."),
+    item("Mushroom Tikka", 190, "TANDOOR VEG", "Yoghurt-marinated mushrooms grilled until smoky and tender.",
+         extra="A generous portion: the skewered mushrooms arranged in two full rows side by side rather than a single row — a substantial, generous serving."),
     item("Vegetarian Tandoori Platter", 349, "TANDOOR VEG", "Paneer tikka, mushroom tikka and assorted vegetable kebabs."),
     # ---------------- FROM THE TANDOOR — NON-VEGETARIAN ----------------
-    item("Chicken Tikka", 230, "TANDOOR NONVEG", "Boneless chicken marinated in yoghurt and Indian spices.", veg=False),
-    item("Chicken Malai Tikka", 240, "TANDOOR NONVEG", "Creamy, delicately spiced chicken grilled until lightly charred.", veg=False, hero=True),
-    item("Tandoori Chicken", 265, "TANDOOR NONVEG", "Half chicken marinated overnight and roasted in the tandoor.", veg=False),
+    item("Chicken Tikka", 230, "TANDOOR NONVEG", "Boneless chicken marinated in yoghurt and Indian spices.", veg=False,
+         extra="A generous portion: the skewered chicken pieces arranged in two full rows side by side rather than a single row — a substantial, generous serving."),
+    item("Chicken Malai Tikka", 240, "TANDOOR NONVEG", "Creamy, delicately spiced chicken grilled until lightly charred.", veg=False, hero=True,
+         extra="A generous portion: the skewered chicken pieces arranged in two full rows side by side rather than a single row — a substantial, generous serving."),
+    item("Tandoori Chicken", 265, "TANDOOR NONVEG", "Half chicken marinated overnight and roasted in the tandoor.", veg=False,
+         extra="A generous, substantial portion of half chicken."),
     item("Royal Mixed Grill", 399, "TANDOOR NONVEG", "Chicken tikka, malai tikka, tandoori chicken and chef's kebab selection.", veg=False),
     # ---------------- OUR SIGNATURE DALS ----------------
     item("Daal Bukhara", 195, "DALS", "Black lentils slowly simmered until velvety and rich, finished with butter and cream.", hero=True),
@@ -152,15 +164,23 @@ items = [
     item("Goan Fish Curry", 249, "MEAT CURRIES", "Fish simmered in a tangy coconut and tomato curry.", veg=False, spice=2),
     item("Egg Curry", 175, "MEAT CURRIES", "Boiled eggs simmered in a traditional Indian curry.", veg=False),
     # ---------------- BREADS FROM THE TANDOOR ----------------
-    item("Tandoori Roti", 55, "BREADS", "Whole-wheat flatbread baked in the tandoor."),
-    item("Plain Naan", 75, "BREADS", "Classic soft tandoor-baked naan."),
-    item("Butter Naan", 80, "BREADS", "Soft tandoor-baked naan finished with melted butter."),
-    item("Garlic Naan", 85, "BREADS", "Soft tandoor-baked naan topped with fresh garlic and coriander."),
+    item("Tandoori Roti", 55, "BREADS", "Whole-wheat flatbread baked in the tandoor.",
+         extra="Authentic tandoor-baked roti, cooked by slapping the dough onto the inside wall of a clay tandoor oven: noticeably puffed up with a light char and smoky blistered dark spots across the surface, a rustic uneven round shape with a slightly irregular edge — it must NOT look flat, pale, or griddle-cooked like a tawa roti or chapati."),
+    item("Plain Naan", 75, "BREADS", "Classic soft tandoor-baked naan.",
+         extra="Traditional naan shape: a wide teardrop, elongated oval that tapers to a rounder point at one end — not a perfectly round or circular bread."),
+    item("Butter Naan", 80, "BREADS", "Soft tandoor-baked naan finished with melted butter.",
+         extra="Traditional naan shape: a wide teardrop, elongated oval that tapers to a rounder point at one end — not a perfectly round or circular bread."),
+    item("Garlic Naan", 85, "BREADS", "Soft tandoor-baked naan topped with fresh garlic and coriander.",
+         extra="Traditional naan shape: a wide teardrop, elongated oval that tapers to a rounder point at one end — not a perfectly round or circular bread."),
     item("Lachha Paratha", 80, "BREADS", "Flaky layered whole-wheat paratha."),
-    item("Cheese Garlic Naan", 95, "BREADS", "Tandoor-baked naan topped with melted cheese and fresh garlic."),
-    item("Chilli Cheese Naan", 95, "BREADS", "Tandoor-baked naan topped with melted cheese and green chilli.", spice=1),
-    item("Stuffed Aloo Naan", 110, "BREADS", "Tandoor-baked naan stuffed with spiced potato."),
-    item("Stuffed Paneer Naan", 145, "BREADS", "Tandoor-baked naan stuffed with seasoned cottage cheese."),
+    item("Cheese Garlic Naan", 95, "BREADS", "Tandoor-baked naan topped with melted cheese and fresh garlic.",
+         extra="Traditional naan shape: a wide teardrop, elongated oval that tapers to a rounder point at one end — not a perfectly round or circular bread."),
+    item("Chilli Cheese Naan", 95, "BREADS", "Tandoor-baked naan topped with melted cheese and green chilli.", spice=1,
+         extra="Traditional naan shape: a wide teardrop, elongated oval that tapers to a rounder point at one end — not a perfectly round or circular bread."),
+    item("Stuffed Aloo Naan", 110, "BREADS", "Tandoor-baked naan stuffed with spiced potato.",
+         extra="Traditional naan shape: a wide teardrop, elongated oval that tapers to a rounder point at one end — not a perfectly round or circular bread."),
+    item("Stuffed Paneer Naan", 145, "BREADS", "Tandoor-baked naan stuffed with seasoned cottage cheese.",
+         extra="Traditional naan shape: a wide teardrop, elongated oval that tapers to a rounder point at one end — not a perfectly round or circular bread."),
     # ---------------- RICE & COMFORT BOWLS ----------------
     item("Steamed Basmati Rice", 85, "RICE", "Fluffy steamed basmati rice."),
     item("Jeera Rice", 99, "RICE", "Basmati rice tempered with toasted cumin."),

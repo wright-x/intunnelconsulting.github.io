@@ -274,11 +274,15 @@ COVER_PROMPT = (
     "few green cardamom pods, a few black peppercorns — resting just "
     "above it, and directly above that, one line of small cream italic "
     "serif text reading 'Freshly prepared. Warmly served. Made for the "
-    "mountains.' No photograph of food anywhere on this page, no other "
+    "mountains.' This tagline sentence must appear exactly ONCE on the "
+    "entire page — never repeated a second time anywhere else, never "
+    "printed twice, never duplicated above, below, or overlapping "
+    "itself. No photograph of food anywhere on this page, no other "
     "text, no other graphic elements, no watermark, no page number.\n\n"
-    "Render ONLY this exact text, nowhere else: the reproduced logo "
-    "lockup exactly as in the reference image (recolored gold), and "
-    "'Freshly prepared. Warmly served. Made for the mountains.'"
+    "Render ONLY this exact text, nowhere else, and each line exactly "
+    "once: the reproduced logo lockup exactly as in the reference image "
+    "(recolored gold), and, appearing a single time only, 'Freshly "
+    "prepared. Warmly served. Made for the mountains.'"
 )
 
 CLOSING_PROMPT = (
