@@ -106,15 +106,18 @@ def item(name, price, category, description, veg=True, jain=False, spice=0, hero
 
 
 TIKKA_PORTION = (
-    "A generous, tempting portion on a single skewer, threaded with EXACTLY "
-    "SIX (6) large cubes of the main ingredient and nothing else — no bell "
-    "pepper, no onion, no tomato pieces threaded on the skewer between them. "
-    "The six cubes sit directly adjacent to one another along the skewer so "
-    "they are trivially easy to count left to right: 1, 2, 3, 4, 5, 6 — no "
-    "fewer, no more, exactly six. Any vegetable garnish (pepper, onion, "
-    "lime) must be plated loose beside the skewer, never threaded onto it. "
-    "Arrange the six cubes attractively so the portion looks substantial "
-    "and inviting, with a few wisps of smoke still curling up from the char."
+    "A generous, tempting portion on EXACTLY TWO separate skewers laid side "
+    "by side on the plate, each skewer threaded with EXACTLY THREE (3) large "
+    "cubes of the main ingredient and nothing else — no bell pepper, no "
+    "onion, no tomato pieces threaded on either skewer between the cubes. "
+    "Two skewers x three cubes = six cubes total. The three cubes on each "
+    "skewer sit directly adjacent to one another so they are trivially easy "
+    "to count: skewer one has 1, 2, 3; skewer two has 1, 2, 3. Do not use "
+    "one long skewer with six cubes — it must be two distinct skewers of "
+    "three cubes each. Any vegetable garnish (pepper, onion, lime) must be "
+    "plated loose beside the skewers, never threaded onto them. Arrange the "
+    "two skewers attractively so the portion looks substantial and "
+    "inviting, with a few wisps of smoke still curling up from the char."
 )
 
 items = [
@@ -135,8 +138,10 @@ items = [
     item("Chicken Shorba", 120, "WARMERS", "Comforting Indian chicken broth with ginger, coriander and aromatic spices.", veg=False),
     # ---------------- SMALL PLATES & CHAAT ----------------
     item("Vegetable Samosa with Mint Chutney", 99, "SMALL PLATES", "Crisp pastry stuffed with spiced potato and peas."),
-    item("Pani Puri Shots", 95, "SMALL PLATES", "Crispy puris with potato filling, chutneys and tangy flavoured waters."),
-    item("Aloo Tikki Chaat", 145, "SMALL PLATES", "Crispy potato patties with yoghurt and chutneys.", hero=True),
+    item("Pani Puri Shots", 95, "SMALL PLATES", "Crispy puris with potato filling, chutneys and tangy flavoured waters.",
+         extra="A portion of exactly five (5) puris, no fewer and no more, arranged attractively."),
+    item("Aloo Tikki Chaat", 145, "SMALL PLATES", "Crispy potato patties with yoghurt and chutneys.", hero=True,
+         extra="A portion of exactly two (2) potato patties, no fewer and no more, generously topped with yoghurt and chutneys."),
     item("Mix Vegetable Pakora", 149, "SMALL PLATES", "Crispy vegetable fritters served with mint chutney."),
     item("Papdi Chaat", 145, "SMALL PLATES", "Crispy wafers layered with potato, chickpeas, yoghurt and tangy chutneys."),
     # ---------------- FROM THE TANDOOR — VEGETARIAN ----------------
@@ -160,7 +165,7 @@ items = [
     # ---------------- OUR SIGNATURE DALS ----------------
     item("Daal Bukhara", 195, "DALS", "Black lentils slowly simmered until velvety and rich, finished with butter and cream.", hero=True,
          vessel="a traditional hammered metal balti bowl with polished brass ring handles, resting on a round wooden coaster",
-         extra="Glossy, rich and deeply tempting, with a generous pat of butter melting into the center and dramatic wisps of hot steam rising — a genuinely irresistible, hearty portion."),
+         extra="Glossy, rich and deeply tempting, with a generous pat of butter melting into the center and dramatic wisps of hot steam rising — a genuinely irresistible, hearty portion. Only the balti bowl of daal on the coaster — no bread, no naan, no roti, no other food items anywhere in frame."),
     item("Dal Tadka", 159, "DALS", "Yellow lentils tempered with garlic, cumin and spices."),
     item("Rajma Masala", 175, "DALS", "Red kidney beans simmered in a traditional North Indian masala."),
     item("Chana Masala", 175, "DALS", "Chickpeas cooked with tomato, ginger and aromatic spices."),
@@ -174,7 +179,7 @@ items = [
     # ---------------- CHICKEN & MEAT CURRIES ----------------
     item("Royal Butter Chicken", 279, "MEAT CURRIES", "Tandoor-grilled chicken simmered in a silky tomato-butter gravy enriched with cashew and a touch of cream.", veg=False, hero=True,
          vessel="a traditional hammered copper handi pot with polished brass ring handles, resting on a round wooden coaster",
-         extra="Glossy, rich and deeply tempting, with a generous swirl of cream and dramatic wisps of hot steam rising — a genuinely irresistible, hearty portion."),
+         extra="Glossy, rich and deeply tempting, with a generous swirl of cream and dramatic wisps of hot steam rising — a genuinely irresistible, hearty portion. Shot in tack-sharp focus with crisp, clearly resolved detail on the chicken pieces and gravy texture — not soft, not blurry, not hazy."),
     item("Chicken Tikka Masala", 239, "MEAT CURRIES", "Tandoori chicken tikka simmered in a rich spiced tomato gravy.", veg=False, spice=2),
     item("Kadai Chicken", 229, "MEAT CURRIES", "Chicken cooked with onion, bell pepper and traditional kadai spices.", veg=False, spice=2),
     item("Home-Style Chicken Curry", 219, "MEAT CURRIES", "Comforting Indian chicken curry cooked slowly with traditional spices.", veg=False),
@@ -208,13 +213,19 @@ items = [
          extra="A generous, inviting portion mounded high in the bowl — never looking small or thin."),
     item("Rajma Chawal", 195, "RICE", "North Indian kidney-bean curry served with steamed basmati rice.", hero=True),
     # ---------------- DUM BIRYANI ----------------
-    item("Vegetable Dum Biryani", 190, "BIRYANI", "Fragrant basmati rice, layered and slow-cooked with charred vegetables."),
-    item("Paneer Dum Biryani", 239, "BIRYANI", "Fragrant basmati rice, layered and slow-cooked with paneer."),
-    item("Chicken Dum Biryani", 259, "BIRYANI", "Fragrant basmati rice, layered and slow-cooked with tender chicken.", veg=False, hero=True),
-    item("Fish Dum Biryani", 269, "BIRYANI", "Fragrant basmati rice, layered and slow-cooked with tender fish.", veg=False),
+    item("Vegetable Dum Biryani", 190, "BIRYANI", "Fragrant basmati rice, layered and slow-cooked with charred vegetables.",
+         vessel="a traditional hammered copper handi pot with polished brass ring handles, resting on a round wooden coaster"),
+    item("Paneer Dum Biryani", 239, "BIRYANI", "Fragrant basmati rice, layered and slow-cooked with paneer.",
+         vessel="a traditional hammered copper handi pot with polished brass ring handles, resting on a round wooden coaster"),
+    item("Chicken Dum Biryani", 259, "BIRYANI", "Fragrant basmati rice, layered and slow-cooked with tender chicken.", veg=False, hero=True,
+         vessel="a traditional hammered copper handi pot with polished brass ring handles, resting on a round wooden coaster"),
+    item("Fish Dum Biryani", 269, "BIRYANI", "Fragrant basmati rice, layered and slow-cooked with tender fish.", veg=False,
+         vessel="a traditional hammered copper handi pot with polished brass ring handles, resting on a round wooden coaster"),
     # ---------------- SOMETHING SWEET ----------------
-    item("Hot Gulab Jamun", 85, "SWEETS", "Warm milk dumplings soaked in saffron-cardamom syrup."),
-    item("Gulab Jamun with Vanilla Ice Cream", 95, "SWEETS", "Warm gulab jamun with cold vanilla ice cream."),
+    item("Hot Gulab Jamun", 85, "SWEETS", "Warm milk dumplings soaked in saffron-cardamom syrup.",
+         extra="A portion of exactly two (2) gulab jamun dumplings, no fewer and no more."),
+    item("Gulab Jamun with Vanilla Ice Cream", 95, "SWEETS", "Warm gulab jamun with cold vanilla ice cream.",
+         extra="A portion of exactly two (2) gulab jamun dumplings alongside the ice cream, no fewer and no more."),
     item("Gajar Halwa", 110, "SWEETS", "Traditional warm carrot pudding cooked with milk, cardamom and nuts.", hero=True),
     item("Kheer", 90, "SWEETS", "Slow-cooked Indian rice pudding with cardamom and nuts."),
     # ---------------- CHAI & MOUNTAIN WARMERS ----------------
