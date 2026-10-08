@@ -106,10 +106,15 @@ def item(name, price, category, description, veg=True, jain=False, spice=0, hero
 
 
 TIKKA_PORTION = (
-    "A generous, tempting portion: exactly six large, generously sized "
-    "skewered pieces (never more than eight), arranged attractively "
-    "side by side so the portion looks substantial and inviting, a few "
-    "wisps of smoke still curling up from the char."
+    "A generous, tempting portion on a single skewer, threaded with EXACTLY "
+    "SIX (6) large cubes of the main ingredient and nothing else — no bell "
+    "pepper, no onion, no tomato pieces threaded on the skewer between them. "
+    "The six cubes sit directly adjacent to one another along the skewer so "
+    "they are trivially easy to count left to right: 1, 2, 3, 4, 5, 6 — no "
+    "fewer, no more, exactly six. Any vegetable garnish (pepper, onion, "
+    "lime) must be plated loose beside the skewer, never threaded onto it. "
+    "Arrange the six cubes attractively so the portion looks substantial "
+    "and inviting, with a few wisps of smoke still curling up from the char."
 )
 
 items = [
