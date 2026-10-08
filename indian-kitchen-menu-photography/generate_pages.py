@@ -319,7 +319,8 @@ CLOSING_PROMPT = (
 CATEGORIES = [
     ("BREAKFAST", "BREAKFAST IN THE MOUNTAINS", "PART ONE", "BR", "breakfast", None),
     ("WARMERS", "SAPA WARMERS", "PART TWO", "SW", "warmers", None),
-    ("SMALL PLATES", "SMALL PLATES & CHAAT", "PART FOUR", "SP", "small-plates", None),
+    ("SMALL PLATES", "SMALL PLATES & CHAAT", "PART THREE", "SP", "small-plates", None),
+    ("CHINESE", "CHINESE SPECIALS", "PART FOUR", "CN", "chinese", None),
     ("TANDOOR VEG", "FROM THE TANDOOR — VEGETARIAN", "PART FIVE", "TV", "tandoor-veg", None),
     ("TANDOOR NONVEG", "FROM THE TANDOOR — NON-VEGETARIAN", "PART SIX", "TN", "tandoor-nonveg", None),
     ("DALS", "OUR SIGNATURE DALS", "PART SEVEN", "DL", "dals", None),
@@ -332,7 +333,6 @@ CATEGORIES = [
     ("CHAI", "CHAI & MOUNTAIN WARMERS", "PART FOURTEEN", "CH", "chai", None),
     ("COLD DRINKS", "LASSI & COLD DRINKS", "PART FIFTEEN", "CD", "cold-drinks", None),
     ("ZERO PROOF", "SIGNATURE ZERO-PROOF DRINKS", "PART SIXTEEN", "ZP", "zero-proof", None),
-    ("CHINESE", "CHINESE SPECIALS", "PART SEVENTEEN", "CN", "chinese", None),
 ]
 
 BREAKFAST_TIME_NOTE = "Poha, omelette and Maggi are served 9:00 AM - 12:00 PM only."

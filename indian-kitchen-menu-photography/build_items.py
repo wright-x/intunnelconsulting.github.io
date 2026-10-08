@@ -219,7 +219,7 @@ items = [
          vessel="a traditional hammered copper handi pot with polished brass ring handles, resting on a round wooden coaster"),
     item("Chicken Dum Biryani", 259, "BIRYANI", "Fragrant basmati rice, layered and slow-cooked with tender chicken.", veg=False, hero=True,
          vessel="a traditional hammered copper handi pot with polished brass ring handles, resting on a round wooden coaster"),
-    item("Fish Dum Biryani", 269, "BIRYANI", "Fragrant basmati rice, layered and slow-cooked with tender fish.", veg=False,
+    item("Egg Dum Biryani", 199, "BIRYANI", "Fragrant basmati rice, layered and slow-cooked with spiced boiled eggs.", veg=False,
          vessel="a traditional hammered copper handi pot with polished brass ring handles, resting on a round wooden coaster"),
     # ---------------- SOMETHING SWEET ----------------
     item("Hot Gulab Jamun", 85, "SWEETS", "Warm milk dumplings soaked in saffron-cardamom syrup.",
@@ -251,6 +251,8 @@ items = [
     item("Gobi 65", 165, "CHINESE", "Crispy cauliflower tossed with curry leaves and South Indian spices.", spice=2),
     item("Chilli Paneer", 199, "CHINESE", "Cottage cheese tossed with peppers, onion and chilli sauce.", spice=2),
     item("Chilli Chicken", 220, "CHINESE", "Crispy chicken tossed in a bold Indo-Chinese chilli sauce.", veg=False, spice=2),
+    item("Chilli Fish", 229, "CHINESE", "Crispy fish tossed in a bold Indo-Chinese chilli sauce.", veg=False, spice=2),
+    item("Fish Manchurian", 235, "CHINESE", "Crispy fried fish tossed in a bold garlic-soy sauce.", veg=False, spice=1),
     item("Veg Manchurian (Dry)", 185, "CHINESE", "Crispy fried vegetable balls tossed in a bold garlic-soy sauce.", spice=1),
     item("Veg Manchurian (Gravy)", 195, "CHINESE", "Crispy vegetable balls simmered in a bold garlic-soy gravy.", spice=1),
     item("Hakka Noodles", 165, "CHINESE", "Stir-fried noodles with vegetables, garlic and soy."),
