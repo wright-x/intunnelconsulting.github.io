@@ -65,7 +65,7 @@ CATEGORY_GARNISH = {
     "BREAKFAST": "finished with a few fresh coriander leaves, with yoghurt and pickle served neatly in small side ramekins rather than on the plate itself",
     "WARMERS": "finished with a swirl of cream, a scatter of fresh coriander and one edible flower",
     "SMALL PLATES": "finished with fresh coriander and one edible flower, any chutney served neatly in a small side ramekin rather than painted on the plate",
-    "CHINESE": "finished with fresh coriander and spring onion, a generous, hearty, abundant portion mounded high on the plate",
+    "CHINESE": "finished with fresh coriander and spring onion, a generous, hearty, abundant portion mounded high on the plate. No edible flowers or petals anywhere on this dish — authentic Indo-Chinese garnish only (coriander, spring onion, sesame, chilli), never floral",
     "TANDOOR VEG": "finished with a scatter of pomegranate arils and fresh coriander, a lime wedge tucked beside it, a small side ramekin of vivid green mint chutney (NOT white yoghurt) served neatly rather than smeared on the plate, a few wisps of smoke still curling up from the char",
     "TANDOOR NONVEG": "finished with a scatter of pomegranate arils and fresh coriander, a lime wedge tucked beside it, a small side ramekin of vivid green mint chutney (NOT white yoghurt) served neatly rather than smeared on the plate, a few wisps of smoke still curling up from the char",
     "DALS": "finished with a swirl of cream, a generous pat of butter melting on top and fresh coriander, dramatic, clearly visible wisps of hot steam rising, a generous, hearty, abundant portion that fills the bowl",
@@ -123,7 +123,8 @@ TIKKA_PORTION = (
 items = [
     # ---------------- BREAKFAST (all-day parathas) ----------------
     item("Aloo Paratha", 115, "BREAKFAST", "Flaky whole-wheat paratha stuffed with spiced potato, served with yoghurt and pickle."),
-    item("Paneer Paratha", 145, "BREAKFAST", "Whole-wheat paratha generously filled with seasoned cottage cheese."),
+    item("Paneer Paratha", 145, "BREAKFAST", "Whole-wheat paratha generously filled with seasoned cottage cheese.",
+         extra="A single large paratha only — exactly one (1) piece on the plate, not stacked or doubled."),
     item("Chole Bhature", 185, "BREAKFAST", "Spiced chickpea curry with hot, fluffy bhature."),
     # ---------------- BREAKFAST (served 9:00 AM - 12:00 PM only) ----------------
     item("Poha", 105, "BREAKFAST", "Light flattened rice cooked with vegetables, peanuts, curry leaves and fresh lime."),
@@ -139,7 +140,7 @@ items = [
     # ---------------- SMALL PLATES & CHAAT ----------------
     item("Vegetable Samosa with Mint Chutney", 99, "SMALL PLATES", "Crisp pastry stuffed with spiced potato and peas."),
     item("Pani Puri Shots", 95, "SMALL PLATES", "Crispy puris with potato filling, chutneys and tangy flavoured waters.",
-         extra="A portion of exactly five (5) puris, no fewer and no more, arranged attractively."),
+         extra="A portion of exactly six (6) puris, no fewer and no more (never nine or more), arranged attractively in a tempting, appetizing presentation around a small bowl of green tangy water, styled to look as inviting and premium as a signature hero dish."),
     item("Aloo Tikki Chaat", 145, "SMALL PLATES", "Crispy potato patties with yoghurt and chutneys.", hero=True,
          extra="A portion of exactly two (2) potato patties, no fewer and no more, generously topped with yoghurt and chutneys."),
     item("Mix Vegetable Pakora", 149, "SMALL PLATES", "Crispy vegetable fritters served with mint chutney."),
