@@ -44,6 +44,7 @@ DRINK_STYLE_SUFFIX = (
 
 CATEGORY_VESSEL = {
     "BREAKFAST": "a plain white ceramic plate with a simple matte finish and a clean rim",
+    "SOUTH INDIAN": "a large oval plain white ceramic plate with a simple matte finish and a clean rim",
     "WARMERS": "a plain white ceramic soup bowl, wide and shallow with a simple rim — a proper restaurant soup bowl shape, NOT a teacup, NOT a mug, no handle",
     "SMALL PLATES": "a plain white ceramic plate with a simple matte finish and a clean rim",
     "CHINESE": "a plain white ceramic plate with a simple matte finish and a clean rim",
@@ -63,6 +64,7 @@ CATEGORY_VESSEL = {
 
 CATEGORY_GARNISH = {
     "BREAKFAST": "finished with a few fresh coriander leaves, with yoghurt and pickle served neatly in small side ramekins rather than on the plate itself",
+    "SOUTH INDIAN": "served with a small side ramekin of white coconut chutney and a small side ramekin of orange sambar, a few curry leaves and mustard seeds visible, golden-brown crisp texture on the dosa surface",
     "WARMERS": "finished with a swirl of cream, a scatter of fresh coriander and one edible flower",
     "SMALL PLATES": "finished with fresh coriander and one edible flower, any chutney served neatly in a small side ramekin rather than painted on the plate",
     "CHINESE": "finished with fresh coriander and spring onion, a generous, hearty, abundant portion mounded high on the plate. No edible flowers or petals anywhere on this dish — authentic Indo-Chinese garnish only (coriander, spring onion, sesame, chilli), never floral",
@@ -122,17 +124,31 @@ TIKKA_PORTION = (
 
 items = [
     # ---------------- BREAKFAST (all-day parathas) ----------------
-    item("Aloo Paratha", 115, "BREAKFAST", "Flaky whole-wheat paratha stuffed with spiced potato, served with yoghurt and pickle."),
+    item("Aloo Paratha", 115, "BREAKFAST", "Flaky whole-wheat paratha stuffed with spiced potato, served with yoghurt and pickle.",
+         extra="Natural, authentic home-style look — no edible flowers or decorative petals, just a light scatter of fresh coriander. Realistic, slightly imperfect char and texture, never looking artificial or overly staged."),
     item("Paneer Paratha", 145, "BREAKFAST", "Whole-wheat paratha generously filled with seasoned cottage cheese.",
-         extra="A single large paratha only — exactly one (1) piece on the plate, not stacked or doubled."),
+         extra="A single large paratha only — exactly one (1) piece on the plate, not stacked or doubled. Natural, authentic home-style look — no edible flowers or decorative petals, just a light scatter of fresh coriander. Realistic, slightly imperfect char and texture, never looking artificial or overly staged."),
     item("Chole Bhature", 185, "BREAKFAST", "Spiced chickpea curry with hot, fluffy bhature."),
     # ---------------- BREAKFAST (served 9:00 AM - 12:00 PM only) ----------------
     item("Poha", 105, "BREAKFAST", "Light flattened rice cooked with vegetables, peanuts, curry leaves and fresh lime."),
     item("Masala Omelette & Toast", 120, "BREAKFAST", "Indian-style omelette with onion, tomato, coriander and green chilli.", veg=False),
-    item("Masala Maggi", 105, "BREAKFAST", "Classic Indian-style masala instant noodles.",
+    item("Masala Maggi", 125, "BREAKFAST", "Classic Indian-style masala instant noodles.",
          extra="No sesame seeds anywhere on the dish."),
-    item("Vegetable Masala Maggi", 125, "BREAKFAST", "Masala Maggi cooked with fresh vegetables."),
-    item("Cheese & Vegetable Maggi", 145, "BREAKFAST", "Hot masala noodles with vegetables and melted cheese."),
+    item("Vegetable Masala Maggi", 140, "BREAKFAST", "Masala Maggi cooked with fresh vegetables."),
+    item("Cheese & Vegetable Maggi", 170, "BREAKFAST", "Hot masala noodles with vegetables and melted cheese."),
+    item("Egg Maggi", 170, "BREAKFAST", "Hot masala noodles cooked with scrambled egg.", veg=False),
+    # ---------------- SOUTH INDIAN CLASSICS ----------------
+    item("Plain Dosa", 125, "SOUTH INDIAN", "Thin, crisp rice-and-lentil dosa with coconut chutney and sambar.", jain=True),
+    item("Masala Dosa", 150, "SOUTH INDIAN", "Crisp dosa filled with seasoned potato masala.", spice=1),
+    item("Butter Masala Dosa", 165, "SOUTH INDIAN", "Golden dosa with potato masala, finished with butter.", spice=1,
+         extra="A visible pat of butter melting on top of the folded dosa."),
+    item("Mysore Masala Dosa", 175, "SOUTH INDIAN", "Crisp dosa with spicy red chutney and potato masala.", spice=3,
+         extra="A visible layer of vivid red-orange Mysore chutney spread inside the dosa before it's folded."),
+    item("Cheese Masala Dosa", 190, "SOUTH INDIAN", "Crisp dosa filled with potato masala and melted cheese.", spice=1,
+         extra="Melted cheese visibly oozing from the folded dosa."),
+    item("Idli (2 pieces)", 110, "SOUTH INDIAN", "Two soft steamed rice cakes with coconut chutney and sambar.", jain=True,
+         extra="A portion of exactly two (2) idli, no fewer and no more, soft and pillowy white."),
+    item("Mix Vegetable Uttapam", 149, "SOUTH INDIAN", "Rice-and-lentil pancake topped with fresh mixed vegetables.", spice=1),
     # ---------------- SAPA WARMERS ----------------
     item("Tomato Dhaniya Shorba", 95, "WARMERS", "Slow-cooked tomato soup finished with coriander and warming Indian spices.", jain=True),
     item("Vegetable Manchow Soup", 105, "WARMERS", "Hot Indo-Chinese vegetable soup with garlic, chilli and crispy noodles.", spice=1),
@@ -149,7 +165,7 @@ items = [
     item("Paneer Tikka", 220, "TANDOOR VEG", "Paneer marinated in yoghurt and aromatic spices, grilled in the tandoor.", hero=True,
          extra=TIKKA_PORTION),
     item("Achari Paneer Tikka", 220, "TANDOOR VEG", "Paneer marinated with traditional Indian pickling spices.", spice=1,
-         extra=TIKKA_PORTION),
+         extra=TIKKA_PORTION + " The marinade is a vivid brick-red achari (pickling-spice) color — deep red-orange all over the paneer, not pale or golden, true to its name."),
     item("Mushroom Tikka", 190, "TANDOOR VEG", "Yoghurt-marinated mushrooms grilled until smoky and tender.",
          extra=TIKKA_PORTION),
     item("Vegetarian Tandoori Platter", 349, "TANDOOR VEG", "Paneer tikka, mushroom tikka, tandoori aloo and assorted vegetable kebabs.",
@@ -206,10 +222,12 @@ items = [
     item("Stuffed Paneer Naan", 145, "BREADS", "Tandoor-baked naan stuffed with seasoned cottage cheese.",
          extra="Traditional naan shape: a wide teardrop, elongated oval that tapers to a rounder point at one end — not a perfectly round or circular bread."),
     # ---------------- RICE & COMFORT BOWLS ----------------
-    item("Steamed Basmati Rice", 85, "RICE", "Fluffy steamed basmati rice."),
-    item("Jeera Rice", 99, "RICE", "Basmati rice tempered with toasted cumin."),
+    item("Steamed Basmati Rice", 85, "RICE", "Fluffy steamed basmati rice.",
+         extra="Long-grain basmati rice, each grain clearly long, slender and separate (never short, stubby or mushy-looking) — a generous, tall, premium mound that fills the bowl, with visible steam rising."),
+    item("Jeera Rice", 99, "RICE", "Basmati rice tempered with toasted cumin.",
+         extra="Long-grain basmati rice, each grain clearly long, slender and separate (never short, stubby or mushy-looking) — a generous, tall, premium mound that fills the bowl, with visible steam rising and whole cumin seeds visible."),
     item("Dal Khichdi", 180, "RICE", "Basmati rice and lentils cooked together into warming Indian comfort food.",
-         extra="A generous, hearty, inviting portion mounded high in the bowl — never looking small or thin."),
+         extra="A rich, glossy, deeply tempting presentation — a generous pat of melting ghee/butter on top, a swirl of cream, dramatic visible steam, finished beautifully like a signature hero dish, not a plain bowl of mush. A generous, hearty, inviting portion mounded high in the bowl — never looking small, thin or unappetising."),
     item("Curd Rice & Pickle", 179, "RICE", "Cooling yoghurt rice tempered with mustard seeds and curry leaves.",
          extra="A generous, inviting portion mounded high in the bowl — never looking small or thin."),
     item("Rajma Chawal", 195, "RICE", "North Indian kidney-bean curry served with steamed basmati rice.", hero=True),
@@ -236,8 +254,10 @@ items = [
     item("Kesar Badam Milk", 95, "CHAI", "Warm saffron milk with almond and cardamom."),
     item("Hot Chocolate", 90, "CHAI", "Rich warm hot chocolate."),
     # ---------------- LASSI & COLD DRINKS ----------------
-    item("Traditional Sweet Lassi", 105, "COLD DRINKS", "Traditional sweetened yoghurt drink."),
-    item("Mango Lassi", 110, "COLD DRINKS", "Thick mango and yoghurt drink."),
+    item("Traditional Sweet Lassi", 105, "COLD DRINKS", "Traditional sweetened yoghurt drink.",
+         vessel="a tall clear drinking glass (plain glass only — never a metal or steel cup/tumbler)"),
+    item("Mango Lassi", 110, "COLD DRINKS", "Thick mango and yoghurt drink.",
+         vessel="a tall clear drinking glass (plain glass only — never a metal or steel cup/tumbler)"),
     item("Masala Chaas", 85, "COLD DRINKS", "Chilled spiced buttermilk."),
     item("Fresh Lime Soda", 75, "COLD DRINKS", "Fresh lime with soda, sweet or salted."),
     item("Lemon Iced Tea", 80, "COLD DRINKS", "Chilled lemon iced tea."),

@@ -99,20 +99,38 @@ ICON_SYSTEM = (
     "items with spice level zero get no chilli icons at all.\n\n"
 )
 
-FOOTER = (
-    "At the very bottom of the page, centered, a single small gold "
-    "line-icon of a lotus flower sitting directly above a short plain "
-    "horizontal bar (the brand mark, no cup or bowl shape beneath it), "
-    "sitting in a gap within a thin gold horizontal rule spanning the "
-    "page width. Do "
-    "not render any full logo lockup, brand name, or tagline elsewhere on "
-    "this page.\n\n"
-)
+TOTAL_PAGES = 43
+
+
+def footer(page_num):
+    return (
+        "At the very bottom of the page, centered, a single small gold "
+        "line-icon of a lotus flower sitting directly above a short plain "
+        "horizontal bar (the brand mark, no cup or bowl shape beneath it), "
+        "sitting in a gap within a thin gold horizontal rule spanning the "
+        "page width. Below that rule, a slim footer row with three small "
+        "elements on one line: at the far left, a small green-outlined "
+        "circular icon of a single leaf immediately followed by small gold "
+        "text reading 'VEG = Vegetarian'; centered, small gold italic text "
+        "reading 'VAT will be charged extra'; at the far right, small gold "
+        f"text reading '{page_num}/{TOTAL_PAGES}'. Do "
+        "not render any full logo lockup, brand name, or tagline elsewhere on "
+        "this page.\n\n"
+    )
+
+
+def footer_render_lines(page_num):
+    return (
+        f"Footer left: 'VEG = Vegetarian' (with small leaf icon)\n"
+        f"Footer center: 'VAT will be charged extra'\n"
+        f"Footer right page number: '{page_num}/{TOTAL_PAGES}'\n"
+    )
+
 
 RENDER_DISCIPLINE = (
     "Render ONLY the text explicitly listed below, exactly as written, "
     "nowhere else on the page — no other words, numbers, letters, "
-    "measurements, percentages, page numbers, or watermark text of any "
+    "measurements, percentages, or watermark text of any "
     "kind. Double-check every letter of the section title before "
     "finalizing — do not drop, merge, or duplicate any letter or word.\n\n"
 )
@@ -123,7 +141,7 @@ def title_spelling(title):
     return "-".join(letters), len(letters)
 
 
-def build_hero_prompt(name, tag_prefix, tag_num, title, kicker):
+def build_hero_prompt(name, tag_prefix, tag_num, title, kicker, page_num):
     it = ITEMS_BY_NAME[name]
     spelled, n_letters = title_spelling(title)
     veg_txt = "yes" if it["veg"] else "no"
@@ -159,15 +177,16 @@ def build_hero_prompt(name, tag_prefix, tag_num, title, kicker):
         "gold-outlined pill tag, the dish name in large gold display "
         "serif, a short thin gold hairline rule, the description in "
         "cream italic serif, then the price in large gold serif.\n\n" +
-        ICON_SYSTEM + FOOTER + RENDER_DISCIPLINE +
+        ICON_SYSTEM + footer(page_num) + RENDER_DISCIPLINE +
         f"Section title: '{title}'\nKicker: '{kicker}'\nBadge: 'CHEF'S RECOMMENDED'\n"
         f"Dish — tag '{tag_prefix} {tag_num:02d}', name '{name}', "
         f"description '{it['description']}', price '{it['price_k']}K', "
-        f"vegetarian: {veg_txt}, jain-adaptable: {jain_txt}, spice level: {it['spice']} (0-3)"
+        f"vegetarian: {veg_txt}, jain-adaptable: {jain_txt}, spice level: {it['spice']} (0-3)\n" +
+        footer_render_lines(page_num)
     )
 
 
-def build_section_prompt(title, kicker, tag_prefix, dish_names, start_tag, note=None):
+def build_section_prompt(title, kicker, tag_prefix, dish_names, start_tag, page_num, note=None):
     n = len(dish_names)
     spelled, n_letters = title_spelling(title)
     lines = []
@@ -249,9 +268,10 @@ def build_section_prompt(title, kicker, tag_prefix, dish_names, start_tag, note=
         (f"Below the dish text blocks, a single small line of cream "
          f"italic serif text reading exactly '{note}', appearing once "
          "only.\n\n" if note else "") +
-        ICON_SYSTEM + FOOTER + RENDER_DISCIPLINE +
+        ICON_SYSTEM + footer(page_num) + RENDER_DISCIPLINE +
         f"Section title: '{title}'\nKicker: '{kicker}'\n{dish_text_block}" +
-        (f"\nFooter note: '{note}'" if note else "")
+        (f"\nFooter note: '{note}'" if note else "") +
+        "\n" + footer_render_lines(page_num)
     )
 
 
@@ -289,13 +309,14 @@ COVER_PROMPT = (
     "prepared. Warmly served. Made for the mountains.'"
 )
 
-CLOSING_PROMPT = (
+def closing_prompt(page_num):
+    return (
     BACKGROUND +
     "This is a text-only closing information page, no food photography "
     "anywhere on it. Layout: the words 'THANK YOU', stacked vertically "
     "down the left edge of the page in large gold display serif. To the "
     "right, a vertically centered column with generous spacing containing "
-    "three text blocks in order, each with a short gold serif heading "
+    "four text blocks in order, each with a short gold serif heading "
     "followed by cream italic serif body text beneath it:\n"
     "Block 1 heading 'SPICE YOUR WAY', body 'Most curries can be prepared "
     "mild, medium, or Indian hot. Please tell our team your preference "
@@ -303,36 +324,44 @@ CLOSING_PROMPT = (
     "Block 2 heading 'VEGETARIAN & JAIN DINING', body 'A wide selection "
     "of vegetarian dishes is available. Selected dishes can be prepared "
     "without onion and garlic when requested.'\n"
-    "Block 3: a thin gold hairline rule, then centered beneath it in "
+    "Block 3 heading 'GET IN TOUCH', body two lines: "
+    "'indiankitchensapa@gmail.com' then on its own line "
+    "'+84 034 818 0134'\n"
+    "Block 4: a thin gold hairline rule, then centered beneath it in "
     "small gold tracked-out capitals: 'FROM INDIA, WITH WARMTH. FROM "
     "SAPA, WITH A VIEW.'\n\n" +
-    FOOTER + RENDER_DISCIPLINE +
+    footer(page_num) + RENDER_DISCIPLINE +
     "Heading 1: 'SPICE YOUR WAY'\nBody 1: 'Most curries can be prepared "
     "mild, medium, or Indian hot. Please tell our team your preference "
     "when ordering.'\nHeading 2: 'VEGETARIAN & JAIN DINING'\nBody 2: 'A "
     "wide selection of vegetarian dishes is available. Selected dishes "
-    "can be prepared without onion and garlic when requested.'\nClosing "
+    "can be prepared without onion and garlic when requested.'\nHeading "
+    "3: 'GET IN TOUCH'\nBody 3 line 1: 'indiankitchensapa@gmail.com'\n"
+    "Body 3 line 2: '+84 034 818 0134'\nClosing "
     "line: 'FROM INDIA, WITH WARMTH. FROM SAPA, WITH A VIEW.'\nStacked "
-    "title: 'THANK YOU'"
+    "title: 'THANK YOU'\nRender the email address and phone number "
+    "exactly once each, exactly as written, with no extra characters.\n" +
+    footer_render_lines(page_num)
 )
 
 CATEGORIES = [
     ("BREAKFAST", "BREAKFAST IN THE MOUNTAINS", "PART ONE", "BR", "breakfast", None),
-    ("WARMERS", "SAPA WARMERS", "PART TWO", "SW", "warmers", None),
-    ("SMALL PLATES", "SMALL PLATES & CHAAT", "PART THREE", "SP", "small-plates", None),
-    ("CHINESE", "CHINESE SPECIALS", "PART FOUR", "CN", "chinese", None),
-    ("TANDOOR VEG", "FROM THE TANDOOR — VEGETARIAN", "PART FIVE", "TV", "tandoor-veg", None),
-    ("TANDOOR NONVEG", "FROM THE TANDOOR — NON-VEGETARIAN", "PART SIX", "TN", "tandoor-nonveg", None),
-    ("DALS", "OUR SIGNATURE DALS", "PART SEVEN", "DL", "dals", None),
-    ("VEG CURRIES", "VEGETARIAN CURRIES", "PART EIGHT", "VC", "veg-curries", None),
-    ("MEAT CURRIES", "CHICKEN & MEAT CURRIES", "PART NINE", "MC", "meat-curries", None),
-    ("BREADS", "BREADS FROM THE TANDOOR", "PART TEN", "BD", "breads", None),
-    ("RICE", "RICE & COMFORT BOWLS", "PART ELEVEN", "RC", "rice", None),
-    ("BIRYANI", "DUM BIRYANI", "PART TWELVE", "DB", "biryani", "All biryanis served with raita."),
-    ("SWEETS", "SOMETHING SWEET", "PART THIRTEEN", "SS", "sweets", None),
-    ("CHAI", "CHAI & MOUNTAIN WARMERS", "PART FOURTEEN", "CH", "chai", None),
-    ("COLD DRINKS", "LASSI & COLD DRINKS", "PART FIFTEEN", "CD", "cold-drinks", None),
-    ("ZERO PROOF", "SIGNATURE ZERO-PROOF DRINKS", "PART SIXTEEN", "ZP", "zero-proof", None),
+    ("SOUTH INDIAN", "SOUTH INDIAN CLASSICS", "PART TWO", "SI", "south-indian", None),
+    ("WARMERS", "SAPA WARMERS", "PART THREE", "SW", "warmers", None),
+    ("SMALL PLATES", "SMALL PLATES & CHAAT", "PART FOUR", "SP", "small-plates", None),
+    ("CHINESE", "CHINESE SPECIALS", "PART FIVE", "CN", "chinese", None),
+    ("TANDOOR VEG", "FROM THE TANDOOR — VEGETARIAN", "PART SIX", "TV", "tandoor-veg", None),
+    ("TANDOOR NONVEG", "FROM THE TANDOOR — NON-VEGETARIAN", "PART SEVEN", "TN", "tandoor-nonveg", None),
+    ("DALS", "OUR SIGNATURE DALS", "PART EIGHT", "DL", "dals", None),
+    ("VEG CURRIES", "VEGETARIAN CURRIES", "PART NINE", "VC", "veg-curries", None),
+    ("MEAT CURRIES", "CHICKEN & MEAT CURRIES", "PART TEN", "MC", "meat-curries", None),
+    ("BREADS", "BREADS FROM THE TANDOOR", "PART ELEVEN", "BD", "breads", None),
+    ("RICE", "RICE & COMFORT BOWLS", "PART TWELVE", "RC", "rice", None),
+    ("BIRYANI", "DUM BIRYANI", "PART THIRTEEN", "DB", "biryani", "All biryanis served with raita."),
+    ("SWEETS", "SOMETHING SWEET", "PART FOURTEEN", "SS", "sweets", None),
+    ("CHAI", "CHAI & MOUNTAIN WARMERS", "PART FIFTEEN", "CH", "chai", None),
+    ("COLD DRINKS", "LASSI & COLD DRINKS", "PART SIXTEEN", "CD", "cold-drinks", None),
+    ("ZERO PROOF", "SIGNATURE ZERO-PROOF DRINKS", "PART SEVENTEEN", "ZP", "zero-proof", None),
 ]
 
 BREAKFAST_TIME_NOTE = "Poha, omelette and Maggi are served 9:00 AM - 12:00 PM only."
@@ -386,6 +415,12 @@ for cat_key, title, kicker, tag_prefix, slug_prefix, note in CATEGORIES:
         })
 
 
+PAGE_NUMBER = {"cover": 1}
+for _i, _p in enumerate(PAGES, start=2):
+    PAGE_NUMBER[_p["slug"]] = _i
+PAGE_NUMBER["closing"] = len(PAGES) + 2
+
+
 def gen(slug, prompt, ref_paths):
     filepath = os.path.join(PAGES_OUT, f"{slug}.png")
     print(f"Generating {slug}...", flush=True)
@@ -409,16 +444,16 @@ def main():
         gen("cover", COVER_PROMPT, [os.path.join(REFS, "sapa-logo.png")])
 
     if not only or "closing" in only:
-        gen("closing", CLOSING_PROMPT, [])
+        gen("closing", closing_prompt(PAGE_NUMBER["closing"]), [])
 
     for p in PAGES:
         if only and p["slug"] not in only:
             continue
         if p["kind"] == "hero":
-            prompt = build_hero_prompt(p["name"], p["tag_prefix"], p["tag_num"], p["title"], p["kicker"])
+            prompt = build_hero_prompt(p["name"], p["tag_prefix"], p["tag_num"], p["title"], p["kicker"], PAGE_NUMBER[p["slug"]])
             refs = [os.path.join(OUT, f"{ITEMS_BY_NAME[p['name']]['slug']}.png")]
         else:
-            prompt = build_section_prompt(p["title"], p["kicker"], p["tag_prefix"], p["names"], p["start_tag"], p.get("note"))
+            prompt = build_section_prompt(p["title"], p["kicker"], p["tag_prefix"], p["names"], p["start_tag"], PAGE_NUMBER[p["slug"]], p.get("note"))
             refs = [os.path.join(OUT, f"{ITEMS_BY_NAME[n]['slug']}.png") for n in p["names"]]
         gen(p["slug"], prompt, refs)
 
