@@ -132,7 +132,7 @@ items = [
     # ---------------- BREAKFAST (served 9:00 AM - 12:00 PM only) ----------------
     item("Poha", 105, "BREAKFAST", "Light flattened rice cooked with vegetables, peanuts, curry leaves and fresh lime."),
     item("Masala Omelette & Toast", 120, "BREAKFAST", "Indian-style omelette with onion, tomato, coriander and green chilli.", veg=False,
-         extra="Natural, realistic home-cooked egg texture — slightly uneven, authentic fold, visible flecks of onion/tomato/chilli cooked into the egg, a bit of natural browning on the surface. Never looking smooth, glossy, plastic, or artificially perfect — must read as a real photograph of real food, not a CGI render."),
+         extra="This must look like an actual phone/DSLR snapshot of a real cooked omelette on a real restaurant plate, NOT a styled stock-photo render. The omelette is cooked FLAT and open-faced (not neatly folded into a clean symmetric crescent/half-moon shape) — a loose, rustic, slightly messy fold or simply laid flat, with uneven, irregular edges (some ragged, some curled), patchy uneven browning (some spots darker, some paler, not a uniform golden tone), and the onion/tomato/coriander/chilli bits visibly a bit messy and unevenly scattered rather than perfectly arranged. Garnish on top is a small rough scatter of chopped coriander, NOT one perfect centered coriander sprig placed like a studio prop. The surface should look slightly wet/eggy in places, not uniformly glossy. Overall it must look like genuine imperfect home-style Indian street-food cooking, not AI-generated or overly symmetric. Shot on a pure seamless white studio background only — no wooden table, no napkin, no cutlery, no window, no lifestyle props of any kind, matching the plain white-backdrop studio style of every other dish photo in this series."),
     item("Masala Maggi", 125, "BREAKFAST", "Classic Indian-style masala instant noodles.",
          extra="No sesame seeds anywhere on the dish."),
     item("Vegetable Masala Maggi", 140, "BREAKFAST", "Masala Maggi cooked with fresh vegetables."),
@@ -157,7 +157,7 @@ items = [
     item("Chicken Shorba", 120, "WARMERS", "Comforting Indian chicken broth with ginger, coriander and aromatic spices.", veg=False),
     # ---------------- SMALL PLATES & CHAAT ----------------
     item("Vegetable Samosa with Mint Chutney", 99, "SMALL PLATES", "Crisp pastry stuffed with spiced potato and peas.",
-         extra="A portion of exactly two (2) samosas, no fewer and no more."),
+         extra="A portion of exactly two (2) samosas, no fewer and no more, and both samosas shown FULL and WHOLE, completely uncut and unopened — never slice, cut in half, or break open either samosa to reveal the filling inside. Both are intact sealed triangular pastry shells, sitting whole on the plate."),
     item("Pani Puri Shots", 95, "SMALL PLATES", "Crispy puris with potato filling, chutneys and tangy flavoured waters.",
          extra="A portion of exactly five (5) puris, no fewer and no more (count them: 1, 2, 3, 4, 5 — never six, never seven, never more), arranged attractively in a tempting, appetizing presentation around a small bowl of green tangy water. Shot on a pure seamless white studio background only — no wooden table, no clay pots, no mint plant, no napkin, no lifestyle props of any kind, matching the plain white-backdrop studio style of every other dish photo in this series."),
     item("Aloo Tikki Chaat", 145, "SMALL PLATES", "Crispy potato patties with yoghurt and chutneys.", hero=True,
