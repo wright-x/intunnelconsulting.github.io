@@ -141,11 +141,23 @@ def title_spelling(title):
     return "-".join(letters), len(letters)
 
 
+HERO_VISIBILITY_OVERRIDE = {
+    "Daal Bukhara": (
+        "The dish must be at least 90% visible within the page — only the "
+        "very edge of the pot's far rim may bleed off the right side, "
+        "never a third or more of the pot. Scale and position it so "
+        "nearly the entire balti bowl, both handles, and its contents "
+        "are clearly in frame."
+    ),
+}
+
+
 def build_hero_prompt(name, tag_prefix, tag_num, title, kicker, page_num):
     it = ITEMS_BY_NAME[name]
     spelled, n_letters = title_spelling(title)
     veg_txt = "yes" if it["veg"] else "no"
     jain_txt = "yes" if it.get("jain") else "no"
+    visibility_note = HERO_VISIBILITY_OVERRIDE.get(name, "")
     return (
         BACKGROUND +
         "One single dish, cut out cleanly from its reference photo with no "
@@ -159,7 +171,7 @@ def build_hero_prompt(name, tag_prefix, tag_num, title, kicker, page_num):
         "three-quarter camera angle looking down as the page lighting, "
         "casting one soft diffuse elliptical shadow toward the lower "
         "right, tilted only a few degrees, never perfectly square. "
-        "Generous empty burgundy space to its left for the text block.\n\n"
+        f"Generous empty burgundy space to its left for the text block. {visibility_note}\n\n"
         "Props: a small scattering of whole spices near the bottom left "
         "of the page resting directly on the burgundy — one star anise, a "
         "few green cardamom pods, a few black peppercorns. No cutlery, no "
