@@ -99,7 +99,7 @@ ICON_SYSTEM = (
     "items with spice level zero get no chilli icons at all.\n\n"
 )
 
-TOTAL_PAGES = 43
+TOTAL_PAGES = 44
 
 
 def footer(page_num):
@@ -313,12 +313,16 @@ COVER_PROMPT = (
     "mountains.' This tagline sentence must appear exactly ONCE on the "
     "entire page — never repeated a second time anywhere else, never "
     "printed twice, never duplicated above, below, or overlapping "
-    "itself. No photograph of food anywhere on this page, no other "
-    "text, no other graphic elements, no watermark, no page number.\n\n"
+    "itself. Directly beneath that tagline, in even smaller plain cream "
+    "italic serif text, one more line reading exactly 'A 3% surcharge "
+    "applies to credit card payments.' — this line also appears exactly "
+    "ONCE, never duplicated. No photograph of food anywhere on this "
+    "page, no other text, no other graphic elements, no watermark, no "
+    "page number.\n\n"
     "Render ONLY this exact text, nowhere else, and each line exactly "
     "once: the reproduced logo lockup exactly as in the reference image "
-    "(recolored gold), and, appearing a single time only, 'Freshly "
-    "prepared. Warmly served. Made for the mountains.'"
+    "(recolored gold), 'Freshly prepared. Warmly served. Made for the "
+    "mountains.', and 'A 3% surcharge applies to credit card payments.'"
 )
 
 def closing_prompt(page_num):
@@ -341,7 +345,10 @@ def closing_prompt(page_num):
     "'+84 034 818 0134'\n"
     "Block 4: a thin gold hairline rule, then centered beneath it in "
     "small gold tracked-out capitals: 'FROM INDIA, WITH WARMTH. FROM "
-    "SAPA, WITH A VIEW.'\n\n" +
+    "SAPA, WITH A VIEW.', then directly beneath that in small plain "
+    "cream italic serif text, one more line reading exactly 'A 3% "
+    "surcharge applies to credit card payments.' — this line appears "
+    "exactly ONCE, never duplicated.\n\n" +
     footer(page_num) + RENDER_DISCIPLINE +
     "Heading 1: 'SPICE YOUR WAY'\nBody 1: 'Most curries can be prepared "
     "mild, medium, or Indian hot. Please tell our team your preference "
@@ -350,11 +357,104 @@ def closing_prompt(page_num):
     "can be prepared without onion and garlic when requested.'\nHeading "
     "3: 'GET IN TOUCH'\nBody 3 line 1: 'indiankitchensapa@gmail.com'\n"
     "Body 3 line 2: '+84 034 818 0134'\nClosing "
-    "line: 'FROM INDIA, WITH WARMTH. FROM SAPA, WITH A VIEW.'\nStacked "
+    "line: 'FROM INDIA, WITH WARMTH. FROM SAPA, WITH A VIEW.'\nSurcharge "
+    "note: 'A 3% surcharge applies to credit card payments.'\nStacked "
     "title: 'THANK YOU'\nRender the email address and phone number "
     "exactly once each, exactly as written, with no extra characters.\n" +
     footer_render_lines(page_num)
 )
+
+
+def spirits_prompt(page_num):
+    title = "SPIRITS, WINES & BEERS"
+    kicker = "PART EIGHTEEN"
+    spelled, n_letters = title_spelling(title)
+    return (
+        BACKGROUND +
+        "This is a text-only pricing list page, no food or drink "
+        "photography, no cutout images, no glassware illustrations of "
+        "any kind anywhere on it.\n\n"
+        f"Layout: the words '{title}', spelled exactly {spelled} "
+        f"({n_letters} letters, double-check every letter before "
+        "finalizing — do not drop, merge, or duplicate any letter or "
+        "word), set very large in gold, stacked vertically down the "
+        "left edge of the page. Beside that stacked title, at the very "
+        f"top, a single short line of small gold text rotated "
+        f"vertically reading exactly '{kicker}' and nothing else, "
+        "appearing exactly once on the page.\n\n"
+        "To the right of the title, a clean two-column price list "
+        "filling the rest of the page: each column heading in gold "
+        "tracked-out serif capitals with a thin gold hairline rule "
+        "beneath it, and each item below it as one line in cream serif "
+        "with the item name on the left and its price in gold serif "
+        "aligned to the right, generous line spacing between items and "
+        "between sections, no table borders or boxes.\n\n"
+        "LEFT COLUMN, top to bottom, in this exact order:\n"
+        "Heading 'WHISKY'\n"
+        "  Johnnie Walker Red Label — 130K (30ml) / 240K (60ml)\n"
+        "  Johnnie Walker Black Label — 160K / 290K (60ml)\n"
+        "  Jameson — 140K (30ml) / 250K (60ml)\n"
+        "  Jack Daniel's — 150K (30ml) / 270K (60ml)\n"
+        "  Glenfiddich 12 Years — 280K (30ml) / 500K (60ml)\n"
+        "Heading 'GIN & TEQUILA'\n"
+        "  Bombay Sapphire — 160K (30ml) / 290K (60ml)\n"
+        "  Jose Cuervo Gold — 130K (30ml) / 230K (60ml)\n"
+        "Heading 'RUM'\n"
+        "  Bacardi — 120K (30ml) / 200K (60ml)\n"
+        "  Captain Morgan — 120K (30ml) / 200K (60ml)\n"
+        "Heading 'VODKA'\n"
+        "  Smirnoff — 120K (30ml) / 200K (60ml)\n"
+        "  Absolut — 140K (30ml) / 250K (60ml)\n"
+        "  Grey Goose — 250K (30ml) / 450K (60ml)\n\n"
+        "RIGHT COLUMN, top to bottom, in this exact order:\n"
+        "Heading 'WINES'\n"
+        "  Red Wine (Glass) — 150K\n"
+        "  White Wine (Glass) — 150K\n"
+        "Heading 'BEERS'\n"
+        "  Red Saigon Beer — 85K\n"
+        "  Green Saigon Beer — 95K\n"
+        "  Heineken — 100K\n"
+        "  Budweiser — 100K\n"
+        "  Pale Ale — 119K\n"
+        "  Good Times — 139K\n\n"
+        "The right column ends well above the bottom of the page, "
+        "leaving generous empty burgundy space beneath it — never "
+        "stretch or pad the right column to match the left column's "
+        "height.\n\n"
+        "Props: a small scattering of whole spices near the bottom "
+        "left of the page resting directly on the burgundy — one star "
+        "anise, a few green cardamom pods, a few black peppercorns.\n\n" +
+        footer(page_num) + RENDER_DISCIPLINE +
+        f"Section title: '{title}'\nKicker: '{kicker}'\n"
+        "Left column heading 1: 'WHISKY'\n"
+        "  Johnnie Walker Red Label — 130K (30ml) / 240K (60ml)\n"
+        "  Johnnie Walker Black Label — 160K (30ml) / 290K (60ml)\n"
+        "  Jameson — 140K (30ml) / 250K (60ml)\n"
+        "  Jack Daniel's — 150K (30ml) / 270K (60ml)\n"
+        "  Glenfiddich 12 Years — 280K (30ml) / 500K (60ml)\n"
+        "Left column heading 2: 'GIN & TEQUILA'\n"
+        "  Bombay Sapphire — 160K (30ml) / 290K (60ml)\n"
+        "  Jose Cuervo Gold — 130K (30ml) / 230K (60ml)\n"
+        "Left column heading 3: 'RUM'\n"
+        "  Bacardi — 120K (30ml) / 200K (60ml)\n"
+        "  Captain Morgan — 120K (30ml) / 200K (60ml)\n"
+        "Left column heading 4: 'VODKA'\n"
+        "  Smirnoff — 120K (30ml) / 200K (60ml)\n"
+        "  Absolut — 140K (30ml) / 250K (60ml)\n"
+        "  Grey Goose — 250K (30ml) / 450K (60ml)\n"
+        "Right column heading 1: 'WINES'\n"
+        "  Red Wine (Glass) — 150K\n"
+        "  White Wine (Glass) — 150K\n"
+        "Right column heading 2: 'BEERS'\n"
+        "  Red Saigon Beer — 85K\n"
+        "  Green Saigon Beer — 95K\n"
+        "  Heineken — 100K\n"
+        "  Budweiser — 100K\n"
+        "  Pale Ale — 119K\n"
+        "  Good Times — 139K\n" +
+        footer_render_lines(page_num)
+    )
+
 
 CATEGORIES = [
     ("BREAKFAST", "BREAKFAST IN THE MOUNTAINS", "PART ONE", "BR", "breakfast", None),
@@ -427,6 +527,9 @@ for cat_key, title, kicker, tag_prefix, slug_prefix, note in CATEGORIES:
         })
 
 
+PAGES.append({"slug": "spirits-1", "kind": "list", "title": "SPIRITS, WINES & BEERS", "kicker": "PART EIGHTEEN"})
+
+
 PAGE_NUMBER = {"cover": 1}
 for _i, _p in enumerate(PAGES, start=2):
     PAGE_NUMBER[_p["slug"]] = _i
@@ -464,6 +567,9 @@ def main():
         if p["kind"] == "hero":
             prompt = build_hero_prompt(p["name"], p["tag_prefix"], p["tag_num"], p["title"], p["kicker"], PAGE_NUMBER[p["slug"]])
             refs = [os.path.join(OUT, f"{ITEMS_BY_NAME[p['name']]['slug']}.png")]
+        elif p["kind"] == "list":
+            prompt = spirits_prompt(PAGE_NUMBER[p["slug"]])
+            refs = []
         else:
             prompt = build_section_prompt(p["title"], p["kicker"], p["tag_prefix"], p["names"], p["start_tag"], PAGE_NUMBER[p["slug"]], p.get("note"))
             refs = [os.path.join(OUT, f"{ITEMS_BY_NAME[n]['slug']}.png") for n in p["names"]]
