@@ -480,18 +480,6 @@
     "prompt": "A premium editorial food photograph of Kadai Paneer: Paneer with onions and bell peppers in aromatic kadai masala. Presented in/on a plain white ceramic bowl with a simple matte finish, finished with a swirl of cream, toasted nuts and fresh coriander, dramatic, clearly visible wisps of hot steam rising, a generous, hearty, abundant portion that fills the bowl. Ultra-premium, fine-dining editorial food photography — thoughtful, confident plating, everything composed on the ONE plate (no side cups, no extra dishes, no props scattered around it) with intentional asymmetry, height and texture contrast, a few deliberate garnishes (fresh herbs, one or two edible flowers, toasted nuts) placed like a chef would place them, never scattered randomly. Absolutely no painted sauce swooshes, smears, purée brushstrokes, or dragged dots of sauce anywhere on the plate or bowl — any chutney, yoghurt or dip is served neatly spooned into a small side ramekin or quenelle, never painted directly onto the plate's surface. The dish must look generously portioned and genuinely irresistible — never sparse, never skimpy, never sad-looking — exactly the kind of plate that makes you want to order it immediately. Bright, clean white studio background: seamless white backdrop, soft directional studio lighting from one side, soft natural shadow, elevated three-quarter angle looking down at the plate. Photorealistic, shot on a full-frame camera, ultra-detailed, natural food texture, 2K quality. No text, no logos, no hands, no watermark, no restaurant background of any kind — pure white studio only."
   },
   {
-    "name": "Palak Paneer",
-    "price_k": 209,
-    "slug": "palak-paneer",
-    "category": "VEG CURRIES",
-    "veg": true,
-    "jain": false,
-    "spice": 0,
-    "hero": false,
-    "description": "Paneer cooked in smooth, lightly spiced spinach gravy.",
-    "prompt": "A premium editorial food photograph of Palak Paneer: Paneer cooked in smooth, lightly spiced spinach gravy. Presented in/on a plain white ceramic bowl with a simple matte finish, finished with a swirl of cream, toasted nuts and fresh coriander, dramatic, clearly visible wisps of hot steam rising, a generous, hearty, abundant portion that fills the bowl. Ultra-premium, fine-dining editorial food photography — thoughtful, confident plating, everything composed on the ONE plate (no side cups, no extra dishes, no props scattered around it) with intentional asymmetry, height and texture contrast, a few deliberate garnishes (fresh herbs, one or two edible flowers, toasted nuts) placed like a chef would place them, never scattered randomly. Absolutely no painted sauce swooshes, smears, purée brushstrokes, or dragged dots of sauce anywhere on the plate or bowl — any chutney, yoghurt or dip is served neatly spooned into a small side ramekin or quenelle, never painted directly onto the plate's surface. The dish must look generously portioned and genuinely irresistible — never sparse, never skimpy, never sad-looking — exactly the kind of plate that makes you want to order it immediately. Bright, clean white studio background: seamless white backdrop, soft directional studio lighting from one side, soft natural shadow, elevated three-quarter angle looking down at the plate. Photorealistic, shot on a full-frame camera, ultra-detailed, natural food texture, 2K quality. No text, no logos, no hands, no watermark, no restaurant background of any kind — pure white studio only."
-  },
-  {
     "name": "Malai Kofta",
     "price_k": 199,
     "slug": "malai-kofta",

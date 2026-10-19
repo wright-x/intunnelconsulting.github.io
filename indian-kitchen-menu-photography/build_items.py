@@ -199,7 +199,6 @@ items = [
     # ---------------- VEGETARIAN CURRIES ----------------
     item("Paneer Butter Masala", 209, "VEG CURRIES", "Paneer simmered in silky tomato-butter gravy."),
     item("Kadai Paneer", 209, "VEG CURRIES", "Paneer with onions and bell peppers in aromatic kadai masala.", spice=2),
-    item("Palak Paneer", 209, "VEG CURRIES", "Paneer cooked in smooth, lightly spiced spinach gravy."),
     item("Malai Kofta", 199, "VEG CURRIES", "Vegetable dumplings served in rich, creamy curry."),
     item("Veg Jalfrezi", 175, "VEG CURRIES", "Fresh vegetables tossed in a vibrant tomato-spice gravy.", spice=1),
     item("Jeera Aloo", 155, "VEG CURRIES", "Potatoes sautéed with cumin and aromatic spices.", jain=True),
