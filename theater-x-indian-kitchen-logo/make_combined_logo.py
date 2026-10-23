@@ -15,7 +15,11 @@ import os
 
 import numpy as np
 import pymupdf
-from PIL import Image
+from PIL import Image, ImageDraw, ImageFont
+
+ITALIC_FONT = "/usr/share/fonts/truetype/liberation/LiberationSerif-Italic.ttf"
+BOLD_FONT = "/usr/share/fonts/truetype/liberation/LiberationSerif-Bold.ttf"
+REGULAR_FONT = "/usr/share/fonts/truetype/liberation/LiberationSerif-Regular.ttf"
 
 THEATER_LOGO = "/home/user/intunnelconsulting.github.io/theater-menu-photography/references/brand-logo-alpha.png"
 IK_LOGO_PDF = "/root/.claude/uploads/b07b59c1-87c7-5e01-8e75-ec8db4f2484f/2191dd6d-Indian_Kitchen_Sapa_Logo_Corrected_Print_Ready.pdf"
@@ -62,6 +66,15 @@ def crop_bands(im, keep, pad=20):
     return im.crop((0, y0, im.width, y1))
 
 
+def remove_star(im):
+    """Clear the small star glyph beneath the 'A' in THE THEATER wordmark,
+    identified by its isolated bounding box in the source asset."""
+    im = im.copy()
+    arr = np.array(im)
+    arr[725:815, 925:1085, 3] = 0
+    return Image.fromarray(arr, "RGBA")
+
+
 def tight_crop(im, pad=20):
     alpha = np.array(im.split()[-1])
     ys, xs = np.where(alpha > 10)
@@ -102,9 +115,10 @@ def save_png_and_pdf(im, out_png, out_pdf, dpi=600):
 
 
 def build_vertical_combined(ink, suffix):
-    # THE THEATER: keep "THE" + "THEATER" + star, drop the tagline band.
+    # THE THEATER: keep "THE" + "THEATER", drop the star and the tagline.
     theater = recolor(load_theater_logo(), ink)
-    theater = crop_bands(theater, keep=3)  # THE / THEATER / star
+    theater = crop_bands(theater, keep=3)  # THE / THEATER / star band
+    theater = remove_star(theater)
     theater = tight_crop(theater)
 
     # INDIAN KITCHEN: keep the lotus mark + "INDIAN KITCHEN", drop SAPA /
@@ -117,21 +131,27 @@ def build_vertical_combined(ink, suffix):
     theater = scale_to_width(theater, target_w)
     ik = scale_to_width(ik, target_w)
 
-    gap = 70
-    rule_h = 6
-    rule_margin = 50
-    total_h = theater.height + rule_margin * 2 + rule_h + rule_margin * 2 + ik.height
+    # "x" divider between the two wordmarks, in place of a rule line.
+    div_h = int(theater.height * 0.4)
+    font = ImageFont.truetype(ITALIC_FONT, div_h)
+    tmp = Image.new("RGBA", (10, 10), (0, 0, 0, 0))
+    tdraw = ImageDraw.Draw(tmp)
+    bbox = tdraw.textbbox((0, 0), "x", font=font)
+    div_w = bbox[2] - bbox[0]
+    divider = Image.new("RGBA", (div_w + 20, bbox[3] - bbox[1] + 20), (0, 0, 0, 0))
+    ddraw = ImageDraw.Draw(divider)
+    ddraw.text((10 - bbox[0], 10 - bbox[1]), "x", font=font, fill=ink)
+
+    margin_v = 55
+    total_h = theater.height + margin_v * 2 + divider.height + margin_v * 2 + ik.height
     canvas = Image.new("RGBA", (target_w, total_h), (0, 0, 0, 0))
     canvas.paste(theater, (0, 0), theater)
 
-    rule_y = theater.height + rule_margin
-    rule_w = int(target_w * 0.3)
-    rule_x = (target_w - rule_w) // 2
-    for yy in range(rule_y, rule_y + rule_h):
-        for xx in range(rule_x, rule_x + rule_w):
-            canvas.putpixel((xx, yy), ink)
+    div_y = theater.height + margin_v
+    div_x = (target_w - divider.width) // 2
+    canvas.paste(divider, (div_x, div_y), divider)
 
-    ik_y = rule_y + rule_h + rule_margin
+    ik_y = div_y + divider.height + margin_v
     ik_x = (target_w - ik.width) // 2
     canvas.paste(ik, (ik_x, ik_y), ik)
 
@@ -146,17 +166,79 @@ def build_vertical_combined(ink, suffix):
     )
 
 
-def build_ik_hem_logo(ink, suffix):
+def extract_lotus_mark(ink):
+    """Just the lotus + bar icon from the IK logo, no wordmark at all."""
     ik = recolor(load_ik_logo(), ink)
-    ik = crop_bands(ik, keep=2)  # lotus mark / INDIAN KITCHEN only
-    ik = tight_crop(ik)
+    bands = ink_bands(ik)
+    y0 = max(0, bands[0][0] - 10)
+    y1 = min(ik.height, bands[0][1] + 10)
+    lotus = ik.crop((0, y0, ik.width, y1))
+    return tight_crop(lotus)
 
-    target_w = 1400
-    ik = scale_to_width(ik, target_w)
 
-    margin = int(target_w * 0.15)
-    framed = Image.new("RGBA", (ik.width + margin * 2, ik.height + margin * 2), (0, 0, 0, 0))
-    framed.paste(ik, (margin, margin), ik)
+def build_ik_hem_logo(ink, suffix):
+    """A truly vertical lockup for a shirt hem: the lotus mark on top,
+    then every letter of 'INDIAN KITCHEN' stacked one below the other in
+    a single narrow column, with a small gap between the two words."""
+    lotus = extract_lotus_mark(ink)
+
+    letter_w = 420
+    font = ImageFont.truetype(BOLD_FONT, int(letter_w * 0.85))
+    tmp = Image.new("RGBA", (10, 10), (0, 0, 0, 0))
+    tdraw = ImageDraw.Draw(tmp)
+
+    def letter_img(ch):
+        bbox = tdraw.textbbox((0, 0), ch, font=font)
+        w, h = bbox[2] - bbox[0], bbox[3] - bbox[1]
+        pad = 10
+        glyph = Image.new("RGBA", (w + pad * 2, h + pad * 2), (0, 0, 0, 0))
+        gdraw = ImageDraw.Draw(glyph)
+        gdraw.text((pad - bbox[0], pad - bbox[1]), ch, font=font, fill=ink)
+        return tight_crop(glyph, pad=4)
+
+    word_gap = 36
+    letter_gap = 14
+    letters = []
+    for word_i, word in enumerate("INDIAN KITCHEN".split(" ")):
+        if word_i > 0:
+            letters.append(None)  # marks an extra gap between words
+        for ch in word:
+            letters.append(letter_img(ch))
+
+    col_w = max(g.width for g in letters if g is not None)
+    rows = []
+    for g in letters:
+        if g is None:
+            rows.append(("gap", word_gap))
+        else:
+            rows.append(("letter", g))
+
+    total_h = sum(
+        (r[1] if r[0] == "gap" else r[1].height) + (0 if r[0] == "gap" else letter_gap)
+        for r in rows
+    )
+    letters_canvas = Image.new("RGBA", (col_w, total_h), (0, 0, 0, 0))
+    y = 0
+    for kind, val in rows:
+        if kind == "gap":
+            y += val
+        else:
+            x = (col_w - val.width) // 2
+            letters_canvas.paste(val, (x, y), val)
+            y += val.height + letter_gap
+    letters_canvas = letters_canvas.crop((0, 0, col_w, max(0, y - letter_gap)))
+
+    lotus = scale_to_width(lotus, int(col_w * 1.5))
+    gap_lotus = 40
+    total_w = max(lotus.width, letters_canvas.width)
+    total_h2 = lotus.height + gap_lotus + letters_canvas.height
+    canvas = Image.new("RGBA", (total_w, total_h2), (0, 0, 0, 0))
+    canvas.paste(lotus, ((total_w - lotus.width) // 2, 0), lotus)
+    canvas.paste(letters_canvas, ((total_w - letters_canvas.width) // 2, lotus.height + gap_lotus), letters_canvas)
+
+    margin = int(total_w * 0.25)
+    framed = Image.new("RGBA", (canvas.width + margin * 2, canvas.height + margin * 2), (0, 0, 0, 0))
+    framed.paste(canvas, (margin, margin), canvas)
 
     save_png_and_pdf(
         framed,
