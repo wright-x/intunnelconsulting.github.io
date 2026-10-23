@@ -177,12 +177,13 @@ def extract_lotus_mark(ink):
 
 
 def build_ik_hem_logo(ink, suffix):
-    """A truly vertical lockup for a shirt hem: the lotus mark on top,
-    then every letter of 'INDIAN KITCHEN' stacked one below the other in
-    a single narrow column, with a small gap between the two words."""
+    """A compact, condensed lockup for a thin shirt hem: the lotus mark on
+    top, then 'INDIAN' and 'KITCHEN' as two short vertical letter-stacks
+    side by side (not one long single column), each letter small and
+    tightly spaced."""
     lotus = extract_lotus_mark(ink)
 
-    letter_w = 420
+    letter_w = 220
     font = ImageFont.truetype(BOLD_FONT, int(letter_w * 0.85))
     tmp = Image.new("RGBA", (10, 10), (0, 0, 0, 0))
     tdraw = ImageDraw.Draw(tmp)
@@ -190,53 +191,45 @@ def build_ik_hem_logo(ink, suffix):
     def letter_img(ch):
         bbox = tdraw.textbbox((0, 0), ch, font=font)
         w, h = bbox[2] - bbox[0], bbox[3] - bbox[1]
-        pad = 10
+        pad = 6
         glyph = Image.new("RGBA", (w + pad * 2, h + pad * 2), (0, 0, 0, 0))
         gdraw = ImageDraw.Draw(glyph)
         gdraw.text((pad - bbox[0], pad - bbox[1]), ch, font=font, fill=ink)
-        return tight_crop(glyph, pad=4)
+        return tight_crop(glyph, pad=3)
 
-    word_gap = 36
-    letter_gap = 14
-    letters = []
-    for word_i, word in enumerate("INDIAN KITCHEN".split(" ")):
-        if word_i > 0:
-            letters.append(None)  # marks an extra gap between words
-        for ch in word:
-            letters.append(letter_img(ch))
+    letter_gap = 6
 
-    col_w = max(g.width for g in letters if g is not None)
-    rows = []
-    for g in letters:
-        if g is None:
-            rows.append(("gap", word_gap))
-        else:
-            rows.append(("letter", g))
+    def build_column(word):
+        glyphs = [letter_img(ch) for ch in word]
+        col_w = max(g.width for g in glyphs)
+        total_h = sum(g.height for g in glyphs) + letter_gap * (len(glyphs) - 1)
+        col = Image.new("RGBA", (col_w, total_h), (0, 0, 0, 0))
+        y = 0
+        for g in glyphs:
+            x = (col_w - g.width) // 2
+            col.paste(g, (x, y), g)
+            y += g.height + letter_gap
+        return col
 
-    total_h = sum(
-        (r[1] if r[0] == "gap" else r[1].height) + (0 if r[0] == "gap" else letter_gap)
-        for r in rows
-    )
-    letters_canvas = Image.new("RGBA", (col_w, total_h), (0, 0, 0, 0))
-    y = 0
-    for kind, val in rows:
-        if kind == "gap":
-            y += val
-        else:
-            x = (col_w - val.width) // 2
-            letters_canvas.paste(val, (x, y), val)
-            y += val.height + letter_gap
-    letters_canvas = letters_canvas.crop((0, 0, col_w, max(0, y - letter_gap)))
+    col_indian = build_column("INDIAN")
+    col_kitchen = build_column("KITCHEN")
 
-    lotus = scale_to_width(lotus, int(col_w * 1.5))
-    gap_lotus = 40
-    total_w = max(lotus.width, letters_canvas.width)
-    total_h2 = lotus.height + gap_lotus + letters_canvas.height
+    col_gap = 26
+    words_h = max(col_indian.height, col_kitchen.height)
+    words_w = col_indian.width + col_gap + col_kitchen.width
+    words_canvas = Image.new("RGBA", (words_w, words_h), (0, 0, 0, 0))
+    words_canvas.paste(col_indian, (0, 0), col_indian)
+    words_canvas.paste(col_kitchen, (col_indian.width + col_gap, 0), col_kitchen)
+
+    lotus = scale_to_width(lotus, int(words_w * 0.55))
+    gap_lotus = 24
+    total_w = max(lotus.width, words_canvas.width)
+    total_h2 = lotus.height + gap_lotus + words_canvas.height
     canvas = Image.new("RGBA", (total_w, total_h2), (0, 0, 0, 0))
     canvas.paste(lotus, ((total_w - lotus.width) // 2, 0), lotus)
-    canvas.paste(letters_canvas, ((total_w - letters_canvas.width) // 2, lotus.height + gap_lotus), letters_canvas)
+    canvas.paste(words_canvas, ((total_w - words_canvas.width) // 2, lotus.height + gap_lotus), words_canvas)
 
-    margin = int(total_w * 0.25)
+    margin = int(total_w * 0.2)
     framed = Image.new("RGBA", (canvas.width + margin * 2, canvas.height + margin * 2), (0, 0, 0, 0))
     framed.paste(canvas, (margin, margin), canvas)
 
