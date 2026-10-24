@@ -262,9 +262,9 @@ def build_front():
     y += int(7 * MM)
 
     desc = (
-        "A Da Nang hospitality collective\n"
-        "crafting distinctive restaurants,\n"
-        "bars and catering experiences."
+        "A hospitality collective crafting\n"
+        "distinctive restaurants, bars\n"
+        "and catering experiences."
     )
     desc_img = multiline_text_img(desc, F_TAGLINE, int(2.5 * MM), INK_DIM, line_gap=int(1.1 * MM))
     if desc_img.width > content_w:
