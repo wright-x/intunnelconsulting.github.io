@@ -24,16 +24,18 @@ IK_LOGO_PDF = "/root/.claude/uploads/b07b59c1-87c7-5e01-8e75-ec8db4f2484f/2191dd
 
 DPI = 300
 MM = DPI / 25.4
-CARD_W = int(55 * MM)
-CARD_H = int(170 * MM)
+# Standard visiting card size (90 x 54mm), portrait orientation so the
+# three brands can stack top to bottom.
+CARD_W = int(54 * MM)
+CARD_H = int(90 * MM)
 
-# ---- palette: warm charcoal + brass gold + cream, flat, no gradients ----
-BG = (23, 20, 16, 255)
-GOLD = (196, 160, 102, 255)
-GOLD_DIM = (140, 114, 72, 255)
-CREAM = (238, 229, 211, 255)
-CREAM_DIM = (178, 170, 154, 255)
-RULE = (90, 78, 58, 255)
+# ---- palette: light cream background, espresso ink, warm bronze gold ----
+BG = (250, 246, 238, 255)
+INK = (36, 28, 20, 255)
+GOLD = (156, 108, 45, 255)
+GOLD_DIM = (176, 138, 85, 255)
+INK_DIM = (110, 98, 84, 255)
+RULE = (214, 198, 170, 255)
 
 F_MASTHEAD = os.path.join(FONTS, "BigShoulders-Bold.ttf")
 F_BRAND = os.path.join(FONTS, "Gloock-Regular.ttf")
@@ -43,10 +45,19 @@ F_BODY = os.path.join(FONTS, "WorkSans-Regular.ttf")
 
 BRANDS = [
     {
+        "key": "indian_kitchen",
+        "wordmark": None,  # drawn from the existing logo asset
+        "tagline": "SOUL OF INDIA",
+        "address": "42 Ngo Thi Si, Da Nang, Vietnam",
+        "phone": "+84 034 818 0134",
+        "email": "indiankitchensapa@gmail.com",
+        "maps_query": "Indian Kitchen Sapa, 42 Ngo Thi Si, Da Nang, Vietnam",
+    },
+    {
         "key": "bottega5",
         "wordmark": "BOTTEGA5",
         "tagline": "ITALIAN KITCHEN",
-        "address": "106 Tran Bach Dang, Bac My An,\nNgu Hanh Son, Da Nang, Vietnam",
+        "address": "106 Tran Bach Dang, Da Nang, Vietnam",
         "phone": "+84 917 963 400",
         "email": "infobottega5@gmail.com",
         "maps_query": "Bottega5, 106 Tran Bach Dang, Ngu Hanh Son, Da Nang, Vietnam",
@@ -55,19 +66,10 @@ BRANDS = [
         "key": "theater",
         "wordmark": None,  # drawn from the existing logo asset
         "tagline": "INDIAN KITCHEN & BAR",
-        "address": "42 Ngo Thi Si, Bac My An,\nNgu Hanh Son, Da Nang, Vietnam",
+        "address": "42 Ngo Thi Si, Da Nang, Vietnam",
         "phone": "+84 32 755 5786",
         "email": "indiankitchensapa@gmail.com",
         "maps_query": "The Theater Indian Kitchen & Bar, 42 Ngo Thi Si, Da Nang, Vietnam",
-    },
-    {
-        "key": "indian_kitchen",
-        "wordmark": None,  # drawn from the existing logo asset
-        "tagline": "SOUL OF INDIA",
-        "address": "42 Ngo Thi Si, Bac My An,\nNgu Hanh Son, Da Nang, Vietnam",
-        "phone": "+84 034 818 0134",
-        "email": "indiankitchensapa@gmail.com",
-        "maps_query": "Indian Kitchen Sapa, 42 Ngo Thi Si, Da Nang, Vietnam",
     },
 ]
 
@@ -205,11 +207,18 @@ def multiline_text_img(text, font_path, size, fill, line_gap=6, pad=4):
     return out
 
 
-def make_qr(data, box_size=10, border=2):
+def make_qr(data, target_px, border=4):
+    """Render at an exact integer module size so there's no resampling
+    blur, using a standard 4-module quiet zone for reliable scanning."""
+    probe = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_M, box_size=1, border=border)
+    probe.add_data(data)
+    probe.make(fit=True)
+    modules = probe.modules_count + border * 2
+    box_size = max(1, round(target_px / modules))
     qr = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_M, box_size=box_size, border=border)
     qr.add_data(data)
     qr.make(fit=True)
-    img = qr.make_image(fill_color=(23, 20, 16), back_color=(238, 229, 211)).convert("RGBA")
+    img = qr.make_image(fill_color=INK[:3], back_color=(255, 255, 255)).convert("RGBA")
     return img
 
 
@@ -222,105 +231,109 @@ def build_front():
     """Cover side: B5 Group identity alone, generous negative space."""
     canvas = Image.new("RGBA", (CARD_W, CARD_H), BG)
     draw = ImageDraw.Draw(canvas)
-    margin = int(5.5 * MM)
+    margin = int(5 * MM)
     content_w = CARD_W - margin * 2
-
-    # small centerpiece lotus-free flat ornament: a thin diamond made of
-    # two hairline rules, echoing the sister brands' gold linework.
     cx = CARD_W // 2
-    top_y = int(46 * MM)
-    diamond_r = int(3.2 * MM)
+
+    # small flat diamond ornament, echoing the sister brands' gold linework
+    top_y = int(22 * MM)
+    diamond_r = int(2.6 * MM)
     draw.line([(cx - diamond_r, top_y), (cx, top_y - diamond_r), (cx + diamond_r, top_y), (cx, top_y + diamond_r), (cx - diamond_r, top_y)], fill=GOLD_DIM, width=2)
 
-    y = top_y + diamond_r + int(7 * MM)
-    masthead = text_img("B5", F_MASTHEAD, int(16 * MM), GOLD, tracking=int(1.6 * MM))
+    y = top_y + diamond_r + int(6 * MM)
+    masthead = text_img("B5", F_MASTHEAD, int(11.5 * MM), GOLD, tracking=int(1.1 * MM))
     canvas.paste(masthead, ((CARD_W - masthead.width) // 2, y), masthead)
-    y += masthead.height + int(1 * MM)
+    y += masthead.height + int(0.8 * MM)
 
-    group_word = text_img("GROUP", F_MASTHEAD, int(6.4 * MM), GOLD, tracking=int(2.6 * MM))
+    group_word = text_img("GROUP", F_MASTHEAD, int(4.6 * MM), GOLD, tracking=int(1.9 * MM))
     canvas.paste(group_word, ((CARD_W - group_word.width) // 2, y), group_word)
-    y += group_word.height + int(5 * MM)
+    y += group_word.height + int(4 * MM)
 
-    hline(draw, cx - int(10 * MM), cx + int(10 * MM), y, RULE, width=2)
-    y += int(5 * MM)
+    hline(draw, cx - int(8 * MM), cx + int(8 * MM), y, RULE, width=2)
+    y += int(4 * MM)
 
-    tagline = text_img("HOSPITALITY · CATERING · RESTAURANTS", F_LABEL, int(2.5 * MM), CREAM_DIM, tracking=int(0.3 * MM))
+    tagline = text_img("HOSPITALITY · CATERING · RESTAURANTS", F_LABEL, int(2.0 * MM), INK_DIM, tracking=int(0.2 * MM))
     if tagline.width > content_w:
         tagline = scale_to_width(tagline, content_w)
     canvas.paste(tagline, ((CARD_W - tagline.width) // 2, y), tagline)
-    y += tagline.height + int(16 * MM)
+    y += tagline.height + int(7 * MM)
 
-    hline(draw, cx - int(6 * MM), cx + int(6 * MM), y, RULE, width=1)
-    y += int(16 * MM)
+    hline(draw, cx - int(5 * MM), cx + int(5 * MM), y, RULE, width=1)
+    y += int(7 * MM)
 
     desc = (
-        "A Da Nang hospitality collective crafting\n"
-        "distinctive restaurants, bars and catering\n"
-        "experiences — BOTTEGA5, THE THEATER and\n"
-        "INDIAN KITCHEN SAPA."
+        "A Da Nang hospitality collective\n"
+        "crafting distinctive restaurants,\n"
+        "bars and catering experiences."
     )
-    desc_img = multiline_text_img(desc, F_TAGLINE, int(3.0 * MM), CREAM_DIM, line_gap=int(1.3 * MM))
+    desc_img = multiline_text_img(desc, F_TAGLINE, int(2.5 * MM), INK_DIM, line_gap=int(1.1 * MM))
     if desc_img.width > content_w:
         desc_img = scale_to_width(desc_img, content_w)
     canvas.paste(desc_img, ((CARD_W - desc_img.width) // 2, y), desc_img)
+    y += desc_img.height
 
-    footer = text_img("DA NANG, VIETNAM", F_LABEL, int(2.2 * MM), CREAM_DIM, tracking=int(0.5 * MM))
-    canvas.paste(footer, ((CARD_W - footer.width) // 2, CARD_H - margin - footer.height), footer)
+    footer = text_img("DA NANG, VIETNAM", F_LABEL, int(1.9 * MM), INK_DIM, tracking=int(0.4 * MM))
+    footer_y = max(CARD_H - margin - footer.height, y + int(5 * MM))
+    canvas.paste(footer, ((CARD_W - footer.width) // 2, footer_y), footer)
 
     return canvas
 
 
 def build_back():
-    """Directory side: all three brands stacked top to bottom."""
+    """Directory side: all three brands stacked top to bottom, condensed
+    to fit a standard card: Indian Kitchen Sapa, Bottega5, The Theater."""
     canvas = Image.new("RGBA", (CARD_W, CARD_H), BG)
     draw = ImageDraw.Draw(canvas)
 
-    margin = int(5.5 * MM)
+    margin = int(4.5 * MM)
     content_w = CARD_W - margin * 2
-    y = int(7 * MM)
+    y = int(4.5 * MM)
 
-    eyebrow = text_img("OUR BRANDS", F_LABEL, int(2.6 * MM), GOLD_DIM, tracking=int(0.8 * MM))
+    eyebrow = text_img("OUR BRANDS", F_LABEL, int(2.1 * MM), GOLD_DIM, tracking=int(0.6 * MM))
     canvas.paste(eyebrow, ((CARD_W - eyebrow.width) // 2, y), eyebrow)
-    y += eyebrow.height + int(3.5 * MM)
+    y += eyebrow.height + int(2.2 * MM)
     hline(draw, margin, CARD_W - margin, y, RULE, width=2)
-    y += int(6 * MM)
+    y += int(3.2 * MM)
 
     # ---- brand blocks ----
-    qr_size = int(13.5 * MM)
+    qr_target = int(9.5 * MM)
+    logo_h = int(6.5 * MM)
     for i, b in enumerate(BRANDS):
         if b["key"] == "bottega5":
-            wm = text_img(b["wordmark"], F_BRAND, int(7.2 * MM), GOLD, tracking=int(0.15 * MM))
-            if wm.width > content_w:
-                wm = scale_to_width(wm, content_w)
+            wm = text_img(b["wordmark"], F_BRAND, int(5.0 * MM), GOLD, tracking=int(0.1 * MM))
         elif b["key"] == "theater":
             wm = theater_wordmark(GOLD, content_w)
+            wm = scale_to_height(wm, logo_h)
         else:
-            wm = ik_mark(GOLD, int(content_w * 0.62))
+            wm = ik_mark(GOLD, content_w)
+            wm = scale_to_height(wm, int(logo_h * 1.3))
+        if wm.width > content_w:
+            wm = scale_to_width(wm, content_w)
 
         canvas.paste(wm, ((CARD_W - wm.width) // 2, y), wm)
-        y += wm.height + int(1.6 * MM)
+        y += wm.height + int(0.6 * MM)
 
-        tg = text_img(b["tagline"], F_LABEL, int(2.4 * MM), GOLD_DIM, tracking=int(0.45 * MM))
+        tg = text_img(b["tagline"], F_LABEL, int(1.7 * MM), GOLD_DIM, tracking=int(0.25 * MM))
         canvas.paste(tg, ((CARD_W - tg.width) // 2, y), tg)
-        y += tg.height + int(3.6 * MM)
+        y += tg.height + int(1.8 * MM)
 
         # address / phone / email block (left) + QR (right)
         block_top = y
-        text_w = content_w - qr_size - int(4 * MM)
+        text_w = content_w - qr_target - int(2.5 * MM)
 
-        addr_img = multiline_text_img(b["address"], F_BODY, int(2.55 * MM), CREAM, line_gap=int(1.0 * MM))
+        addr_img = text_img(b["address"], F_BODY, int(1.75 * MM), INK)
         if addr_img.width > text_w:
             addr_img = scale_to_width(addr_img, text_w)
         canvas.paste(addr_img, (margin, y), addr_img)
-        y += addr_img.height + int(2.0 * MM)
+        y += addr_img.height + int(1.1 * MM)
 
-        phone_img = text_img(b["phone"], F_BODY, int(2.6 * MM), CREAM)
+        phone_img = text_img(b["phone"], F_BODY, int(1.9 * MM), INK)
         if phone_img.width > text_w:
             phone_img = scale_to_width(phone_img, text_w)
         canvas.paste(phone_img, (margin, y), phone_img)
-        y += phone_img.height + int(1.6 * MM)
+        y += phone_img.height + int(0.9 * MM)
 
-        email_img = text_img(b["email"], F_BODY, int(2.55 * MM), CREAM)
+        email_img = text_img(b["email"], F_BODY, int(1.75 * MM), INK)
         if email_img.width > text_w:
             email_img = scale_to_width(email_img, text_w)
         canvas.paste(email_img, (margin, y), email_img)
@@ -329,25 +342,22 @@ def build_back():
         text_block_h = y - block_top
 
         maps_url = "https://www.google.com/maps/search/?api=1&query=" + urllib.parse.quote(b["maps_query"])
-        qr = make_qr(maps_url)
-        qr = qr.resize((qr_size, qr_size), Image.NEAREST)
+        qr = make_qr(maps_url, qr_target)
+        qr_size = qr.width  # exact integer-module size, close to the target
         qr_x = CARD_W - margin - qr_size
         qr_y = block_top + max(0, (text_block_h - qr_size) // 2)
-        # cream tile behind the QR for a clean frame + reliable scan contrast
-        tile_pad = int(1.0 * MM)
-        tile = Image.new("RGBA", (qr_size + tile_pad * 2, qr_size + tile_pad * 2), CREAM)
+        tile_pad = int(0.6 * MM)
+        tile = Image.new("RGBA", (qr_size + tile_pad * 2, qr_size + tile_pad * 2), (255, 255, 255, 255))
         canvas.paste(tile, (qr_x - tile_pad, qr_y - tile_pad), tile)
+        draw.rectangle([qr_x - tile_pad, qr_y - tile_pad, qr_x + qr_size + tile_pad, qr_y + qr_size + tile_pad], outline=RULE, width=1)
         canvas.paste(qr, (qr_x, qr_y), qr)
-        scan_label = text_img("SCAN FOR DIRECTIONS", F_LABEL, int(1.5 * MM), GOLD_DIM, tracking=int(0.15 * MM))
-        scan_label = scale_to_width(scan_label, min(scan_label.width, qr_size + tile_pad * 2))
-        canvas.paste(scan_label, (qr_x - tile_pad + (qr_size + tile_pad * 2 - scan_label.width) // 2, qr_y + qr_size + tile_pad + int(0.8 * MM)), scan_label)
 
-        y = max(y, qr_y + qr_size + tile_pad + int(0.8 * MM) + scan_label.height)
-        y += int(5.5 * MM)
+        y = max(y, qr_y + qr_size + tile_pad)
+        y += int(2.6 * MM)
 
         if i < len(BRANDS) - 1:
             hline(draw, margin, CARD_W - margin, y, RULE, width=1)
-            y += int(6 * MM)
+            y += int(2.6 * MM)
 
     print(f"  back content bottom at y={y}px of {CARD_H}px ({y/MM:.1f}mm of {CARD_H/MM:.1f}mm)")
     return canvas
