@@ -269,12 +269,9 @@ def build_front():
     desc_img = multiline_text_img(desc, F_TAGLINE, int(2.5 * MM), INK_DIM, line_gap=int(1.1 * MM))
     if desc_img.width > content_w:
         desc_img = scale_to_width(desc_img, content_w)
+    y += int(4 * MM)
     canvas.paste(desc_img, ((CARD_W - desc_img.width) // 2, y), desc_img)
     y += desc_img.height
-
-    footer = text_img("DA NANG, VIETNAM", F_LABEL, int(1.9 * MM), INK_DIM, tracking=int(0.4 * MM))
-    footer_y = max(CARD_H - margin - footer.height, y + int(5 * MM))
-    canvas.paste(footer, ((CARD_W - footer.width) // 2, footer_y), footer)
 
     return canvas
 
